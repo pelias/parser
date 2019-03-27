@@ -8,7 +8,7 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.body, '')
     t.equals(span.start, 0)
     t.equals(span.end, 0)
-    t.end();
+    t.end()
   });
 
   test('constructor: string', (t) => {
@@ -16,7 +16,15 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.body, 'example')
     t.equals(span.start, 0)
     t.equals(span.end, 7)
-    t.end();
+    t.end()
+  });
+
+  test('constructor: string + start', (t) => {
+    let span = new Span('example', 10)
+    t.equals(span.body, 'example')
+    t.equals(span.start, 10)
+    t.equals(span.end, 17)
+    t.end()
   });
 };
 
@@ -39,7 +47,7 @@ module.exports.tests.intersects = (test) => {
     let spanB = new Span('B')
     t.true(spanA.intersects(spanB))
     t.true(spanB.intersects(spanA))
-    t.end();
+    t.end()
   });
 
   test('intersects: advanced', (t) => {
@@ -61,7 +69,7 @@ module.exports.tests.intersects = (test) => {
     t.true(spanC.intersects(spanA))
     t.true(spanB.intersects(spanC))
     t.true(spanC.intersects(spanB))
-    t.end();
+    t.end()
   });
 };
 

@@ -50,7 +50,7 @@ module.exports.tests.permutate = (test) => {
       new Span('SoHo', 0),
       new Span('New', 5),
       new Span('York', 9),
-      new Span('USA', 14)
+      new Span('USA', 13)
     ]
     let actual = permutate(spans, 1, 2)
     t.deepEquals(actual, [
@@ -58,9 +58,9 @@ module.exports.tests.permutate = (test) => {
       new Span('SoHo', 0).setChildren(spans.slice(0, 1)),
       new Span('New York', 5).setChildren(spans.slice(1, 3)),
       new Span('New', 5).setChildren(spans.slice(1, 2)),
-      new Span('York USA', 5).setChildren(spans.slice(2, 4)),
-      new Span('York', 5).setChildren(spans.slice(2, 3)),
-      new Span('USA', 14).setChildren(spans.slice(3, 4))
+      new Span('York USA', 9).setChildren(spans.slice(2, 4)),
+      new Span('York', 9).setChildren(spans.slice(2, 3)),
+      new Span('USA', 13).setChildren(spans.slice(3, 4))
     ])
     t.end();
   });

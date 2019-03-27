@@ -1,3 +1,5 @@
+const Span = require('./Span')
+
 function split(span, f) {
 
   // A span is used to record a slice of s of the form s[start:end].
@@ -9,15 +11,14 @@ function split(span, f) {
   let fromIndex = 0
   
   // Iterate unicode code points in string
-  for( var i=0; i<span.body.length; i++){
+  for( let i=0; i<span.body.length; i++){
     let char = span.body.charAt(i);
     if( f(char) ) {
       if( wasField ) {
-        spans.push({
-          body: span.body.substring(fromIndex, i),
-          start: span.start + fromIndex,
-          end: span.start + i
-        })
+        spans.push(new Span(
+          span.body.substring(fromIndex, i),
+          span.start + fromIndex
+        ))
         wasField = false
       }
     } else if( !wasField ) {
@@ -28,11 +29,10 @@ function split(span, f) {
 
   // Last field might end at EOF.
   if( wasField ){
-    spans.push({
-      body: span.body.substring(fromIndex, span.body.length),
-      start: span.start + fromIndex,
-      end: span.start + span.body.length
-    });
+    spans.push(new Span(
+      span.body.substring(fromIndex, span.body.length),
+      span.start + fromIndex
+    ));
   }
 
   return spans

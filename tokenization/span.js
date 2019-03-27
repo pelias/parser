@@ -1,7 +1,7 @@
 class Span {
-  constructor(body) {
+  constructor(body, start) {
     this.body = body || ''
-    this.start = 0
+    this.start = start || 0
     this.end = this.start + this.body.length
     this.child = []
   }
