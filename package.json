@@ -1,0 +1,44 @@
+{
+  "name": "pelias-parser",
+  "version": "0.0.0-development",
+  "author": "pelias",
+  "description": "Pelias parsing library",
+  "homepage": "https://github.com/pelias/parser",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "units": "./bin/units",
+    "test": "npm run units",
+    "travis": "npm test",
+    "lint": "jshint .",
+    "validate": "npm ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pelias/parser.git"
+  },
+  "keywords": [
+    "pelias",
+    "parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/pelias/parser/issues"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "precommit-hook": "^3.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.4.0"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "release": {
+    "success": []
+  }
+}
