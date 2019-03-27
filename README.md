@@ -10,6 +10,7 @@ Strategic goals:
 - Extensible to handle queries such as 'pizza near new york'
 - Record offsets to the original token positions in the input text
 - Pluggable classifiers
+- Support for partially complete 'autocomplete' tokens 
 
 It's still very early stages but this is the basic architecture:
 
