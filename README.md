@@ -13,12 +13,12 @@ Strategic goals:
 
 It's still very early stages but this is the basic architecture:
 
-1. start with an input:
+#### 1. start with an input:
 ```
 30 West 26th Street, New York, NYC, 10010
 ```
 
-2. split tokens in to logical groups:
+#### 2. split tokens in to logical groups:
 ```
 [
   "30 West 26th Street",
@@ -28,7 +28,7 @@ It's still very early stages but this is the basic architecture:
 ]
 ```
 
-3. tokenize groups:
+#### 3. tokenize groups:
 ```
 [
   [ "30", "west", "26th", "street" ],
@@ -38,7 +38,7 @@ It's still very early stages but this is the basic architecture:
 ]
 ```
 
-4. generate permutations:
+#### 4. generate permutations:
 ```
 [
   [
@@ -62,7 +62,7 @@ It's still very early stages but this is the basic architecture:
 ]
 ```
 
-5. run classifiers against all permutations and record potential classes per permutation
+#### 5. run classifiers against all permutations and record potential classes per permutation
 ```
 '10010' -> postcode
 'west 26th street' -> street
@@ -70,6 +70,6 @@ It's still very early stages but this is the basic architecture:
 'street' -> street_postfix
 ```
 
-6. generate solutions
+#### 6. generate solutions
 
 Given the classifications for each permutation, compute an array of potential parses for the input, a confidence score can also be provided.
