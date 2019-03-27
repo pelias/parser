@@ -71,4 +71,5 @@ It's still very early stages but this is the basic architecture:
 ```
 
 6. generate solutions
-Given the classifications for each permutation, compute an array of potential parser for the input, a confidence score can also be provided.
+
+Given the classifications for each permutation, compute an array of potential parses for the input, a confidence score can also be provided.
