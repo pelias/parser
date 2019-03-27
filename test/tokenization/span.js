@@ -20,6 +20,19 @@ module.exports.tests.constructor = (test) => {
   });
 };
 
+module.exports.tests.setter = (test) => {
+  test('setter: setChildren', (t) => {
+    let span = new Span()
+    t.deepEquals(span.child, [])
+
+    let spans = [new Span('A'), new Span('B')]
+    span.setChildren(spans)
+
+    t.deepEquals(span.child, spans)
+    t.end();
+  });
+};
+
 module.exports.tests.intersects = (test) => {
   test('intersects: basic', (t) => {
     let spanA = new Span('A')

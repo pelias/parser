@@ -32,7 +32,7 @@ function split(span, f) {
       body: span.body.substring(fromIndex, span.body.length),
       start: span.start + fromIndex,
       end: span.start + span.body.length
-		});
+    });
   }
 
   return spans
