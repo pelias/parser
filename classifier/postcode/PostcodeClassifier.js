@@ -15,7 +15,7 @@ class PostcodeClassifier extends Classifier {
 
   loadSSLAddressData() {
     this.data = whitelist.map( cc => {
-      let row = require(`./chromium-i18n/ssl-address/${cc}.json`)
+      let row = require(`../../resources/chromium-i18n/ssl-address/${cc}.json`)
       row.regex = new RegExp( row.zip );
       return row
     })
