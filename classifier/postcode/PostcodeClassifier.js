@@ -25,7 +25,7 @@ class PostcodeClassifier extends Classifier {
     for( let i=0; i<this.data.length; i++ ){
       let row = this.data[i]
       if( row.regex.test(span.body) ){
-        this.results.push( new Classification(span, 'POSTCODE', 1, row) )
+        this.results.push( new Classification(span, 'POSTCODE', 1) )
         break
       }
     }

@@ -1,18 +1,36 @@
+const fs = require('fs')
+const path = require('path')
 const Classifier = require('../../classification/Classifier')
 const Classification = require('../../classification/Classification')
 
-// copied from: https://github.com/mapbox/carmen/blob/5489f0e67a4f31280ae1b9d091952c97280b83e7/lib/text-processing/termops.js#L269-L290
+// postcode data sourced from google-i18n project
+// see: https://chromium-i18n.appspot.com/ssl-address
+
+const whitelist = ['en', 'de', 'fr']
 
 class StreetClassifier extends Classifier {
+
+  constructor() {
+    super()
+    this.loadStreetTypes()
+  }
+
+  loadStreetTypes() {
+    this.index = {}
+    whitelist.forEach(lang => {
+      let filepath = path.join( __dirname, `../../resources/libpostal/dictionaries/${lang}/street_types.txt` )
+      let dict = fs.readFileSync(filepath, 'utf8')
+      dict.split('\n').forEach(row => {
+        row.split('|').forEach(cell => {
+          this.index[cell] = true
+        })
+      }, this)
+    }, this)
+  }
+
   each(span) {
-    if (
-      /^\d+[a-z]?$/.test(span.body) || // 10 or 10a Style
-      /^(\d+)-(\d+)[a-z]?$/.test(span.body) || // 10-19 or 10-19a Style
-      /^(\d+)([nsew])(\d+)[a-z]?$/.test(span.body) || // 6N23 Style (ie Kane County, IL)
-      /^([nesw])(\d+)([nesw]\d+)?$/.test(span.body) || // W350N5337 or N453 Style (ie Waukesha County, WI)
-      /^\d+(к\d+)?(с\d+)?$/.test(span.body) // Russian style including korpus (cyrillic к) and stroenie (cyrillic с)
-    ) {
-      this.results.push(new Classification(span, 'HOUSENUMBER', 1))
+    if( this.index.hasOwnProperty(span.body.toLowerCase()) ) {
+      this.results.push( new Classification(span, 'STREET', 1) )
     }
   }
 }
