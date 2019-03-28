@@ -3,7 +3,6 @@ const Classification = require('../../classification/Classification')
 
 // postcode data sourced from google-i18n project
 // see: https://chromium-i18n.appspot.com/ssl-address
-
 const whitelist = [ 'US', 'GB', 'AU', 'NZ', 'DE' ]
 
 class PostcodeClassifier extends Classifier {
@@ -16,7 +15,7 @@ class PostcodeClassifier extends Classifier {
   loadSSLAddressData() {
     this.data = whitelist.map( cc => {
       let row = require(`../../resources/chromium-i18n/ssl-address/${cc}.json`)
-      row.regex = new RegExp( row.zip );
+      row.regex = new RegExp( '^(' + row.zip + ')$', 'i' );
       return row
     })
   }
