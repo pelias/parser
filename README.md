@@ -12,6 +12,14 @@ Strategic goals:
 - Pluggable classifiers
 - Support for partially complete 'autocomplete' tokens 
 
+#### CLI
+
+```
+node bin/cli.js West 26th Street, New York, NYC, 10010
+```
+
+![cli](./docs/cli.png)
+
 It's still very early stages but this is the basic architecture:
 
 #### 1. start with an input:

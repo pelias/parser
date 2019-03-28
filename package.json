@@ -27,7 +27,9 @@
   "engines": {
     "node": ">= 8.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^2.4.2"
+  },
   "devDependencies": {
     "precommit-hook": "^3.0.0",
     "tap-spec": "^5.0.0",
