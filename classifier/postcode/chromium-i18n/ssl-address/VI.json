@@ -1,0 +1,1 @@
+{"zipex":"00802-1222,00850-9802","key":"VI","name":"VIRGIN ISLANDS (U.S.)","fmt":"%N%n%O%n%A%n%C %S %Z","zip_name_type":"zip","posturl":"http://zip4.usps.com/zip4/welcome.jsp","require":"ACSZ","state_name_type":"state","zip":"(008(?:(?:[0-4]\\d)|(?:5[01])))(?:[ \\-](\\d{4}))?","upper":"ACNOS","id":"data/VI"}

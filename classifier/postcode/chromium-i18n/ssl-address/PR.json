@@ -1,0 +1,1 @@
+{"zipex":"00930","postprefix":"PR ","key":"PR","name":"PUERTO RICO","fmt":"%N%n%O%n%A%n%C PR %Z","zip_name_type":"zip","posturl":"http://zip4.usps.com/zip4/welcome.jsp","require":"ACZ","zip":"(00[679]\\d{2})(?:[ \\-](\\d{4}))?","upper":"ACNO","id":"data/PR"}

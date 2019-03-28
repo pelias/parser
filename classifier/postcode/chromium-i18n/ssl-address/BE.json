@@ -1,0 +1,1 @@
+{"zipex":"4000,1000","key":"BE","name":"BELGIUM","fmt":"%O%n%N%n%A%n%Z %C","require":"ACZ","zip":"\\d{4}","posturl":"http://www.post.be/site/nl/residential/customerservice/search/postal_codes.html","id":"data/BE"}

@@ -1,0 +1,1 @@
+{"zipex":"0025,0107,6631","key":"NO","name":"NORWAY","fmt":"%N%n%O%n%A%n%Z %C","locality_name_type":"post_town","require":"ACZ","zip":"\\d{4}","posturl":"http://adressesok.posten.no/nb/postal_codes/search","id":"data/NO"}

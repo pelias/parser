@@ -1,0 +1,1 @@
+{"zipex":"96910,96931","key":"GU","name":"GUAM","fmt":"%N%n%O%n%A%n%C %Z","zip_name_type":"zip","posturl":"http://zip4.usps.com/zip4/welcome.jsp","require":"ACZ","zip":"(969(?:[12]\\d|3[12]))(?:[ \\-](\\d{4}))?","upper":"ACNO","id":"data/GU"}

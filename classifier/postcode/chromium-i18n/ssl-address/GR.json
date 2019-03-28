@@ -1,0 +1,1 @@
+{"zipex":"151 24,151 10,101 88","key":"GR","name":"GREECE","fmt":"%N%n%O%n%A%n%Z %C","require":"ACZ","zip":"\\d{3} ?\\d{2}","posturl":"http://www.elta.gr/findapostcode.aspx","id":"data/GR"}

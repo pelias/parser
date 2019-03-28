@@ -1,0 +1,1 @@
+{"zipex":"11455,12345,10500","postprefix":"SE-","key":"SE","name":"SWEDEN","fmt":"%O%n%N%n%A%nSE-%Z %C","locality_name_type":"post_town","require":"ACZ","zip":"\\d{3} ?\\d{2}","posturl":"http://www.posten.se/sv/Kundservice/Sidor/Sok-postnummer-resultat.aspx","id":"data/SE"}

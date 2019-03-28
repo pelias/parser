@@ -1,0 +1,1 @@
+{"zipex":"00550,00011","postprefix":"FI-","key":"FI","name":"FINLAND","fmt":"%O%n%N%n%A%nFI-%Z %C","require":"ACZ","zip":"\\d{5}","posturl":"http://www.verkkoposti.com/e3/postinumeroluettelo","id":"data/FI"}

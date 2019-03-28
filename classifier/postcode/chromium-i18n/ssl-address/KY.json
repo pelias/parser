@@ -1,0 +1,1 @@
+{"zipex":"KY1-1100,KY1-1702,KY2-2101","require":"AS","key":"KY","name":"CAYMAN ISLANDS","fmt":"%N%n%O%n%A%n%S %Z","state_name_type":"island","lang":"en","zip":"KY\\d-\\d{4}","sub_keys":"Cayman Brac~Grand Cayman~Little Cayman","languages":"en","posturl":"http://www.caymanpost.gov.ky/","id":"data/KY"}

@@ -35,5 +35,21 @@ function spans(title, s) {
   }
 }
 
+function classifier( c, label ){
+  console.log()
+  console.log('='.repeat(64))
+  console.log('CLASSIFIER %s', label)
+  console.log('-'.repeat(64))
+
+  for( let i=0; i<c.results.length; i++ ){
+    let res = c.results[i]
+    process.stdout.write( res.span.body.padEnd(32) + '➜  ' )
+    console.log( chalk.bgGreen.bold( res.name ) )
+  }
+
+  console.log()
+}
+
 module.exports.tokenizer = tokenizer
 module.exports.spans = spans
+module.exports.classifier = classifier
