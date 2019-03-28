@@ -47,6 +47,11 @@ class StreetClassifier extends Classifier {
       this.results.push( new Classification( span, 'STREET:SUFFIX', 1 ) )
     }
 
+    // try again for abbreviations denoted by a period such as 'str.'
+    else if( body.slice(-1) === '.' && this.index.hasOwnProperty( body.slice( 0, -1 ) )){
+      this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
+    }
+
     // else use a slower suffix check which is O(n)
     // this allows us to match Germanic compound words such as:
     // 'Grolmanstraße' which end with the dictionary term '-straße'

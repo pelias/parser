@@ -36,7 +36,12 @@ class DirectionalClassifier extends Classifier {
     let body = span.body.toLowerCase()
 
     // use an inverted index for full token matching as it's O(1)
-    if (this.index.hasOwnProperty(body)) {
+    if( this.index.hasOwnProperty(body) ){
+      this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
+    }
+    
+    // try again for abbreviations denoted by a period such as 'n.'
+    else if( body.slice(-1) === '.' && this.index.hasOwnProperty( body.slice( 0, -1 ) )){
       this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
     }
   }
