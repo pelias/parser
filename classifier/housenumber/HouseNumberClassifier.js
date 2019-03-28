@@ -5,14 +5,23 @@ const Classification = require('../../classification/Classification')
 
 class HouseNumberClassifier extends Classifier {
   each(span) {
-    if (
-        /^\d+[a-z]?$/.test(span.body) || // 10 or 10a Style
-        /^(\d+)-(\d+)[a-z]?$/.test(span.body) || // 10-19 or 10-19a Style
-        /^(\d+)([nsew])(\d+)[a-z]?$/.test(span.body) || // 6N23 Style (ie Kane County, IL)
-        /^([nesw])(\d+)([nesw]\d+)?$/.test(span.body) || // W350N5337 or N453 Style (ie Waukesha County, WI)
-        /^\d+(к\d+)?(с\d+)?$/.test(span.body) // Russian style including korpus (cyrillic к) and stroenie (cyrillic с)
+    if(
+        /^\d{1,5}[a-z]?$/.test(span.body) || // 10 or 10a Style
+        /^(\d{1,5})-(\d{1,5})[a-z]?$/.test(span.body) || // 10-19 or 10-19a Style
+        /^(\d{1,5})([nsew])(\d{1,5})[a-z]?$/.test(span.body) || // 6N23 Style (ie Kane County, IL)
+        /^([nesw])(\d{1,5})([nesw]\d{1,5})?$/.test(span.body) || // W350N5337 or N453 Style (ie Waukesha County, WI)
+        /^\d{1,5}(к\d{1,5})?(с\d{1,5})?$/.test(span.body) // Russian style including korpus (cyrillic к) and stroenie (cyrillic с)
     ) {
-      this.results.push( new Classification( span, 'HOUSENUMBER', 1 ) )
+
+      let confidence = 1
+
+      // it's possible to have 5 digit housenumbers
+      // but they are fairly uncommon
+      if( /^\d{5}$/.test(span.body) ){
+        confidence = 0.2
+      }
+
+      this.results.push( new Classification( span, 'HOUSENUMBER', confidence ) )
     }
   }
 }

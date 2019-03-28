@@ -6,8 +6,11 @@ const Classification = require('../../classification/Classification')
 // dictionaries sourced from the libpostal project
 // see: https://github.com/openvenues/libpostal
 
-const whitelist = ['en', 'de', 'fr']
-
+const whitelist = [
+  { lang: 'en' },
+  { lang: 'de', compound: true },
+  { lang: 'fr' }
+]
 class StreetClassifier extends Classifier {
   constructor() {
     super()
@@ -15,13 +18,21 @@ class StreetClassifier extends Classifier {
   }
 
   loadStreetTypes() {
-    this.index = {}
-    whitelist.forEach(lang => {
-      let filepath = path.join( __dirname, `../../resources/libpostal/dictionaries/${lang}/street_types.txt` )
+    this.index = {} // inverted index
+    this.suffixes = {} // suffix index
+    
+    whitelist.forEach(item => {
+      let filepath = path.join( __dirname, `../../resources/libpostal/dictionaries/${item.lang}/street_types.txt` )
       let dict = fs.readFileSync(filepath, 'utf8')
       dict.split('\n').forEach(row => {
         row.split('|').forEach((cell, o) => {
-          this.index[cell] = o
+          this.index[cell] = true
+
+          // only consider suffixes from the first cell
+          // of languages which use compound words
+          if( item.compound && o == 0 ) {
+            this.suffixes[cell] = true
+          }
         })
       }, this)
     }, this)
@@ -40,9 +51,9 @@ class StreetClassifier extends Classifier {
     // this allows us to match Germanic compound words such as:
     // 'Grolmanstraße' which end with the dictionary term '-straße'
     else {
-      for( let token in this.index ){
-        if( this.index[token] > 0 ){ continue } // only consider the first cell
+      for( let token in this.suffixes ){
         if( span.body.length <= token.length ){ continue }
+        if( span.body.indexOf(' ') >= 0 ){ continue } // multi-word
         if( body.slice(-token.length) === token ){
           this.results.push( new Classification( span, 'STREET', 1 ) )
           break
