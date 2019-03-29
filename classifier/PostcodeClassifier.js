@@ -1,15 +1,19 @@
+const fs = require('fs')
 const path = require('path')
-const WordClassifier = require('../classification/WordClassifier')
-const Classification = require('../classification/Classification')
+const WordClassifier = require('./super/WordClassifier')
+const PostcodeClassification = require('../classification/PostcodeClassification')
 const dictPath = path.join(__dirname, `../resources/chromium-i18n/ssl-address`)
 
 // postcode data sourced from google-i18n project
 // see: https://chromium-i18n.appspot.com/ssl-address
-const whitelist = [ 'US', 'GB', 'AU', 'NZ', 'DE' ]
+// note: reducing the list of country codes will have a performance benefit
+const countryCodes = fs.readdirSync(dictPath)
+  .filter(p => p.endsWith('.json'))
+  .map(p => p.split('.')[0])
 
 class PostcodeClassifier extends WordClassifier {
   setup () {
-    this.data = whitelist.map(cc => {
+    this.data = countryCodes.map(cc => {
       let row = require(path.join(dictPath, `${cc}.json`))
       row.regex = new RegExp('^(' + row.zip + ')$', 'i')
       return row
@@ -23,7 +27,7 @@ class PostcodeClassifier extends WordClassifier {
 
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].regex.test(span.norm)) {
-        this.add(new Classification(span, Classification.POSTCODE, 1))
+        span.classify(new PostcodeClassification(1))
         break
       }
     }

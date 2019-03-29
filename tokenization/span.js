@@ -2,7 +2,9 @@ class Span {
   constructor (body, start) {
     this.start = start || 0
     this.setBody(body)
+    this.classifications = []
 
+    // sub-spans
     this.child = []
     this.permutation = []
   }
@@ -25,6 +27,12 @@ class Span {
   // return true if Span ranges overlap
   intersects (span) {
     return this.start < span.end && this.end > span.start
+  }
+
+  // add a classification for this span
+  classify (classification) {
+    this.classifications.push(classification)
+    return this
   }
 
   // set the child Spans for a subset of this Span

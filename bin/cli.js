@@ -13,32 +13,18 @@ var start = new Date()
 const t = new Tokenizer(input)
 pretty.tokenizer(t, util.format('(%sms)', new Date() - start))
 
-// housenumber classifier
-start = new Date()
-const hn = new HouseNumberClassifier()
-hn.classify(t)
-pretty.classifier(hn, util.format('housenumber (%sms)', new Date() - start))
+// enabled classifiers
+const classifiers = [
 
-// postcode classifier
-start = new Date()
-const pc = new PostcodeClassifier()
-pc.classify(t)
-pretty.classifier(pc, util.format('postcode (%sms)', new Date() - start))
+  // single-word classifiers
+  new HouseNumberClassifier(),
+  new PostcodeClassifier(),
+  new StreetClassifier(),
+  new DirectionalClassifier(),
+  new OrdinalClassifier()
+]
 
-// street classifier
+// run all classifiers
 start = new Date()
-const sc = new StreetClassifier()
-sc.classify(t)
-pretty.classifier(sc, util.format('street (%sms)', new Date() - start))
-
-// directional classifier
-start = new Date()
-const dc = new DirectionalClassifier()
-dc.classify(t)
-pretty.classifier(dc, util.format('directional (%sms)', new Date() - start))
-
-// directional classifier
-start = new Date()
-const oc = new OrdinalClassifier()
-oc.classify(t)
-pretty.classifier(oc, util.format('ordinal (%sms)', new Date() - start))
+classifiers.forEach(c => c.classify(t))
+pretty.classifications(t, util.format('word (%sms)', new Date() - start))

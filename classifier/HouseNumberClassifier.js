@@ -1,5 +1,5 @@
-const WordClassifier = require('../classification/WordClassifier')
-const Classification = require('../classification/Classification')
+const WordClassifier = require('./super/WordClassifier')
+const HouseNumberClassification = require('../classification/HouseNumberClassification')
 
 // copied from: https://github.com/mapbox/carmen/blob/5489f0e67a4f31280ae1b9d091952c97280b83e7/lib/text-processing/termops.js#L269-L290
 
@@ -23,7 +23,7 @@ class HouseNumberClassifier extends WordClassifier {
         confidence = 0.2
       }
 
-      this.add(new Classification(span, Classification.HOUSENUMBER, confidence))
+      span.classify(new HouseNumberClassification(confidence))
     }
   }
 }

@@ -35,16 +35,27 @@ function spans (title, s) {
   }
 }
 
-function classifier (c, label) {
+function classifications (tokenizer, label) {
   console.log()
   console.log('='.repeat(64))
   console.log('CLASSIFIER %s', label)
   console.log('-'.repeat(64))
 
-  for (let i = 0; i < c.results.length; i++) {
-    let res = c.results[i]
-    process.stdout.write(res.span.body.padEnd(32) + '➜  ')
-    console.log(chalk.bgGreen.bold(res.type + `=${res.confidence.toFixed(1)}`))
+  for (let i = 0; i < tokenizer.section.length; i++) {
+    let section = tokenizer.section[i]
+    for (let j = 0; j < section.child.length; j++) {
+      let word = section.child[j]
+      process.stdout.write(word.body.padEnd(32) + '➜  ')
+      for (let k = 0; k < word.classifications.length; k++) {
+        let classification = word.classifications[k]
+        let block = chalk.bgGreen.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
+        process.stdout.write(block)
+        if (k < word.classifications.length - 1) {
+          process.stdout.write(' ')
+        }
+      }
+      console.log()
+    }
   }
 
   console.log()
@@ -52,4 +63,4 @@ function classifier (c, label) {
 
 module.exports.tokenizer = tokenizer
 module.exports.spans = spans
-module.exports.classifier = classifier
+module.exports.classifications = classifications

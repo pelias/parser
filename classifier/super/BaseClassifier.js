@@ -1,6 +1,5 @@
 class BaseClassifier {
   constructor () {
-    this.results = []
     this.setup()
   }
 
@@ -12,11 +11,6 @@ class BaseClassifier {
 
   // you may optionally provide this function in your subclass
   setup () {}
-
-  // add a new classification
-  add (classification) {
-    this.results.push(classification)
-  }
 }
 
 module.exports = BaseClassifier
