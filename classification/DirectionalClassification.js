@@ -1,4 +1,4 @@
-const Classification = require('./Classification')
+const Classification = require('../classification/Classification')
 
 class DirectionalClassification extends Classification {
   constructor (confidence, meta) {

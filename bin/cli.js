@@ -6,6 +6,7 @@ const PostcodeClassifier = require('../classifier/PostcodeClassifier')
 const StreetClassifier = require('../classifier/StreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
+const MultiWordStreetClassifier = require('../classifier/MultiWordStreetClassifier')
 const input = process.argv.slice(2).join(' ')
 
 // tokenizer
@@ -21,10 +22,13 @@ const classifiers = [
   new PostcodeClassifier(),
   new StreetClassifier(),
   new DirectionalClassifier(),
-  new OrdinalClassifier()
+  new OrdinalClassifier(),
+
+  // multi-word classifiers
+  new MultiWordStreetClassifier()
 ]
 
 // run all classifiers
 start = new Date()
 classifiers.forEach(c => c.classify(t))
-pretty.classifications(t, util.format('word (%sms)', new Date() - start))
+pretty.classifications(t, util.format('(%sms)', new Date() - start))

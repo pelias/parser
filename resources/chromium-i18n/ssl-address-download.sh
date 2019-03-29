@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# see: https://github.com/googlei18n/libaddressinput/wiki/AddressValidationMetadata
+
 COUNTRY_CODES=$(curl -sLo- 'https://chromium-i18n.appspot.com/ssl-address/data' \
     | jq -r .countries);
 

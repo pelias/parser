@@ -2,7 +2,7 @@ class Span {
   constructor (body, start) {
     this.start = start || 0
     this.setBody(body)
-    this.classifications = []
+    this.classifications = {}
 
     // sub-spans
     this.child = []
@@ -31,7 +31,7 @@ class Span {
 
   // add a classification for this span
   classify (classification) {
-    this.classifications.push(classification)
+    this.classifications[classification.constructor.name] = classification
     return this
   }
 

@@ -35,22 +35,23 @@ function spans (title, s) {
   }
 }
 
-function classifications (tokenizer, label) {
-  console.log()
-  console.log('='.repeat(64))
-  console.log('CLASSIFIER %s', label)
+function wordClassifications (tokenizer) {
+  console.log('-'.repeat(64))
+  console.log('WORDS')
   console.log('-'.repeat(64))
 
   for (let i = 0; i < tokenizer.section.length; i++) {
     let section = tokenizer.section[i]
     for (let j = 0; j < section.child.length; j++) {
       let word = section.child[j]
+      let keys = Object.keys(word.classifications)
+      if (!keys.length) { continue }
       process.stdout.write(word.body.padEnd(32) + '➜  ')
-      for (let k = 0; k < word.classifications.length; k++) {
+      for (let k in word.classifications) {
         let classification = word.classifications[k]
         let block = chalk.bgGreen.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
         process.stdout.write(block)
-        if (k < word.classifications.length - 1) {
+        if (k !== keys.slice(-1)) {
           process.stdout.write(' ')
         }
       }
@@ -59,6 +60,42 @@ function classifications (tokenizer, label) {
   }
 
   console.log()
+}
+
+function permutationClassifications (tokenizer) {
+  console.log('-'.repeat(64))
+  console.log('PERMUTATIONS')
+  console.log('-'.repeat(64))
+
+  for (let i = 0; i < tokenizer.section.length; i++) {
+    let section = tokenizer.section[i]
+    for (let j = 0; j < section.permutation.length; j++) {
+      let perm = section.permutation[j]
+      let keys = Object.keys(perm.classifications)
+      if (!keys.length) { continue }
+      process.stdout.write(perm.body.padEnd(32) + '➜  ')
+      for (let k in perm.classifications) {
+        let classification = perm.classifications[k]
+        let block = chalk.bgGreen.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
+        process.stdout.write(block)
+        if (k !== keys.slice(-1)) {
+          process.stdout.write(' ')
+        }
+      }
+      console.log()
+    }
+  }
+
+  console.log()
+}
+
+function classifications (tokenizer, label) {
+  console.log()
+  console.log('='.repeat(64))
+  console.log('CLASSIFICATIONS %s', label)
+
+  wordClassifications(tokenizer, label)
+  permutationClassifications(tokenizer, label)
 }
 
 module.exports.tokenizer = tokenizer
