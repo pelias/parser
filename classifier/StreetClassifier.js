@@ -1,19 +1,14 @@
-const fs = require('fs')
-const path = require('path')
 const WordClassifier = require('../classification/WordClassifier')
 const Classification = require('../classification/Classification')
-const dictPath = path.join(__dirname, `../resources/libpostal/dictionaries`)
+const libpostal = require('../resources/libpostal/libpostal')
 
 // dictionaries sourced from the libpostal project
 // see: https://github.com/openvenues/libpostal
 
-// include all languages
-const allLanguages = fs.readdirSync( dictPath ).filter( p => !p.includes('.') )
-
 // optionally control which languages are included
 // note: reducing the languages will have a considerable performance benefit
-const streetTypeWhitelist = allLanguages
-const suffixWhitelist = [ 'de' ]
+const streetTypeLangs = libpostal.languages
+const suffixLangs = [ 'de' ]
 
 class StreetClassifier extends WordClassifier {
   constructor() {
@@ -24,30 +19,12 @@ class StreetClassifier extends WordClassifier {
 
   loadStreetTypes() {
     this.streetTypes = {}
-    streetTypeWhitelist.forEach(lang => {
-      let filepath = path.join( dictPath, lang, 'street_types.txt' )
-      if( !fs.existsSync( filepath ) ){ return }
-      let dict = fs.readFileSync(filepath, 'utf8')
-      dict.split('\n').forEach(row => {
-        row.split('|').forEach(cell => {
-          this.streetTypes[cell.trim()] = true
-        })
-      }, this)
-    }, this)
+    libpostal.load( this.streetTypes, streetTypeLangs, 'street_types.txt' )
   }
 
   loadSuffixes() {
     this.suffixes = {}
-    suffixWhitelist.forEach(lang => {
-      let filepath = path.join( dictPath, lang, 'concatenated_suffixes_separable.txt' )
-      if( !fs.existsSync( filepath ) ){ return }
-      let dict = fs.readFileSync(filepath, 'utf8')
-      dict.split('\n').forEach(row => {
-        row.split('|').forEach(cell => {
-          this.suffixes[cell.trim()] = true
-        })
-      }, this)
-    }, this)
+    libpostal.load( this.suffixes, suffixLangs, 'concatenated_suffixes_separable.txt' )
   }
 
   each(span) {
