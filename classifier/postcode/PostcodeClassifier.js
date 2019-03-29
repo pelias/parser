@@ -21,6 +21,10 @@ class PostcodeClassifier extends WordClassifier {
   }
   
   each(span) {
+    // skip spans which do not contain numbers
+    // @todo: is this correct globally?
+    if( !span.contains.numerals ){ return }
+
     for( let i=0; i<this.data.length; i++ ){
       let row = this.data[i]
       if( row.regex.test(span.body) ){

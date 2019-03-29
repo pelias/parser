@@ -5,6 +5,9 @@ const Classification = require('../../classification/Classification')
 
 class HouseNumberClassifier extends WordClassifier {
   each(span) {
+    // skip spans which do not contain numbers
+    if( !span.contains.numerals ){ return }
+
     if(
         /^\d{1,5}[a-z]?$/.test(span.body) || // 10 or 10a Style
         /^(\d{1,5})-(\d{1,5})[a-z]?$/.test(span.body) || // 10-19 or 10-19a Style

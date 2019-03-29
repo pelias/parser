@@ -7,6 +7,12 @@ class Span {
 
     this.child = []
     this.permutation = []
+
+    // convenience booleans to avoid computing
+    // these in every classifier
+    this.contains = {
+      numerals: /\d/.test( this.body )
+    }
   }
 
   // return true if Span ranges overlap

@@ -8,11 +8,12 @@ const dictPath = path.join(__dirname, `../../resources/libpostal/dictionaries`)
 // see: https://github.com/openvenues/libpostal
 
 // include all languages
-const whitelist = fs.readdirSync( dictPath ).filter( p => !p.includes('.') )
+const allLanguages = fs.readdirSync( dictPath ).filter( p => !p.includes('.') )
 
 // optionally control which languages are included
 // note: reducing the languages will have a considerable performance benefit
-// const whitelist = [ 'en', 'de', 'fr' ]
+const streetTypeWhitelist = allLanguages
+const suffixWhitelist = [ 'de' ]
 
 class StreetClassifier extends WordClassifier {
   constructor() {
@@ -23,7 +24,7 @@ class StreetClassifier extends WordClassifier {
 
   loadStreetTypes() {
     this.streetTypes = {}
-    whitelist.forEach(lang => {
+    streetTypeWhitelist.forEach(lang => {
       let filepath = path.join( dictPath, lang, 'street_types.txt' )
       if( !fs.existsSync( filepath ) ){ return }
       let dict = fs.readFileSync(filepath, 'utf8')
@@ -37,7 +38,7 @@ class StreetClassifier extends WordClassifier {
 
   loadSuffixes() {
     this.suffixes = {}
-    whitelist.forEach(lang => {
+    suffixWhitelist.forEach(lang => {
       let filepath = path.join( dictPath, lang, 'concatenated_suffixes_separable.txt' )
       if( !fs.existsSync( filepath ) ){ return }
       let dict = fs.readFileSync(filepath, 'utf8')
@@ -50,6 +51,9 @@ class StreetClassifier extends WordClassifier {
   }
 
   each(span) {
+    // skip spans which contain numbers
+    if( span.contains.numerals ){ return }
+
     // normalize string body
     let body = span.body.toLowerCase()
     let confidence = 1

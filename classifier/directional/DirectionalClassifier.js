@@ -2,15 +2,17 @@ const fs = require('fs')
 const path = require('path')
 const WordClassifier = require('../../classification/WordClassifier')
 const Classification = require('../../classification/Classification')
+const dictPath = path.join(__dirname, `../../resources/libpostal/dictionaries`)
 
 // dictionaries sourced from the libpostal project
 // see: https://github.com/openvenues/libpostal
 
-const whitelist = [
-  { lang: 'en' },
-  { lang: 'de' },
-  { lang: 'fr' }
-]
+// const languages = fs.readdirSync( dictPath ).filter( p => !p.includes('.') )
+
+// optionally control which languages are included
+// note: reducing the languages will have a considerable performance benefit
+const languages = ['en', 'es', 'de', 'fr']
+
 class DirectionalClassifier extends WordClassifier {
   constructor() {
     super()
@@ -20,18 +22,22 @@ class DirectionalClassifier extends WordClassifier {
   loadDirectionals() {
     this.index = {} // inverted index
 
-    whitelist.forEach(item => {
-      let filepath = path.join(__dirname, `../../resources/libpostal/dictionaries/${item.lang}/directionals.txt`)
-      let dict = fs.readFileSync(filepath, 'utf8')
+    languages.forEach(lang => {
+      let filepath = path.join( dictPath, lang, 'directionals.txt' )
+      if( !fs.existsSync( filepath ) ){ return }
+      let dict = fs.readFileSync( filepath, 'utf8' )
       dict.split('\n').forEach(row => {
         row.split('|').forEach(cell => {
-          this.index[cell] = true
+          this.index[cell.trim()] = true
         })
       }, this)
     }, this)
   }
 
   each(span) {
+    // skip spans which contain numbers
+    if( span.contains.numerals ){ return }
+
     // normalize string body
     let body = span.body.toLowerCase()
 
