@@ -8,7 +8,7 @@ class SectionClassifier extends BaseClassifier {
 
   classify(tokenizer) {
     for (let i = 0; i < tokenizer.section.length; i++) {
-      this.each(tokenizer.section[i])
+      this.each(tokenizer.section[i], i)
     }
   }
 }

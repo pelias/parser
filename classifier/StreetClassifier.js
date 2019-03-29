@@ -21,31 +21,36 @@ class StreetClassifier extends WordClassifier {
     libpostal.load( this.suffixes, suffixLangs, 'concatenated_suffixes_separable.txt' )
   }
 
-  each(span) {
+  each(span, _, pos) {
     // skip spans which contain numbers
     if( span.contains.numerals ){ return }
 
     // base confidence
     let confidence = 1
 
-    // use an inverted index for full token matching as it's O(1)
-    if( this.streetTypes.hasOwnProperty( span.norm ) ) {
-      if( span.norm.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
-      this.add( new Classification( span, Classification.STREET_SUFFIX, confidence ) )
-      return
-    }
+    // skip checking spans in the first position within their section
+    // note: assuming that a street suffix should not appear as the first token
+    if( pos > 0 ) {
 
-    // try again for abbreviations denoted by a period such as 'str.', also O(1)
-    else if( span.contains.final.period && this.streetTypes.hasOwnProperty( span.norm.slice( 0, -1 ) )){
-      if( span.norm.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
-      this.add( new Classification( span, Classification.STREET_SUFFIX, confidence) )
-      return
+      // use an inverted index for full token matching as it's O(1)
+      if( this.streetTypes.hasOwnProperty( span.norm ) ) {
+        if( span.norm.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
+        this.add( new Classification( span, Classification.STREET_SUFFIX, confidence ) )
+        return
+      }
+
+      // try again for abbreviations denoted by a period such as 'str.', also O(1)
+      if( span.contains.final.period && this.streetTypes.hasOwnProperty( span.norm.slice( 0, -1 ) )){
+        if( span.norm.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
+        this.add( new Classification( span, Classification.STREET_SUFFIX, confidence) )
+        return
+      }
     }
 
     // else use a slower suffix check which is O(n)
     // this allows us to match Germanic compound words such as:
     // 'Grolmanstraße' which end with the dictionary term '-straße'
-    else if( !span.contains.final.period ) {
+    if( !span.contains.final.period ) {
       for( let token in this.suffixes ){
         let offet = span.body.length - token.length
         if( offet < 1 ){ continue }

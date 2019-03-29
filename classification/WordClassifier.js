@@ -9,7 +9,7 @@ class WordClassifier extends BaseClassifier {
   classify(tokenizer) {
     for (let i = 0; i < tokenizer.section.length; i++) {
       for (let j = 0; j < tokenizer.section[i].child.length; j++) {
-        this.each(tokenizer.section[i].child[j])
+        this.each(tokenizer.section[i].child[j], i, j)
       }
     }
   }

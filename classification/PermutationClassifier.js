@@ -10,7 +10,7 @@ class PermutationClassifier extends BaseClassifier {
   classify(tokenizer) {
     for (let i = 0; i < tokenizer.section.length; i++) {
       for (let j = 0; j < tokenizer.section[i].permutation.length; j++) {
-        this.each(tokenizer.section[i].permutation[j])
+        this.each(tokenizer.section[i].permutation[j], i, j)
       }
     }
   }
