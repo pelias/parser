@@ -4,26 +4,26 @@ const funcs = require('./split_funcs')
 const permutate = require('./permutate')
 
 class Tokenizer {
-  constructor(s) {
+  constructor (s) {
     this.span = new Span(s)
     this.segment()
     this.split()
     this.permute(0, 6)
   }
 
-  segment() {
+  segment () {
     this.section = split(this.span, funcs.fieldsFuncBoundary)
   }
 
-  split() {
-    for( let i=0; i<this.section.length; i++ ){
-      this.section[i].setChildren( split(this.section[i], funcs.fieldsFuncWhiteSpace) )
+  split () {
+    for (let i = 0; i < this.section.length; i++) {
+      this.section[i].setChildren(split(this.section[i], funcs.fieldsFuncWhiteSpace))
     }
   }
 
-  permute(windowMin, windowMax) {
-    for( let i=0; i<this.section.length; i++ ){
-      this.section[i].setPermutations( permutate(this.section[i].child, windowMin, windowMax) )
+  permute (windowMin, windowMax) {
+    for (let i = 0; i < this.section.length; i++) {
+      this.section[i].setPermutations(permutate(this.section[i].child, windowMin, windowMax))
     }
   }
 }

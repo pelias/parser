@@ -1,7 +1,7 @@
 const Span = require('../../tokenization/Span')
 const permutate = require('../../tokenization/permutate')
 
-module.exports.tests = {};
+module.exports.tests = {}
 
 module.exports.tests.permutate = (test) => {
   test('permutate: simple', (t) => {
@@ -24,8 +24,8 @@ module.exports.tests.permutate = (test) => {
       new Span('York', 9).setChildren(spans.slice(2, 3)),
       new Span('USA', 14).setChildren(spans.slice(3, 4))
     ])
-    t.end();
-  });
+    t.end()
+  })
 
   test('permutate: tokens contain whitespace', (t) => {
     let spans = [
@@ -42,8 +42,8 @@ module.exports.tests.permutate = (test) => {
       new Span('New York', 5).setChildren(spans.slice(1, 2)),
       new Span('USA', 14).setChildren(spans.slice(2, 3))
     ])
-    t.end();
-  });
+    t.end()
+  })
 
   test('permutate: smaller window', (t) => {
     let spans = [
@@ -62,17 +62,16 @@ module.exports.tests.permutate = (test) => {
       new Span('York', 9).setChildren(spans.slice(2, 3)),
       new Span('USA', 13).setChildren(spans.slice(3, 4))
     ])
-    t.end();
-  });
-};
+    t.end()
+  })
+}
 
 module.exports.all = (tape, common) => {
-
-  function test(name, testFunction) {
-    return tape(`permutate: ${name}`, testFunction);
+  function test (name, testFunction) {
+    return tape(`permutate: ${name}`, testFunction)
   }
 
   for (var testCase in module.exports.tests) {
-    module.exports.tests[testCase](test, common);
+    module.exports.tests[testCase](test, common)
   }
-};
+}

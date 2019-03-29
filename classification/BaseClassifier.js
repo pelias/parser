@@ -1,5 +1,5 @@
 class BaseClassifier {
-  constructor() {
+  constructor () {
     this.results = []
     this.setup()
   }
@@ -11,11 +11,11 @@ class BaseClassifier {
   // classify(tokenizer) {}
 
   // you may optionally provide this function in your subclass
-  setup() {}
+  setup () {}
 
   // add a new classification
-  add( classification ){
-    this.results.push( classification )
+  add (classification) {
+    this.results.push(classification)
   }
 }
 

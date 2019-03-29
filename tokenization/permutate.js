@@ -11,34 +11,34 @@ const JOIN_CHAR = ' '
   ported: https://github.com/pelias/placeholder/blob/master/lib/permutations.js
 **/
 
-function permutate(spans, windowMin, windowMax) {
+function permutate (spans, windowMin, windowMax) {
   let perms = []
 
   // favour larger tokens over shorter ones
-  for( let i=0; i<spans.length; i++ ) {
-    for( let j=i+windowMax; j>=i+windowMin; j-- ){
-      if( j <= spans.length ) {
-        if( j > i ){
+  for (let i = 0; i < spans.length; i++) {
+    for (let j = i + windowMax; j >= i + windowMin; j--) {
+      if (j <= spans.length) {
+        if (j > i) {
           let span = new Span()
-          for( let k=i; k<j; k++ ){
+          for (let k = i; k < j; k++) {
             let s = spans[k]
-            span.setBody( span.body += s.body )
+            span.setBody(span.body += s.body)
             span.child.push(s)
 
             // join with delim
-            if( k < j-1 ) {
+            if (k < j - 1) {
               span.body += JOIN_CHAR
             }
 
             // update spans
-            if( i === k ) {
+            if (i === k) {
               span.start = s.start
               span.end = s.end
             } else {
-              if( s.start < span.start ){
+              if (s.start < span.start) {
                 span.start = s.start
               }
-              if( s.end > span.end ){
+              if (s.end > span.end) {
                 span.end = s.end
               }
             }

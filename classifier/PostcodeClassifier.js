@@ -8,22 +8,22 @@ const dictPath = path.join(__dirname, `../resources/chromium-i18n/ssl-address`)
 const whitelist = [ 'US', 'GB', 'AU', 'NZ', 'DE' ]
 
 class PostcodeClassifier extends WordClassifier {
-  setup(){
-    this.data = whitelist.map( cc => {
-      let row = require( path.join( dictPath, `${cc}.json` ) )
-      row.regex = new RegExp( '^(' + row.zip + ')$', 'i' );
+  setup () {
+    this.data = whitelist.map(cc => {
+      let row = require(path.join(dictPath, `${cc}.json`))
+      row.regex = new RegExp('^(' + row.zip + ')$', 'i')
       return row
     })
   }
-  
-  each(span) {
+
+  each (span) {
     // skip spans which do not contain numbers
     // @todo: is this correct globally?
-    if( !span.contains.numerals ){ return }
+    if (!span.contains.numerals) { return }
 
-    for( let i=0; i<this.data.length; i++ ){
-      if( this.data[i].regex.test( span.norm ) ){
-        this.add( new Classification(span, Classification.POSTCODE, 1) )
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i].regex.test(span.norm)) {
+        this.add(new Classification(span, Classification.POSTCODE, 1))
         break
       }
     }

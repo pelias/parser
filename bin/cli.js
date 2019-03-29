@@ -10,14 +10,14 @@ const input = process.argv.slice(2).join(' ')
 
 // tokenizer
 var start = new Date()
-const t = new Tokenizer( input )
-pretty.tokenizer( t, util.format('(%sms)', new Date()-start ) )
+const t = new Tokenizer(input)
+pretty.tokenizer(t, util.format('(%sms)', new Date() - start))
 
 // housenumber classifier
 start = new Date()
 const hn = new HouseNumberClassifier()
-hn.classify( t )
-pretty.classifier( hn, util.format('housenumber (%sms)', new Date()-start ) )
+hn.classify(t)
+pretty.classifier(hn, util.format('housenumber (%sms)', new Date() - start))
 
 // postcode classifier
 start = new Date()

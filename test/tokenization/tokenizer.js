@@ -1,6 +1,6 @@
 const Tokenizer = require('../../tokenization/Tokenizer')
 
-module.exports.tests = {};
+module.exports.tests = {}
 
 module.exports.tests.constructor = (test) => {
   test('constructor: basic', (t) => {
@@ -8,14 +8,14 @@ module.exports.tests.constructor = (test) => {
     t.equals(tok.span.constructor.name, 'Span')
     t.equals(tok.span.body, '100 Main Street')
     t.end()
-  });
+  })
   test('constructor: advanced', (t) => {
     let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
     t.equals(tok.span.constructor.name, 'Span')
     t.equals(tok.span.body, '100 West 26th Street, NYC, 10010 NY, USA')
     t.end()
-  });
-};
+  })
+}
 
 module.exports.tests.segment = (test) => {
   test('segment: basic', (t) => {
@@ -24,7 +24,7 @@ module.exports.tests.segment = (test) => {
     t.equals(tok.section.length, 1)
     t.equals(tok.section[0].body, '100 Main Street')
     t.end()
-  });
+  })
   test('segment: advanced', (t) => {
     let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
     t.true(tok.section.every(s => s.constructor.name === 'Span'))
@@ -34,8 +34,8 @@ module.exports.tests.segment = (test) => {
     t.equals(tok.section[2].body, ' 10010 NY')
     t.equals(tok.section[3].body, ' USA')
     t.end()
-  });
-};
+  })
+}
 
 module.exports.tests.split = (test) => {
   test('split: basic', (t) => {
@@ -46,7 +46,7 @@ module.exports.tests.split = (test) => {
     t.equals(tok.section[0].child[1].body, 'Main')
     t.equals(tok.section[0].child[2].body, 'Street')
     t.end()
-  });
+  })
   test('split: advanced', (t) => {
     let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
     t.true(tok.section.every(s => s.child.every(c => c.constructor.name === 'Span')))
@@ -63,8 +63,8 @@ module.exports.tests.split = (test) => {
     t.equals(tok.section[3].child.length, 1)
     t.equals(tok.section[3].child[0].body, 'USA')
     t.end()
-  });
-};
+  })
+}
 
 module.exports.tests.permute = (test) => {
   test('permute: basic', (t) => {
@@ -78,7 +78,7 @@ module.exports.tests.permute = (test) => {
     t.equals(tok.section[0].permutation[4].body, 'Main')
     t.equals(tok.section[0].permutation[5].body, 'Street')
     t.end()
-  });
+  })
   test('permute: advanced', (t) => {
     let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
     t.true(tok.section.every(s => s.permutation.every(p => p.constructor.name === 'Span')))
@@ -102,16 +102,15 @@ module.exports.tests.permute = (test) => {
     t.equals(tok.section[3].permutation.length, 1)
     t.equals(tok.section[3].permutation[0].body, 'USA')
     t.end()
-  });
-};
+  })
+}
 
 module.exports.all = (tape, common) => {
-
-  function test(name, testFunction) {
-    return tape(`Tokenizer: ${name}`, testFunction);
+  function test (name, testFunction) {
+    return tape(`Tokenizer: ${name}`, testFunction)
   }
 
   for (var testCase in module.exports.tests) {
-    module.exports.tests[testCase](test, common);
+    module.exports.tests[testCase](test, common)
   }
-};
+}

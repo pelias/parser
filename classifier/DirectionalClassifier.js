@@ -12,23 +12,22 @@ const libpostal = require('../resources/libpostal/libpostal')
 const languages = ['en', 'es', 'de', 'fr']
 
 class DirectionalClassifier extends WordClassifier {
-  setup() {
+  setup () {
     this.index = {}
-    libpostal.load( this.index, languages, 'directionals.txt' )
+    libpostal.load(this.index, languages, 'directionals.txt')
   }
 
-  each(span) {
+  each (span) {
     // skip spans which contain numbers
-    if( span.contains.numerals ){ return }
+    if (span.contains.numerals) { return }
 
     // use an inverted index for full token matching as it's O(1)
-    if( this.index.hasOwnProperty(span.norm) ){
-      this.add( new Classification(span, Classification.DIRECTIONAL, 1) )
-    }
-    
+    if (this.index.hasOwnProperty(span.norm)) {
+      this.add(new Classification(span, Classification.DIRECTIONAL, 1))
+
     // try again for abbreviations denoted by a period such as 'n.'
-    else if( span.norm.slice(-1) === '.' && this.index.hasOwnProperty( span.norm.slice( 0, -1 ) )){
-      this.add( new Classification(span, Classification.DIRECTIONAL, 1) )
+    } else if (span.norm.slice(-1) === '.' && this.index.hasOwnProperty(span.norm.slice(0, -1))) {
+      this.add(new Classification(span, Classification.DIRECTIONAL, 1))
     }
   }
 }
