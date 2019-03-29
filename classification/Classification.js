@@ -11,6 +11,7 @@ class Classification {
   static get STREET_SUFFIX (){ return 'STREET:SUFFIX' }
   static get POSTCODE      (){ return 'POSTCODE' }
   static get DIRECTIONAL   (){ return 'DIRECTIONAL' }
+  static get ORDINAL       (){ return 'ORDINAL' }
 }
 
 module.exports = Classification

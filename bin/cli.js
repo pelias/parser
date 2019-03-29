@@ -5,6 +5,7 @@ const HouseNumberClassifier = require('../classifier/housenumber/HouseNumberClas
 const PostcodeClassifier = require('../classifier/postcode/PostcodeClassifier')
 const StreetClassifier = require('../classifier/street/StreetClassifier')
 const DirectionalClassifier = require('../classifier/directional/DirectionalClassifier')
+const OrdinalClassifier = require('../classifier/ordinal/OrdinalClassifier')
 const input = process.argv.slice(2).join(' ')
 
 // tokenizer
@@ -35,3 +36,9 @@ start = new Date()
 const dc = new DirectionalClassifier()
 dc.classify(t)
 pretty.classifier(dc, util.format('directional (%sms)', new Date() - start))
+
+// directional classifier
+start = new Date()
+const oc = new OrdinalClassifier()
+oc.classify(t)
+pretty.classifier(oc, util.format('ordinal (%sms)', new Date() - start))
