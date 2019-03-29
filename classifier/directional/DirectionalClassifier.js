@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const Classifier = require('../../classification/Classifier')
+const WordClassifier = require('../../classification/WordClassifier')
 const Classification = require('../../classification/Classification')
 
 // dictionaries sourced from the libpostal project
@@ -11,7 +11,7 @@ const whitelist = [
   { lang: 'de' },
   { lang: 'fr' }
 ]
-class DirectionalClassifier extends Classifier {
+class DirectionalClassifier extends WordClassifier {
   constructor() {
     super()
     this.loadDirectionals()
@@ -37,12 +37,12 @@ class DirectionalClassifier extends Classifier {
 
     // use an inverted index for full token matching as it's O(1)
     if( this.index.hasOwnProperty(body) ){
-      this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
+      this.add( new Classification(span, 'DIRECTIONAL', 1) )
     }
     
     // try again for abbreviations denoted by a period such as 'n.'
     else if( body.slice(-1) === '.' && this.index.hasOwnProperty( body.slice( 0, -1 ) )){
-      this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
+      this.add( new Classification(span, 'DIRECTIONAL', 1) )
     }
   }
 }

@@ -1,9 +1,9 @@
-const Classifier = require('../../classification/Classifier')
+const WordClassifier = require('../../classification/WordClassifier')
 const Classification = require('../../classification/Classification')
 
 // copied from: https://github.com/mapbox/carmen/blob/5489f0e67a4f31280ae1b9d091952c97280b83e7/lib/text-processing/termops.js#L269-L290
 
-class HouseNumberClassifier extends Classifier {
+class HouseNumberClassifier extends WordClassifier {
   each(span) {
     if(
         /^\d{1,5}[a-z]?$/.test(span.body) || // 10 or 10a Style
@@ -21,7 +21,7 @@ class HouseNumberClassifier extends Classifier {
         confidence = 0.2
       }
 
-      this.results.push( new Classification( span, 'HOUSENUMBER', confidence ) )
+      this.add( new Classification( span, 'HOUSENUMBER', confidence ) )
     }
   }
 }

@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const Classifier = require('../../classification/Classifier')
+const WordClassifier = require('../../classification/WordClassifier')
 const Classification = require('../../classification/Classification')
 
 // dictionaries sourced from the libpostal project
@@ -8,31 +8,37 @@ const Classification = require('../../classification/Classification')
 
 const whitelist = [
   { lang: 'en' },
-  { lang: 'de', compound: true },
+  { lang: 'de' },
   { lang: 'fr' }
 ]
-class StreetClassifier extends Classifier {
+class StreetClassifier extends WordClassifier {
   constructor() {
     super()
     this.loadStreetTypes()
   }
 
   loadStreetTypes() {
-    this.index = {} // inverted index
-    this.suffixes = {} // suffix index
+    this.streetTypes = {}
+    this.suffixes = {}
     
     whitelist.forEach(item => {
       let filepath = path.join( __dirname, `../../resources/libpostal/dictionaries/${item.lang}/street_types.txt` )
+      if( !fs.existsSync( filepath ) ){ return }
       let dict = fs.readFileSync(filepath, 'utf8')
       dict.split('\n').forEach(row => {
-        row.split('|').forEach((cell, o) => {
-          this.index[cell] = true
+        row.split('|').forEach(cell => {
+          this.streetTypes[cell.trim()] = true
+        })
+      }, this)
+    }, this)
 
-          // only consider suffixes from the first cell
-          // of languages which use compound words
-          if( item.compound && o == 0 ) {
-            this.suffixes[cell] = true
-          }
+    whitelist.forEach(item => {
+      let filepath = path.join(__dirname, `../../resources/libpostal/dictionaries/${item.lang}/concatenated_suffixes_separable.txt`)
+      if( !fs.existsSync( filepath ) ){ return }
+      let dict = fs.readFileSync(filepath, 'utf8')
+      dict.split('\n').forEach(row => {
+        row.split('|').forEach(cell => {
+          this.suffixes[cell.trim()] = true
         })
       }, this)
     }, this)
@@ -41,15 +47,18 @@ class StreetClassifier extends Classifier {
   each(span) {
     // normalize string body
     let body = span.body.toLowerCase()
+    let confidence = 1
 
     // use an inverted index for full token matching as it's O(1)
-    if( this.index.hasOwnProperty( body ) ) {
-      this.results.push( new Classification( span, 'STREET:SUFFIX', 1 ) )
+    if( this.streetTypes.hasOwnProperty( body ) ) {
+      if( body.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
+      this.add( new Classification( span, 'STREET:SUFFIX', confidence ) )
     }
 
     // try again for abbreviations denoted by a period such as 'str.'
-    else if( body.slice(-1) === '.' && this.index.hasOwnProperty( body.slice( 0, -1 ) )){
-      this.results.push( new Classification(span, 'DIRECTIONAL', 1) )
+    else if( body.slice(-1) === '.' && this.streetTypes.hasOwnProperty( body.slice( 0, -1 ) )){
+      if( body.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
+      this.add( new Classification( span, 'STREET:SUFFIX', confidence) )
     }
 
     // else use a slower suffix check which is O(n)
@@ -58,9 +67,8 @@ class StreetClassifier extends Classifier {
     else {
       for( let token in this.suffixes ){
         if( span.body.length <= token.length ){ continue }
-        if( span.body.indexOf(' ') >= 0 ){ continue } // multi-word
-        if( body.slice(-token.length) === token ){
-          this.results.push( new Classification( span, 'STREET', 1 ) )
+        if( body.slice( -token.length ) === token ){
+          this.add( new Classification( span, 'STREET', confidence ) )
           break
         }
       }

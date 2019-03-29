@@ -1,11 +1,11 @@
-const Classifier = require('../../classification/Classifier')
+const WordClassifier = require('../../classification/WordClassifier')
 const Classification = require('../../classification/Classification')
 
 // postcode data sourced from google-i18n project
 // see: https://chromium-i18n.appspot.com/ssl-address
 const whitelist = [ 'US', 'GB', 'AU', 'NZ', 'DE' ]
 
-class PostcodeClassifier extends Classifier {
+class PostcodeClassifier extends WordClassifier {
 
   constructor(){
     super()
@@ -24,7 +24,7 @@ class PostcodeClassifier extends Classifier {
     for( let i=0; i<this.data.length; i++ ){
       let row = this.data[i]
       if( row.regex.test(span.body) ){
-        this.results.push( new Classification(span, 'POSTCODE', 1) )
+        this.add( new Classification(span, 'POSTCODE', 1) )
         break
       }
     }
