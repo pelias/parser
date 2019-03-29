@@ -1,5 +1,5 @@
-const WordClassifier = require('../../classification/WordClassifier')
-const Classification = require('../../classification/Classification')
+const WordClassifier = require('../classification/WordClassifier')
+const Classification = require('../classification/Classification')
 
 class OrdinalClassifier extends WordClassifier {
   each(span) {

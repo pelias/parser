@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path')
-const WordClassifier = require('../../classification/WordClassifier')
-const Classification = require('../../classification/Classification')
-const dictPath = path.join(__dirname, `../../resources/libpostal/dictionaries`)
+const WordClassifier = require('../classification/WordClassifier')
+const Classification = require('../classification/Classification')
+const dictPath = path.join(__dirname, `../resources/libpostal/dictionaries`)
 
 // dictionaries sourced from the libpostal project
 // see: https://github.com/openvenues/libpostal

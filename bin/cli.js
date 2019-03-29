@@ -1,11 +1,11 @@
 const util = require('util')
 const pretty = require('./pretty')
 const Tokenizer = require('../tokenization/Tokenizer')
-const HouseNumberClassifier = require('../classifier/housenumber/HouseNumberClassifier')
-const PostcodeClassifier = require('../classifier/postcode/PostcodeClassifier')
-const StreetClassifier = require('../classifier/street/StreetClassifier')
-const DirectionalClassifier = require('../classifier/directional/DirectionalClassifier')
-const OrdinalClassifier = require('../classifier/ordinal/OrdinalClassifier')
+const HouseNumberClassifier = require('../classifier/HouseNumberClassifier')
+const PostcodeClassifier = require('../classifier/PostcodeClassifier')
+const StreetClassifier = require('../classifier/StreetClassifier')
+const DirectionalClassifier = require('../classifier/DirectionalClassifier')
+const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const input = process.argv.slice(2).join(' ')
 
 // tokenizer
