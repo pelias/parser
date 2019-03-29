@@ -44,7 +44,7 @@ function classifier( c, label ){
   for( let i=0; i<c.results.length; i++ ){
     let res = c.results[i]
     process.stdout.write( res.span.body.padEnd(32) + '➜  ' )
-    console.log( chalk.bgGreen.bold( res.name + `=${res.confidence.toFixed(1)}` ) )
+    console.log( chalk.bgGreen.bold( res.type + `=${res.confidence.toFixed(1)}` ) )
   }
 
   console.log()

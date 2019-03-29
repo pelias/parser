@@ -24,7 +24,7 @@ class PostcodeClassifier extends WordClassifier {
     for( let i=0; i<this.data.length; i++ ){
       let row = this.data[i]
       if( row.regex.test(span.body) ){
-        this.add( new Classification(span, 'POSTCODE', 1) )
+        this.add( new Classification(span, Classification.POSTCODE, 1) )
         break
       }
     }

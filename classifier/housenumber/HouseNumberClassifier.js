@@ -21,7 +21,7 @@ class HouseNumberClassifier extends WordClassifier {
         confidence = 0.2
       }
 
-      this.add( new Classification( span, 'HOUSENUMBER', confidence ) )
+      this.add( new Classification( span, Classification.HOUSENUMBER, confidence ) )
     }
   }
 }

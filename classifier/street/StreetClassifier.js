@@ -57,14 +57,14 @@ class StreetClassifier extends WordClassifier {
     // use an inverted index for full token matching as it's O(1)
     if( this.streetTypes.hasOwnProperty( body ) ) {
       if( body.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
-      this.add( new Classification( span, 'STREET:SUFFIX', confidence ) )
+      this.add( new Classification( span, Classification.STREET, confidence ) )
       return
     }
 
     // try again for abbreviations denoted by a period such as 'str.', also O(1)
     else if( body.slice(-1) === '.' && this.streetTypes.hasOwnProperty( body.slice( 0, -1 ) )){
       if( body.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
-      this.add( new Classification( span, 'STREET:SUFFIX', confidence) )
+      this.add( new Classification( span, Classification.STREET, confidence) )
       return
     }
 
@@ -75,7 +75,7 @@ class StreetClassifier extends WordClassifier {
       for( let token in this.suffixes ){
         if( span.body.length <= token.length ){ continue }
         if( body.slice( -token.length ) === token ){
-          this.add( new Classification( span, 'STREET', confidence ) )
+          this.add( new Classification( span, Classification.STREET, confidence ) )
           return
         }
       }
