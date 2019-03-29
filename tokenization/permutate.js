@@ -22,8 +22,7 @@ function permutate(spans, windowMin, windowMax) {
           let span = new Span()
           for( let k=i; k<j; k++ ){
             let s = spans[k]
-            span.body += s.body
-            span.end = span.start + span.body.length
+            span.setBody( span.body += s.body )
             span.child.push(s)
 
             // join with delim

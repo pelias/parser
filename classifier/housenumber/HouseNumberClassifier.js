@@ -20,7 +20,7 @@ class HouseNumberClassifier extends WordClassifier {
 
       // it's possible to have 5 digit housenumbers
       // but they are fairly uncommon
-      if( /^\d{5}$/.test(span.body) ){
+      if( /^\d{5}$/.test(span.norm) ){
         confidence = 0.2
       }
 

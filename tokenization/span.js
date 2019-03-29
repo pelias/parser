@@ -1,21 +1,25 @@
 class Span {
   constructor(body, start) {
-    this.body = body || ''
-
     this.start = start || 0
-    this.end = this.start + this.body.length
+    this.setBody(body)
 
     this.child = []
     this.permutation = []
 
-    // convenience booleans to avoid computing
-    // these in every classifier
+    // convenience booleans to avoid computing these in every classifier
     this.contains = {
       numerals: /\d/.test( this.body ),
       final: {
         period: ( this.body.slice(-1) === '.' )
       }
     }
+  }
+
+  // update the token body
+  setBody(body) {
+    this.body = body || ''
+    this.norm = this.body.toLowerCase() // normalized body
+    this.end = this.start + this.body.length
   }
 
   // return true if Span ranges overlap

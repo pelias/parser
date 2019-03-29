@@ -54,20 +54,19 @@ class StreetClassifier extends WordClassifier {
     // skip spans which contain numbers
     if( span.contains.numerals ){ return }
 
-    // normalize string body
-    let body = span.body.toLowerCase()
+    // base confidence
     let confidence = 1
 
     // use an inverted index for full token matching as it's O(1)
-    if( this.streetTypes.hasOwnProperty( body ) ) {
-      if( body.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
+    if( this.streetTypes.hasOwnProperty( span.norm ) ) {
+      if( span.norm.length < 2 ){ confidence = 0.2 } // single letter streets are uncommon
       this.add( new Classification( span, Classification.STREET_SUFFIX, confidence ) )
       return
     }
 
     // try again for abbreviations denoted by a period such as 'str.', also O(1)
-    else if( span.contains.final.period && this.streetTypes.hasOwnProperty( body.slice( 0, -1 ) )){
-      if( body.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
+    else if( span.contains.final.period && this.streetTypes.hasOwnProperty( span.norm.slice( 0, -1 ) )){
+      if( span.norm.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
       this.add( new Classification( span, Classification.STREET_SUFFIX, confidence) )
       return
     }
@@ -80,7 +79,7 @@ class StreetClassifier extends WordClassifier {
         let offet = span.body.length - token.length
         if( offet < 1 ){ continue }
         // perf: https://gist.github.com/dai-shi/4950506
-        if( span.body.substring( offet ) === token ){
+        if( span.norm.substring( offet ) === token ){
           this.add( new Classification( span, Classification.STREET, confidence ) )
           return
         }
