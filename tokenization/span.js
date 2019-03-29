@@ -11,7 +11,10 @@ class Span {
     // convenience booleans to avoid computing
     // these in every classifier
     this.contains = {
-      numerals: /\d/.test( this.body )
+      numerals: /\d/.test( this.body ),
+      final: {
+        period: ( this.body.slice(-1) === '.' )
+      }
     }
   }
 

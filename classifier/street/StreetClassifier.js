@@ -66,7 +66,7 @@ class StreetClassifier extends WordClassifier {
     }
 
     // try again for abbreviations denoted by a period such as 'str.', also O(1)
-    else if( body.slice(-1) === '.' && this.streetTypes.hasOwnProperty( body.slice( 0, -1 ) )){
+    else if( span.contains.final.period && this.streetTypes.hasOwnProperty( body.slice( 0, -1 ) )){
       if( body.length < 3 ){ confidence = 0.2 } // single letter streets are uncommon
       this.add( new Classification( span, Classification.STREET_SUFFIX, confidence) )
       return
@@ -75,10 +75,12 @@ class StreetClassifier extends WordClassifier {
     // else use a slower suffix check which is O(n)
     // this allows us to match Germanic compound words such as:
     // 'Grolmanstraße' which end with the dictionary term '-straße'
-    else {
+    else if( !span.contains.final.period ) {
       for( let token in this.suffixes ){
-        if( span.body.length <= token.length ){ continue }
-        if( body.slice( -token.length ) === token ){
+        let offet = span.body.length - token.length
+        if( offet < 1 ){ continue }
+        // perf: https://gist.github.com/dai-shi/4950506
+        if( span.body.substring( offet ) === token ){
           this.add( new Classification( span, Classification.STREET, confidence ) )
           return
         }
