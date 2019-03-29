@@ -8,13 +8,7 @@ const dictPath = path.join(__dirname, `../resources/chromium-i18n/ssl-address`)
 const whitelist = [ 'US', 'GB', 'AU', 'NZ', 'DE' ]
 
 class PostcodeClassifier extends WordClassifier {
-
-  constructor(){
-    super()
-    this.loadSSLAddressData()
-  }
-
-  loadSSLAddressData() {
+  setup(){
     this.data = whitelist.map( cc => {
       let row = require( path.join( dictPath, `${cc}.json` ) )
       row.regex = new RegExp( '^(' + row.zip + ')$', 'i' );

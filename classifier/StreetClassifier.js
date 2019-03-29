@@ -11,18 +11,12 @@ const streetTypeLangs = libpostal.languages
 const suffixLangs = [ 'de' ]
 
 class StreetClassifier extends WordClassifier {
-  constructor() {
-    super()
-    this.loadStreetTypes()
-    this.loadSuffixes()
-  }
-
-  loadStreetTypes() {
+  setup(){
+    // load street tokens
     this.streetTypes = {}
     libpostal.load( this.streetTypes, streetTypeLangs, 'street_types.txt' )
-  }
 
-  loadSuffixes() {
+    // load street suffixes
     this.suffixes = {}
     libpostal.load( this.suffixes, suffixLangs, 'concatenated_suffixes_separable.txt' )
   }
