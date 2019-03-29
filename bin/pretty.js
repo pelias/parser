@@ -18,6 +18,8 @@ function tokenizer (tokenizer, label) {
   for (let i = 0; i < tokenizer.section.length; i++) {
     spans(util.format('S%d PERMUTATIONS', i), tokenizer.section[i].permutation)
   }
+
+  console.log()
 }
 
 function spans (title, s) {
@@ -90,7 +92,6 @@ function permutationClassifications (tokenizer) {
 }
 
 function classifications (tokenizer, label) {
-  console.log()
   console.log('='.repeat(64))
   console.log('CLASSIFICATIONS %s', label)
 
@@ -98,6 +99,23 @@ function classifications (tokenizer, label) {
   permutationClassifications(tokenizer, label)
 }
 
+function solutions (solutions, label) {
+  console.log('='.repeat(64))
+  console.log('SOLUTIONS %s', label)
+  console.log('-'.repeat(64))
+
+  solutions.forEach(s => {
+    console.log(s.map(c => {
+      return {
+        [c.classification.label]: c.span.body,
+        offset: c.span.start
+      }
+    }))
+    console.log()
+  })
+}
+
 module.exports.tokenizer = tokenizer
 module.exports.spans = spans
 module.exports.classifications = classifications
+module.exports.solutions = solutions

@@ -7,6 +7,7 @@ const StreetClassifier = require('../classifier/StreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const MultiWordStreetClassifier = require('../classifier/MultiWordStreetClassifier')
+const solver = require('../solution/solver')
 const input = process.argv.slice(2).join(' ')
 
 // tokenizer
@@ -32,3 +33,8 @@ const classifiers = [
 start = new Date()
 classifiers.forEach(c => c.classify(t))
 pretty.classifications(t, util.format('(%sms)', new Date() - start))
+
+// solver
+start = new Date()
+var solutions = solver.solutions(t)
+pretty.solutions(solutions, util.format('(%sms)', new Date() - start))
