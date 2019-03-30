@@ -3,6 +3,23 @@ const StreetClassification = require('../classification/StreetClassification')
 
 const streetSchemes = [
   {
+    // West Main Street
+    confidence: 1.0,
+    classifications: [
+      'DirectionalClassification',
+      'AlphaClassification',
+      'StreetSuffixClassification'
+    ]
+  },
+  {
+    // Main Street
+    confidence: 1.0,
+    classifications: [
+      'AlphaClassification',
+      'StreetSuffixClassification'
+    ]
+  },
+  {
     // West 26th Street
     confidence: 1.0,
     classifications: [
@@ -24,7 +41,7 @@ const streetSchemes = [
     confidence: 0.2,
     classifications: [
       'DirectionalClassification',
-      'HouseNumberClassification',
+      'NumericClassification',
       'StreetSuffixClassification'
     ]
   },
@@ -32,7 +49,7 @@ const streetSchemes = [
     // 26 Street
     confidence: 0.2,
     classifications: [
-      'HouseNumberClassification',
+      'NumericClassification',
       'StreetSuffixClassification'
     ]
   }

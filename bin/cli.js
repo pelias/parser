@@ -1,6 +1,7 @@
 const util = require('util')
 const pretty = require('./pretty')
 const Tokenizer = require('../tokenization/Tokenizer')
+const AlphaNumericClassifier = require('../classifier/AlphaNumericClassifier')
 const HouseNumberClassifier = require('../classifier/HouseNumberClassifier')
 const PostcodeClassifier = require('../classifier/PostcodeClassifier')
 const StreetClassifier = require('../classifier/StreetClassifier')
@@ -17,6 +18,9 @@ pretty.tokenizer(t, util.format('(%sms)', new Date() - start))
 
 // enabled classifiers
 const classifiers = [
+
+  // generic word classifiers
+  new AlphaNumericClassifier(),
 
   // single-word classifiers
   new HouseNumberClassifier(),
