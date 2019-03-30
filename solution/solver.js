@@ -12,6 +12,7 @@ function generateMap (tokenizer) {
       if (!keys.length) { continue }
       for (let k in perm.classifications) {
         let classification = perm.classifications[k]
+        if (!classification.public) { continue }
         if (!map.hasOwnProperty(classification.label)) {
           map[classification.label] = []
         }
@@ -26,6 +27,7 @@ function generateMap (tokenizer) {
       if (!keys.length) { continue }
       for (let k in word.classifications) {
         let classification = word.classifications[k]
+        if (!classification.public) { continue }
         if (!map.hasOwnProperty(classification.label)) {
           map[classification.label] = []
         }
