@@ -9,6 +9,7 @@ class Tokenizer {
     this.segment()
     this.split()
     this.permute(0, 6)
+    this.solution = []
   }
 
   segment () {

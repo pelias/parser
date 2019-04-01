@@ -99,12 +99,12 @@ function classifications (tokenizer, label) {
   permutationClassifications(tokenizer, label)
 }
 
-function solutions (solutions, label) {
+function solutions (tokenizer, label) {
   console.log('='.repeat(64))
   console.log('SOLUTIONS %s', label)
   console.log('-'.repeat(64))
 
-  solutions.forEach(s => {
+  tokenizer.solution.forEach(s => {
     console.log(s.map(c => {
       return {
         [c.classification.label]: c.span.body,
