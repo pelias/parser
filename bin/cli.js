@@ -7,8 +7,11 @@ const PostcodeClassifier = require('../classifier/PostcodeClassifier')
 const StreetClassifier = require('../classifier/StreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
+const IntersectionClassifier = require('../classifier/IntersectionClassifier')
+const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const MultiWordStreetClassifier = require('../classifier/MultiWordStreetClassifier')
 const ExclusiveCarseianSolver = require('../solver/ExclusiveCarseianSolver')
+const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const input = process.argv.slice(2).join(' ')
 
 // tokenizer
@@ -28,9 +31,11 @@ const classifiers = [
   new StreetClassifier(),
   new DirectionalClassifier(),
   new OrdinalClassifier(),
+  new IntersectionClassifier(),
 
   // multi-word classifiers
-  new MultiWordStreetClassifier()
+  new MultiWordStreetClassifier(),
+  new MultiStreetClassifier()
 ]
 
 // run all classifiers
@@ -39,7 +44,8 @@ classifiers.forEach(c => c.classify(t))
 pretty.classifications(t, util.format('(%sms)', new Date() - start))
 
 const solvers = [
-  new ExclusiveCarseianSolver()
+  new ExclusiveCarseianSolver(),
+  new MultiStreetSolver()
 ]
 
 // run all solvers

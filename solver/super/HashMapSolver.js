@@ -5,7 +5,7 @@ class HashMapSolver extends BaseSolver {
   // you should provide this function in your subclass
   // solve() {}
 
-  generateHashMap (tokenizer) {
+  generateHashMap (tokenizer, includePrivate) {
     let map = {}
     for (let i = 0; i < tokenizer.section.length; i++) {
       let section = tokenizer.section[i]
@@ -17,7 +17,7 @@ class HashMapSolver extends BaseSolver {
         if (!keys.length) { continue }
         for (let k in perm.classifications) {
           let classification = perm.classifications[k]
-          if (!classification.public) { continue }
+          if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
             map[classification.label] = []
           }
@@ -32,7 +32,7 @@ class HashMapSolver extends BaseSolver {
         if (!keys.length) { continue }
         for (let k in word.classifications) {
           let classification = word.classifications[k]
-          if (!classification.public) { continue }
+          if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
             map[classification.label] = []
           }

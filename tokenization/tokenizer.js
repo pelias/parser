@@ -8,7 +8,7 @@ class Tokenizer {
     this.span = new Span(s)
     this.segment()
     this.split()
-    this.permute(0, 6)
+    this.permute(0, 10)
     this.solution = []
   }
 

@@ -5,6 +5,14 @@ class Classification {
     this.confidence = confidence || 1.0
     this.meta = meta || {}
   }
+
+  equals (classification) {
+    // @todo: compare meta?
+    return (
+      this.constructor.name === classification.constructor.name &&
+      this.confidence === classification.confidence
+    )
+  }
 }
 
 module.exports = Classification

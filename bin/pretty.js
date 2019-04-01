@@ -78,7 +78,7 @@ function permutationClassifications (tokenizer) {
       process.stdout.write(perm.body.padEnd(32) + '➜  ')
       for (let k in perm.classifications) {
         let classification = perm.classifications[k]
-        let block = chalk.bgGreen.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
+        let block = chalk.bgRed.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
         process.stdout.write(block)
         if (k !== keys.slice(-1)) {
           process.stdout.write(' ')
