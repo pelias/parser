@@ -8,6 +8,7 @@ class Tokenizer {
     this.span = new Span(s)
     this.segment()
     this.split()
+    this.computeCoverage()
     this.permute(0, 10)
     this.solution = []
   }
@@ -26,6 +27,15 @@ class Tokenizer {
     for (let i = 0; i < this.section.length; i++) {
       this.section[i].setPermutations(permutate(this.section[i].child, windowMin, windowMax))
     }
+  }
+
+  computeCoverage () {
+    this.coverage = 0
+    this.section.forEach(s => {
+      this.coverage += s.child.reduce(
+        (sum, cur) => sum + cur.end - cur.start, 0
+      )
+    }, this)
   }
 }
 

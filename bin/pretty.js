@@ -104,11 +104,13 @@ function solutions (tokenizer, label) {
   console.log('SOLUTIONS %s', label)
   console.log('-'.repeat(64))
 
+  // print all solutions
   tokenizer.solution.forEach(s => {
-    console.log(s.pair.map(c => {
+    let score = chalk.yellow.bold('(' + s.score.toFixed(1) + ')')
+    console.log(score, '➜', s.pair.map(c => {
       return {
-        [c.classification.label]: c.span.body,
-        offset: c.span.start
+        [c.classification.label]: c.span.body
+        // offset: c.span.start
       }
     }))
     console.log()

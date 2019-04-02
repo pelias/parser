@@ -28,10 +28,14 @@ class MultiStreetSolver extends HashMapSolver {
         }
       }
       if (success) {
+        sol.computeScore(tokenizer)
         tokenizer.solution.push(sol)
         candidates.pair = candidates.pair.filter(c => c === sol[sol.length - 1])
       }
     }
+
+    // sort results by score desc
+    tokenizer.solution.sort((a, b) => b.score - a.score)
   }
 }
 

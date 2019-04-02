@@ -60,27 +60,27 @@ module.exports.tests.permutate = (test) => {
 
   // intersection queries
   assert('Corner of Main St & Second Ave', [
-    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }, { street: 'Main St' }],
     [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }, { street: 'Second Ave' }]
+    [{ street: 'Main St' }]
   ])
 
   assert('Main St & Second Ave', [
-    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }, { street: 'Main St' }],
     [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }, { street: 'Second Ave' }]
+    [{ street: 'Main St' }]
   ])
 
   assert('Main St @ Second Ave', [
-    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }, { street: 'Main St' }],
     [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }, { street: 'Second Ave' }]
+    [{ street: 'Main St' }]
   ])
 
   assert('Gleimstraße zwischen Schönhauser Allee', [
+    [{ street: 'Schönhauser Allee' }, { street: 'Gleimstraße' }],
     [{ street: 'Schönhauser Allee' }],
-    [{ street: 'Gleimstraße' }],
-    [{ street: 'Schönhauser Allee' }, { street: 'Gleimstraße' }]
+    [{ street: 'Gleimstraße' }]
   ])
 }
 
