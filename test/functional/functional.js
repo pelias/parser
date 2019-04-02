@@ -6,41 +6,82 @@ module.exports.tests = {}
 module.exports.tests.permutate = (test) => {
   let parser = new AddressParser()
 
-  test('functional', (t) => {
-    function run (input, expected) {
-      let tokenizer = new Tokenizer(input)
-      parser.classify(tokenizer)
-      parser.solve(tokenizer)
+  function assert (input, expected) {
+    let tokenizer = new Tokenizer(input)
+    parser.classify(tokenizer)
+    parser.solve(tokenizer)
+    test(input, (t) => {
       t.deepEquals(tokenizer.solution.map(s => s.map(c => {
         return {
           [c.classification.label]: c.span.body
-        // offset: c.span.start
+          // offset: c.span.start
         }
       })), expected)
       t.end()
-    }
+    })
+  }
 
-    run('30 west 26th street, 10010, nyc', [
-      [
-        { street: 'west 26th street' },
-        { housenumber: '30' },
-        { postcode: '10010' }
-      ],
-      [
-        { street: 'west 26th street' },
-        { housenumber: '10010' }
-      ],
-      [
-        { street: '26th street' },
-        { housenumber: '30' },
-        { postcode: '10010' }
-      ],
-      [
-        { street: '26th street' },
-        { housenumber: '10010' }
-      ]
-    ])
-  })
+  // street simple
+  assert('main pl', [[{ street: 'main pl' }]])
+
+  // street ordinal
+  assert('10th ave', [[{ street: '10th ave' }]])
+
+  // street cardinal
+  assert('10 ave', [[{ street: '10 ave' }]])
+
+  // address simple
+  assert('1 main pl', [
+    [{ street: 'main pl' }, { housenumber: '1' }]
+  ])
+
+  // address with ordinal
+  assert('100 10th ave', [
+    [{ street: '10th ave' }, { housenumber: '100' }]
+  ])
+
+  // address with cardinal
+  assert('100 10 ave', [
+    [{ street: '10 ave' }, { housenumber: '100' }],
+    [{ street: '10 ave' }, { postcode: '100' }] // @todo can we avoid this?
+  ])
+
+  // address with directional
+  assert('1 north main blvd', [
+    [{ street: 'north main blvd' }, { housenumber: '1' }],
+    [{ street: 'main blvd' }, { housenumber: '1' }] // @todo can we remove this?
+  ])
+
+  // address with directional & ordinal
+  assert('30 west 26th street', [
+    [{ street: 'west 26th street' }, { housenumber: '30' }],
+    [{ street: '26th street' }, { housenumber: '30' }]
+  ])
+
+  // intersection queries
+  assert('Corner of Main St & Second Ave', [
+    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }],
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
+  ])
+
+  assert('Main St & Second Ave', [
+    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }],
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
+  ])
+
+  assert('Main St @ Second Ave', [
+    [{ street: 'Main St' }],
+    [{ street: 'Second Ave' }],
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
+  ])
+
+  assert('Gleimstraße zwischen Schönhauser Allee', [
+    [{ street: 'Schönhauser Allee' }],
+    [{ street: 'Gleimstraße' }],
+    [{ street: 'Schönhauser Allee' }, { street: 'Gleimstraße' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {
