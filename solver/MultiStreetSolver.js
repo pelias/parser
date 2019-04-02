@@ -8,28 +8,28 @@ class MultiStreetSolver extends HashMapSolver {
     if (!map.hasOwnProperty('multistreet')) { return }
     if (!map.hasOwnProperty('street') || map.street.length < 2) { return }
 
-    let multi = map.multistreet[0]
-    let candidates = map.street.slice(0)
+    let multi = map.multistreet.pair[0]
+    let candidates = map.street.copy()
 
     // add the second street to existing solutions
     for (let s = 0; s < tokenizer.solution.length; s++) {
-      let sol = tokenizer.solution[s].slice(0) // make a copy
+      let sol = tokenizer.solution[s].copy() // make a copy
       let success = false
 
-      for (let i = 0; i < candidates.length; i++) {
-        let s = candidates[i]
+      for (let i = 0; i < candidates.pair.length; i++) {
+        let s = candidates.pair[i]
         if ((
           s.span.intersects(multi.span) &&
-          !sol.some(ss => ss.span.intersects(s.span))
+          !sol.pair.some(sp => sp.span.intersects(s.span))
         )) {
-          sol.push(s)
+          sol.pair.push(s)
           success = true
           break
         }
       }
       if (success) {
         tokenizer.solution.push(sol)
-        candidates = candidates.filter(c => c === sol[sol.length - 1])
+        candidates.pair = candidates.pair.filter(c => c === sol[sol.length - 1])
       }
     }
   }

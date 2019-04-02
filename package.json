@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "units": "./bin/units",
-    "standardjs": "./node_modules/standard/bin/cmd.js --fix",
+    "format_check": "./node_modules/standard/bin/cmd.js",
+    "format_fix": "./node_modules/standard/bin/cmd.js --fix",
     "test": "npm run units",
     "travis": "npm test",
     "lint": "jshint .",
@@ -38,7 +39,7 @@
     "tape": "^4.4.0"
   },
   "pre-commit": [
-    "standardjs",
+    "format_check",
     "lint",
     "validate",
     "test"

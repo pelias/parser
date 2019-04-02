@@ -11,7 +11,7 @@ module.exports.tests.permutate = (test) => {
     parser.classify(tokenizer)
     parser.solve(tokenizer)
     test(input, (t) => {
-      t.deepEquals(tokenizer.solution.map(s => s.map(c => {
+      t.deepEquals(tokenizer.solution.map(s => s.pair.map(c => {
         return {
           [c.classification.label]: c.span.body
           // offset: c.span.start

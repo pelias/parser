@@ -1,5 +1,6 @@
 const BaseSolver = require('./BaseSolver')
 const Solution = require('../Solution')
+const SolutionPair = require('../SolutionPair')
 
 class HashMapSolver extends BaseSolver {
   // you should provide this function in your subclass
@@ -19,9 +20,9 @@ class HashMapSolver extends BaseSolver {
           let classification = perm.classifications[k]
           if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
-            map[classification.label] = []
+            map[classification.label] = new Solution()
           }
-          map[classification.label].push(new Solution(perm, classification))
+          map[classification.label].pair.push(new SolutionPair(perm, classification))
         }
       }
 
@@ -34,9 +35,9 @@ class HashMapSolver extends BaseSolver {
           let classification = word.classifications[k]
           if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
-            map[classification.label] = []
+            map[classification.label] = new Solution()
           }
-          map[classification.label].push(new Solution(word, classification))
+          map[classification.label].pair.push(new SolutionPair(word, classification))
         }
       }
     }

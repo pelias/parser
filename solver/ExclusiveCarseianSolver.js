@@ -1,3 +1,4 @@
+const Solution = require('./Solution')
 const HashMapSolver = require('./super/HashMapSolver')
 
 class ExclusiveCarseianSolver extends HashMapSolver {
@@ -12,35 +13,35 @@ class ExclusiveCarseianSolver extends HashMapSolver {
   exclusiveCartesian () {
     let r = []; let arg = arguments; let max = arg.length - 1
     if (!arg.length) { return r }
-    const helper = (arr, i) => {
-      for (let j = 0, l = arg[i].length; j < l; j++) {
-        let a = arr.slice(0) // clone arr
+    const helper = (solution, i) => {
+      for (let j = 0, l = arg[i].pair.length; j < l; j++) {
+        let copy = solution.copy() // clone solution
 
         // exclusive - same span range cannot appear twice
-        if (!isRangeConflict(a, arg[i][j].span)) {
-          a.push(arg[i][j])
+        if (!isRangeConflict(copy, arg[i].pair[j].span)) {
+          copy.pair.push(arg[i].pair[j])
         }
 
         if (i === max) {
           // duplicates - prevent duplicate solutions
-          if (!isDuplicateSolutionArray(r, a)) {
-            r.push(a)
+          if (!isDuplicateSolutionArray(r, copy)) {
+            r.push(copy)
           }
         } else {
-          helper(a, i + 1)
+          helper(copy, i + 1) // @todo: can this be $solution?
         }
       }
     }
-    helper([], 0)
+    helper(new Solution(), 0)
     return r
   }
 }
 
 // check that the span does not intersect with existing ranges in arr
-function isRangeConflict (arr, span) {
+function isRangeConflict (solution, span) {
   let isUsed = false
-  for (let i = 0; i < arr.length; i++) {
-    if (span.intersects(arr[i].span)) {
+  for (let i = 0; i < solution.pair.length; i++) {
+    if (span.intersects(solution.pair[i].span)) {
       isUsed = true
       break
     }
@@ -50,10 +51,10 @@ function isRangeConflict (arr, span) {
 
 // check that this is not a duplicate of an existing array of solution
 // @todo: deduplicate out-of-order yet the same arrays
-function isDuplicateSolutionArray (rows, arr) {
-  return rows.some(rrow => {
-    if (arr.length !== rrow.length) { return false }
-    return rrow.every((v, i) => v.equals(arr[i]))
+function isDuplicateSolutionArray (solutions, solution) {
+  return solutions.some(sol => {
+    if (solution.pair.length !== sol.pair.length) { return false }
+    return sol.pair.every((v, i) => v.equals(solution.pair[i]))
   })
 }
 

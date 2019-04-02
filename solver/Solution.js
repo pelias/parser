@@ -1,15 +1,15 @@
 class Solution {
-  constructor (span, classification) {
-    this.span = span
-    this.classification = classification
+  constructor (pairs) {
+    this.pair = pairs || []
   }
 
-  equals (solution) {
-    return (
-      this.span === solution.span &&
-      this.classification.equals(solution.classification)
-    )
+  // create a deep copy of this solution
+  copy () {
+    return new Solution(this.pair.slice(0))
   }
+
+  // @todo implement this
+  // equals(solution) {}
 }
 
 module.exports = Solution

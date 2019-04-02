@@ -105,7 +105,7 @@ function solutions (tokenizer, label) {
   console.log('-'.repeat(64))
 
   tokenizer.solution.forEach(s => {
-    console.log(s.map(c => {
+    console.log(s.pair.map(c => {
       return {
         [c.classification.label]: c.span.body,
         offset: c.span.start
