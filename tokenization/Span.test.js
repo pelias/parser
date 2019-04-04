@@ -1,4 +1,4 @@
-const Span = require('../../tokenization/Span')
+const Span = require('./Span')
 
 module.exports.tests = {}
 

@@ -1,4 +1,4 @@
-const Tokenizer = require('../../tokenization/Tokenizer')
+const Tokenizer = require('./Tokenizer')
 
 module.exports.tests = {}
 

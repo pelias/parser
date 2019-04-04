@@ -1,6 +1,6 @@
-const Span = require('../../tokenization/Span')
-const split = require('../../tokenization/split')
-const funcs = require('../../tokenization/split_funcs')
+const Span = require('./Span')
+const split = require('./split')
+const funcs = require('./split_funcs')
 
 module.exports.tests = {}
 

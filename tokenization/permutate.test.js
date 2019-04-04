@@ -1,5 +1,5 @@
-const Span = require('../../tokenization/Span')
-const permutate = require('../../tokenization/permutate')
+const Span = require('./Span')
+const permutate = require('./permutate')
 
 module.exports.tests = {}
 

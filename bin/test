@@ -4,4 +4,4 @@
 # see https://github.com/pelias/pelias/issues/744
 set -o pipefail
 
-node test/run.js | npx tap-spec
+node test/run.js $@ | npx tap-spec
