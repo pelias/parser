@@ -11,7 +11,7 @@ let took = new Date() - start
 pretty.tokenizer(t, util.format('(%sms)', took))
 
 // parser
-var parser = new AddressParser()
+const parser = new AddressParser()
 took = parser.classify(t)
 pretty.classifications(t, util.format('(%sms)', took))
 took = parser.solve(t)
