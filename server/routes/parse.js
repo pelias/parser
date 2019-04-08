@@ -26,10 +26,10 @@ module.exports = function (req, res) {
 function jsonify (solution) {
   return {
     score: solution.score,
-    coverage: solution.coverage,
     classifications: solution.pair.map(c => {
       return {
-        [c.classification.label]: c.span.body,
+        label: c.classification.label,
+        value: c.span.body,
         // confidence: c.classification.confidence,
         start: c.span.start,
         end: c.span.end

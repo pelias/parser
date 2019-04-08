@@ -39,6 +39,7 @@ http://localhost:6100/
 try the following paths:
 
 ```javascript
+/demo
 /parser/parse?text=12 main st
 ```
 

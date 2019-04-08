@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" ng-app="demo">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  <style>
+    #table,
+    #table tbody,
+    #table tbody tr,
+    #table tbody tr td,
+    #table tbody tr th {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-family: 'Inconsolata', monospace;
+    }
+
+    #table {
+      border-collapse: separate; 
+      border-spacing: 0.1em 0.4em;
+    }
+
+    .kb {
+      padding:0.1em 0.4em !important;
+      border:1px solid #ccc;
+      /* font-size:11px; */
+      /* font-family:Arial,Helvetica,sans-serif; */
+      background-color:#f7f7f7;
+      color:#333;
+      -moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+      -webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+      box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+      -moz-border-radius:3px;
+      -webkit-border-radius:3px;
+      border-radius:3px;
+      /* display:inline-block; */
+      margin:0 0.1em;
+      text-shadow:0 1px 0 #fff;
+      /* line-height:1.4; */
+      white-space:nowrap;
+    }
+
+    #table tbody tr th,
+    #table tbody tr td {
+      text-align: center;
+      text-overflow: clip;
+    }
+
+    #table tbody tr td {
+      font-size: 10px;
+    }
+
+    .score {
+      width: 80px;
+      display: block;
+      text-align: left;
+      background-color: #dedede;
+    }
+
+    .span {
+      background-color: rgb(223, 223, 223);
+    }
+
+    .span-street {
+      background-color: rgb(238, 193, 95);
+    }
+
+    .span-housenumber {
+      background-color: rgb(230, 134, 222);
+    }
+
+    .span-postcode {
+      background-color: rgb(134, 195, 230);
+    }
+  </style>
+
+  <script>
+    function exec(args) {
+      $('#input').empty();
+      parse(args, function (results) {
+        results = results || [];
+
+        // render results
+        render(results);
+      });
+    }
+
+    function render(res) {
+
+      $('#input').empty();
+      $('#solutions').empty();
+      $('#table').empty();
+
+      // $('#input').html(JSON.stringify(res.input))
+      // $('#solutions').html(JSON.stringify(res.solutions))
+
+      var body = $('<tbody>')
+
+      // headings
+      var row = $('<tr>')
+      row.append($('<th>').addClass('score').text(''))
+      for( var i= res.input.start; i< res.input.end; i++ ){
+        let cell = $('<th>')
+        let char = res.input.body.charAt(i);
+        if( char.trim().length > 0 ){
+          cell.addClass('kb');
+        } else {
+          char = String.fromCharCode(160);
+        }
+        cell.text(char)
+        row.append(cell);
+      }
+      body.append(row);
+
+      // solutions
+      res.solutions.forEach(function( s ){
+
+        row = $('<tr>')
+        row.append($('<th>').addClass('score').text((s.score * 100).toFixed(1) + '%'))
+        for (var i = res.input.start; i < res.input.end; i++) {
+          let cell = $('<td>')
+
+          var spanStart = false;
+          var classification;
+          for (var j=0; j < s.classifications.length; j++) {
+            if( s.classifications[j].start === i ){
+              spanStart = true
+              classification = s.classifications[j]
+            }
+          }
+
+          if( spanStart ){
+            var covers = classification.end - classification.start;
+            cell.attr('colspan', covers);
+            cell.addClass('span');
+            cell.addClass('span-'+ classification.label);
+            cell.text(classification.label);
+            i += covers-1;
+          } else {
+            cell.text(String.fromCharCode(160));
+          }
+
+          row.append(cell);
+        }
+        body.append(row);
+
+      });
+  
+      $('#table').append(body);
+      console.log($('#table'))
+    }
+
+    function request(url, params, cb) {
+      $.ajax({
+        url: url,
+        method: 'GET',
+        data: params,
+        headers: { 'Accept': 'application/json' }
+      })
+      .done(cb);
+    };
+
+    function parse(args, cb) {
+      saveText(args.text);
+      request('/parser/parse', args, cb);
+    }
+
+    function saveText(text) {
+      if (window.localStorage) {
+        window.localStorage.setItem('text', text);
+      }
+    }
+
+    function loadText() {
+      if (window.localStorage) {
+        var text = window.localStorage.getItem('text');
+        if (text) { return text; }
+      }
+
+      // default text
+      return 'Gleimstraße zwischen Scönhauserallee 10117 Berlin';
+    }
+
+    $(document).ready(function () {
+
+      var liveMode = _.debounce(function (e) {
+        if (e.which === 13) { return false; } // not for enter key
+
+        var args = { text: $('#text').val() };
+        exec(args);
+
+        return false;
+      }, 200);
+
+      // button / keyup event handlers
+      $('#search').on('submit', liveMode);
+      $('#search').on('keyup', liveMode);
+
+      $('#go').on('click', function () {
+        $('#search').submit();
+        return false;
+      });
+
+      $('#text').val(loadText());
+      liveMode({});
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div style="margin:20px;">
+
+    <form id="search" action="">
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="input-group">
+            <input id="text" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button id="go" class="btn btn-default" type="button">Parse!</button>
+            </span>
+          </div>
+
+          <ul id="input" class="btn-group" role="group" style="margin-top:10px; list-style: none;"></ul>
+          <ul id="solutions" class="list-group" style="margin-top:10px;"></ul>
+          
+          <table id="table"></table>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+
+</body>
+
+</html>

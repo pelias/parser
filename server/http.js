@@ -1,4 +1,3 @@
-
 /**
   The http server improves performance on multicore machines by using the
   node core 'cluster' module to fork worker processes.
@@ -17,6 +16,7 @@
 **/
 
 const os = require('os')
+const path = require('path')
 const express = require('express')
 const cluster = require('cluster')
 const AddressParser = require('../parser/AddressParser')
@@ -43,6 +43,7 @@ app.use((req, res, next) => {
 
 // routes
 app.get('/parser/parse', require('./routes/parse'))
+app.use('/demo', express.static(path.join(__dirname, '/demo')))
 
 // start multi-threaded server
 if (cpus > 1) {
