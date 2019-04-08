@@ -28,7 +28,8 @@ class AddressParser extends Parser {
         new IntersectionClassifier(),
 
         // multi-word classifiers
-        new CompositeClassifier(),
+        new CompositeClassifier(require('../classifier/scheme/street')),
+        new CompositeClassifier(require('../classifier/scheme/intersection')),
         new MultiStreetClassifier()
       ],
       // solvers

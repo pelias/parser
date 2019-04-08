@@ -19,7 +19,11 @@ class IntersectionClassifier extends PermutationClassifier {
 
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {
+      // classify permutation
       span.classify(new IntersectionClassification(1))
+
+      // classify child spans
+      span.child.forEach(c => c.classify(new IntersectionClassification(1)))
     }
   }
 }

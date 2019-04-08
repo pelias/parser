@@ -34,6 +34,28 @@ const testcase = (test, common) => {
     [{ street: 'north ave' }],
     [{ street: 'west st' }]
   ])
+
+  // no street suffix
+  assert('foo & bar', [
+    [{ street: 'foo' }, { street: 'bar' }],
+    [{ street: 'foo' }],
+    [{ street: 'bar' }]
+  ])
+  assert('foo and bar', [
+    [{ street: 'foo' }, { street: 'bar' }],
+    [{ street: 'foo' }],
+    [{ street: 'bar' }]
+  ])
+  assert('foo at bar', [
+    [{ street: 'foo' }, { street: 'bar' }],
+    [{ street: 'foo' }],
+    [{ street: 'bar' }]
+  ])
+  assert('foo @ bar', [
+    [{ street: 'foo' }, { street: 'bar' }],
+    [{ street: 'foo' }],
+    [{ street: 'bar' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {
