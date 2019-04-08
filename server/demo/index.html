@@ -191,7 +191,7 @@
     $(document).ready(function () {
 
       var liveMode = _.debounce(function (e) {
-        if (e.which === 13) { return false; } // not for enter key
+        // if (e.which === 13) { return false; } // not for enter key
 
         var args = { text: $('#text').val() };
         exec(args);
