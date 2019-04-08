@@ -28,6 +28,12 @@ const testcase = (test, common) => {
     [{ street: 'Schönhauser Allee' }],
     [{ street: 'Gleimstraße' }]
   ])
+
+  assert('cnr west st and north ave', [
+    [{ street: 'west st' }, { street: 'north ave' }],
+    [{ street: 'north ave' }],
+    [{ street: 'west st' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {

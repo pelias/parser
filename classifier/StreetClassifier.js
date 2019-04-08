@@ -12,6 +12,10 @@ class StreetClassifier extends WordClassifier {
     this.streetTypes = {}
     libpostal.load(this.streetTypes, libpostal.languages, 'street_types.txt')
 
+    // blacklist
+    // this Italian contracted form of Androna causes issues in English
+    delete this.streetTypes.and
+
     // load street suffixes
     this.suffixes = {}
     libpostal.load(this.suffixes, libpostal.languages, 'concatenated_suffixes_separable.txt')

@@ -9,6 +9,7 @@ const testcase = (test, common) => {
 
   // should not attach a second suffix
   assert('Foostraße Rd', [[{ street: 'Foostraße' }]])
+  assert('foo st and', [[{ street: 'foo st' }]])
 
   // address simple
   assert('Foostraße 1', [
