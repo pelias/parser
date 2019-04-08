@@ -59,7 +59,10 @@ class MultiWordStreetClassifier extends PermutationClassifier {
   each (span) {
     streetSchemes.forEach(s => {
       if (span.child.length === s.classifications.length) {
-        if (s.classifications.every((c, i) => span.child[i].classifications.hasOwnProperty(c))) {
+        if (s.classifications.every((c, i) => {
+          return span.child[i].classifications.hasOwnProperty(c) &&
+            !span.child[i].classifications.hasOwnProperty('StreetClassification')
+        })) {
           span.classify(new StreetClassification(s.confidence))
         }
       }
