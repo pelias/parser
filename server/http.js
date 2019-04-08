@@ -37,7 +37,8 @@ app.locals.parser = { address: new AddressParser() }
 // generic http headers
 app.use((req, res, next) => {
   res.header('Charset', 'utf8')
-  res.header('Cache-Control', 'public, max-age=120')
+  // production setting
+  // res.header('Cache-Control', 'public, max-age=120')
   next()
 })
 
