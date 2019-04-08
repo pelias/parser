@@ -22,6 +22,28 @@ node bin/cli.js West 26th Street, New York, NYC, 10010
 
 It's still very early stages but this is the basic architecture:
 
+#### Server
+
+```bash
+$ PORT=6100 npm run server;
+```
+
+### open browser
+
+the server should now be running and you should be able to access the http API:
+
+```bash
+http://localhost:6100/
+```
+
+try the following paths:
+
+```javascript
+/parser/parse?text=12 main st
+```
+
+### Architecture overview
+
 #### 1. start with an input:
 ```
 30 West 26th Street, New York, NYC, 10010

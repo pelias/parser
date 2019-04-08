@@ -11,6 +11,7 @@
     "funcs": "./bin/test func",
     "format_check": "./node_modules/standard/bin/cmd.js",
     "format_fix": "./node_modules/standard/bin/cmd.js --fix",
+    "server": "node ./server/http.js",
     "test": "./bin/test",
     "travis": "./bin/test",
     "lint": "jshint .",
@@ -31,7 +32,9 @@
     "node": ">= 8.0.0"
   },
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "cluster": "^0.7.7",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "glob": "^7.1.3",
