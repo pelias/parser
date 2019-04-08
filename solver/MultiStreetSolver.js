@@ -36,6 +36,9 @@ class MultiStreetSolver extends HashMapSolver {
 
     // sort results by score desc
     tokenizer.solution.sort((a, b) => b.score - a.score)
+
+    // sort by span start
+    tokenizer.solution.forEach(s => s.pair.sort((a, b) => a.span.start - b.span.start))
   }
 }
 

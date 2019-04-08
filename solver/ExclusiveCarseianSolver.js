@@ -8,6 +8,7 @@ class ExclusiveCarseianSolver extends HashMapSolver {
     solutions.forEach(s => s.computeScore(tokenizer))
     tokenizer.solution = tokenizer.solution.concat(solutions)
     tokenizer.solution.sort((a, b) => b.score - a.score) // sort results by score desc
+    tokenizer.solution.forEach(s => s.pair.sort((a, b) => a.span.start - b.span.start)) // sort by span start
   }
 
   // compute the unique cartesian product
