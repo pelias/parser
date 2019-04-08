@@ -5,69 +5,93 @@ const streetSchemes = [
   {
     // West Main Street
     confidence: 1.0,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'DirectionalClassification',
       'AlphaClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   },
   {
     // Main Street
     confidence: 1.0,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'AlphaClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   },
   {
     // West 26th Street
     confidence: 1.0,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'DirectionalClassification',
       'OrdinalClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   },
   {
     // 26th Street
     confidence: 1.0,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'OrdinalClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   },
   {
     // West 26 Street
     confidence: 0.2,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'DirectionalClassification',
       'NumericClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   },
   {
     // 26 Street
     confidence: 0.2,
-    classifications: [
+    Class: StreetClassification,
+    is: [
       'NumericClassification',
       'StreetSuffixClassification'
+    ],
+    not: [
+      'StreetClassification'
     ]
   }
 ]
 
-class MultiWordStreetClassifier extends PermutationClassifier {
+class CompositeClassifier extends PermutationClassifier {
   each (span) {
     streetSchemes.forEach(s => {
-      if (span.child.length === s.classifications.length) {
-        if (s.classifications.every((c, i) => {
-          return span.child[i].classifications.hasOwnProperty(c) &&
-            !span.child[i].classifications.hasOwnProperty('StreetClassification')
-        })) {
-          span.classify(new StreetClassification(s.confidence))
+      if (span.child.length === s.is.length) {
+        if (
+          s.is.every((c, i) => span.child[i].classifications.hasOwnProperty(c)) &&
+          s.not.every((c, i) => !span.child[i].classifications.hasOwnProperty(c))
+        ) {
+          span.classify(new s.Class(s.confidence))
         }
       }
     })
   }
 }
 
-module.exports = MultiWordStreetClassifier
+module.exports = CompositeClassifier

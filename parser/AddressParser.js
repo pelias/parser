@@ -7,7 +7,7 @@ const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
-const MultiWordStreetClassifier = require('../classifier/MultiWordStreetClassifier')
+const CompositeClassifier = require('../classifier/CompositeClassifier')
 const ExclusiveCarseianSolver = require('../solver/ExclusiveCarseianSolver')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 
@@ -28,7 +28,7 @@ class AddressParser extends Parser {
         new IntersectionClassifier(),
 
         // multi-word classifiers
-        new MultiWordStreetClassifier(),
+        new CompositeClassifier(),
         new MultiStreetClassifier()
       ],
       // solvers
