@@ -31,14 +31,12 @@ const testcase = (test, common) => {
 
   // address with directional
   assert('1 north main blvd', [
-    [{ housenumber: '1' }, { street: 'north main blvd' }],
-    [{ housenumber: '1' }, { street: 'main blvd' }] // @todo can we remove this?
+    [{ housenumber: '1' }, { street: 'north main blvd' }]
   ])
 
   // address with directional & ordinal
   assert('30 west 26th street', [
-    [{ housenumber: '30' }, { street: 'west 26th street' }],
-    [{ housenumber: '30' }, { street: '26th street' }]
+    [{ housenumber: '30' }, { street: 'west 26th street' }]
   ])
 }
 

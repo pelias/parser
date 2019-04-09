@@ -21,10 +21,48 @@ module.exports = [
     ]
   },
   {
+    // Main Street West
+    confidence: 0.8,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['DirectionalClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
     // Main Street
     confidence: 1.0,
     Class: StreetClassification,
     scheme: [
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // St Kilda Road
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
       {
         is: ['AlphaClassification'],
         not: ['StreetClassification', 'IntersectionClassification']

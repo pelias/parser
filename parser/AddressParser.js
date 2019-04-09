@@ -8,9 +8,10 @@ const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
-const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
+// const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
+const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
 
 class AddressParser extends Parser {
   constructor () {
@@ -33,13 +34,14 @@ class AddressParser extends Parser {
         new CompositeClassifier(require('../classifier/scheme/intersection')),
 
         // section classifiers
-        new AdjacencyClassifier(),
+        // new AdjacencyClassifier(), // currently doesn't have any consumers
         new MultiStreetClassifier()
       ],
       // solvers
       [
         new ExclusiveCartesianSolver(),
-        new MultiStreetSolver()
+        new MultiStreetSolver(),
+        new TokenDistanceFilter()
       ]
     )
   }

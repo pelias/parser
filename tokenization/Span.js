@@ -29,6 +29,13 @@ class Span {
     return this.start < span.end && this.end > span.start
   }
 
+  // returns the distance between two Spans
+  distance (span) {
+    if (this.intersects(span)) { return 0 }
+    if (this.end < span.start) { return span.start - this.end } // $this is left
+    return this.start - span.end // $this is right
+  }
+
   // add a classification for this span
   classify (classification) {
     this.classifications[classification.constructor.name] = classification
