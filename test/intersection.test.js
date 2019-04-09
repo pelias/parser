@@ -6,33 +6,23 @@ const testcase = (test, common) => {
 
   // intersection queries
   assert('Corner of Main St & Second Ave', [
-    [{ street: 'Main St' }, { street: 'Second Ave' }],
-    [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }]
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
   ])
 
   assert('Main St & Second Ave', [
-    [{ street: 'Main St' }, { street: 'Second Ave' }],
-    [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }]
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
   ])
 
   assert('Main St @ Second Ave', [
-    [{ street: 'Main St' }, { street: 'Second Ave' }],
-    [{ street: 'Second Ave' }],
-    [{ street: 'Main St' }]
+    [{ street: 'Main St' }, { street: 'Second Ave' }]
   ])
 
   assert('Gleimstraße zwischen Schönhauser Allee', [
-    [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }],
-    [{ street: 'Schönhauser Allee' }],
-    [{ street: 'Gleimstraße' }]
+    [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }]
   ])
 
   assert('cnr west st and north ave', [
-    [{ street: 'west st' }, { street: 'north ave' }],
-    [{ street: 'north ave' }],
-    [{ street: 'west st' }]
+    [{ street: 'west st' }, { street: 'north ave' }]
   ])
 
   // should not consider intersection tokens for street name
@@ -41,24 +31,16 @@ const testcase = (test, common) => {
 
   // no street suffix
   assert('foo & bar', [
-    [{ street: 'foo' }, { street: 'bar' }],
-    [{ street: 'foo' }],
-    [{ street: 'bar' }]
+    [{ street: 'foo' }, { street: 'bar' }]
   ])
   assert('foo and bar', [
-    [{ street: 'foo' }, { street: 'bar' }],
-    [{ street: 'foo' }],
-    [{ street: 'bar' }]
+    [{ street: 'foo' }, { street: 'bar' }]
   ])
   assert('foo at bar', [
-    [{ street: 'foo' }, { street: 'bar' }],
-    [{ street: 'foo' }],
-    [{ street: 'bar' }]
+    [{ street: 'foo' }, { street: 'bar' }]
   ])
   assert('foo @ bar', [
-    [{ street: 'foo' }, { street: 'bar' }],
-    [{ street: 'foo' }],
-    [{ street: 'bar' }]
+    [{ street: 'foo' }, { street: 'bar' }]
   ])
 }
 

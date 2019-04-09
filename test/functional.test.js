@@ -7,6 +7,10 @@ const testcase = (test, common) => {
   // street simple
   assert('main pl', [[{ street: 'main pl' }]])
 
+  // street directional
+  assert('west main st', [[{ street: 'west main st' }]])
+  assert('main st west', [[{ street: 'main st west' }]])
+
   // street ordinal
   assert('10th ave', [[{ street: '10th ave' }]])
 
@@ -25,13 +29,15 @@ const testcase = (test, common) => {
 
   // address with cardinal
   assert('100 10 ave', [
-    [{ housenumber: '100' }, { street: '10 ave' }],
-    [{ postcode: '100' }, { street: '10 ave' }] // @todo can we avoid this?
+    [{ housenumber: '100' }, { street: '10 ave' }]
   ])
 
   // address with directional
   assert('1 north main blvd', [
     [{ housenumber: '1' }, { street: 'north main blvd' }]
+  ])
+  assert('1 main blvd north', [
+    [{ housenumber: '1' }, { street: 'main blvd north' }]
   ])
 
   // address with directional & ordinal

@@ -12,6 +12,7 @@ const CompositeClassifier = require('../classifier/CompositeClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
+const SubsetFilter = require('../solver/SubsetFilter')
 
 class AddressParser extends Parser {
   constructor () {
@@ -41,7 +42,8 @@ class AddressParser extends Parser {
       [
         new ExclusiveCartesianSolver(),
         new MultiStreetSolver(),
-        new TokenDistanceFilter()
+        new TokenDistanceFilter(),
+        new SubsetFilter()
       ]
     )
   }

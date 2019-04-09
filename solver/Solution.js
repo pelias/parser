@@ -9,6 +9,22 @@ class Solution {
     return new Solution(this.pair.slice(0))
   }
 
+  // return true if $this totally covers the target solution
+  // ie. target solution is a subset of $this without any unique ranges
+  covers (solution) {
+    return solution.pair.every(p => this.pair.some(pp => pp.span.covers(p.span)))
+  }
+
+  // same as above but classifications must also match
+  coversSameClassification (solution) {
+    return solution.pair.every(p => this.pair.some(pp => {
+      return (
+        pp.classification.constructor.name === p.classification.constructor.name &&
+        pp.span.covers(p.span)
+      )
+    }))
+  }
+
   computeScore (tokenizer) {
     // iterate pairs to compute a score
     let score = this.pair.reduce((memo, cur) => {

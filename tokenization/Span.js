@@ -29,6 +29,11 @@ class Span {
     return this.start < span.end && this.end > span.start
   }
 
+  // return true if $this totally covers the target Span
+  covers (span) {
+    return this.start <= span.start && this.end >= span.end
+  }
+
   // returns the distance between two Spans
   distance (span) {
     if (this.intersects(span)) { return 0 }

@@ -1,11 +1,9 @@
-const HashMapSolver = require('./super/HashMapSolver')
-
 // enforce a maximum span distance between classifications
 // eg. {housenumber} should not be more than n chars from {street}
 
 const MAX_DISTANCE = 1
 
-class TokenDistanceFilter extends HashMapSolver {
+class TokenDistanceFilter {
   solve (tokenizer) {
     tokenizer.solution = tokenizer.solution.filter(s => {
       let housenumber = s.pair.filter(p => p.classification.constructor.name === 'HouseNumberClassification')
