@@ -128,7 +128,7 @@ module.exports = [
   },
   {
     // 26 Street
-    confidence: 0.1,
+    confidence: 0.2,
     Class: StreetClassification,
     scheme: [
       {
@@ -138,6 +138,21 @@ module.exports = [
       {
         is: ['StreetSuffixClassification'],
         not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // SW 6th
+    confidence: 0.2,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['DirectionalClassification'],
+        not: ['StreetClassification', 'StreetSuffixClassification']
+      },
+      {
+        is: ['OrdinalClassification'],
+        not: ['StreetClassification', 'StreetSuffixClassification']
       }
     ]
   }

@@ -6,9 +6,12 @@
    |------||---||--------||--||---| tokens
    |===========|==================| sections
 **/
+const whitespace = new RegExp(/^\s$/)
 
 function fieldsFuncBoundary (char) {
   switch (char) {
+    case '\n':
+      return true
     case ',':
       return true
       // @todo: this should ideally only work for 'matching pairs' of quotes
@@ -21,7 +24,6 @@ function fieldsFuncBoundary (char) {
 
 // test for any unicode whitespace char including newlines and tabs
 // @todo: is this possible in js without using a regex?
-const whitespace = new RegExp(/^\s$/)
 function fieldsFuncWhiteSpace (char) {
   return whitespace.test(char)
 }

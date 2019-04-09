@@ -36,7 +36,7 @@ class AddressParser extends Parser {
 
         // section classifiers
         // new AdjacencyClassifier(), // currently doesn't have any consumers
-        new MultiStreetClassifier()
+        new MultiStreetClassifier() // hoping to retire this classifier
       ],
       // solvers
       [

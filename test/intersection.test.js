@@ -17,8 +17,12 @@ const testcase = (test, common) => {
     [{ street: 'Main St' }, { street: 'Second Ave' }]
   ])
 
-  assert('Gleimstraße zwischen Schönhauser Allee', [
-    [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }]
+  // assert('Gleimstraße an der ecke von Schönhauser Allee', [
+  //   [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }]
+  // ])
+
+  assert('Gleimstraße und Schönhauserallee', [
+    [{ street: 'Gleimstraße' }, { street: 'Schönhauserallee' }]
   ])
 
   assert('cnr west st and north ave', [
@@ -42,6 +46,57 @@ const testcase = (test, common) => {
   assert('foo @ bar', [
     [{ street: 'foo' }, { street: 'bar' }]
   ])
+
+  // missing street suffix - alpha
+  assert('main st & side ave', [
+    [{ street: 'main st' }, { street: 'side ave' }]
+  ])
+  assert('main st & side', [
+    [{ street: 'main st' }, { street: 'side' }]
+  ])
+  assert('main & side ave', [
+    [{ street: 'main' }, { street: 'side ave' }]
+  ])
+  assert('main & side', [
+    [{ street: 'main' }, { street: 'side' }]
+  ])
+
+  // missing street suffix - ordinal
+  assert('1st st & 2nd ave', [
+    [{ street: '1st st' }, { street: '2nd ave' }]
+  ])
+  assert('1st st & 2nd', [
+    [{ street: '1st st' }, { street: '2nd' }]
+  ])
+  assert('1st & 2nd ave', [
+    [{ street: '1st' }, { street: '2nd ave' }]
+  ])
+  assert('1st & 2nd', [
+    [{ street: '1st' }, { street: '2nd' }]
+  ])
+
+  // missing street suffix - cardinal
+  assert('1 st & 2 ave', [
+    [{ street: '1 st' }, { street: '2 ave' }]
+  ])
+  assert('1 st & 2', [
+    [{ street: '1 st' }, { street: '2' }]
+  ])
+  assert('1 & 2 ave', [
+    [{ street: '1' }, { street: '2 ave' }]
+  ])
+  assert('1 & 2', [
+    [{ street: '1' }, { street: '2' }]
+  ])
+
+  assert('SW 6th & Pine', [
+    [{ street: 'SW 6th' }, { street: 'Pine' }]
+  ])
+
+  // Trimet syntax
+  // assert('9,Lambert', [
+  //   [{ street: '9' }, { street: 'Lambert' }]
+  // ])
 }
 
 module.exports.all = (tape, common) => {

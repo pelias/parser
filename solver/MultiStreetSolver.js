@@ -14,6 +14,10 @@ class MultiStreetSolver extends HashMapSolver {
     // add the second street to existing solutions
     for (let s = 0; s < tokenizer.solution.length; s++) {
       let sol = tokenizer.solution[s].copy() // make a copy
+
+      // remove any pairs which are more granular than street (not applicable for intersections)
+      sol.pair = sol.pair.filter(p => p.classification.constructor.name !== 'HouseNumberClassification')
+
       let success = false
 
       for (let i = 0; i < candidates.pair.length; i++) {
