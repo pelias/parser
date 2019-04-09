@@ -22,13 +22,17 @@ class CompositeClassifier extends PermutationClassifier {
         let child = span.child[i]
 
         if (Array.isArray(sch.is)) {
-          // child should include one of target classifications
-          if (!sch.is.some(cl => child.classifications.hasOwnProperty(cl))) { return }
+          if (
+            // child should include at least one of target classifications
+            !sch.is.some(cl => child.classifications.hasOwnProperty(cl))
+          ) { return }
         }
 
         if (Array.isArray(sch.not)) {
-          // child should not include any target classifications
-          if (sch.not.some(cl => child.classifications.hasOwnProperty(cl))) { return }
+          if (
+            // child should not include any target classifications
+            sch.not.some(cl => child.classifications.hasOwnProperty(cl))
+          ) { return }
         }
       }
 

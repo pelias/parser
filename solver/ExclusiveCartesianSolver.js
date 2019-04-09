@@ -1,7 +1,7 @@
 const Solution = require('./Solution')
 const HashMapSolver = require('./super/HashMapSolver')
 
-class ExclusiveCarseianSolver extends HashMapSolver {
+class ExclusiveCartesianSolver extends HashMapSolver {
   solve (tokenizer) {
     let map = this.generateHashMap(tokenizer)
     let solutions = this.exclusiveCartesian.apply(null, Object.keys(map).map(k => map[k]))
@@ -61,4 +61,4 @@ function isDuplicateSolutionArray (solutions, solution) {
   })
 }
 
-module.exports = ExclusiveCarseianSolver
+module.exports = ExclusiveCartesianSolver

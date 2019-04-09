@@ -8,7 +8,8 @@ const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
-const ExclusiveCarseianSolver = require('../solver/ExclusiveCarseianSolver')
+const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
+const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 
 class AddressParser extends Parser {
@@ -19,7 +20,7 @@ class AddressParser extends Parser {
         // generic word classifiers
         new AlphaNumericClassifier(),
 
-        // single-word classifiers
+        // word classifiers
         new HouseNumberClassifier(),
         new PostcodeClassifier(),
         new StreetClassifier(),
@@ -27,14 +28,17 @@ class AddressParser extends Parser {
         new OrdinalClassifier(),
         new IntersectionClassifier(),
 
-        // multi-word classifiers
+        // permutation classifiers
         new CompositeClassifier(require('../classifier/scheme/street')),
         new CompositeClassifier(require('../classifier/scheme/intersection')),
+
+        // section classifiers
+        new AdjacencyClassifier(),
         new MultiStreetClassifier()
       ],
       // solvers
       [
-        new ExclusiveCarseianSolver(),
+        new ExclusiveCartesianSolver(),
         new MultiStreetSolver()
       ]
     )

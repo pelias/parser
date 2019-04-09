@@ -2,7 +2,7 @@ const SectionClassifier = require('./super/SectionClassifier')
 const MultiStreetClassification = require('../classification/MultiStreetClassification')
 
 class MultiStreetClassifier extends SectionClassifier {
-  each (section) {
+  each (section, utils) {
     let children = {
       all: [],
       street: [],
@@ -16,12 +16,9 @@ class MultiStreetClassifier extends SectionClassifier {
     section.child.forEach((c, o) => {
       if (
         c.classifications.hasOwnProperty('StreetClassification') ||
-        section.permutation.some(p => {
-          return (
-            p.classifications.hasOwnProperty('StreetClassification') &&
-            p.child.some(pc => pc === c)
-          )
-        })
+        utils.findPermutationsContaining(c).some(
+          p => p.classifications.hasOwnProperty('StreetClassification')
+        )
       ) {
         if (children.street.length === 0 || o === lastOffset + 1) {
           children.all.push(c)
@@ -30,12 +27,9 @@ class MultiStreetClassifier extends SectionClassifier {
         }
       } else if (
         c.classifications.hasOwnProperty('IntersectionClassification') ||
-        section.permutation.some(p => {
-          return (
-            p.classifications.hasOwnProperty('IntersectionClassification') &&
-            p.child.some(pc => pc === c)
-          )
-        })
+        utils.findPermutationsContaining(c).some(
+          p => p.classifications.hasOwnProperty('IntersectionClassification')
+        )
       ) {
         if (children.intersection.length === 0 || o === lastOffset + 1) {
           children.all.push(c)
