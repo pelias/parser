@@ -35,6 +35,10 @@ const testcase = (test, common) => {
     [{ street: 'west st' }]
   ])
 
+  // should not consider intersection tokens for street name
+  assert('& b', [])
+  assert('a &', [])
+
   // no street suffix
   assert('foo & bar', [
     [{ street: 'foo' }, { street: 'bar' }],

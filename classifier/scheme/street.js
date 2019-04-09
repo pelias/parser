@@ -27,7 +27,7 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
