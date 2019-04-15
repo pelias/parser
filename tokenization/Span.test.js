@@ -9,6 +9,7 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.norm, '')
     t.equals(span.start, 0)
     t.equals(span.end, 0)
+    t.deepEquals(span.classifications, {})
     t.deepEquals(span.child, [])
     t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)
@@ -96,19 +97,6 @@ module.exports.tests.setBody = (test) => {
   })
 }
 
-module.exports.tests.setter = (test) => {
-  test('setter: setChildren', (t) => {
-    let section = new Span()
-    t.deepEquals(section.child, [])
-
-    let sections = [new Span('A'), new Span('B')]
-    section.setChildren(sections)
-
-    t.deepEquals(section.child, sections)
-    t.end()
-  })
-}
-
 module.exports.tests.intersects = (test) => {
   test('intersects: basic', (t) => {
     let spanA = new Span('A')
@@ -137,6 +125,98 @@ module.exports.tests.intersects = (test) => {
     t.true(spanC.intersects(spanA))
     t.true(spanB.intersects(spanC))
     t.true(spanC.intersects(spanB))
+    t.end()
+  })
+}
+
+module.exports.tests.covers = (test) => {
+  test('covers: basic', (t) => {
+    let spanA = new Span('A')
+    let spanB = new Span('B')
+    t.true(spanA.covers(spanB))
+    t.true(spanB.covers(spanA))
+    t.end()
+  })
+
+  test('covers: advanced', (t) => {
+    let spanA = new Span('A')
+    spanA.start = 0
+    spanA.end = 10
+
+    let spanB = new Span('B')
+    spanB.start = 2
+    spanB.end = 10
+
+    let spanC = new Span('C')
+    spanC.start = 0
+    spanC.end = 5
+
+    t.true(spanA.covers(spanB))
+    t.false(spanB.covers(spanA))
+    t.true(spanA.covers(spanC))
+    t.false(spanC.covers(spanA))
+    t.false(spanB.covers(spanC))
+    t.false(spanC.covers(spanB))
+    t.end()
+  })
+}
+
+module.exports.tests.distance = (test) => {
+  test('distance: same', (t) => {
+    let spanA = new Span('A')
+    let spanB = new Span('B')
+
+    t.equal(0, spanA.distance(spanB))
+    t.equal(0, spanB.distance(spanA))
+    t.end()
+  })
+
+  test('distance: right', (t) => {
+    let spanA = new Span('A')
+    let spanB = new Span('B')
+    spanB.start = 5
+    spanB.end = 6
+
+    t.equal(4, spanA.distance(spanB))
+    t.equal(4, spanB.distance(spanA))
+    t.end()
+  })
+
+  test('distance: left', (t) => {
+    let spanA = new Span('A')
+    spanA.start = 2
+    spanA.end = 3
+
+    let spanB = new Span('B')
+
+    t.equal(1, spanA.distance(spanB))
+    t.equal(1, spanB.distance(spanA))
+    t.end()
+  })
+}
+
+module.exports.tests.setChildren = (test) => {
+  test('setChildren', (t) => {
+    let section = new Span()
+    t.deepEquals(section.child, [])
+
+    let children = [new Span('A'), new Span('B')]
+    section.setChildren(children)
+
+    t.deepEquals(section.child, children)
+    t.end()
+  })
+}
+
+module.exports.tests.setPermutations = (test) => {
+  test('setPermutations', (t) => {
+    let section = new Span()
+    t.deepEquals(section.permutation, [])
+
+    let permutations = [new Span('A'), new Span('B')]
+    section.setPermutations(permutations)
+
+    t.deepEquals(section.permutation, permutations)
     t.end()
   })
 }
