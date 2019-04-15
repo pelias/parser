@@ -7,12 +7,14 @@ module.exports.tests.constructor = (test) => {
     let tok = new Tokenizer('100 Main Street')
     t.equals(tok.span.constructor.name, 'Span')
     t.equals(tok.span.body, '100 Main Street')
+    t.deepEquals(tok.solution, [])
     t.end()
   })
   test('constructor: advanced', (t) => {
     let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
     t.equals(tok.span.constructor.name, 'Span')
     t.equals(tok.span.body, '100 West 26th Street, NYC, 10010 NY, USA')
+    t.deepEquals(tok.solution, [])
     t.end()
   })
 }
@@ -101,6 +103,19 @@ module.exports.tests.permute = (test) => {
     t.equals(tok.section[2].permutation[2].body, 'NY')
     t.equals(tok.section[3].permutation.length, 1)
     t.equals(tok.section[3].permutation[0].body, 'USA')
+    t.end()
+  })
+}
+
+module.exports.tests.computeCoverage = (test) => {
+  test('computeCoverage: basic', (t) => {
+    let tok = new Tokenizer('100 Main Street')
+    t.equal(13, tok.coverage)
+    t.end()
+  })
+  test('computeCoverage: advanced', (t) => {
+    let tok = new Tokenizer('100 West 26th Street, NYC, 10010 NY, USA')
+    t.equal(30, tok.coverage)
     t.end()
   })
 }
