@@ -31,6 +31,9 @@ It's still very early stages but this is the basic architecture:
 $ PORT=6100 npm run server;
 ```
 
+![demo](./docs/demo.png)
+![api](./docs/api.png)
+
 ### open browser
 
 the server should now be running and you should be able to access the http API:
