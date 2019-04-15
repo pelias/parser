@@ -208,6 +208,19 @@ module.exports.tests.setChildren = (test) => {
   })
 }
 
+module.exports.tests.classify = (test) => {
+  test('classify', (t) => {
+    let section = new Span()
+    t.deepEquals(section.classifications, {})
+
+    let classification = new (class Mock {})()
+    section.classify(classification)
+
+    t.deepEquals(section.classifications, { Mock: classification })
+    t.end()
+  })
+}
+
 module.exports.tests.setPermutations = (test) => {
   test('setPermutations', (t) => {
     let section = new Span()
