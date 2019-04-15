@@ -7,7 +7,6 @@ const testcase = (test, common) => {
   let parser = new AddressParser()
   let assert = common.assert.bind(null, test, parser)
 
-  // Australia
   assert('2649 Logan Road, Eight Mile Plains, QLD 4113', [
     [{ housenumber: '2649' }, { street: 'Logan Road' }, { postcode: '4113' }]
   ])
@@ -24,24 +23,23 @@ const testcase = (test, common) => {
     [{ housenumber: '754' }, { street: 'Robinson Rd West' }, { postcode: '4035' }]
   ])
 
-  // assert('Sydney 2000', [
-  //   [{ postcode: '2000' }]
-  // ])
+  assert('Sydney 2000', [
+    [{ postcode: '2000' }]
+  ])
 
   assert('Perth', [])
 
-  // assert('1/135 Ferny Way, Ferny Grove 4054', [
-  //   [{ apartment: '1' }, { housenumber: '135' }, { street: 'Ferny Way' }]
-  // ])
+  assert('1/135 Ferny Way, Ferny Grove 4054', [
+    [{ housenumber: '1/135' }, { street: 'Ferny Way' }, { postcode: '4054' }]
+  ])
 
   // assert('Eight Mile Plains 4113', [
   //   [{ housenumber: 'Eight' }, { street: 'Mile Plains' }, { postcode: '4113' }]
   // ])
 
-  // assert('8/437 St Kilda Road Melbourne, VIC ', [
-  //   [{ apartment: '8' }, { housenumber: '437' }, { street: 'St Kilda Road' }],
-  //   [{ apartment: '8' }, { housenumber: '437' }, { street: 'Kilda Road' }]
-  // ])
+  assert('8/437 St Kilda Road Melbourne, VIC ', [
+    [{ housenumber: '8/437' }, { street: 'St Kilda Road' }]
+  ])
 
   assert('BOOM', [])
 
@@ -52,7 +50,7 @@ const testcase = (test, common) => {
 
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
-    return tape(`functional: ${name}`, testFunction)
+    return tape(`addressit AUS: ${name}`, testFunction)
   }
 
   testcase(test, common)

@@ -12,6 +12,7 @@ class HouseNumberClassifier extends WordClassifier {
     if (
       /^\d{1,5}[a-zA-Z\u0400-\u04FF]?$/.test(span.body) || // 10 or 10a Style
         /^(\d{1,5})-(\d{1,5})[a-zA-Z\u0400-\u04FF]?$/.test(span.body) || // 10-19 or 10-19a Style
+        /^(\d{1,5})[a-zA-Z\u0400-\u04FF]?\/(\d{1,5})$/.test(span.body) || // 1/135 or 1b/135 Style
         /^(\d{1,5})([nsewNSEW])(\d{1,5})[a-zA-Z]?$/.test(span.body) || // 6N23 Style (ie Kane County, IL)
         /^([nsewNSEW])(\d{1,5})([nsewNSEW]\d{1,5})?$/.test(span.body) // W350N5337 or N453 Style (ie Waukesha County, WI)
         // /^\d{1,5}(к\d{1,5})?(с\d{1,5})?$/.test(span.body) // Russian style including korpus (cyrillic к) and stroenie (cyrillic с)

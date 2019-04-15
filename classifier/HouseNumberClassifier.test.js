@@ -116,6 +116,24 @@ module.exports.tests.hyphenated = (test) => {
   })
 }
 
+module.exports.tests.forward_slash = (test) => {
+  test('forward slash: 1/135', (t) => {
+    let s = classify('1/135')
+    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(1.0) })
+    t.end()
+  })
+  test('forward slash: 1a/135', (t) => {
+    let s = classify('1a/135')
+    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(1.0) })
+    t.end()
+  })
+  test('forward slash: 1B/125', (t) => {
+    let s = classify('1B/125')
+    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(1.0) })
+    t.end()
+  })
+}
+
 module.exports.tests.misc = (test) => {
   test('misc: 6N23', (t) => {
     let s = classify('6N23')

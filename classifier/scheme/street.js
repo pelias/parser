@@ -108,6 +108,25 @@ module.exports = [
     ]
   },
   {
+    // 21st Avenue North
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['OrdinalClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['DirectionalClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
     // West 26 Street
     confidence: 0.4,
     Class: StreetClassification,
