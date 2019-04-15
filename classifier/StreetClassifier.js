@@ -49,15 +49,13 @@ class StreetClassifier extends WordClassifier {
     // else use a slower suffix check which is O(n)
     // this allows us to match Germanic compound words such as:
     // 'Grolmanstraße' which end with the dictionary term '-straße'
-    if (!span.contains.final.period) {
-      for (let token in this.suffixes) {
-        let offet = span.body.length - token.length
-        if (offet < 1) { continue }
-        // perf: https://gist.github.com/dai-shi/4950506
-        if (span.norm.substring(offet) === token) {
-          span.classify(new StreetClassification(confidence))
-          return
-        }
+    for (let token in this.suffixes) {
+      let offet = span.body.length - token.length
+      if (offet < 1) { continue }
+      // perf: https://gist.github.com/dai-shi/4950506
+      if (span.norm.substring(offet) === token) {
+        span.classify(new StreetClassification(confidence))
+        return
       }
     }
   }
