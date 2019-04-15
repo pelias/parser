@@ -44,6 +44,11 @@ const testcase = (test, common) => {
   assert('30 west 26th street', [
     [{ housenumber: '30' }, { street: 'west 26th street' }]
   ])
+
+  // street with directional, ordinal & admin info
+  assert('West 26th Street, New York, NYC, 10010', [
+    [{ street: 'West 26th Street' }, { postcode: '10010' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {

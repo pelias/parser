@@ -14,51 +14,38 @@ class ExclusiveCartesianSolver extends HashMapSolver {
   // compute the unique cartesian product
   // (all permutations of non-overlapping tokens from different classifications)
   exclusiveCartesian () {
-    let r = []; let arg = arguments; let max = arg.length - 1
-    if (!arg.length) { return r }
-    const helper = (solution, i) => {
-      for (let j = 0, l = arg[i].pair.length; j < l; j++) {
-        let copy = solution.copy() // clone solution
+    let solutions = []
 
-        // exclusive - same span range cannot appear twice
-        if (!isRangeConflict(copy, arg[i].pair[j].span)) {
-          copy.pair.push(arg[i].pair[j])
+    // generate a flattened array of SolutionPairs
+    let pairs = []
+    Array.prototype.slice.call(arguments).forEach(a => { pairs = pairs.concat(a.pair) })
+
+    // iterate all pairs twice (once as $i and once as $j)
+    for (let i = 0; i < pairs.length; i++) {
+      let solution = new Solution()
+      solution.pair.push(pairs[i])
+      for (let j = 0; j < pairs.length; j++) {
+        // do not add the same pair twice
+        if (j === i) { continue }
+
+        // do not add another pair from an existing classification
+        if (solution.pair.some(p => {
+          return p.classification.constructor.name === pairs[j].classification.constructor.name
+        })) {
+          continue
         }
 
-        if (i === max) {
-          // duplicates - prevent duplicate solutions
-          if (!isDuplicateSolutionArray(r, copy)) {
-            r.push(copy)
-          }
-        } else {
-          helper(copy, i + 1)
+        // so not add a pair where the span intersects an existing pair
+        if (solution.pair.some(p => p.span.intersects(pairs[j].span))) {
+          continue
         }
+        solution.pair.push(pairs[j])
       }
+      solutions.push(solution)
     }
-    helper(new Solution(), 0)
-    return r
-  }
-}
 
-// check that the span does not intersect with existing ranges in arr
-function isRangeConflict (solution, span) {
-  let isUsed = false
-  for (let i = 0; i < solution.pair.length; i++) {
-    if (span.intersects(solution.pair[i].span)) {
-      isUsed = true
-      break
-    }
+    return solutions
   }
-  return isUsed
-}
-
-// check that this is not a duplicate of an existing array of solution
-// @todo: deduplicate out-of-order yet the same arrays
-function isDuplicateSolutionArray (solutions, solution) {
-  return solutions.some(sol => {
-    if (solution.pair.length !== sol.pair.length) { return false }
-    return sol.pair.every((v, i) => v.equals(solution.pair[i]))
-  })
 }
 
 module.exports = ExclusiveCartesianSolver

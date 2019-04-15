@@ -109,7 +109,7 @@ module.exports = [
   },
   {
     // West 26 Street
-    confidence: 0.2,
+    confidence: 0.4,
     Class: StreetClassification,
     scheme: [
       {
@@ -128,7 +128,7 @@ module.exports = [
   },
   {
     // 26 Street
-    confidence: 0.2,
+    confidence: 0.4,
     Class: StreetClassification,
     scheme: [
       {
@@ -143,7 +143,7 @@ module.exports = [
   },
   {
     // SW 6th
-    confidence: 0.2,
+    confidence: 0.4,
     Class: StreetClassification,
     scheme: [
       {
