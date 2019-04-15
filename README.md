@@ -1,3 +1,6 @@
+| WARNING: This repo is a work in progress! |
+| --- |
+
 An address parsing engine designed for geocoding.
 
 Strategic goals:
