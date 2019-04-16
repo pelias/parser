@@ -6,6 +6,10 @@ const StreetSuffixClassifier = require('../classifier/StreetSuffixClassifier')
 const CompoundStreetClassifier = require('../classifier/CompoundStreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
+const PersonClassifier = require('../classifier/PersonClassifier')
+const GivenNameClassifier = require('../classifier/GivenNameClassifier')
+const SurnameClassifier = require('../classifier/SurnameClassifier')
+const ChainClassifier = require('../classifier/ChainClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
@@ -30,6 +34,10 @@ class AddressParser extends Parser {
         new CompoundStreetClassifier(),
         new DirectionalClassifier(),
         new OrdinalClassifier(),
+        new PersonClassifier(),
+        new GivenNameClassifier(),
+        new SurnameClassifier(),
+        new ChainClassifier(),
         new IntersectionClassifier(),
 
         // phrase classifiers

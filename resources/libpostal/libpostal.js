@@ -10,7 +10,7 @@ function load (index, langs, filename) {
     let dict = fs.readFileSync(filepath, 'utf8')
     dict.split('\n').forEach(row => {
       row.split('|').forEach(cell => {
-        index[cell.trim()] = true
+        index[cell.trim().toLowerCase()] = true
       })
     }, this)
   }, this)
