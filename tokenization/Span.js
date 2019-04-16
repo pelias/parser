@@ -1,8 +1,13 @@
+const Graph = require('./Graph')
+
 class Span {
   constructor (body, start) {
     this.start = start || 0
     this.setBody(body)
     this.classifications = {}
+
+    // graph
+    this.graph = new Graph()
 
     // sub-spans
     this.child = []

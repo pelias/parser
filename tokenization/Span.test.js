@@ -1,3 +1,4 @@
+const Graph = require('./Graph')
 const Span = require('./Span')
 
 module.exports.tests = {}
@@ -10,6 +11,7 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.start, 0)
     t.equals(span.end, 0)
     t.deepEquals(span.classifications, {})
+    t.deepEquals(span.graph, new Graph())
     t.deepEquals(span.child, [])
     t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)

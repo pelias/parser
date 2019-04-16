@@ -1,3 +1,4 @@
+const deepEqual = require('deep-eql')
 const Span = require('./Span')
 const split = require('./split')
 const funcs = require('./split_funcs')
@@ -19,11 +20,17 @@ module.exports.tests.boundary = (test) => {
     let span = new Span('SoHo,,, New York, USA')
     let actual = split(span, funcs.fieldsFuncBoundary)
 
-    t.deepEquals(actual, [
-      new Span('SoHo'),
-      new Span(' New York', 7),
-      new Span(' USA', 17)
-    ])
+    let token1 = new Span('SoHo', 0)
+    let token2 = new Span(' New York', 7)
+    let token3 = new Span(' USA', 17)
+
+    // relationships
+    token1.graph.add('next', token2)
+    token2.graph.add('prev', token1)
+    token2.graph.add('next', token3)
+    token3.graph.add('prev', token2)
+
+    t.true(deepEqual(actual, [token1, token2, token3]))
     t.end()
   })
 
@@ -31,11 +38,17 @@ module.exports.tests.boundary = (test) => {
     let span = new Span('SoHo "New York" USA')
     let actual = split(span, funcs.fieldsFuncBoundary)
 
-    t.deepEquals(actual, [
-      new Span('SoHo '),
-      new Span('New York', 6),
-      new Span(' USA', 15)
-    ])
+    let token1 = new Span('SoHo ', 0)
+    let token2 = new Span('New York', 6)
+    let token3 = new Span(' USA', 15)
+
+    // relationships
+    token1.graph.add('next', token2)
+    token2.graph.add('prev', token1)
+    token2.graph.add('next', token3)
+    token3.graph.add('prev', token2)
+
+    t.true(deepEqual(actual, [token1, token2, token3]))
     t.end()
   })
 }
@@ -55,12 +68,20 @@ module.exports.tests.whitespace = (test) => {
     let span = new Span('SoHo\t New York \n USA')
     let actual = split(span, funcs.fieldsFuncWhiteSpace)
 
-    t.deepEquals(actual, [
-      new Span('SoHo'),
-      new Span('New', 6),
-      new Span('York', 10),
-      new Span('USA', 17)
-    ])
+    let token1 = new Span('SoHo', 0)
+    let token2 = new Span('New', 6)
+    let token3 = new Span('York', 10)
+    let token4 = new Span('USA', 17)
+
+    // relationships
+    token1.graph.add('next', token2)
+    token2.graph.add('prev', token1)
+    token2.graph.add('next', token3)
+    token3.graph.add('prev', token2)
+    token3.graph.add('next', token4)
+    token4.graph.add('prev', token3)
+
+    t.true(deepEqual(actual, [token1, token2, token3, token4]))
     t.end()
   })
 }
