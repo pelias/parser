@@ -10,6 +10,14 @@ class CompoundStreetClassifier extends WordClassifier {
     // load street suffixes
     this.suffixes = {}
     libpostal.load(this.suffixes, libpostal.languages, 'concatenated_suffixes_separable.txt')
+
+    // remove any suffixes which contain less than 3 characters (excluding a period)
+    // this removes suffixes such as 'r.' which can be ambiguous
+    for (let token in this.suffixes) {
+      if (token.length < 3 || token.replace(/\./g, '').length < 3) {
+        delete this.suffixes[token]
+      }
+    }
   }
 
   each (span) {
@@ -24,6 +32,7 @@ class CompoundStreetClassifier extends WordClassifier {
       if (offet < 1) { continue }
       // perf: https://gist.github.com/dai-shi/4950506
       if (span.norm.substring(offet) === token) {
+        console.error(span.body, `'${token}'`)
         span.classify(new StreetClassification(1.0))
         return
       }
