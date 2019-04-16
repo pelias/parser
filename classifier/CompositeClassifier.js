@@ -11,15 +11,17 @@ class CompositeClassifier extends PermutationClassifier {
       // invalid scheme
       if (!Array.isArray(s.scheme)) { return }
 
+      let children = span.graph.findAll('child')
+
       // permutation should contain same number
       // of children as scheme does
-      if (span.child.length !== s.scheme.length) { return }
+      if (children.length !== s.scheme.length) { return }
 
       // iterate over the scheme items and children
       // at the same time, comparing each
       for (let i = 0; i < s.scheme.length; i++) {
         let sch = s.scheme[i]
-        let child = span.child[i]
+        let child = children[i]
 
         if (Array.isArray(sch.is)) {
           if (
@@ -44,7 +46,7 @@ class CompositeClassifier extends PermutationClassifier {
       // optionally classify children
       s.scheme.forEach((sch, i) => {
         if (typeof sch.Class === 'function') {
-          span.child[i].classify(new sch.Class(sch.confidence))
+          children[i].classify(new sch.Class(sch.confidence))
         }
       })
     })

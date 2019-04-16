@@ -27,8 +27,9 @@ class HashMapSolver extends BaseSolver {
       }
 
       // single-word spans
-      for (let j = 0; j < section.child.length; j++) {
-        let word = section.child[j]
+      let children = section.graph.findAll('child')
+      for (let j = 0; j < children.length; j++) {
+        let word = children[j]
         let keys = Object.keys(word.classifications)
         if (!keys.length) { continue }
         for (let k in word.classifications) {

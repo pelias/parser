@@ -33,8 +33,10 @@ class Solution {
 
       // if it does have children, iterate them so that
       // delimiters such as spaces are not counted in the range
-      if (cur.span.child.length) {
-        range = cur.span.child.reduce((sum, child) => { return sum + (child.end - child.start) }, 0)
+      if (cur.span.graph.length('child')) {
+        range = cur.span.graph.findAll('child').reduce((sum, child) => {
+          return sum + (child.end - child.start)
+        }, 0)
       }
 
       // total characters covered

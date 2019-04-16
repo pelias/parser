@@ -23,7 +23,7 @@ class IntersectionClassifier extends PermutationClassifier {
       span.classify(new IntersectionClassification(1))
 
       // classify child spans
-      span.child.forEach(c => c.classify(new IntersectionClassification(1)))
+      span.graph.findAll('child').forEach(c => c.classify(new IntersectionClassification(1)))
     }
   }
 }

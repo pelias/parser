@@ -19,14 +19,29 @@ class Graph {
     return this.edges[relationship].length !== len
   }
 
+  length (relationship) {
+    if (!this.edges[relationship]) { return 0 }
+    return this.edges[relationship].length
+  }
+
   findAll (relationship) {
-    if (!this.edges[relationship]) { return [] }
+    if (this.length(relationship) < 1) { return [] }
     return this.edges[relationship]
   }
 
   findOne (relationship) {
-    if (!this.edges[relationship] || !this.edges[relationship].length) { return null }
+    if (this.length(relationship) < 1) { return null }
     return this.edges[relationship][0]
+  }
+
+  some (relationship, func) {
+    if (this.length(relationship) < 1) { return false }
+    return this.edges[relationship].some(func)
+  }
+
+  every (relationship, func) {
+    if (this.length(relationship) < 1) { return false }
+    return this.edges[relationship].every(func)
   }
 }
 

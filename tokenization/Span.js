@@ -10,7 +10,6 @@ class Span {
     this.graph = new Graph()
 
     // sub-spans
-    this.child = []
     this.permutation = []
   }
 
@@ -54,7 +53,7 @@ class Span {
 
   // set the child Spans for a subset of this Span
   setChildren (spans) {
-    this.child = spans
+    spans.forEach(c => this.graph.add('child', c), this)
     return this
   }
 

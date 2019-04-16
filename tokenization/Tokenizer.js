@@ -25,14 +25,16 @@ class Tokenizer {
 
   permute (windowMin, windowMax) {
     for (let i = 0; i < this.section.length; i++) {
-      this.section[i].setPermutations(permutate(this.section[i].child, windowMin, windowMax))
+      this.section[i].setPermutations(
+        permutate(this.section[i].graph.findAll('child'), windowMin, windowMax)
+      )
     }
   }
 
   computeCoverage () {
     this.coverage = 0
     this.section.forEach(s => {
-      this.coverage += s.child.reduce(
+      this.coverage += s.graph.findAll('child').reduce(
         (sum, cur) => sum + cur.end - cur.start, 0
       )
     }, this)

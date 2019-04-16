@@ -8,32 +8,34 @@ const AdjacentClassification = require('../classification/AdjacentClassification
 
 class AdjacencyClassifier extends SectionClassifier {
   each (section, utils) {
-    section.child.forEach((_, cc) => {
+    let children = section.graph.findAll('child')
+    children.forEach((_, cc) => {
       // skip last two elements
-      if (cc >= section.child.length - 2) { return }
+      if (cc >= section.graph.length('child') - 2) { return }
 
       if (
         (
-          section.child[cc + 0].classifications.hasOwnProperty('HouseNumberClassification')
+          children[cc + 0].classifications.hasOwnProperty('HouseNumberClassification')
         ) &&
         (
-          section.child[cc + 1].classifications.hasOwnProperty('StreetClassification') ||
-          utils.findPermutationsContaining(section.child[cc + 1]).some(
+          children[cc + 1].classifications.hasOwnProperty('StreetClassification') ||
+          utils.findPermutationsContaining(children[cc + 1]).some(
             p => p.classifications.hasOwnProperty('StreetClassification')
           )
         ) &&
         (
-          section.child[cc + 2].classifications.hasOwnProperty('StreetSuffixClassification')
+          children[cc + 2].classifications.hasOwnProperty('StreetSuffixClassification')
         )
       ) {
         // every child must be part of the set above
         // and must not omit any children
         let matches = section.permutation.filter(p => {
+          let ch = p.graph.findAll('child')
           return (
-            p.child.length === 3 &&
-            p.child[cc + 0] === section.child[cc + 0] &&
-            p.child[cc + 1] === section.child[cc + 1] &&
-            p.child[cc + 2] === section.child[cc + 2]
+            ch.length === 3 &&
+            ch[cc + 0] === children[cc + 0] &&
+            ch[cc + 1] === children[cc + 1] &&
+            ch[cc + 2] === children[cc + 2]
           )
         })
 

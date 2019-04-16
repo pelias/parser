@@ -13,7 +13,7 @@ class MultiStreetClassifier extends SectionClassifier {
     // find a span of multiple children in this section
     // who are either classified as street or intersection /or
     // are part of a permutation classes as such
-    section.child.forEach((c, o) => {
+    section.graph.findAll('child').forEach((c, o) => {
       if (
         c.classifications.hasOwnProperty('StreetClassification') ||
         utils.findPermutationsContaining(c).some(
@@ -53,7 +53,7 @@ class MultiStreetClassifier extends SectionClassifier {
     let matches = section.permutation.map(p => {
       if (
         // every child must be part of the set above
-        p.child.every(pc => children.all.includes(pc))
+        p.graph.every('child', pc => children.all.includes(pc))
       ) {
         return p
       }

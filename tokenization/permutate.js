@@ -23,7 +23,7 @@ function permutate (spans, windowMin, windowMax) {
           for (let k = i; k < j; k++) {
             let s = spans[k]
             span.setBody(span.body += s.body)
-            span.child.push(s)
+            span.graph.add('child', s)
 
             // join with delim
             if (k < j - 1) {

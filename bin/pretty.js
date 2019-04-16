@@ -12,7 +12,7 @@ function tokenizer (tokenizer, label) {
   spans('SECTIONS', tokenizer.section)
 
   for (let i = 0; i < tokenizer.section.length; i++) {
-    spans(util.format('S%d TOKENS', i), tokenizer.section[i].child)
+    spans(util.format('S%d TOKENS', i), tokenizer.section[i].graph.findAll('child'))
   }
 
   for (let i = 0; i < tokenizer.section.length; i++) {
@@ -44,8 +44,9 @@ function wordClassifications (tokenizer) {
 
   for (let i = 0; i < tokenizer.section.length; i++) {
     let section = tokenizer.section[i]
-    for (let j = 0; j < section.child.length; j++) {
-      let word = section.child[j]
+    let children = section.graph.findAll('child')
+    for (let j = 0; j < children.length; j++) {
+      let word = children[j]
       let keys = Object.keys(word.classifications)
       if (!keys.length) { continue }
       process.stdout.write(word.body.padEnd(32) + '➜  ')

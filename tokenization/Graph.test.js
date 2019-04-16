@@ -69,6 +69,31 @@ module.exports.tests.remove = (test) => {
   })
 }
 
+module.exports.tests.length = (test) => {
+  test('length', (t) => {
+    let graph = new Graph()
+    let node1 = new (class Example { })()
+    let node2 = new (class Example { })()
+    graph.add('foo', node1)
+    graph.add('bar', node1)
+    graph.add('foo', node2)
+
+    // find total nodes with 'foo' relationship
+    let foo = graph.length('foo')
+    t.equals(foo, 2)
+
+    // find total nodes with 'bar' relationship
+    let bar = graph.length('bar')
+    t.equals(bar, 1)
+
+    // find total nodes with 'baz' relationship
+    let baz = graph.length('baz')
+    t.equals(baz, 0)
+
+    t.end()
+  })
+}
+
 module.exports.tests.findAll = (test) => {
   test('findAll', (t) => {
     let graph = new Graph()
@@ -114,6 +139,64 @@ module.exports.tests.findOne = (test) => {
     // find all nodes with 'baz' relationship
     let baz = graph.findOne('baz')
     t.equals(baz, null)
+
+    t.end()
+  })
+}
+
+module.exports.tests.some = (test) => {
+  test('some', (t) => {
+    let graph = new Graph()
+    let node1 = new (class Example { constructor () { this.name = 'A' }})()
+    let node2 = new (class Example { constructor () { this.name = 'B' } })()
+    graph.add('foo', node1)
+    graph.add('bar', node1)
+    graph.add('foo', node2)
+
+    // find some nodes with 'foo' relationship
+    let foo = graph.some('foo', n => n.name === 'A')
+    t.true(foo)
+
+    // find some nodes with 'bar' relationship
+    let bar = graph.some('bar', n => n.name === 'B')
+    t.false(bar)
+
+    // find some nodes with 'baz' relationship
+    let baz = graph.some('baz', n => n.name === 'A')
+    t.false(baz)
+
+    // invalid function
+    let nofunc = graph.some('baz')
+    t.false(nofunc)
+
+    t.end()
+  })
+}
+
+module.exports.tests.every = (test) => {
+  test('every', (t) => {
+    let graph = new Graph()
+    let node1 = new (class Example { constructor () { this.name = 'A' } })()
+    let node2 = new (class Example { constructor () { this.name = 'B' } })()
+    graph.add('foo', node1)
+    graph.add('bar', node1)
+    graph.add('foo', node2)
+
+    // find every nodes with 'foo' relationship
+    let foo = graph.every('foo', n => n.name === 'A')
+    t.false(foo)
+
+    // find every nodes with 'bar' relationship
+    let bar = graph.every('bar', n => n.name === 'A')
+    t.true(bar)
+
+    // find every nodes with 'baz' relationship
+    let baz = graph.every('baz', n => n.name === 'A')
+    t.false(baz)
+
+    // invalid function
+    let nofunc = graph.every('baz')
+    t.false(nofunc)
 
     t.end()
   })
