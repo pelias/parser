@@ -1,6 +1,6 @@
-const PermutationClassifier = require('./super/PermutationClassifier')
+const PhraseClassifier = require('./super/PhraseClassifier')
 
-class CompositeClassifier extends PermutationClassifier {
+class CompositeClassifier extends PhraseClassifier {
   constructor (schemes) {
     super()
     this.schemes = schemes || []
@@ -13,8 +13,7 @@ class CompositeClassifier extends PermutationClassifier {
 
       let children = span.graph.findAll('child')
 
-      // permutation should contain same number
-      // of children as scheme does
+      // phrase should contain same number of children as scheme does
       if (children.length !== s.scheme.length) { return }
 
       // iterate over the scheme items and children
@@ -38,7 +37,7 @@ class CompositeClassifier extends PermutationClassifier {
         }
       }
 
-      // optionally classify permutation
+      // optionally classify phrase
       if (typeof s.Class === 'function') {
         span.classify(new s.Class(s.confidence))
       }

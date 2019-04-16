@@ -23,8 +23,6 @@ node bin/cli.js West 26th Street, New York, NYC, 10010
 
 ![cli](./docs/cli.png)
 
-It's still very early stages but this is the basic architecture:
-
 #### Server
 
 ```bash
@@ -76,7 +74,7 @@ try the following paths:
 ]
 ```
 
-#### 4. generate permutations:
+#### 4. generate phrase permutations:
 ```
 [
   [
@@ -100,7 +98,7 @@ try the following paths:
 ]
 ```
 
-#### 5. run classifiers against all permutations and record potential classes per permutation
+#### 5. run classifiers against all phrases and record potential classes per phrase
 ```
 '10010' -> postcode
 'west 26th street' -> street
@@ -110,4 +108,4 @@ try the following paths:
 
 #### 6. generate solutions
 
-Given the classifications for each permutation, compute an array of potential parses for the input, a confidence score can also be provided.
+Given the classifications for each phrase, compute an array of potential parses for the input, a confidence score can also be provided.

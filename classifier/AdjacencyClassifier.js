@@ -19,7 +19,7 @@ class AdjacencyClassifier extends SectionClassifier {
         ) &&
         (
           children[cc + 1].classifications.hasOwnProperty('StreetClassification') ||
-          utils.findPermutationsContaining(children[cc + 1]).some(
+          utils.findPhrasesContaining(children[cc + 1]).some(
             p => p.classifications.hasOwnProperty('StreetClassification')
           )
         ) &&
@@ -29,7 +29,7 @@ class AdjacencyClassifier extends SectionClassifier {
       ) {
         // every child must be part of the set above
         // and must not omit any children
-        let matches = section.permutation.filter(p => {
+        let matches = section.graph.findAll('phrase').filter(p => {
           let ch = p.graph.findAll('child')
           return (
             ch.length === 3 &&

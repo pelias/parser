@@ -1,6 +1,6 @@
 const BaseClassifier = require('./BaseClassifier')
 
-class PermutationClassifier extends BaseClassifier {
+class PhraseClassifier extends BaseClassifier {
   // classify an individual permutation
 
   // note: you should provide this function in your subclass
@@ -9,11 +9,12 @@ class PermutationClassifier extends BaseClassifier {
   // run classifier against every permutation produced by the tokenizer
   classify (tokenizer) {
     for (let i = 0; i < tokenizer.section.length; i++) {
-      for (let j = 0; j < tokenizer.section[i].permutation.length; j++) {
-        this.each(tokenizer.section[i].permutation[j], i, j)
+      let phrases = tokenizer.section[i].graph.findAll('phrase')
+      for (let j = 0; j < phrases.length; j++) {
+        this.each(phrases[j], i, j)
       }
     }
   }
 }
 
-module.exports = PermutationClassifier
+module.exports = PhraseClassifier

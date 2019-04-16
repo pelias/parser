@@ -11,18 +11,19 @@ class HashMapSolver extends BaseSolver {
     for (let i = 0; i < tokenizer.section.length; i++) {
       let section = tokenizer.section[i]
 
-      // multi-word permutations
-      for (let j = 0; j < section.permutation.length; j++) {
-        let perm = section.permutation[j]
-        let keys = Object.keys(perm.classifications)
+      // multi-word phrases
+      let phrases = section.graph.findAll('phrase')
+      for (let j = 0; j < phrases.length; j++) {
+        let phrase = phrases[j]
+        let keys = Object.keys(phrase.classifications)
         if (!keys.length) { continue }
-        for (let k in perm.classifications) {
-          let classification = perm.classifications[k]
+        for (let k in phrase.classifications) {
+          let classification = phrase.classifications[k]
           if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
             map[classification.label] = new Solution()
           }
-          map[classification.label].pair.push(new SolutionPair(perm, classification))
+          map[classification.label].pair.push(new SolutionPair(phrase, classification))
         }
       }
 

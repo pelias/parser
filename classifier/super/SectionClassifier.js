@@ -14,9 +14,9 @@ class SectionClassifier extends BaseClassifier {
 
   utils (section) {
     return {
-      // find all permutations containing a child span
-      findPermutationsContaining: (child) => {
-        return section.permutation.filter(p => p.graph.some('child', pc => pc === child))
+      // find all phrases containing a child span
+      findPhrasesContaining: (child) => {
+        return section.graph.findAll('phrase').filter(p => p.graph.some('child', pc => pc === child))
       }
     }
   }

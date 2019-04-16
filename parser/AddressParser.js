@@ -30,7 +30,7 @@ class AddressParser extends Parser {
         new OrdinalClassifier(),
         new IntersectionClassifier(),
 
-        // permutation classifiers
+        // phrase classifiers
         new CompositeClassifier(require('../classifier/scheme/street')),
         new CompositeClassifier(require('../classifier/scheme/intersection')),
 

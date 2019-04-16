@@ -25,7 +25,7 @@ class Tokenizer {
 
   permute (windowMin, windowMax) {
     for (let i = 0; i < this.section.length; i++) {
-      this.section[i].setPermutations(
+      this.section[i].setPhrases(
         permutate(this.section[i].graph.findAll('child'), windowMin, windowMax)
       )
     }

@@ -8,9 +8,6 @@ class Span {
 
     // graph
     this.graph = new Graph()
-
-    // sub-spans
-    this.permutation = []
   }
 
   // update the token body
@@ -57,9 +54,9 @@ class Span {
     return this
   }
 
-  // set permutations of the children of this Span
-  setPermutations (perms) {
-    this.permutation = perms
+  // set phrases of the children of this Span
+  setPhrases (phrases) {
+    phrases.forEach(p => this.graph.add('phrase', p), this)
     return this
   }
 }

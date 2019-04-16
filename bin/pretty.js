@@ -16,7 +16,7 @@ function tokenizer (tokenizer, label) {
   }
 
   for (let i = 0; i < tokenizer.section.length; i++) {
-    spans(util.format('S%d PERMUTATIONS', i), tokenizer.section[i].permutation)
+    spans(util.format('S%d PHRASES', i), tokenizer.section[i].graph.findAll('phrase'))
   }
 
   console.log()
@@ -65,20 +65,21 @@ function wordClassifications (tokenizer) {
   console.log()
 }
 
-function permutationClassifications (tokenizer) {
+function phraseClassifications (tokenizer) {
   console.log('-'.repeat(64))
-  console.log('PERMUTATIONS')
+  console.log('PHRASES')
   console.log('-'.repeat(64))
 
   for (let i = 0; i < tokenizer.section.length; i++) {
     let section = tokenizer.section[i]
-    for (let j = 0; j < section.permutation.length; j++) {
-      let perm = section.permutation[j]
-      let keys = Object.keys(perm.classifications)
+    let phrases = section.graph.findAll('phrase')
+    for (let j = 0; j < phrases.length; j++) {
+      let phrase = phrases[j]
+      let keys = Object.keys(phrase.classifications)
       if (!keys.length) { continue }
-      process.stdout.write(perm.body.padEnd(32) + '➜  ')
-      for (let k in perm.classifications) {
-        let classification = perm.classifications[k]
+      process.stdout.write(phrase.body.padEnd(32) + '➜  ')
+      for (let k in phrase.classifications) {
+        let classification = phrase.classifications[k]
         let block = chalk.bgRed.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
         process.stdout.write(block)
         if (k !== keys.slice(-1)) {
@@ -97,7 +98,7 @@ function classifications (tokenizer, label) {
   console.log('CLASSIFICATIONS %s', label)
 
   wordClassifications(tokenizer, label)
-  permutationClassifications(tokenizer, label)
+  phraseClassifications(tokenizer, label)
 }
 
 function solutions (tokenizer, label) {

@@ -12,7 +12,6 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.end, 0)
     t.deepEquals(span.classifications, {})
     t.deepEquals(span.graph, new Graph())
-    t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)
     t.false(span.contains.final.period)
     t.end()
@@ -24,7 +23,6 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.norm, 'example')
     t.equals(span.start, 0)
     t.equals(span.end, 7)
-    t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)
     t.false(span.contains.final.period)
     t.end()
@@ -36,7 +34,6 @@ module.exports.tests.constructor = (test) => {
     t.equals(span.norm, 'example')
     t.equals(span.start, 10)
     t.equals(span.end, 17)
-    t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)
     t.false(span.contains.final.period)
     t.end()
@@ -51,7 +48,6 @@ module.exports.tests.setBody = (test) => {
     t.equals(span.norm, '')
     t.equals(span.start, 0)
     t.equals(span.end, 0)
-    t.deepEquals(span.permutation, [])
     t.false(span.contains.numerals)
     t.false(span.contains.final.period)
     t.end()
@@ -219,15 +215,15 @@ module.exports.tests.classify = (test) => {
   })
 }
 
-module.exports.tests.setPermutations = (test) => {
-  test('setPermutations', (t) => {
+module.exports.tests.setPhrases = (test) => {
+  test('setPhrases', (t) => {
     let section = new Span()
-    t.deepEquals(section.permutation, [])
+    t.deepEquals(section.graph.findAll('phrase'), [])
 
-    let permutations = [new Span('A'), new Span('B')]
-    section.setPermutations(permutations)
+    let phrases = [new Span('A'), new Span('B')]
+    section.setPhrases(phrases)
 
-    t.deepEquals(section.permutation, permutations)
+    t.deepEquals(section.graph.findAll('phrase'), phrases)
     t.end()
   })
 }

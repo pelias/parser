@@ -12,7 +12,7 @@ class ExclusiveCartesianSolver extends HashMapSolver {
   }
 
   // compute the unique cartesian product
-  // (all permutations of non-overlapping tokens from different classifications)
+  // (all phrases of non-overlapping tokens from different classifications)
   exclusiveCartesian () {
     let solutions = []
 

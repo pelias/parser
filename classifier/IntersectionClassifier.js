@@ -1,4 +1,4 @@
-const PermutationClassifier = require('./super/PermutationClassifier')
+const PhraseClassifier = require('./super/PhraseClassifier')
 const IntersectionClassification = require('../classification/IntersectionClassification')
 const libpostal = require('../resources/libpostal/libpostal')
 
@@ -7,7 +7,7 @@ const libpostal = require('../resources/libpostal/libpostal')
 
 const languages = libpostal.languages
 
-class IntersectionClassifier extends PermutationClassifier {
+class IntersectionClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
     libpostal.load(this.index, languages, 'cross_streets.txt')
@@ -19,7 +19,7 @@ class IntersectionClassifier extends PermutationClassifier {
 
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {
-      // classify permutation
+      // classify phrase
       span.classify(new IntersectionClassification(1))
 
       // classify child spans
