@@ -12,7 +12,7 @@ const JOIN_CHAR = ' '
 **/
 
 function permutate (spans, windowMin, windowMax) {
-  let perms = []
+  let permutations = []
 
   // favour larger tokens over shorter ones
   for (let i = 0; i < spans.length; i++) {
@@ -24,6 +24,7 @@ function permutate (spans, windowMin, windowMax) {
             let s = spans[k]
             span.setBody(span.body += s.body)
             span.graph.add('child', s)
+            s.graph.add('parent', span)
 
             // join with delim
             if (k < j - 1) {
@@ -43,13 +44,13 @@ function permutate (spans, windowMin, windowMax) {
               }
             }
           }
-          perms.push(span)
+          permutations.push(span)
         }
       }
     }
   }
 
-  return perms
+  return permutations
 }
 
 module.exports = permutate
