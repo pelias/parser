@@ -8,7 +8,7 @@ const libpostal = require('../resources/libpostal/libpostal')
 class SurnameClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
-    libpostal.load(this.index, ['all'], 'surnames.txt')
+    libpostal.load(this.index, ['all'], 'surnames.txt', { lowercase: true })
   }
 
   each (span) {
