@@ -12,6 +12,8 @@ function fieldsFuncBoundary (char) {
   switch (char) {
     case '\n':
       return true
+    case '\t':
+      return true
     case ',':
       return true
       // @todo: this should ideally only work for 'matching pairs' of quotes

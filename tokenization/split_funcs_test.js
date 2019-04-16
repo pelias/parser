@@ -19,6 +19,7 @@ module.exports.tests.fieldsFuncBoundary = (test) => {
   test('fieldsFuncBoundary', (t) => {
     t.true(funcs.fieldsFuncBoundary(','))
     t.true(funcs.fieldsFuncBoundary('\n'))
+    t.true(funcs.fieldsFuncBoundary('\t'))
     t.true(funcs.fieldsFuncBoundary('"'))
     t.false(funcs.fieldsFuncBoundary('A'))
     t.false(funcs.fieldsFuncBoundary('1'))
