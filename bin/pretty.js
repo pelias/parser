@@ -28,7 +28,10 @@ function spans (title, s) {
     console.log()
   }
   for (let i = 0; i < s.length; i++) {
-    process.stdout.write(chalk.bgBlue.bold(s[i].body))
+    process.stdout.write(
+      chalk.bgBlue.bold(util.format(' %s ', s[i].body)) +
+      chalk.bgWhite.bold.gray(util.format(' %d:%d ', s[i].start, s[i].end))
+    )
     if (i === s.length - 1) {
       console.log()
     } else {
@@ -52,7 +55,8 @@ function wordClassifications (tokenizer) {
       process.stdout.write(word.body.padEnd(32) + '➜  ')
       for (let k in word.classifications) {
         let classification = word.classifications[k]
-        let block = chalk.bgGreen.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
+        let block = chalk.bgGreen.bold(util.format(' %s ', classification.label))
+        block += chalk.bgWhite.bold.gray(util.format(' %s ', classification.confidence.toFixed(2)))
         process.stdout.write(block)
         if (k !== keys.slice(-1)) {
           process.stdout.write(' ')
@@ -80,7 +84,8 @@ function phraseClassifications (tokenizer) {
       process.stdout.write(phrase.body.padEnd(32) + '➜  ')
       for (let k in phrase.classifications) {
         let classification = phrase.classifications[k]
-        let block = chalk.bgRed.bold(classification.label + `=${classification.confidence.toFixed(1)}`)
+        let block = chalk.bgRed.bold(util.format(' %s ', classification.label))
+        block += chalk.bgWhite.bold.gray(util.format(' %s ', classification.confidence.toFixed(2)))
         process.stdout.write(block)
         if (k !== keys.slice(-1)) {
           process.stdout.write(' ')
