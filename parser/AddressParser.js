@@ -2,7 +2,8 @@ const Parser = require('./Parser')
 const AlphaNumericClassifier = require('../classifier/AlphaNumericClassifier')
 const HouseNumberClassifier = require('../classifier/HouseNumberClassifier')
 const PostcodeClassifier = require('../classifier/PostcodeClassifier')
-const StreetClassifier = require('../classifier/StreetClassifier')
+const StreetSuffixClassifier = require('../classifier/StreetSuffixClassifier')
+const CompoundStreetClassifier = require('../classifier/CompoundStreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
@@ -25,7 +26,8 @@ class AddressParser extends Parser {
         // word classifiers
         new HouseNumberClassifier(),
         new PostcodeClassifier(),
-        new StreetClassifier(),
+        new StreetSuffixClassifier(),
+        new CompoundStreetClassifier(),
         new DirectionalClassifier(),
         new OrdinalClassifier(),
         new IntersectionClassifier(),
