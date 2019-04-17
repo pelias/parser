@@ -24,6 +24,8 @@ function permutate (spans, windowMin, windowMax) {
             let s = spans[k]
             span.setBody(span.body += s.body)
             span.graph.add('child', s)
+            if (k === i) { span.graph.add('child:first', s) }
+            if (k === j - 1) { span.graph.add('child:last', s) }
             s.graph.add('parent', span)
 
             // join with delim

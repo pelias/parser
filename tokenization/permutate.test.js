@@ -15,33 +15,53 @@ module.exports.tests.permutate = (test) => {
     // expected permutations
     let perm1 = new Span('SoHo New York USA', 0)
     spans.slice(0, 4).forEach(s => perm1.graph.add('child', s))
+    perm1.graph.add('child:first', spans[0])
+    perm1.graph.add('child:last', spans[3])
 
     let perm2 = new Span('SoHo New York', 0)
     spans.slice(0, 3).forEach(s => perm2.graph.add('child', s))
+    perm2.graph.add('child:first', spans[0])
+    perm2.graph.add('child:last', spans[2])
 
     let perm3 = new Span('SoHo New', 0)
     spans.slice(0, 2).forEach(s => perm3.graph.add('child', s))
+    perm3.graph.add('child:first', spans[0])
+    perm3.graph.add('child:last', spans[1])
 
     let perm4 = new Span('SoHo', 0)
     spans.slice(0, 1).forEach(s => perm4.graph.add('child', s))
+    perm4.graph.add('child:first', spans[0])
+    perm4.graph.add('child:last', spans[0])
 
     let perm5 = new Span('New York USA', 5)
     spans.slice(1, 4).forEach(s => perm5.graph.add('child', s))
+    perm5.graph.add('child:first', spans[1])
+    perm5.graph.add('child:last', spans[3])
 
     let perm6 = new Span('New York', 5)
     spans.slice(1, 3).forEach(s => perm6.graph.add('child', s))
+    perm6.graph.add('child:first', spans[1])
+    perm6.graph.add('child:last', spans[2])
 
     let perm7 = new Span('New', 5)
     spans.slice(1, 2).forEach(s => perm7.graph.add('child', s))
+    perm7.graph.add('child:first', spans[1])
+    perm7.graph.add('child:last', spans[1])
 
     let perm8 = new Span('York USA', 9)
     spans.slice(2, 4).forEach(s => perm8.graph.add('child', s))
+    perm8.graph.add('child:first', spans[2])
+    perm8.graph.add('child:last', spans[3])
 
     let perm9 = new Span('York', 9)
     spans.slice(2, 3).forEach(s => perm9.graph.add('child', s))
+    perm9.graph.add('child:first', spans[2])
+    perm9.graph.add('child:last', spans[2])
 
     let perm10 = new Span('USA', 14)
     spans.slice(3, 4).forEach(s => perm10.graph.add('child', s))
+    perm10.graph.add('child:first', spans[3])
+    perm10.graph.add('child:last', spans[3])
 
     let actual = permutate(spans, 1, 6)
     t.deepEquals(actual, [
@@ -61,21 +81,33 @@ module.exports.tests.permutate = (test) => {
     // expected permutations
     let perm1 = new Span('SoHo New York USA', 0)
     spans.slice(0, 3).forEach(s => perm1.graph.add('child', s))
+    perm1.graph.add('child:first', spans[0])
+    perm1.graph.add('child:last', spans[2])
 
     let perm2 = new Span('SoHo New York', 0)
     spans.slice(0, 2).forEach(s => perm2.graph.add('child', s))
+    perm2.graph.add('child:first', spans[0])
+    perm2.graph.add('child:last', spans[1])
 
     let perm3 = new Span('SoHo', 0)
     spans.slice(0, 1).forEach(s => perm3.graph.add('child', s))
+    perm3.graph.add('child:first', spans[0])
+    perm3.graph.add('child:last', spans[0])
 
     let perm4 = new Span('New York USA', 5)
     spans.slice(1, 3).forEach(s => perm4.graph.add('child', s))
+    perm4.graph.add('child:first', spans[1])
+    perm4.graph.add('child:last', spans[2])
 
     let perm5 = new Span('New York', 5)
     spans.slice(1, 2).forEach(s => perm5.graph.add('child', s))
+    perm5.graph.add('child:first', spans[1])
+    perm5.graph.add('child:last', spans[1])
 
     let perm6 = new Span('USA', 14)
     spans.slice(2, 3).forEach(s => perm6.graph.add('child', s))
+    perm6.graph.add('child:first', spans[2])
+    perm6.graph.add('child:last', spans[2])
 
     let actual = permutate(spans, 1, 6)
     t.deepEquals(actual, [
@@ -95,24 +127,38 @@ module.exports.tests.permutate = (test) => {
     // expected permutations
     let perm1 = new Span('SoHo New', 0)
     spans.slice(0, 2).forEach(s => perm1.graph.add('child', s))
+    perm1.graph.add('child:first', spans[0])
+    perm1.graph.add('child:last', spans[1])
 
     let perm2 = new Span('SoHo', 0)
     spans.slice(0, 1).forEach(s => perm2.graph.add('child', s))
+    perm2.graph.add('child:first', spans[0])
+    perm2.graph.add('child:last', spans[0])
 
     let perm3 = new Span('New York', 5)
     spans.slice(1, 3).forEach(s => perm3.graph.add('child', s))
+    perm3.graph.add('child:first', spans[1])
+    perm3.graph.add('child:last', spans[2])
 
     let perm4 = new Span('New', 5)
     spans.slice(1, 2).forEach(s => perm4.graph.add('child', s))
+    perm4.graph.add('child:first', spans[1])
+    perm4.graph.add('child:last', spans[1])
 
     let perm5 = new Span('York USA', 9)
     spans.slice(2, 4).forEach(s => perm5.graph.add('child', s))
+    perm5.graph.add('child:first', spans[2])
+    perm5.graph.add('child:last', spans[3])
 
     let perm6 = new Span('York', 9)
     spans.slice(2, 3).forEach(s => perm6.graph.add('child', s))
+    perm6.graph.add('child:first', spans[2])
+    perm6.graph.add('child:last', spans[2])
 
     let perm7 = new Span('USA', 13)
     spans.slice(3, 4).forEach(s => perm7.graph.add('child', s))
+    perm7.graph.add('child:first', spans[3])
+    perm7.graph.add('child:last', spans[3])
 
     let actual = permutate(spans, 1, 2)
     t.deepEquals(actual, [
@@ -136,31 +182,43 @@ module.exports.tests.permutate = (test) => {
     perm1.start = span1.start
     perm1.end = span3.end
     spans.slice(0, 3).forEach(s => perm1.graph.add('child', s))
+    perm1.graph.add('child:first', spans[0])
+    perm1.graph.add('child:last', spans[2])
 
     let perm2 = new Span('SoHo New', 2)
     perm2.start = span1.start
     perm2.end = span2.end
     spans.slice(0, 2).forEach(s => perm2.graph.add('child', s))
+    perm2.graph.add('child:first', spans[0])
+    perm2.graph.add('child:last', spans[1])
 
     let perm3 = new Span('SoHo', 2)
     perm3.start = span1.start
     perm3.end = span1.end
     spans.slice(0, 1).forEach(s => perm3.graph.add('child', s))
+    perm3.graph.add('child:first', spans[0])
+    perm3.graph.add('child:last', spans[0])
 
     let perm4 = new Span('New York', 11)
     perm4.start = span2.start
     perm4.end = span3.end
     spans.slice(1, 3).forEach(s => perm4.graph.add('child', s))
+    perm4.graph.add('child:first', spans[1])
+    perm4.graph.add('child:last', spans[2])
 
     let perm5 = new Span('New', 11)
     perm5.start = span2.start
     perm5.end = span2.end
     spans.slice(1, 2).forEach(s => perm5.graph.add('child', s))
+    perm5.graph.add('child:first', spans[1])
+    perm5.graph.add('child:last', spans[1])
 
     let perm6 = new Span('York', 15)
     perm6.start = span3.start
     perm6.end = span3.end
     spans.slice(2, 3).forEach(s => perm6.graph.add('child', s))
+    perm6.graph.add('child:first', spans[2])
+    perm6.graph.add('child:last', spans[2])
 
     let actual = permutate(spans, 1, 6)
     t.deepEquals(actual, [
