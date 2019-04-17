@@ -53,6 +53,11 @@ module.exports.tests.classify = (test) => {
     t.deepEqual(s.classifications, { PostcodeClassification: new PostcodeClassification(1.0) })
     t.end()
   })
+  test('classify: GBP', (t) => {
+    let s = classify('E81DN')
+    t.deepEqual(s.classifications, { PostcodeClassification: new PostcodeClassification(1.0) })
+    t.end()
+  })
   test('classify: JAP', (t) => {
     let s = classify('100-0000')
     t.deepEqual(s.classifications, { PostcodeClassification: new PostcodeClassification(1.0) })
