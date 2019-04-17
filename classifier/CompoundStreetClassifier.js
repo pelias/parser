@@ -32,7 +32,6 @@ class CompoundStreetClassifier extends WordClassifier {
       if (offet < 1) { continue }
       // perf: https://gist.github.com/dai-shi/4950506
       if (span.norm.substring(offet) === token) {
-        console.error(span.body, `'${token}'`)
         span.classify(new StreetClassification(1.0))
         return
       }
