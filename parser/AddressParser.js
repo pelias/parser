@@ -12,7 +12,7 @@ const SurnameClassifier = require('../classifier/SurnameClassifier')
 const PersonalSuffixClassifier = require('../classifier/PersonalSuffixClassifier')
 const ChainClassifier = require('../classifier/ChainClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
-const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
+// const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
 // const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
@@ -35,20 +35,16 @@ class AddressParser extends Parser {
         new CompoundStreetClassifier(),
         new DirectionalClassifier(),
         new OrdinalClassifier(),
+
+        // phrase classifiers
+        new IntersectionClassifier(),
         new PersonClassifier(),
         new GivenNameClassifier(),
         new SurnameClassifier(),
         new PersonalSuffixClassifier(),
         new ChainClassifier(),
-        new IntersectionClassifier(),
-
-        // phrase classifiers
         new CompositeClassifier(require('../classifier/scheme/street')),
-        new CompositeClassifier(require('../classifier/scheme/intersection')),
-
-        // section classifiers
-        // new AdjacencyClassifier(), // currently doesn't have any consumers
-        new MultiStreetClassifier() // hoping to retire this classifier
+        new CompositeClassifier(require('../classifier/scheme/intersection'))
       ],
       // solvers
       [
