@@ -43,6 +43,8 @@ class AddressParser extends Parser {
         new SurnameClassifier(),
         new PersonalSuffixClassifier(),
         new ChainClassifier(),
+
+        // composite classifiers
         new CompositeClassifier(require('../classifier/scheme/street')),
         new CompositeClassifier(require('../classifier/scheme/intersection'))
       ],
