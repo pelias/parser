@@ -174,5 +174,39 @@ module.exports = [
         not: ['StreetClassification', 'StreetSuffixClassification']
       }
     ]
+  },
+  {
+    // Martin Luther King Blvd.
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['PersonClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // Martin Luther King Jr. Blvd.
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['PersonClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['PersonalSuffixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification']
+      }
+    ]
   }
 ]
