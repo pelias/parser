@@ -17,9 +17,9 @@ const testcase = (test, common) => {
     [{ street: 'Main St' }, { street: 'Second Ave' }]
   ])
 
-  // assert('Gleimstraße an der ecke von Schönhauser Allee', [
-  //   [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }]
-  // ])
+  assert('Gleimstraße an der ecke von Schönhauser Allee', [
+    [{ street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }]
+  ])
 
   assert('Gleimstraße und Schönhauserallee', [
     [{ street: 'Gleimstraße' }, { street: 'Schönhauserallee' }]
