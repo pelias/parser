@@ -24,7 +24,7 @@ class HouseNumberClassifier extends WordClassifier {
       if (/^\d{5}/.test(span.norm)) {
         confidence = 0.2
       } else if (/^\d{4}/.test(span.norm)) {
-        confidence = 0.7
+        confidence = 0.9
       }
 
       span.classify(new HouseNumberClassification(confidence))

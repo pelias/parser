@@ -40,7 +40,7 @@ module.exports.tests.numeric = (test) => {
   })
   test('numeric: four digits', (t) => {
     let s = classify('1234')
-    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(0.7) })
+    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(0.9) })
     t.end()
   })
   test('numeric: five digits', (t) => {
@@ -73,7 +73,7 @@ module.exports.tests.letter_suffix = (test) => {
   })
   test('letter suffix: four digits', (t) => {
     let s = classify('1234d')
-    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(0.7) })
+    t.deepEqual(s.classifications, { HouseNumberClassification: new HouseNumberClassification(0.9) })
     t.end()
   })
   test('letter suffix: five digits', (t) => {
