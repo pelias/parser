@@ -1,2 +1,15 @@
 node_modules
 package-lock.json
+
+# ignore all of whosonfirst/dictionaries
+resources/whosonfirst/dictionaries/*/*.txt
+
+# whitelist certain files
+!resources/whosonfirst/dictionaries/country/wof:country.txt
+!resources/whosonfirst/dictionaries/country/wof:shortcode.txt
+!resources/whosonfirst/dictionaries/country/name:eng_x_preferred.txt
+!resources/whosonfirst/dictionaries/dependency/wof:shortcode.txt
+!resources/whosonfirst/dictionaries/dependency/name:eng_x_preferred.txt
+!resources/whosonfirst/dictionaries/region/wof:shortcode.txt
+!resources/whosonfirst/dictionaries/region/name:eng_x_preferred.txt
+!resources/whosonfirst/dictionaries/locality/name:eng_x_preferred.txt
