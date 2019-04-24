@@ -36,6 +36,8 @@ class Span {
   }
 
   // returns the distance between two Spans
+  // todo: use graph to find prev and next spans for a more accurate result
+  // todo: or base 'distance' on word distance (slop) rather than characters
   distance (span) {
     if (this.intersects(span)) { return 0 }
     if (this.end < span.start) { return span.start - this.end } // $this is left
