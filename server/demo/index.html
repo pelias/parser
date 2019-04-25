@@ -154,7 +154,6 @@
       });
   
       $('#table').append(body);
-      console.log($('#table'))
     }
 
     function request(url, params, cb) {
@@ -179,6 +178,14 @@
     }
 
     function loadText() {
+      let hash = window.location.hash;
+      if (hash && hash.length) {
+        if(hash[0] === '#'){ hash = hash.slice(1); }
+        if(hash.length){
+          return decodeURIComponent(hash);
+        }
+      }
+
       if (window.localStorage) {
         var text = window.localStorage.getItem('text');
         if (text) { return text; }
@@ -195,6 +202,9 @@
 
         var args = { text: $('#text').val() };
         exec(args);
+
+        // update location hash
+        window.location.hash = encodeURIComponent(args.text);
 
         return false;
       }, 200);
