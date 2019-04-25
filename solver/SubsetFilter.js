@@ -2,20 +2,19 @@
 
 class SubsetFilter {
   solve (tokenizer) {
-    tokenizer.solution = tokenizer.solution.filter((s, i) => {
-      for (let j = 0; j < tokenizer.solution.length; j++) {
-        // do not check itself
-        if (i === j) { return true }
+    for (let i = 0; i < tokenizer.solution.length; i++) {
+      tokenizer.solution = tokenizer.solution.filter((s, j) => {
+        if (j <= i) { return true }
 
-        // do not filter solutions with the same score
         // do not favour solutions with lower scores (if for any reason they are not sorted)
-        if (tokenizer.solution[i].score <= s.score) { return false }
+        if (tokenizer.solution[i].score < s.score) { return false }
 
-        // if two solutions cover the same tokens, remove one of them
+        // if two solutions cover the same tokens, remove the latter
         if (tokenizer.solution[i].coversSameClassification(s)) { return false }
-      }
-      return true
-    })
+
+        return true
+      })
+    }
   }
 }
 

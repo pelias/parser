@@ -11,6 +11,9 @@ class IntersectionClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
     libpostal.load(this.index, languages, 'cross_streets.txt')
+
+    // blacklist
+    delete this.index.e
   }
 
   each (span) {

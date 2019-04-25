@@ -17,7 +17,7 @@ class PostcodeClassifier extends WordClassifier {
       let row = require(path.join(dictPath, `${cc}.json`))
       row.regex = new RegExp('^(' + row.zip + ')$', 'i')
       return row
-    })
+    }).filter(row => !row.regex.test('100')) // remove countries with 3-digit postcodes
   }
 
   each (span) {
