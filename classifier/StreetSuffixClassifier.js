@@ -9,7 +9,8 @@ class StreetSuffixClassifier extends WordClassifier {
   setup () {
     // load street tokens
     this.streetTypes = {}
-    libpostal.load(this.streetTypes, libpostal.languages, 'street_types.txt')
+    // Exclude french types because they are street prefix
+    libpostal.load(this.streetTypes, libpostal.languages.filter(e => e !== 'fr'), 'street_types.txt')
 
     // blacklist
     // this Italian contracted form of Androna causes issues in English

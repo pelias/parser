@@ -208,5 +208,62 @@ module.exports = [
         not: ['StreetClassification']
       }
     ]
+  },
+  {
+    // Rue Montmartre
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // Rue Du Paris
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StopWordsClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // Boulevard De La Paix
+    confidence: 1.0,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StopWordsClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StopWordsClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification']
+      }
+    ]
   }
 ]
