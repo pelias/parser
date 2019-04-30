@@ -2,10 +2,12 @@ const Parser = require('./Parser')
 const AlphaNumericClassifier = require('../classifier/AlphaNumericClassifier')
 const HouseNumberClassifier = require('../classifier/HouseNumberClassifier')
 const PostcodeClassifier = require('../classifier/PostcodeClassifier')
+const StreetPrefixClassifier = require('../classifier/StreetPrefixClassifier')
 const StreetSuffixClassifier = require('../classifier/StreetSuffixClassifier')
 const CompoundStreetClassifier = require('../classifier/CompoundStreetClassifier')
 const DirectionalClassifier = require('../classifier/DirectionalClassifier')
 const OrdinalClassifier = require('../classifier/OrdinalClassifier')
+const StopWordsClassifier = require('../classifier/StopWordsClassifier')
 const PersonClassifier = require('../classifier/PersonClassifier')
 const GivenNameClassifier = require('../classifier/GivenNameClassifier')
 const SurnameClassifier = require('../classifier/SurnameClassifier')
@@ -31,10 +33,12 @@ class AddressParser extends Parser {
         // word classifiers
         new HouseNumberClassifier(),
         new PostcodeClassifier(),
+        new StreetPrefixClassifier(),
         new StreetSuffixClassifier(),
         new CompoundStreetClassifier(),
         new DirectionalClassifier(),
         new OrdinalClassifier(),
+        new StopWordsClassifier(),
 
         // phrase classifiers
         new IntersectionClassifier(),
