@@ -220,7 +220,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StopWordsClassification', 'StreetClassification']
       }
     ]
   },
