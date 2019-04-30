@@ -1,5 +1,4 @@
 const WhosOnFirstClassifier = require('./WhosOnFirstClassifier')
-const AreaClassification = require('../classification/AreaClassification')
 const Span = require('../tokenization/Span')
 
 module.exports.tests = {}
@@ -11,33 +10,15 @@ function classify (body) {
   return s
 }
 
-module.exports.tests.country = (test) => {
-  let valid = [
-    'united states of america', 'united states', 'usa',
-    'australia', 'aus',
-    'germany', 'deutschland', 'deu'
-  ]
-
-  valid.forEach(token => {
-    test(`country: ${token}`, (t) => {
-      let s = classify(token)
-      t.deepEqual(s.classifications, {
-        AreaClassification: new AreaClassification(1.0)
-      })
-      t.end()
-    })
-  })
-}
-
-// module.exports.tests.locality = (test) => {
+// module.exports.tests.country = (test) => {
 //   let valid = [
-//     'new york', 'new your city', 'nyc',
-//     'london', 'paris', 'berlin', 'bern',
-//     'tokyo'
+//     'united states', 'usa',
+//     'australia', 'aus',
+//     'germany', 'deutschland', 'deu'
 //   ]
 
 //   valid.forEach(token => {
-//     test(`locality: ${token}`, (t) => {
+//     test(`country: ${token}`, (t) => {
 //       let s = classify(token)
 //       t.deepEqual(s.classifications, {
 //         AreaClassification: new AreaClassification(1.0)
@@ -46,6 +27,23 @@ module.exports.tests.country = (test) => {
 //     })
 //   })
 // }
+
+module.exports.tests.locality = (test) => {
+  let valid = [
+    'new york',
+    'london', 'paris', 'berlin', 'bern',
+    'tokyo'
+  ]
+
+  valid.forEach(token => {
+    test(`locality: ${token}`, (t) => {
+      let s = classify(token)
+      t.true(s.classifications.hasOwnProperty('LocalityClassification'))
+      t.true(s.classifications.hasOwnProperty('AreaClassification'))
+      t.end()
+    })
+  })
+}
 
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {

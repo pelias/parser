@@ -12,4 +12,5 @@ resources/whosonfirst/dictionaries/*/*.txt
 !resources/whosonfirst/dictionaries/dependency/name:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/region/wof:shortcode.txt
 !resources/whosonfirst/dictionaries/region/name:eng_x_preferred.txt
+!resources/whosonfirst/dictionaries/region/abrv:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/locality/name:eng_x_preferred.txt

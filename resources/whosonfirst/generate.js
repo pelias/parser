@@ -31,6 +31,7 @@ FROM properties, json_tree(body) AS prop
 WHERE prop.type = 'text'
 AND (
   prop.path LIKE '$.name:%_x_preferred' OR
+  prop.path LIKE '$.abrv:%_x_preferred' OR
   prop.fullkey = '$.wof:country' OR
   prop.fullkey = '$.wof:country_alpha3' OR
   prop.fullkey = '$.wof:shortcode' OR
