@@ -1,5 +1,5 @@
 const WordClassifier = require('./super/WordClassifier')
-const StopWordsClassification = require('../classification/StopWordsClassification')
+const StopWordClassification = require('../classification/StopWordClassification')
 const libpostal = require('../resources/libpostal/libpostal')
 
 // dictionaries sourced from the libpostal project
@@ -22,7 +22,7 @@ class StopWordsClassifier extends WordClassifier {
     // use an inverted index for full token matching as it's O(1)
     if (this.stopWords.hasOwnProperty(span.norm)) {
       if (span.norm.length < 2) { confidence = 0.2 }
-      span.classify(new StopWordsClassification(confidence))
+      span.classify(new StopWordClassification(confidence))
     }
   }
 }

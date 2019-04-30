@@ -220,7 +220,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StopWordsClassification', 'StreetClassification']
+        not: ['StopWordClassification', 'StreetClassification']
       }
     ]
   },
@@ -234,7 +234,7 @@ module.exports = [
         not: ['StreetClassification']
       },
       {
-        is: ['StopWordsClassification'],
+        is: ['StopWordClassification'],
         not: ['StreetClassification']
       },
       {
@@ -253,11 +253,11 @@ module.exports = [
         not: ['StreetClassification']
       },
       {
-        is: ['StopWordsClassification'],
+        is: ['StopWordClassification'],
         not: ['StreetClassification']
       },
       {
-        is: ['StopWordsClassification'],
+        is: ['StopWordClassification'],
         not: ['StreetClassification']
       },
       {
@@ -272,12 +272,12 @@ module.exports = [
     Class: StreetClassification,
     scheme: [
       {
-        is: ['StopWordsClassification'],
+        is: ['StopWordClassification'],
         not: ['IntersectionClassification']
       },
       {
         is: ['StreetClassification'],
-        not: ['StopWordsClassification']
+        not: ['StopWordClassification']
       }
     ]
   }

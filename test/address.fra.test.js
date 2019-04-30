@@ -16,14 +16,12 @@ const testcase = (test, common) => {
 
   assert('Rue de Paris', [
     [{ street: 'Rue de Paris' }],
-    [{ region: 'de' }, { locality: 'Paris' }], // @incorrect
-    [{ region: 'Paris' }] // @incorrect
+    [{ region: 'de' }] // @incorrect
   ])
 
   assert('Rue de la Paix', [
     [{ street: 'Rue de la Paix' }],
-    [{ region: 'de' }, { locality: 'la' }], // @incorrect
-    [{ region: 'la' }] // @incorrect
+    [{ region: 'de' }] // @incorrect
   ])
 }
 

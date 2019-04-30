@@ -1,4 +1,4 @@
-const Classification = require('./StopWordsClassification')
+const Classification = require('./StopWordClassification')
 
 module.exports.tests = {}
 
@@ -6,7 +6,7 @@ module.exports.tests.constructor = (test) => {
   test('constructor', (t) => {
     let c = new Classification()
     t.false(c.public)
-    t.equals(c.label, 'stop_words')
+    t.equals(c.label, 'stop_word')
     t.equals(c.confidence, 1.0)
     t.deepEqual(c.meta, {})
     t.end()
@@ -15,7 +15,7 @@ module.exports.tests.constructor = (test) => {
 
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
-    return tape(`StopWordsClassification: ${name}`, testFunction)
+    return tape(`StopWordClassification: ${name}`, testFunction)
   }
 
   for (var testCase in module.exports.tests) {
