@@ -52,6 +52,7 @@
     "test"
   ],
   "release": {
+    "branch": "master",
     "success": []
   }
 }
