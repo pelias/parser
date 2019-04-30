@@ -43,6 +43,7 @@ module.exports.tests.english_suffix = (test) => {
 module.exports.tests.german_suffix = (test) => {
   let valid = [
     'straße', 'strasse', 'str', 'str.',
+    'platz', 'pl.',
     'allee', 'al', 'al.',
     'weg', 'w', 'w.'
   ]

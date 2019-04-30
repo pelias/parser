@@ -9,7 +9,7 @@ class StopWordsClassifier extends WordClassifier {
   setup () {
     // load stopwords tokens
     this.stopWords = {}
-    libpostal.load(this.stopWords, ['fr'], 'stopwords.txt')
+    libpostal.load(this.stopWords, ['fr', 'de'], 'stopwords.txt')
   }
 
   each (span) {

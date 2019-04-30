@@ -31,7 +31,7 @@ const testcase = (test, common) => {
 
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
-    return tape(`addressit FRA: ${name}`, testFunction)
+    return tape(`address FRA: ${name}`, testFunction)
   }
 
   testcase(test, common)

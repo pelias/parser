@@ -27,14 +27,14 @@ module.exports.tests.german_compound = (test) => {
     'teststraße', 'teststrasse', 'teststr.',
     'testallee',
     'testweg',
-    'testplatz'
+    'testplatz',
+    'testpl.'
   ]
 
   let invalid = [
     'teststr',
     'testal',
-    'testw', 'testw.',
-    'testpl.'
+    'testw', 'testw.'
   ]
 
   valid.forEach(token => {
