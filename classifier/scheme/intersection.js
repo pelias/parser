@@ -3,6 +3,29 @@ const MultiStreetClassification = require('../../classification/MultiStreetClass
 
 module.exports = [
   {
+    // SW 6th & Pine
+    confidence: 1,
+    Class: MultiStreetClassification,
+    scheme: [
+      {
+        is: ['DirectionalClassification'],
+        not: ['IntersectionClassification', 'StreetSuffixClassification']
+      },
+      {
+        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
+        not: ['IntersectionClassification', 'StreetSuffixClassification']
+      },
+      {
+        is: ['IntersectionClassification'],
+        not: ['StreetClassification', 'StreetSuffixClassification']
+      },
+      {
+        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
+        not: ['IntersectionClassification']
+      }
+    ]
+  },
+  {
     // Foo St and Bar St
     confidence: 1,
     Class: MultiStreetClassification,

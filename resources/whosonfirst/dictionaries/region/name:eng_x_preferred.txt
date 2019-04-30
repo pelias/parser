@@ -1,0 +1,4517 @@
+republic of srpska
+lakshadweep
+brcko distrikt
+puntland
+nicobar is.
+saint martin
+aruba
+badghis
+herat
+bamian
+balkh
+faryab
+jowzjan
+ghowr
+sare pol
+farah
+helmand
+nimruz
+oruzgan
+daykundi
+kandahar
+zabol
+ghazni
+khowst
+paktika
+badakhshan
+nurestan
+konar
+konduz
+nangarhar
+takhar
+baghlan
+kabul
+kapisa
+parvan
+laghman
+lowgar
+panjshir
+samangan
+vardak
+paktia
+lunda norte
+lunda sul
+malanje
+bengo
+cuanza norte
+cuanza sul
+luanda province
+uíge province
+zaire
+cabinda
+bíe province
+benguela
+cuando cubango
+cunene
+huambo
+huíla province
+moxico
+namibe
+blowing point
+east end
+george hill
+island harbour
+north hill
+north side
+sandy ground
+sandy hill
+south hill
+stoney ground
+the farrington
+the quarter
+the valley
+west end
+durrës
+fier
+shkodër county
+kukës
+vlorë
+korçë
+berat
+elbasan
+gjirokastër
+dibër
+lezhë
+finström
+jomala
+hammarland
+eckerö
+geta
+föglö
+saltvik
+sund
+mariehamn
+lemland
+lumparland
+vårdö
+sottunga
+kumlinge
+brändö
+kökar
+andorra la vella
+massana
+ordino
+canillo
+encamp
+escaldes-engordany
+sant julià de lòria
+ras al khaimah
+umm al quwain
+fujairah
+neutral zone
+ajman
+sharjah
+abu dhabi
+dubai
+santa cruz
+tierra del fuego
+san juan province
+chubut
+mendoza
+neuquen
+buenos aires
+la pampa
+rio negro
+san luis
+cordoba
+catamarca
+jujuy
+la rioja
+salta
+santiago del estero
+tucuman
+chaco
+formosa
+corrientes
+entre rios
+santa fe province
+misiones
+autonomous city of buenos aires
+aragatsotn
+armavir
+shirak
+tavush
+ararat
+geghark'unik'
+kotayk'
+lorri
+erevan
+syunik'
+vayots' dzor
+eastern
+manua
+rose atoll
+swains
+western
+archipel des kerguelen
+archipel des crozet
+iles saint-paul et nouvelle-amsterdam
+iles eparses de l'ocean indien
+barbuda
+redonda
+saint george
+saint peter
+saint philip
+saint paul
+saint mary
+saint john
+agstafa
+daskasan
+gadabay
+ganca
+xanlar
+goranboy
+kalbacar
+mingacevir
+qazax
+samkir
+samux
+tovuz
+yevlax
+baki
+abseron
+agdam
+agdas
+agsu
+haciqabul
+astara
+barda
+beylaqan
+bilasuvar
+cabrayil
+calilabad
+davaci
+fuzuli
+goycay
+imisli
+ismayilli
+kurdamir
+lankaran
+masalli
+lerik
+neftcala
+qobustan
+siyazan
+saatli
+sabirabad
+salyan
+samaxi
+sumqayit
+ucar
+xizi
+yardimli
+zardab
+agcabadi
+balakan
+qabala
+oguz
+qax
+saki
+quba
+qusar
+xacmaz
+zaqatala
+xocavand
+qubadli
+susa
+tartar
+xocali
+zangilan
+azarbayjan-e gharbi
+ordubad
+sarur
+babek
+culfa
+naxcivan
+shakhbuz
+xankandi
+cankuzo province
+karuzi province
+rutana province
+ruyigi province
+bubanza province
+bururi province
+cibitoke province
+gitega province
+kayanza province
+makamba province
+ngozi province
+kirundo province
+muyinga province
+bujumbura mairie province
+muramvya province
+bujumbura rural
+mwaro
+borgou department
+alibori department
+collines department
+atlantique department
+littoral department
+kouffo department
+ouémé department
+zou department
+plateau department
+mono department
+atakora department
+donga department
+kompienga
+gourma
+houet
+banwa
+kossi
+mou houn
+oudalan
+soum
+nayala
+sourou
+bam
+kadiogo
+oubritenga
+zondoma
+sissili
+ziro
+loroum
+yatenga
+namentenga
+sanmatenga
+boulgou
+ganzourgou
+kouritenga
+nahouri
+bougouriba
+ioba
+tuy
+poni
+gnagna
+komondjari
+yagha
+tapoa
+noumbiel
+dhaka
+khulna
+barisal
+chittagong
+sylhet
+rajshahi
+southern
+northern
+middle
+capital
+muharraq
+new providence
+city of freeport
+west grand bahama
+east grand bahama
+grand cay
+north abaco
+central abaco
+south abaco
+moore's island
+berry islands
+north andros
+central andros
+mangrove cay
+south andros
+black point
+exuma
+spanish wells
+harbour island
+north eleuthera
+central eleuthera
+south eleuthera
+cat island
+san salvador
+rum cay
+long island
+ragged island
+crooked island
+acklins
+mayaguana
+inagua
+bimini
+hope town
+west bosnia
+una-sana
+central bosnia
+west herzegovina
+herzegovina-neretva
+tuzla
+zenica-doboj
+sarajevo
+bosnian podrinje
+posavina
+doboj
+banja luka
+bijeljina
+vlasenica
+sarajevo-romanija
+trebinje
+saint barthelemy
+brestskaya voblasts'
+homyel'skaya voblasts'
+mahilyowskaya voblasts'
+vitsyebskaya voblasts'
+haradzyenskaya voblasts'
+minskaya voblasts'
+minsk
+belize
+cayo
+corozal
+orange walk
+stann creek
+toledo
+hamilton
+devonshire
+paget
+pembroke
+saint george's
+sandys
+smith's
+southampton
+warwick
+cochabamba
+chuquisaca
+el beni
+la paz
+oruro
+pando
+potosí
+tarija
+christ church
+saint andrew
+saint james
+saint joseph
+saint lucy
+saint michael
+saint thomas
+belait
+brunei-muara
+temburong
+tutong
+chhukha
+daga
+ha
+paro
+gasa
+samchi
+thimphu
+punakha
+bumthang
+chirang
+geylegphug
+lhuntshi
+tashi yangtse
+shemgang
+tongsa
+wangdue phodrang
+mongar
+pemagatsel
+samdrup
+tashigang
+ghanzi
+kgalagadi
+north-west
+central
+kgatleng
+kweneng
+south-east
+north-east
+bangui prefecture
+ombella-m'poko
+basse-kotto
+lobaye
+mambéré-kadéï prefecture
+sangha-mbaéré prefecture
+nana-mambéré prefecture
+ouham-pendé prefecture
+bamingui-bangoran
+nana-grébizi prefecture
+kémo prefecture
+ouaka
+ouham
+vakaga
+haute-kotto
+haut-mbomou
+mbomou
+gansu
+qinghai
+guangxi zhuang
+guizhou
+chongqing
+beijing
+fujian
+anhui
+guangdong
+tibet
+xinjiang uyghur
+hainan
+ningxia hui
+shaanxi
+shanxi
+hubei
+hunan
+sichuan
+yunnan
+hebei
+henan
+liaoning
+shandong
+tianjin
+jiangxi
+jiangsu
+shanghai
+zhejiang
+jilin
+inner mongolia
+heilongjiang
+savanes
+denguélé
+dix-huit montagnes
+worodougou
+fromager
+haut-sassandra
+sud-bandama
+bas-sassandra
+zanzan
+vallée du bandama
+moyen-cavally
+moyen-comoe
+far north region
+littoral province
+north-west province
+centre region
+east province
+adamaoua province
+north province
+west region
+south-west province
+south province
+Équateur province
+eastern province
+bandundu province
+kasaï-occidental province
+bas-congo province
+kinshasa city
+south kivu
+maniema
+katanga
+north kivu
+cuvette-ouest department
+bouenza department
+likouala
+sangha department
+pool department
+cuvette department
+kouilou
+lékoumou department
+niari region
+plateaux department
+brazzavile department
+kouilou department
+atiu
+aitutaki
+mangaia
+rarotonga
+mitiaro
+mauke
+palmerston
+pukapuka
+rakahanga
+maniki
+tongareva
+amazonas
+antioquia
+boyacá
+córdoba
+santander
+la guajira
+san andrés y providencia
+caldas
+cundinamarca
+bogota d.c.
+quindío
+risaralda
+tolima
+caquetá
+cauca
+huila
+nariño
+putumayo
+valle del cauca
+atlántico
+bolívar
+cesar
+chocó
+magdalena
+sucre
+arauca
+norte de santander
+casanare
+guaviare
+guainía
+meta
+vaupés
+vichada
+mohéli
+grande comore
+anjouan
+brava
+são filipe municipality
+mosteiros
+santa catarina do fogo
+tarrafal
+santa catarina
+são miguel municipality
+são salvador do mundo municipality
+são lourenço dos Órgãos
+são domingos municipality
+ribeira grande de santiago
+praia
+maio
+boa vista
+sal
+ribeira brava
+tarrafal de são nicolau municipality
+são vicente municipality
+porto novo
+ribeira grande
+paul
+cartago
+heredia
+limón
+puntarenas
+san josé
+alajuela
+guanacaste
+cienfuegos
+isla de la juventud
+pinar del río
+sancti spíritus
+ciego de Ávila
+camagüey
+guantánamo
+granma
+holguín
+las tunas
+santiago de cuba
+la habana
+artemisa
+matanzas
+villa clara
+mayabeque
+curacao
+ali sabieh
+djibouti
+arta
+dikhil
+obock
+tadjourah
+saint david
+saint luke
+saint mark
+saint patrick
+santiago
+santiago rodríguez
+valverde
+san juan
+santo domingo
+sánchez ramírez
+san pedro de macorís
+monte cristi
+puerto plata
+dajabón
+espaillat
+hermanas
+bahoruco
+barahona
+independencia
+la estrelleta
+pedernales
+azua
+la vega
+monseñor nouel
+peravia
+san josé de ocoa
+duarte
+hato mayor
+monte plata
+maría trinidad sánchez
+samaná
+san cristóbal
+distrito nacional
+el seybo
+la altagracia
+la romana
+adrar
+aïn témouchent province
+oran
+sidi bel abbes
+tlemcen
+béchar province
+naama
+tindouf
+annaba
+el tarf
+jijel
+skikda
+illizi
+tamanghasset
+el bayadh
+el oued
+ghardaia province
+laghouat
+ouargla
+alger
+boumerdes province
+tizi ouzou
+tipaza
+aïn defla province
+chlef
+mascara
+mostaganem
+relizane
+saida province
+tiaret
+tissemsilt
+bordj bou arréridj province
+béjaia province
+blida
+bouira
+biskra
+djelfa
+medea province
+m'sila
+sétif province
+batna
+constantine
+guelma
+khenchela
+mila
+oum el bouaghi
+souk ahras
+tébessa province
+azuay
+el oro
+loja
+zamora chinchipe
+galápagos
+bolivar
+cañar
+cotopaxi
+guayas
+los rios
+manabi
+chimborazo
+morona santiago
+orellana
+pichincha
+pastaza
+napo
+tungurahua
+esmeraldas
+carchi
+imbabura
+sucumbios
+santa elena
+santo domingo de los tsáchilas
+gharbia
+el ismailia
+menofia
+cairo
+qalubia
+sharqia
+el suez
+daqahlia
+port said
+dumiat
+matrouh
+beheira
+fayoum
+alexandria
+giza
+menia
+bani sueif
+kafr el sheikh
+aswan
+asyout
+el wadi el gedeed
+qena
+sohag
+el bahr el ahmar
+south sinai
+north sinai
+luxor
+gash-barka
+maekel
+semien-keih-bahri
+anseba
+debub
+debub-keih-bahri
+famagusta district
+amhara
+tigray
+afar
+southern nations nationalities and people's region
+gambela
+oromia
+benshangul-gumaz
+addis ababa
+somali
+dire dawa
+harari
+rotuma
+martinique
+french guiana
+reunion
+mayotte
+guadeloupe
+faroe islands
+state of pohnpei
+state of chuuk
+state of yap
+state of kosrae
+estuaire province
+ogooué-ivindo province
+woleu-ntem province
+moyen-ogooué province
+ngouni province
+nyanga province
+ogooué-maritime province
+haut-ogooué province
+ogooué-lol province
+abkhazia
+ajaria
+ozurget´is raioni
+khonis raioni
+vanis raioni
+gurjaanis raioni
+dushet´is raioni
+ambrolauris raioni
+t´bilisi
+t´et´ritsqaros raioni
+akhalts´ikhis raioni
+goris raioni
+upper east
+upper west
+ashanti
+brong-ahafo
+greater accra
+volta
+beyla
+boffa
+boké
+conakry
+coyah
+dabola
+dalaba
+dinguiraye
+dubréka
+forécariah
+fria
+gaoual
+guéckédou
+kankan
+kérouané
+kindia
+kissidougou
+koubia
+koundara
+kouroussa
+labé
+lélouma
+lola
+macenta
+mali
+mamou
+mandiana
+nzérékoré
+pita
+siguiri
+tougué
+yomou
+télimélé
+central river
+upper river
+banjul
+lower river
+north bank
+biombo
+bissau
+bolama
+cacheu
+oio
+quinara
+bafatá
+gabú
+tombali
+annobón province
+centro sur
+kié-ntem province
+litoral
+wele-nzas province
+bioko norte
+bioko sur
+baja verapaz
+huehuetenango
+petén
+quezaltenango
+retalhuleu
+san marcos
+alta verapaz
+chimaltenango
+escuintla
+guatemala
+suchitepeque
+sacatepéquez
+sololá
+totonicapán
+el progreso
+santa rosa
+izabal
+chiquimula
+jalapa
+jutiapa
+zacapa
+quiché
+east berbice-corentyne
+potaro-siparuni
+upper demerara-berbice
+upper takutu-upper essequibo
+barima-waini
+cuyuni-mazaruni
+demerara-mahaica
+essequibo islands-west demerara
+mahaica-berbice
+pomeroon-supenaam
+central and western
+wan chai
+yau tsim mong
+kowloon city
+sham shui po
+wong tai sin
+kwun tong
+sai kung
+sha tin
+kwai tsing
+tsuen wan
+tuen mun
+yuen long
+north
+tai po
+islands
+atlántida
+colón
+francisco morazán
+gracias a dios
+bay islands
+olancho
+yoro
+valle
+comayagua
+cortés
+intibucá
+santa bárbara
+copán
+lempira
+ocotepeque
+choluteca
+el paraíso
+grand' anse
+nippes
+nord-ouest
+sud
+l'artibonite
+centre
+nord-est
+nord
+ouest
+sud-est
+aceh
+east kalimantan
+west java
+central java
+bengkulu
+banten
+dki jakarta
+west kalimantan
+lampung
+south sumatra
+bangka-belitung
+bali
+east java
+south kalimantan
+east nusa tenggara
+south sulawesi
+west sulawesi
+kepulauan riau
+gorontalo
+jambi
+central kalimantan
+west papua
+north sumatra
+riau
+north sulawesi
+north maluku
+west sumatra
+special region of yogyakarta
+maluku
+west nusa tenggara
+south east sulawesi
+central sulawesi
+papua
+chandigarh
+delhi
+himachal pradesh
+haryana
+jammu and kashmir
+andhra pradesh
+kerala
+odisha
+dadra and nagar haveli
+karnataka
+maharashtra
+andaman and nicobar islands
+assam
+manipur
+nagaland
+meghalaya
+punjab
+rajasthan
+uttar pradesh
+uttarakhand
+jharkhand
+west bengal
+bihar
+sikkim
+chhattisgarh
+madhya pradesh
+puducherry
+tamil nadu
+gujarat
+goa
+arunachal pradesh
+mizoram
+tripura
+daman and diu
+cocos (keeling) islands
+christmas island
+kohgiluyeh va buyer ahmad
+bushehr
+esfahan
+fars
+golestan
+mazandaran
+semnan
+tehran
+yazd
+chahar mahall va bakhtiari
+khuzestan
+lorestan
+ilam
+hormozgan
+ardabil
+markazi
+qom
+hamadan
+zanjan
+qazvin
+azarbayjan-e sharqi
+kermanshah
+gilan
+kordestan
+south khorasan
+khorasan
+razavi khorasan
+sistan va baluchestan
+kerman
+alborz
+dihok
+at-ta'mim
+arbil
+ninawa
+sala ad-din
+an-najaf
+karbala'
+baghdad
+al-basrah
+al-muthannia
+al-qadisiyah
+dhi-qar
+maysan
+wasit
+as-sulaymaniyah
+diyala
+al-anbar
+babil
+capital region
+westfjords
+austurland
+northwest
+northeast
+southern peninsula
+south
+vesturland
+haifa
+tel aviv
+jerusalem
+clarendon
+hanover
+manchester
+saint elizabeth
+trelawny
+westmoreland
+kingston st. john
+portland
+saint ann
+saint catherine
+al aqaba
+al mafraq
+amman
+al tafilah
+maan
+irbid
+ajloun
+jerash
+al balqa
+madaba
+al karak
+al zarqa
+hiroshima prefecture
+okayama prefecture
+shimane prefecture
+tottori prefecture
+yamaguchi prefecture
+saga prefecture
+fukuoka prefecture
+kumamoto prefecture
+miyazaki prefecture
+ehime prefecture
+kagawa prefecture
+kochi prefecture
+oita prefecture
+tokushima prefecture
+aichi prefecture
+gifu prefecture
+ishikawa prefecture
+mie prefecture
+nagano prefecture
+shizuoka prefecture
+toyama prefecture
+hokkaido prefecture
+fukui prefecture
+hyogo prefecture
+kyoto prefecture
+nara prefecture
+osaka prefecture
+shiga prefecture
+wakayama prefecture
+chiba prefecture
+ibaraki prefecture
+kanagawa prefecture
+saitama prefecture
+tochigi prefecture
+tokyo
+yamanashi prefecture
+akita prefecture
+aomori prefecture
+fukushima prefecture
+iwate prefecture
+miyagi prefecture
+niigata prefecture
+yamagata prefecture
+nagasaki prefecture
+kagoshima prefecture
+okinawa prefecture
+gunma prefecture
+aqtobe
+qostanay
+qyzylorda
+atyrau
+batys qazaqstan
+aqmola
+qaraghandy
+soltustik qazaqstan
+pavlodar
+shyghys qazaqstan
+almaty
+mangghystau
+ongtustik qazaqstan
+zhambyl
+astana
+coast
+nairobi area
+nyanza
+rift valley
+north-eastern
+bishkek
+chuy
+ysyk-kol
+naryn
+batken
+jalal-abad
+talas
+osh
+banteay mean cheay
+batdambang
+kaoh kong
+pouthisat
+siem reap province
+otdar mean cheay
+pailin
+kampong cham
+kampong chhnang
+kandal
+kampong spoe
+kampong thum
+phnum penh
+prey veng
+preah vihear
+stoeng treng
+krachen
+mondol kiri
+ratanah kiri
+kampot
+keb
+preah seihanu
+svay rieng
+takev
+christ church nichola town
+saint anne sandy point
+saint george basseterre
+saint george gingerland
+saint james windward
+saint john capesterre
+saint john figtree
+saint mary cayon
+saint paul capesterre
+saint paul charlestown
+saint peter basseterre
+saint thomas lowland
+saint thomas middle island
+trinity palmetto point
+chungcheongbuk-do
+incheon
+kangwon-do
+seoul
+kyeongki-do
+jeollabuk-do
+gwangju
+chungcheongnam-do
+daejon
+daegu
+gyeongsangnam-do
+jeollanam-do
+busan
+ulsan
+gyeongsangbuk-do
+jaeju-do
+pech
+kosovska mitrovica
+kosovo
+kosovsko pomoravlje
+prizren
+al `asimah
+al farwaniyah
+al ahmadi
+mubarak al kabeer
+al jahra
+hawalli
+bokeo
+louang namtha province
+xiagnabouli
+champasak
+salavan
+savannahkhet
+viangchan
+xiangkhoang
+houaphan
+louangphabang
+oudomxai
+phongsali
+bolikhamxai
+khammouan
+attapu
+xekong
+beqaa
+north lebanon
+beirut
+mount lebanon
+nabatieh
+south lebanon
+grand gedeh
+lofa
+grand kru
+maryland
+sinoe
+bomi
+bong
+grand bassa
+grand cape mount
+montserrado
+margibi
+nimba
+river cess
+ghadamis
+al jufrah
+al kufrah
+al khums
+ash shati'
+awbari
+murzuq
+misratah
+sabha
+al jifarah
+an nuqat al khams
+az zawiyah
+gharyan
+tajura' wa an nawahi al arba
+al marj
+al jabal al akhdar
+ajdabiya
+benghazi
+surt
+darnah
+al butnan
+ansela-raye
+castries
+choiseul
+dauphin
+dennery
+gros islet
+laborie
+micoud
+praslin
+soufriere
+vieux fort
+kandy
+matale
+nuwara eliya
+ampara
+batticaloa
+polonnaruwa
+trincomalee
+anuradhapura
+vavuniya
+mannar
+mullaitivu
+jaffna
+kilinochchi
+kurunegala
+puttalam
+ratnapura
+galle
+hambantota
+matara
+badulla
+moneragala
+kegalle
+colombo
+gampaha
+kalutara
+berea
+maseru
+mohale's hoek
+quthing
+butha-buthe
+leribe
+mokhotlong
+qacha's nek
+thaba-tseka
+mafeteng
+luxemburg
+tangier-tetouan
+fes-boulemane
+taza-al hoceima-taounate
+gharb-chrarda-béni hssen
+chaouia - ouardigha
+greater casablanca
+rabat-salé-zemmour-zaer
+meknès-tafilalet
+tadla - azilal
+oriental
+suss-massa-draa
+marrakech - tensift - al haouz
+doukkala - abda
+laâyoune-boujdour-sakia el hamra
+guelmim - es-semara
+oued ed-dahab
+toamasina
+fianarantsoa
+antananarivo
+toliara
+mahajanga
+antsiranana
+haa alifu
+haa dhaalu
+shaviyani
+raa
+noonu
+baa
+lhaviyani
+kaafu
+alifu
+faafu
+maale
+vaavu
+meemu
+dhaalu
+thaa
+laamu
+gaafu alifu
+gaafu dhaalu
+gnaviyani
+seenu
+railik chain
+ratak chain
+resen municipality
+vevcani municipality
+bitola municipality
+demir hisar municipality
+ohrid municipality
+debarca municipality
+petrovec municipality
+plasnica municipality
+prilep municipality
+probistip municipality
+radovis municipality
+kriva palanka municipality
+rosoman municipality
+saraj municipality
+sopiste municipality
+staro nagoricane municipality
+stip municipality
+studenicani municipality
+cair municipality
+sveti nikole municipality
+veles municipality
+vranestica municipality
+zelenikovo municipality
+zelino municipality
+aracinovo municipality
+lipkovo municipality
+butel municipality
+caska municipality
+centar municipality
+zrnovci municipality
+cesinovo-oblesevo municipality
+cucer-sandevo municipality
+demir kapija municipality
+dolneni municipality
+gazi baba municipality
+gradsko municipality
+lozovo municipality
+konce municipality
+ilinden municipality
+karbinci municipality
+karpos municipality
+kavadarci municipality
+aerodrom municipality
+kocani municipality
+kratovo municipality
+krivogastani municipality
+krusevo municipality
+kumanovo municipality
+makedonski brod municipality
+mogila municipality
+negotino municipality
+novaci municipality
+gjorce petrov municipality
+zajas municipality
+centar zupa municipality
+debar municipality
+drugovo municipality
+kicevo municipality
+mavrovo and rostusa municipality
+oslomej municipality
+tearce municipality
+tetovo municipality
+vrapciste municipality
+bogovinje municipality
+brvenica municipality
+gostivar municipality
+jegunovce municipality
+strumica municipality
+valandovo municipality
+vasilevo municipality
+bogdanci municipality
+bosilovo municipality
+gevgelija municipality
+novo selo municipality
+star dojran municipality
+vinica municipality
+berovo municipality
+delcevo municipality
+makedonska kamenica municipality
+pehcevo municipality
+struga municipality
+rankovce municipality
+tombouctou
+kidal
+gao
+bamako
+kayes
+sikasso
+mopti
+ségou
+koulikoro
+kayan state
+karan state
+mandalay
+bago
+yangon
+mon state
+rakhine state
+chin state
+ayeyarwady
+magway
+shan state
+tenasserim
+kachin state
+sagaing
+bar
+ulcinj
+budva
+cetinje
+rozaje
+plav
+herceg novi
+kotor
+andrijevica
+berane
+bijelo polje
+danilovgrad
+kolasin
+mojkovac
+niksic
+pluzine
+pljevlja
+podgorica
+tivat
+savnik
+zabljak
+bayan-olgiy
+dornogovi
+omnogov
+hentiy
+arhangay
+bayanhongor
+dzavhan
+govi-altay
+hovd
+hovsgol
+uvs
+bulgan
+erdenet
+dundgovi
+selenge
+ovorhangay
+darhan
+tov
+ulaanbaatar
+dornod
+suhbaatar
+rota
+tinian
+saipan
+northern islands
+tete
+manica
+cabo delgado
+niassa
+nampula
+gaza
+sofala
+zambézia
+inhambane
+maputo
+tiris zemmour
+brakna region
+dakhlet nouadhibou
+inchiri region
+nouakchott
+trarza
+assaba region
+guidimaka region
+gorgol region
+adrar region
+hodh ech chargui
+hodh el gharbi
+tagant region
+saint anthony
+saint georges
+agalega islands
+beau bassin
+cargados carajos
+curepipe (2)
+flacq
+grand port
+moka
+pamplemousses
+plaines wilhems
+port louis
+quatre bornes
+riviere du rempart
+black river
+rodrigues
+savanne
+vacoas
+chitipa
+kasungu
+mzimba
+nkhata bay
+nkhotakota
+rumphi
+machinga
+dedza
+dowa
+lilongwe
+mangochi
+mchinji
+ntcheu
+ntchisi
+salima
+balaka
+chikwawa
+chiradzulu
+thyolo
+nsanje
+zomba
+blantyre
+mwanza
+mulanje
+phalombe
+perak
+penang
+kedah
+perlis
+johor
+kelantan
+melaka
+negeri sembilan
+pahang
+selangor
+trengganu
+sabah
+sarawak
+kuala lumpur
+putrajaya
+labuan
+karas
+hardap
+khomas
+kunene
+erongo
+otjozondjupa
+omusati
+oshana
+ohangwena
+omaheke
+okavango
+oshikoto
+caprivi
+loyalty islands
+tillabéri
+diffa region
+agadez
+maradi
+zinder
+dosso
+niamey
+tahoua
+borno
+abia
+akwa ibom
+imo
+rivers
+bayelsa
+benue
+cross river
+taraba
+kwara
+lagos
+niger
+ogun
+ondo
+ekiti
+osun
+oyo
+anambra
+bauchi
+gombe
+delta
+edo
+enugu
+ebonyi
+kaduna
+kogi
+plateau
+nassarawa
+jigawa
+kano
+katsina
+sokoto
+zamfara
+yobe
+kebbi
+adamawa
+federal capital territory
+rivas
+rio san juan
+región autónoma del caribe sur
+carazo
+granada
+jinotega
+región autónoma del caribe norte
+león
+managua
+masaya
+chinandega
+estelí
+madriz
+matagalpa
+nueva segovia
+boaco
+chontales
+st. eustatius
+bonaire
+svalbard
+gandaki
+bheri
+dhawalagiri
+karnali
+lumbini
+mahakali
+seti
+bagmati
+janakpur
+narayani
+sagarmatha
+kosi
+mechi
+rapti
+buada
+boe
+aiwo
+denigomodu
+nibok
+uaboe
+baiti
+ewa
+anetan
+anabar
+ijuw
+anibare
+meneng
+yaren
+ad dakhiliyah
+al wusta
+ash sharqiyah
+zufar
+az zahirah
+al batinah
+musandam
+masqat
+buraymi
+balochistan
+azad kashmir
+islamabad
+gilgit baltistan
+gilgit baltistan province
+federally administered tribal areas
+sindh
+north-west frontier
+chiriquí
+coclé
+herrera
+los santos
+panama
+veraguas
+darién
+kuna yala
+bocas del toro
+ngäbe buglé
+emberá
+callao
+lambayeque
+piura
+tumbes
+apurímac
+arequipa
+cusco
+madre de dios
+moquegua
+tacna
+ancash
+cajamarca
+huánuco
+la libertad
+pasco
+san martín
+ucayali
+loreto
+ayacucho
+lima province
+huancavelica
+ica
+junín region
+lima region
+tawitawi
+bohol
+cebu
+negros oriental
+siquijor
+negros occidental
+basilan
+zamboanga del norte
+zamboanga sibugay
+zamboanga del sur
+misamis occidental
+sulu
+aklan
+antique
+capiz
+iloilo
+guimaras
+palawan
+romblon
+albay
+camarines norte
+camarines sur
+catanduanes
+masbate
+sorsogon
+abra
+batanes
+cagayan
+apayao
+ilocos norte
+ilocos sur
+aurora
+isabela
+ifugao
+mountain province
+nueva vizcaya
+quirino
+bataan
+tarlac
+nueva ecija
+pampanga
+benguet
+zambales
+la union
+pangasinan
+cavite
+batangas
+bulacan
+laguna
+rizal
+marinduque
+mindoro occidental
+mindoro oriental
+quezon
+lanao del norte
+lanao del sur
+maguindanao
+cotabato
+sultan kudarat
+biliran
+eastern samar
+leyte
+samar
+southern leyte
+northern samar
+agusan del norte
+agusan del sur
+bukidnon
+camiguin
+davao del norte
+compostela valley
+surigao del norte
+surigao del sur
+misamis oriental
+davao del sur
+davao oriental
+sarangani
+south cotabato
+kalinga
+zamboanga city
+central visayas
+western visayas
+davao
+northern mindanao
+caraga
+eastern visayas
+bicol region
+cagayan valley
+central luzon
+cordillera administrative region
+ilocos region
+national capital region
+calabarzon
+aimeliik
+airai
+angaur
+hatohobei
+kayangel
+koror
+melekeok
+ngaraard
+ngarchelong
+ngardmau
+ngatpang
+ngchesar
+ngeremlengui
+ngiwal
+peleliu
+sonsorol
+enga
+east sepik
+madang
+sandaun
+chimbu
+eastern highlands
+gulf
+north solomons
+southern highlands
+western highlands
+east new britain
+manus
+milne bay
+morobe
+national capital
+new ireland
+west new britain
+hwanghae-bukto
+hwanghae-namdo
+p´yongyang-si
+hamgyong-bukto
+chagang-do
+hamgyong-namdo
+p'yongan-bukto
+p'yongan-namdo
+yanggang-do
+asunción
+alto paraguay
+boquerón
+concepción
+cordillera
+presidente hayes
+san pedro
+guairá
+Ñeembucú
+paraguarí
+amambay
+alto paraná
+caaguazú
+caazapá
+canindeyú
+itapúa
+windward islands
+leeward islands
+tuamotu-gambier
+austral islands
+marquesas islands
+doha
+al rayyan
+al wakra
+al khor
+madinat al shamal
+umm slal
+kigali province
+najran
+riyadh
+al madinah
+al-qassim
+ha'il
+tabuk
+northern borders
+al jawf
+al-bahah
+aseer
+jizan
+makkah
+an nil al azraq
+al bahr al ahmar
+janub darfor
+gharb darfor
+al khartum
+gezira
+gadarif
+nahr an nil
+ash shamaliyah
+an nil al abyad
+sinnar
+shamal darfor
+janub kurdufan
+shamal kurdufan
+northern bahr al ghazal
+lakes
+western equatoria
+central equatoria
+upper nile
+jonglei
+unity
+warrap
+western bahr el ghazal
+eastern equatoria
+sedhiou
+kedougou
+kaffrine
+saint-louis
+dakar
+diourbel
+fatick
+kaolack
+louga
+matam
+thies
+kolda
+ziguinchor
+tambacounda
+central singapore
+south west
+north west
+north east
+south east
+ascension
+saint helena
+tristan da cunha
+malaita
+makira
+guadalcanal
+isabel
+temotu
+western area
+ahuachapán
+cabañas
+cuscatlán
+sonsonate
+la unión
+morazán
+san miguel
+san vicente
+usulután
+chalatenango
+santa ana
+borgo maggiore
+san marino
+acquaviva
+serravalle
+domagnano
+faetano
+montegiardino
+fiorentino
+chiesanuova
+bari
+bakool
+bay
+gedo
+jubbada dhexe
+shabeellaha hoose
+banaadir
+galguduud
+hiiraan
+shabeellaha dhexe
+mudug
+nugaal
+jubbada hoose
+saint-pierre
+miquelon-langlade
+são tomé island
+príncipe
+nickerie
+brokopondo
+marowijne
+para
+sipaliwini
+commewijne
+coronie
+paramaribo
+saramacca
+wanica
+velenje
+vitanje
+vodice
+vrhnika
+vuzenica
+zasavska
+zrece
+bled
+bohinj
+cerkno
+gorenja vas-poljane
+idrija
+kranj
+kranjska gora
+naklo
+radovljica
+municipality of Škofja loka
+tolmin
+bovec
+brda
+divaca
+hrpelje-kozina
+izola
+kanal
+kobarid
+komen
+koper
+miren-kostanjevica
+piran
+vipava
+beltinci
+dornava
+kobilje
+moravske toplice
+murska sobota
+odranci
+sveti jurij
+zavrc
+kuzma
+cerkvenjak
+benedikt
+sveta ana
+grad
+destrnik
+dobrova-polhov gradec
+kamnik
+kocevje
+lenart
+luce
+novo mesto
+bistrica ob sotli
+podvelka
+preddvor
+ptuj
+ribnica
+municipality of Šentjur
+slovenska bistrica
+videm
+vojnik
+komenda
+oplotnica
+hajdina
+hoce-slivnica
+trnovska vas
+podlehnik
+prevalje
+selnica ob dravi
+lovrenc na pohorju
+trzin
+jezersko
+dobrna
+tabor
+vransko
+mirna pec
+prebold
+polzela
+kostel
+braslovce
+dolenjske toplice
+horjul
+solcava
+dobje
+dobrepolje
+bloke
+podcetrtek
+maribor
+ribnica na pohorju
+jesenice
+lendava
+ljutomer
+velika polana
+dobrovnik
+markovci
+apace
+cankova
+gornja radgona
+gornji petrovci
+puconci
+radenci
+borovnica
+krsko
+brezovica
+celje
+cerklje na gorenjskem
+cerknica
+crnomelj
+dol pri ljubljani
+dravograd
+duplek
+gornji grad
+grosuplje
+hrastnik
+trbovlje
+ig
+ilirska bistrica
+ivancna gorica
+kidricevo
+kozje
+kungota
+litija
+ljubljana
+ljubno
+logatec
+lukovica
+medvode
+metlika
+mislinja
+moravce
+mozirje
+muta
+nazarje
+pesnica
+pivka
+postojna
+race-fram
+radece
+radlje ob dravi
+rogatec
+semic
+sevnica
+slovenj gradec
+slovenske konjice
+trebnje
+hhohho
+lubombo
+manzini
+shiselweni
+sint maarten
+outer islands
+anse aux pins
+anse boileau
+anse etoile
+au cap
+anse royale
+baie lazare
+baie ste. anne
+beau vallon
+bel air
+belombre
+cascade
+glacis
+grand anse mahe
+grand anse praslin
+la digue and inner islands
+english river
+mont buxton
+mont fleuri
+plaisance
+pointe larue
+port glaud
+saint louis
+takamaka
+les mamelles
+roche caiman
+al ladhiqiyah
+tartus
+ar raqqah
+h'alab
+hamah
+homs (hims)
+idlib
+hasaka (al haksa)
+dayr az zawr
+as suwayda'
+rif dimashq
+al qunaytirah
+dar`a
+dimashq
+middle caicos
+north caicos
+providencales and west caicos
+south and east caicos
+gand turk
+salt cay
+hadjer-lamis
+kanem region
+lac region
+batha region
+wadi fira region
+guéra region
+ouadaï region
+logone occidental
+logone oriental region
+mayo-kebbi est
+tandjilé region
+mandoul region
+salamat region
+n'djamena
+mayo-kebbi ouest
+borkou
+tibesti
+chari-baguirmi
+barh el gazel
+sila
+moyen-chari
+plateaux region
+maritime region
+kara region
+centrale region
+savanes region
+mae hong son
+chumphon
+nakhon si thammarat
+phuket
+phang nga
+ranong
+surat thani
+krabi
+phatthalung
+satun
+songkhla
+trang
+yala
+chiang rai
+chiang mai
+lampang
+lamphun
+nan
+phayao
+phrae
+phitsanulok
+sukhothai
+uttaradit
+kanchanaburi
+kamphaeng phet
+phichit
+phetchabun
+suphan buri
+tak
+uthai thani
+ang thong
+chai nat
+lopburi
+nakhon nayok
+prachinburi
+nakhon sawan
+phra nakhon si ayutthaya
+pathum thani
+sing buri
+sara buri
+bangkok
+nonthaburi
+nathon pathon
+phetchaburi
+prachuap khiri khan
+ratchaburi
+samut prakan
+samut sakhon
+samut songkhran
+sisaket
+ubon ratchathani
+amnat charoen
+yasothon
+chonburi
+chachoengsao
+chanthaburi
+sa kaeo
+rayong
+trat
+buriram
+chaiyaphum
+khon kaen
+kalasin
+maha sarakham
+nakhon ratchasima
+roi et
+surin
+loei
+nong khai
+sakon nakhon
+udon thani
+nong bua lam phu
+nakhon phanom
+mukdahan
+narathiwat
+pattani
+kuhistoni badakhshon
+khatlon
+karategin
+leninobod
+krasnovodsk
+ashkhabad
+tashauz
+chardzhou
+mary
+dili
+liquica
+oecussi-ambeno
+aileu
+ainaro
+baucau
+bobonaro
+cova lima
+ermera
+manatuto
+manufahi
+viqueque
+lautem
+tongatapu
+vava'eu
+niuas
+ha'apai
+eua
+eastern tobago
+western tobago
+diego martin
+siparia
+arima
+sangre grande
+rio claro-mayaro
+san juan-laventille
+princes town
+couva-tabaquite-talparo
+penal-debe
+point fortin
+tanapuna-piarco
+san fernando
+chaguanas
+port of spain
+tozeur
+manubah
+béja
+ben arous (tunis sud)
+bizerte
+jendouba
+nabeul
+tunis
+le kef
+kassérine
+gabès
+gafsa
+sidi bou zid
+sfax
+siliana
+mahdia
+monastir
+kairouan
+sousse
+zaghouan
+médenine
+kebili
+tataouine
+aydin
+izmir
+balikesir
+Çanakkale province
+edirne
+kirklareli
+tekirdag
+bilecik
+bursa
+istanbul
+kocaeli
+sakarya
+bolu
+eskisehir
+kastamonu
+antalya
+afyonkarahisar
+burdur
+denizli
+isparta
+kütahya province
+manisa
+mugla
+adiyaman
+elazig
+k. maras
+malatya
+mersin
+kirsehir
+kayseri
+nevsehir
+hatay
+amasya
+Çorum province
+giresun
+ordu
+sinop
+sivas
+samsun
+tokat
+artvin
+erzurum
+erzincan
+rize
+trabzon
+agri
+bingöl province
+diyarbakir
+mus
+bitlis
+ankara province
+Çankırı province
+zinguldak
+konya
+karaman
+usak
+gaziantep
+sanliurfa
+adana
+kinkkale
+nigde
+aksaray
+yozgat
+gümüshane
+bayburt
+kars
+mardin
+batman
+siirt
+sirnak
+tunceli
+hakkari
+van
+ardahan
+iğdır province
+kilis
+osmaniye
+yalova
+düzce
+karabük
+bartın province
+kaohsiung city
+pingtung county
+tainan city
+hsinchu city
+hsinchu county
+yilan county
+keelung city
+miaoli county
+taipei city
+new taipei city
+taoyuan county
+changhua county
+chiayi county
+chiayi city
+hualien county
+nantou county
+taichung city
+yunlin county
+taitung county
+penghu county
+kinmen county
+lienchiang county
+mbeya
+rukwa
+zanzibar south and central
+shinyanga
+tabora
+kagera
+kigoma
+dar es salaam
+morogoro
+pemba north
+pemba south
+pwani
+zanzibar north
+zanzibar west
+dodoma
+iringa
+lindi
+mtwara
+ruvuma
+singida
+arusha
+manyara
+kilimanjaro
+mara
+tanga
+njombe
+kalangala
+jinja
+kumi
+kaberamaido
+kayunga
+iganga
+kamuli
+amolatar
+kaliro
+soroti
+mukono
+pallisa
+sembabule
+mpigi
+adjumani
+arua
+koboko
+masindi
+nebbi
+moyo
+yumbe
+kampala
+kiboga
+nakasongola
+wakiso
+luwero
+mubende
+mityana
+kitgum
+gulu
+lira
+dokolo
+pader
+oyam
+bundibugyo
+hoima
+kabarole
+kyenjojo
+kibaale
+kapchorwa
+sironko
+mbale
+bugiri
+busia
+butaleja
+mayuge
+tororo
+amuria
+kotido
+katakwi
+moroto
+nakapiripirit
+rakai
+masaka
+bushenyi
+kasese
+kamwenge
+ibanda
+isingiro
+mbarara
+ntungamo
+rukungiri
+kabale
+kisoro
+kanungu
+budaka
+apac
+baker island
+howland island
+jarvis island
+johnston atoll
+kingman reef
+midway islands
+navassa island
+palmyra atoll
+wake island
+salto
+soriano
+cerro largo
+durazno
+rivera
+tacuarembó
+treinta y tres
+canelones
+florida department
+lavalleja
+maldonado
+montevideo
+rocha
+colonia
+artigas
+flores
+paysandú
+río negro
+bukhoro
+khorazm
+qoraqalpoghiston
+nawoiy
+samarqand
+qashqadaryo
+surkhondaryo
+andijon
+farghona
+namangan
+jizzakh
+sirdaryo
+toshkent
+charlotte
+grenadines
+falcón
+apure
+barinas
+mérida
+táchira
+trujillo
+zulia
+cojedes
+carabobo
+lara
+portuguesa
+yaracuy
+anzoátegui
+aragua
+vargas
+distrito capital
+dependencias federales
+guárico
+monagas
+miranda
+nueva esparta
+delta amacuro
+saint thomas island
+saint john island
+saint croix island
+quang ninh
+tay ninh
+dien bien
+bac kan
+thai nguyen
+lai chau
+lang son
+son la
+thanh hoa
+tuyen quang
+yen bai
+hoa binh
+hai duong
+hai phong
+hung yen
+ha noi
+bac ninh
+vinh phuc
+ninh binh
+ha nam
+nam dinh
+phu tho
+bac giang
+thai binh
+ha tinh
+nghe an
+quang binh
+dak lak
+gia lai
+khanh hoa
+lam dong
+ninh thuan
+phu yen
+bin duong
+tien giang
+dac nong
+bin phuoc
+binh dinh
+kon tum
+quang nam
+quang ngai
+quang tri
+thura thien-hue
+da nang
+ba ria-vung tau
+binh thuan
+dong nai
+an giang
+can tho
+dong thap
+ho chi minh
+kien giang
+long an
+ben tre
+hau giang
+bac lieu
+ca mau
+soc trang
+tra vinh
+vinh long
+cao bang
+ha giang
+lao cai
+torba
+sanma
+tafea
+malampa
+penama
+shefa
+sigave
+uvéa
+alo
+limassol district
+tuamasaga
+a`ana
+aiga-i-le-tai
+atua
+va`a-o-fonoti
+fa`asaleleaga
+gaga`emauga
+gagaifomauga
+vaisigano
+satupa`itea
+palauli
+sa`dah
+al hudaydah
+al mahwit
+dhamar
+hajjah
+amran
+ibb
+lahij
+ta`izz
+al mahrah
+al bayda'
+al dali'
+shabwah
+ma'rib
+san`ar
+hadramawt
+amanat al asimah
+`adan
+abyan
+luapula
+copperbelt
+lusaka
+north-western
+mashonaland central
+harare
+matabeleland north
+midlands
+mashonaland east
+manicaland
+matabeleland south
+bulawayo
+masvingo
+mashonaland west
+minor islands of anguilla
+antarctica
+minor islands of antarctica
+ashmore and cartier islands
+bajo nuevo bank
+minor islands of belize
+clipperton island
+minor islands of colombia
+coral sea islands
+minor islands of cuba
+cayman islands
+northern cyprus
+minor islands of djibouti
+minor islands of egypt
+minor islands of eritrea
+minor islands of fiji
+falkland islands
+gaza strip
+sark
+minor islands of guernsey
+guam
+heard island and mcdonald islands
+minor islands of indonesia
+isle of man
+minor islands of india
+british indian ocean territory
+minor islands of iran
+jersey
+minor islands of japan
+minor islands of kazakhstan
+kiribati
+minor islands of kiribati
+minor islands of south korea
+macau
+minor islands of myanmar
+minor islands of mauritania
+minor islands of malaysia
+minor islands of new caledonia
+norfolk island
+niue
+null island
+pitcairn islands
+paracel islands
+spratly islands
+minor islands of philippines
+minor islands of papua new guinea
+minor islands of north korea
+western sahara
+minor islands of saudi arabia
+scarborough reef
+south georgia and the south sandwich islands
+minor islands of solomon islands
+somaliland
+minor islands of somaliland
+united nations neutral zone
+minor islands of thailand
+minor islands of tunisia
+minor islands of turkey
+tuvalu
+minor islands of tuvalu
+guantanamo bay usnb
+minor islands of venezuela
+british virgin islands
+minor islands of cambodia
+west bank
+minor island of yemen
+western australia
+queensland
+australian capital territory
+victoria
+south australia
+northern territory
+new south wales
+tasmania
+vorarlberg
+burgenland
+carinthia
+tirol
+wien
+lower austria
+upper austria
+salzburg
+steiermark
+liège
+brabant wallon
+namur
+limburg
+west-vlaanderen
+brussels
+antwerpen
+hainaut
+luxembourg
+vlaams-brabant
+oost-vlaanderen
+smolyan
+kurdzhali
+blagoevgrad
+kyustendil
+khaskovo
+pazardzhik
+pernik
+sofiya
+plovdiv
+stara zagora
+sofia province
+yambol
+gabrovo
+sliven
+burgas
+lovech
+ruse
+vratsa
+montana
+veliko turnovo
+pleven
+turgovishte
+vidin
+varna
+shumen
+razgrad
+dobrich
+silistra
+acre
+alagoas
+amapa
+bahia
+ceara
+distrito federal
+espirito santo
+goias
+maranhao
+minas gerais
+mato grosso do sul
+mato grosso
+paraiba
+pernambuco
+piaui
+parana
+rio de janeiro
+rio grande do norte
+rondonia
+roraima
+rio grande do sul
+sergipe
+sao paulo
+tocantins
+ontario
+new brunswick
+northwest territories
+nova scotia
+prince edward island
+manitoba
+alberta
+yukon
+nunavut
+saskatchewan
+british columbia
+newfoundland and labrador
+de atacama
+de valparaiso
+del maule
+del bio-bio
+de coquimbo
+del libertador b ohiggins
+de los rios
+de antofagasta
+de la araucania
+andean southern ice field (campo de hielo sur)
+de aisen
+metropolitana
+de magallanes y antartica chilena
+de los lagos
+de tarapaca
+glarus
+grisons
+zug
+ticino
+appenzell innerrhoden
+valais
+schaffhausen
+canton of geneva
+basel-stadt
+fribourg
+schwyz
+canton of zurich
+nidwalden
+lucerne
+vaud
+aargau
+thurgau
+sankt gallen
+jura
+appenzell ausserrhoden
+canton of neuchâtel
+basel-landschaft
+solothurn
+obwalden
+uri
+bern
+famagusta
+kyrenia
+nicosia
+paphos district
+larnaca district
+jihoceský
+zlínský
+south moravian region
+vysocina
+plzenský
+praha
+pardubický
+karlovarský
+moravskoslezský
+olomoucký
+central bohemian region
+královéhradecký
+Ústecký
+liberecký
+saarland
+minor islands of germany
+mecklenburg-vorpommern
+rheinland-pfalz
+berlin
+hamburg
+nordrhein-westfalen
+schleswig-holstein
+sachsen-anhalt
+sachsen
+hessen
+free state of thuringia
+brandenburg
+niedersachsen
+bremen
+baden-württemberg region
+bayern
+syddanmark
+hovedstaden
+region zealand
+nordjylland
+midtjylland
+minor islands of denmark
+araba / Álava
+araba/Álava
+albacete
+alicante
+almeria
+avila
+badajoz
+balearic islands
+barcelona
+burgos
+caceres
+cadiz
+castellon
+ciudad real
+corunna
+cuenca
+girona
+guadalajara
+gipuzkoa
+huelva
+huesca
+jaen
+leon
+lleida
+lugo
+madrid
+malaga
+murcia
+navarre
+ourense
+asturias
+palencia
+las palmas
+pontevedra
+salamanca
+santa cruz de tenerife
+cantabria
+segovia
+seville
+soria
+tarragona
+teruel
+valencia
+valladolid
+biscay
+zamora
+zaragoza
+ceuta
+melilla
+conjurisdicciones interprovinciales
+saaremaa
+võru
+valgamaa
+põlva county
+estonia
+tartumaa
+hiiumaa
+pärnu county
+viljandimaa
+lääne
+lääne county
+jõgeva county
+raplamaa
+harjumaa
+järva county
+lääne-viru county
+ida-virumaa
+pskov
+uusimaa
+southwest finland
+tavastia proper
+kymenlaakso
+päijänne tavastia
+paijanne tavastia
+satakunta
+pirkanmaa
+south karelia
+southern savonia
+southern ostrobothnia
+central finland
+ostrobothnia
+central ostrobothnia
+northern savonia
+north karelen
+kainuu
+northern ostrobothnia
+lapland
+ain
+hauts-de-seine
+deux-sèvres
+corse-du-sud
+pyrénées-orientales
+creuse
+landes
+vienne
+eure-et-loir
+aube
+vaucluse
+hautes-pyrénées
+corrèze
+tarn-et-garonne
+bas-rhin
+vosges
+haute-savoie
+loire-atlantique
+doubs
+gironde
+aisne
+seine-maritime
+pas-de-calais
+haute-marne
+savoie
+moselle
+charente-maritime
+sarthe
+eure
+oise
+allier
+meuse
+aveyron
+ardennes
+indre
+var
+alpes-maritimes
+maine-et-loire
+dordogne
+ariège
+lot-et-garonne
+meurthe-et-moselle
+loir-et-cher
+territoire de belfort
+nièvre
+somme
+yvelines
+essonne
+loire
+haut-rhin
+seine-et-marne
+lot
+haute-garonne
+mayenne
+marne
+vendée
+haute-loire
+hérault
+ardèche
+isère
+gard
+charente
+bouches-du-rhône
+val-d'oise
+lozère
+val-de-marne
+ille-et-vilaine
+gers
+puy-de-dôme
+seine-saint-denis
+loiret
+aude
+manche
+haute-corse
+paris
+yonne
+morbihan
+alpes-de-haute-provence
+côtes-d'armor
+cantal
+drôme
+orne
+haute-vienne
+pyrénées-atlantiques
+saône-et-loire
+cher
+finistère
+haute-saône
+cote d'or
+rhône
+indre-et-loire
+calvados
+hautes-alpes
+tarn
+calderdale
+pembrokeshire
+bury
+limavady
+redcar and cleveland
+ballymoney
+craigavon
+barking and dagenham
+cumbria
+sutton
+shetland islands
+poole
+milton keynes
+kensington and chelsea
+wandsworth
+tameside
+ealing
+hackney
+wakefield
+north lanarkshire
+oldham
+newcastle upon tyne
+warrington
+cookstown
+york
+greenwich
+hillingdon
+city of leicester
+down
+na h-eileanan an iar
+east lothian
+wigan
+swindon
+dumfries and galloway
+highland
+county of herefordshire
+slough
+bexley
+harrow
+devon
+stockton-on-tees
+city of derby
+bolton
+cardiff
+north somerset
+inverclyde
+city of wolverhampton
+dorset
+north yorkshire
+fermanagh
+northumberland
+bath and north east somerset
+north down
+isle of anglesey
+flintshire
+havering
+nottinghamshire
+lancashire
+orkney islands
+perth and kinross
+oxfordshire
+cambridgeshire
+rotherham
+omagh
+argyll and bute
+moray
+leicestershire
+newtownabbey
+stockport
+dundee city
+warwickshire
+vale of glamorgan
+isles of scilly
+larne
+ards
+cheshire west and chester
+gloucestershire
+wiltshire
+staffordshire
+norfolk
+south lanarkshire
+dungannon
+hartlepool
+powys
+halton
+blackburn with darwen
+stirling
+blaenau gwent
+castlereagh
+rhondda, cynon, taf
+belfast
+north tyneside
+brent
+croydon
+somerset
+city of portsmouth
+torbay
+clackmannanshire
+armagh city and district
+barnsley
+renfrewshire
+moyle
+carrickfergus
+east renfrewshire
+city of westminster
+city of bristol
+southend-on-sea
+islington
+derbyshire
+city and county of the city of london
+east ayrshire
+luton
+st. helens
+merton
+angus
+east sussex
+west dunbartonshire
+neath port talbot
+haringey
+north east lincolnshire
+city of plymouth
+middlesbrough
+west berkshire
+hounslow
+ballymena
+richmond upon thames
+walsall
+gateshead
+darlington
+antrim
+city of southampton
+thurrock
+torfaen
+caerphilly
+cheshire east
+trafford
+windsor and maidenhead
+gwynedd
+wokingham
+liverpool
+essex
+lisburn
+aberdeen city
+buckinghamshire
+bromley
+scottish borders
+south ayrshire
+west lothian
+aberdeenshire
+worcestershire
+bridgend
+solihull
+rochdale
+waltham forest
+bedford
+birmingham
+southwark
+isle of wight
+rutland
+hammersmith and fulham
+monmouthshire
+ceredigion
+derry
+conwy
+leeds
+northamptonshire
+hertfordshire
+sefton
+lewisham
+denbighshire
+midlothian
+glasgow city
+merthyr tydfil
+city of stoke-on-trent
+kent
+shropshire
+hampshire
+east dunbartonshire
+enfield
+kingston upon thames
+north ayrshire
+south tyneside
+falkirk
+bournemouth
+magherafelt
+newham
+surrey
+south gloucestershire
+north lincolnshire
+telford and wrekin
+kirklees
+redbridge
+coleraine
+dudley
+knowsley
+city of kingston upon hull
+bradford
+tower hamlets
+doncaster
+reading
+sunderland
+east riding of yorkshire
+salford
+bracknell forest
+the city of brighton and hove
+strabane
+sandwell
+suffolk
+wirral
+county durham
+lincolnshire
+lambeth
+sheffield
+banbridge
+cornwall
+swansea
+medway
+newry and mourne
+coventry
+fife
+newport
+wrexham
+west sussex
+city of edinburgh
+central bedfordshire
+city of peterborough
+camden
+carmarthenshire
+blackpool
+city of nottingham
+barnet
+gibraltar
+western greece
+west macedonia
+epirus
+central macedonia
+peloponnese
+crete
+south aegean
+central greece
+thessaly
+ionian islands
+attica
+east macedonia and thrace
+nuna allanngutsaaaliugaq
+kommune kujalleq
+qeqqata kommunia
+qaasuitsup kommunia
+kommuneqarfik sermersooq
+vukovarsko-srijemska
+licko-senjska
+disputed areas of croatia
+brodsko-posavska
+bjelovarsko-bilogorska
+sibenik
+pozega-slavonija
+zagrebacka
+sisacko-moslavacka
+dubrovacko-neretvanska
+splitsko-dalmatinska
+inland waters of croatia
+primorsko-goranska
+viroviticko-podravska
+koprivnica-krizevci
+osjecko-baranjska
+zadarska
+grad zagreb
+krapinsko-zagorska
+karlovacka
+medimurska
+istarska
+varazdin
+baranya
+tolna
+somogy
+zala
+csongrád
+bács-kiskun county
+vas
+veszprém
+bekes
+fejér
+budapest
+komárom-esztergom
+jász-nagykun-szolnok county
+gyor-moson-sopron
+pest
+hajdú-bihar county
+heves
+nógrád
+szabolcs-szatmár-bereg
+borsod-abauj zemplen county
+cork
+cork city
+waterford city
+waterford
+kerry
+wexford
+south tipperary
+carlow
+kilkenny
+limerick city
+limerick
+wicklow
+dunlaoghaire-rathdown
+laois
+south dublin
+dublin city
+north tipperary
+kildare
+galway
+clare
+offaly
+fingal
+galway city
+westmeath
+meath
+louth
+longford
+mayo
+roscommon
+monaghan
+cavan
+leitrim
+sligo
+donegal
+torino
+vercelli
+novara
+cuneo
+asti
+alessandria
+valle d'aosta
+imperia
+savona
+genova
+la spezia
+varese
+como
+sondrio
+milano
+bergamo
+brescia
+pavia
+cremona
+mantova
+bolzano/bozen
+trento
+verona
+vicenza
+belluno
+treviso
+venezia
+padova
+rovigo
+udine
+gorizia
+trieste
+piacenza
+parma
+reggio nell'emilia
+modena
+bologna
+ferrara
+ravenna
+forli'-cesena
+pesaro e urbino
+ancona
+macerata
+ascoli piceno
+massa-carrara
+lucca
+pistoia
+firenze
+livorno
+pisa
+arezzo
+siena
+grosseto
+perugia
+terni
+viterbo
+rieti
+rome
+latina
+frosinone
+caserta
+benevento
+napoli
+avellino
+salerno
+l'aquila
+teramo
+pescara
+chieti
+campobasso
+foggia
+taranto
+brindisi
+lecce
+potenza
+matera
+cosenza
+catanzaro
+reggio di calabria
+trapani
+palermo
+messina
+agrigento
+caltanissetta
+enna
+catania
+ragusa
+siracusa
+sassari
+nuoro
+cagliari
+pordenone
+isernia
+oristano
+biella
+lecco
+lodi
+rimini
+prato
+crotone
+vibo valentia
+verbano-cusio-ossola
+olbia-tempio
+ogliastra
+carbonia-iglesias
+monza e della brianza
+fermo
+barletta-andria-trani
+liechtenstein
+telšiai county
+klaipeda
+marijampole
+Šiauliai county
+vilnius
+alytus
+taurage
+kaunas
+panevėžys county
+utena
+rucavas
+nicas
+daugavpils
+liepaja
+priekules
+vainodes
+grobinas
+ilukstes
+aknistes
+durbes
+kraslavas
+tervetes
+auces
+rundales
+bauskas
+aglonas
+varkavas
+neretas
+aizputes
+skrundas
+viesites
+jelgava
+brocenu
+jekabpils
+dagdas
+pavilostas
+iecavas
+ozolnieku
+olaines
+jaunpils
+dobeles
+preilu
+saldus
+vecumnieku
+livanu
+jaunjelgavas
+salas
+baldones
+alsungas
+aizkraukles
+jelgavas
+skriveru
+riebinu
+zilupes
+krustpils
+lielvardes
+kekavas
+rezekne
+marupes
+keguma
+salaspils
+ikšķile
+kokneses
+babites
+jurmala
+stopinu
+ludzas
+kuldigas
+vilanu
+varaklanu
+plavinu
+kandavas
+riga
+ropazi
+garkalnes
+ogres
+tukuma
+erglu
+ciblas
+rezeknes
+malpils
+engures
+carnikavas
+Ādaži
+incukalna
+ventspils
+mersraga
+lubanas
+siguldas
+karsavas
+madonas
+cesvaines
+ligatnes
+talsu
+sejas
+saulkrastu
+amatas
+jaunpiepalgas
+baltinavas
+rugaju
+vecpiebalgas
+cesu
+krimuldas
+raunas
+rojas
+pargaujas
+dundagas
+priekulu
+balvu
+gulbenes
+valmiera
+smiltenes
+vilakas
+kocenu
+beverinas
+limbazi
+apes
+strencu
+aluksnes
+burtnieku
+salacgrivas
+alojas
+valkas
+nauksenu
+mazsalacas
+rujienas
+monaco
+cahul
+taraclia
+cantemir
+gagauzia
+basarabeasca
+leova
+cimișlia district
+stefan voda
+mun.bender
+causeni
+hîncești district
+ialoveni
+nisporeni
+chișinău municipality
+anenii noi
+criuleni
+strășeni
+ungheni
+calarasi
+dubasari
+transnistria
+fălești district
+orhei
+glodeni
+balti
+telenești district
+sîngerei district
+rîșcani district
+rezina
+Șoldănești district
+florești district
+drocia
+raionul edineţ
+briceni
+soroca
+dondușeni district
+raionul ocniţa
+ciudad de méxico
+guerrero
+méxico
+morelos
+sinaloa
+baja california
+sonora
+baja california sur
+zacatecas
+durango
+chihuahua
+colima
+nayarit
+michoacán
+jalisco
+chiapas
+tabasco
+oaxaca
+guanajuato
+aguascalientes
+querétaro
+san luis potosí
+tlaxcala
+puebla
+hidalgo
+veracruz de ignacio de la llave
+nuevo león
+coahuila de zaragoza
+tamaulipas
+yucatán
+campeche
+quintana roo
+zurrieq
+qrendi
+safi
+birzebbugia
+kirkop
+mqabba
+marsaxlokk
+gudja
+ghaxaq
+santa lucija
+siggiewi (citta' ferdinand)
+dingli
+zejtun (citta' beland)
+tarxien
+luqa
+fgura
+marsaskala
+zebbug (malta) (citta' rohan)
+bormla (citta'  cospicua)
+mdina (citta' notabile)
+marsa
+qormi (citta' pinto)
+zabbar (citta' hompesch)
+paola
+mtarfa
+hamrun
+isla (citta' invicta)
+xghajra
+santa venera
+birgu (citta' vittoriosa)
+pieta'
+attard
+floriana
+balzan
+kalkara
+ta'  xbiex
+lija
+rabat (malta)
+birkirkara
+msida
+valletta (citta' umilissima)
+gzira
+iklin
+san gwann
+sliema
+mosta
+san giljan
+gharghur
+swieqi
+mgarr
+naxxar
+san pawl il-bahar
+mellieha
+ghajnsielem u kemmuna
+sannat
+munxar
+fontana
+xewkija
+rabat (ghawdex) (citta' vittoria)
+qala
+kercem
+san lawrenz
+nadur
+xaghra
+gharb
+ghasri
+zebbug (ghawdex)
+noord-brabant
+zeeland
+utrecht
+zuid-holland
+gelderland
+overijssel
+flevoland
+drenthe
+noord-holland
+friesland
+groningen
+vest-agder
+aust-agder
+vestfold
+Østfold
+rogaland
+oslo
+telemark
+akershus
+hordaland
+buskerud
+oppland
+sogn og fjordane
+hedmark
+møre og romsdal
+sør-trøndelag
+nord-trøndelag
+nordland
+troms
+finnmark
+northland region
+nelson region
+area outside region
+west coast region
+bay of plenty region
+canterbury region
+marlborough region
+hawke's bay region
+taranaki region
+otago region
+southland region
+chatham islands
+tasman region
+waikato region
+wellington region
+gisborne region
+auckland region
+manawatu-wanganui region
+mazowieckie
+Łódź voivodeship
+pomorskie
+zachodniopomorskie
+silesian voivodeship
+podlaskie
+Świętokrzyskie voivodship
+lesser poland voivodeship
+podkarpackie
+dolnoslaskie
+warmian-masurian voivodeship
+lubelskie
+opolskie
+kujawsko-pomorskie
+greater poland
+lubuskie
+puerto rico
+ilha da madeira
+ilha de porto santo
+faro
+beja
+setúbal district
+Évora
+lisboa
+portalegre
+santarém
+leiria
+castelo branco
+coimbra
+guarda
+viseu
+aveiro
+porto
+braganza district
+braga
+vila real
+ilha de santa maria
+viana do castelo
+ilha terceira
+ilha do pico
+ilha do faial
+ilha da graciosa
+ilha das flores
+ilha do corvo
+qalqilya
+salfit
+ramallah
+hebron
+deir al-balah
+khan younis
+rafah
+jenin
+tulkarem
+tubas
+nablus
+jericho
+bethlahem
+dolj
+teleorman
+giurgiu
+bucharest
+mehedinti
+olt
+ilfov
+gorj
+ialomita
+caras-severin
+constanta
+dâmbovita
+vâlcea
+arges
+tulcea
+timis
+prahova
+braila
+buzau
+hunedoara
+brasov
+sibiu
+arad
+alba
+covasna
+vrancea
+galati
+bacau
+mures
+salaj
+cluj
+harghita
+bihor
+vaslui
+neamt
+bistrita-nasaud
+satu mare
+maramureş county
+iasi
+suceava
+botosani
+samara
+udmurt
+chelyabinsk
+chukotka
+bashkortostan
+tomsk
+belgorod
+smolensk
+stavropol
+tambov
+tyumen
+altai
+sakha
+oryol
+vologda
+leningrad
+north ossetia-alania
+murmansk
+mordovia
+magadan
+kirov
+ulyanovsk
+karachay-cherkess
+lipetsk
+khanty-mansi
+novosibirsk
+yamalo-nenets
+khabarovsk
+gorno-altay
+amur
+kalmykia
+kamchatka
+yaroslavl
+ryazan
+arkhangelsk
+perm
+vladimir
+astrakhan
+yevrey
+saratov
+penza
+zabaykalsky
+kursk
+chechnya
+primorsky
+krasnodar
+rostov
+tuva
+mari el
+tver
+voronezh
+nizhny novgorod
+khakassia
+tatarstan
+saint petersburg
+komi
+orenburg
+moscow city
+kabardino-balkar
+novgorod
+volgograd
+kemerovo
+chuvash
+kostroma
+bryansk
+sakhalin
+kaluga
+adygea
+krasnoyarsk
+ivanovo
+kurgan
+moscow oblast
+irkutsk
+sverdlovsk
+omsk
+karelia
+dagestan
+tula
+buryat
+nenets
+kaliningrad
+pcinja
+morava
+north bačka district
+branicevo district
+minor islands of serbia
+rasinski upravni okrug
+zlatiborski upravni okrug
+severnobanatski upravni okrug
+toplica
+podunavski upravni okrug
+raska
+zajecar
+grad beograd
+nisava
+sremski upravni okrug
+south backa
+srednjobanatski upravni okrug
+pirotski upravni okrug
+pomoravski upravni okrug
+kolubarski upravni okrug
+sumadija
+south banat
+jablanica
+borski upravni okrug
+macva
+trenciansky kraj
+presov
+zilina
+banska bystrica
+kosice
+nitriansky kraj
+trnava
+bratislava
+scania
+blekinge
+kronoberg
+halland
+jonkoping
+kalmar
+gotland
+ostergotland
+vastra gotaland
+sodermanland
+orebro
+vastmanland
+stockholm
+varmland
+uppsala
+dalarna
+gavleborg
+vasternorrland
+jamtland
+vasterbotten county
+norrbotten
+wyoming
+pennsylvania
+ohio
+new mexico
+rhode island
+oregon
+wisconsin
+north dakota
+nevada
+georgia
+new york
+arkansas
+kansas
+nebraska
+utah
+alaska
+mississippi
+oklahoma
+west virginia
+michigan
+colorado
+new jersey
+delaware
+washington
+connecticut
+california
+kentucky
+massachusetts
+florida
+idaho
+missouri
+hawaii
+alabama
+south carolina
+new hampshire
+south dakota
+illinois
+tennessee
+indiana
+iowa
+arizona
+minnesota
+louisiana
+district of columbia
+virginia
+texas
+vermont
+maine
+north carolina
+donetsk
+vinnytsia
+sumy
+zhytomyr
+dnipropetrovs'k
+kiev
+luhansk
+rivne
+volyn
+mykolaiv
+ivano-frankivs'k
+chernihiv
+khmelnytskyi
+ternopil
+zakarpattia
+kherson
+zaporizhia
+crimea
+poltava
+cherkasy
+chernivtsi
+kharkiv
+odessa
+kirovohrad
+lviv
+vatican
+mpumalanga
+northern cape
+western cape
+kwazulu-natal
+free state
+gauteng
+eastern cape
+limpopo
+quebec
+kédougou
+khashuris raioni
+marneulis raioni
+akhmetis raioni
+sabaragamuwa
+talofofo
+borjomis raioni
+tqibuli
+madhyamanchal
+zlitan
+qvarlis raioni
+dmanisis raioni
+lagodekhis raioni
+senakis raioni
+adigenis raioni
+madhya pashchimanchal
+davao region
+mimaropa
+zugdidi
+woqooyi galbeed
+ha tay
+tsalenjikhis raioni
+tsqaltubo
+kharagaulis raioni
+orenburg oblast
+onis raioni
+ingushetia republic
+kaesong-si
+aspindzis raioni
+akhalgoris raioni
+lentekhis raioni
+sagarejos raioni
+qazbegis raioni
+mestiis raioni
+gori
+sighnaghis raioni
+kaspis raioni
+sudur pashchimanchal
+tarhunah
+autonomous region in muslim mindanao
+ninotsmindis raioni
+faranah
+zamboanga peninsula
+nanumanga
+niutao
+nukulaelae
+nukufetau
+nanumea
+togdheer
+sawfajjin
+bolnisis raioni
+naftalan
+yafran
+uva
+north central
+purwanchal
+pashchimanchal
+aur
+lae
+lib
+nui
+north western
+gardabanis raioni
+funafuti
+kwajalein
+majuro
+west falkland
+inarajan
+sinajana
+dededo
+yigo
+agat
+merizo
+umatac
+santa rita
+piti
+asan
+agana
+atafu
+nukunonu
+fakaofo
+north eastern
+mangilao
+autonomna pokrajina vojvodina
+zapadna bachka
+bor
+severna bachka
+moravica
+podunavlje
+zajechar
+juzhna bachka
+srednji banat
+pirot
+machva
+rashka
+kolubara
+zlatibor
+rasina
+pchinja
+juzhni banat
+nishava
+severni banat
+beograd
+srem
+shumadija
+pomoravlje
+republika srpska
+federacija bosne i hercegovine
+daikondi
+tiranë
+mymensingh
+rumonge
+tbong khmum
+arica and parinacota
+kirkuk
+halabja
+osh city
+naypyidaw
+kavango east
+zambezi
+kavango west
+panamá oeste
+jiwaka
+hela
+puno
+sool
+sanaag
+awdal
+west kordofan
+socotra
+sud-ouest
+est
+hauts bassins
+sahel
+plateau central
+centre ouest
+centre sud
+cascades
+centre est
+boucle du mouhoun
+centre nord
+maekel region
+anseba region
+imereti
+shida kartli
+mtskheta-mtianeti
+tbilisi
+kvemo kartli
+samtskhe-javakheti
+guria
+racha-lochkhumi-kvemo svaneti
+telangana
+kalimantan utara
+montagnes
+gôh-djiboua
+lagunes
+lacs
+bafing region
+comoé
+abidjan
+sassandra-marahoué
+yamoussoukro
+four
+five
+six
+seven
+one
+two
+three
+ariana
+kyankwanzi
+kiruhuura
+ennedi est
+ennedi ouest
+pec
+davao occidental
+dolenjska
+pomurska
+goriska
+osrednjeslovenska
+koroska
+notranjsko-kraska
+savinjska
+podravska
+spodnjeposavska
+gorenjska
+national capital district
+north aegean
+mt athos
+mt. athos
+holy mountain
+bedfordshire
+berkshire
+bristol
+cheshire
+greater manchester
+merseyside
+south yorkshire
+tyne & wear
+west midlands
+west yorkshire
+herefordshire
+durham
+south glamorgan
+west glamorgan
+mid glamorgan
+clwyd
+dyfed
+gwent
+greater london
+the stewartry of kirkcudbright
+wigtown
+tweeddale
+stirling and falkirk
+clackmannan
+inverness
+caithness
+nairn
+ross and cromarty
+sutherland
+shetland
+orkney
+western isles
+city of dundee
+ayrshire and arran
+dunbartonshire
+lanarkshire
+city of glasgow
+city of aberdeen
+kincardineshire
+banffshire
+dumfries
+roxburgh, ettrick and lauderdale
+berwickshire
+antrim and newtownabbey
+armagh city banbridge and craigavon
+causeway coast and glens
+derry city and strabane
+fermanagh and omagh
+lisburn and castlereagh
+mid and east antrim
+mid ulster
+newry mourne and down
+ards and north down
+khyber pakhtunkhwa
+south sardinia
+baalbek-hermel
+akkar
+al-shahaniya‎

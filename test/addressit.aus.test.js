@@ -8,44 +8,71 @@ const testcase = (test, common) => {
   let assert = common.assert.bind(null, test, parser)
 
   assert('2649 Logan Road, Eight Mile Plains, QLD 4113', [
-    [{ housenumber: '2649' }, { street: 'Logan Road' }, { postcode: '4113' }]
+    [
+      { housenumber: '2649' }, { street: 'Logan Road' },
+      { locality: 'Eight Mile Plains' },
+      { region: 'QLD' }, { postcode: '4113' }
+    ]
   ])
 
   assert('2649 Logan Road Eight Mile Plains, QLD 4113', [
-    [{ housenumber: '2649' }, { street: 'Logan Road' }, { postcode: '4113' }]
+    [
+      { housenumber: '2649' }, { street: 'Logan Road' },
+      { locality: 'Eight Mile Plains' },
+      { region: 'QLD' }, { postcode: '4113' }
+    ]
   ])
 
   assert('1 Queen Street, Brisbane 4000', [
-    [{ housenumber: '1' }, { street: 'Queen Street' }, { postcode: '4000' }]
+    [{ housenumber: '1' }, { street: 'Queen Street' }, { locality: 'Brisbane' }, { postcode: '4000' }]
   ])
 
   assert('754 Robinson Rd West, Aspley, QLD 4035', [
-    [{ housenumber: '754' }, { street: 'Robinson Rd West' }, { postcode: '4035' }]
+    [
+      { housenumber: '754' }, { street: 'Robinson Rd West' },
+      { locality: 'Aspley' }, { region: 'QLD' }, { postcode: '4035' }
+    ]
   ])
 
   assert('Sydney 2000', [
-    [{ postcode: '2000' }]
+    [{ locality: 'Sydney' }, { postcode: '2000' }]
   ])
 
-  assert('Perth', [])
+  assert('Perth', [
+    [{ locality: 'Perth' }]
+  ])
 
   assert('1/135 Ferny Way, Ferny Grove 4054', [
-    [{ housenumber: '1/135' }, { street: 'Ferny Way' }, { postcode: '4054' }]
+    [
+      { housenumber: '1/135' }, { street: 'Ferny Way' },
+      { locality: 'Ferny Grove' }, { postcode: '4054' }
+    ]
   ])
 
-  // assert('Eight Mile Plains 4113', [
-  //   [{ housenumber: 'Eight' }, { street: 'Mile Plains' }, { postcode: '4113' }]
-  // ])
+  assert('Eight Mile Plains 4113', [
+    [{ locality: 'Eight Mile Plains' }, { postcode: '4113' }],
+    [{ street: 'Eight Mile Plains' }, { housenumber: '4113' }]
+  ])
 
   assert('8/437 St Kilda Road Melbourne, VIC ', [
-    [{ housenumber: '8/437' }, { street: 'St Kilda Road' }]
+    [
+      { housenumber: '8/437' }, { street: 'St Kilda Road' },
+      { locality: 'Melbourne' }, { region: 'VIC' }
+    ],
+    [
+      { housenumber: '8/437' }, { street: 'St Kilda Road' },
+      { locality: 'VIC' }
+    ]
   ])
 
-  assert('BOOM', [])
+  assert('BOOM', [
+    [{ locality: 'BOOM' }]
+  ])
 
-  // assert('Eight Mile Plains 9999', [
-  //   [{ postcode: '9999' }]
-  // ])
+  assert('Eight Mile Plains 9999', [
+    [{ locality: 'Eight Mile Plains' }, { postcode: '9999' }],
+    [{ street: 'Eight Mile Plains' }, { housenumber: '9999' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {

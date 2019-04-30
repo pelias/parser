@@ -16,8 +16,10 @@ const ChainClassifier = require('../classifier/ChainClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 // const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
+const WhosOnFirstClassifier = require('../classifier/WhosOnFirstClassifier')
 // const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
+const LeadingAreaDeclassifier = require('../solver/LeadingAreaDeclassifier')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
@@ -47,6 +49,7 @@ class AddressParser extends Parser {
         new SurnameClassifier(),
         new PersonalSuffixClassifier(),
         new ChainClassifier(),
+        new WhosOnFirstClassifier(),
 
         // composite classifiers
         new CompositeClassifier(require('../classifier/scheme/street')),
@@ -55,6 +58,7 @@ class AddressParser extends Parser {
       // solvers
       [
         new ExclusiveCartesianSolver(),
+        new LeadingAreaDeclassifier(),
         new MultiStreetSolver(),
         new TokenDistanceFilter(),
         new SubsetFilter()

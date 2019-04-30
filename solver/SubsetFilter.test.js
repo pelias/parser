@@ -52,6 +52,27 @@ module.exports.tests.subset = (test) => {
   })
 }
 
+module.exports.tests.intersection_subset = (test) => {
+  test('subset: remove intersection subsets', (t) => {
+    let tok = new Tokenizer()
+
+    let sp1 = new SolutionPair(new Span('foo'), new StreetClassification(1.0))
+    let sp2 = new SolutionPair(new Span('bar'), new StreetClassification(1.0))
+    let s1 = new Solution([sp1, sp2])
+
+    let sp3 = new SolutionPair(new Span('bar'), new StreetClassification(1.0))
+    let s2 = new Solution([sp3])
+
+    tok.solution = [s1, s2]
+
+    let c = new SubsetFilter()
+    c.solve(tok)
+
+    t.deepEquals(tok.solution, [s1])
+    t.end()
+  })
+}
+
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
     return tape(`SubsetFilter: ${name}`, testFunction)

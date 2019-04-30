@@ -5,10 +5,7 @@ class ExclusiveCartesianSolver extends HashMapSolver {
   solve (tokenizer) {
     let map = this.generateHashMap(tokenizer)
     let solutions = this.exclusiveCartesian.apply(null, Object.keys(map).map(k => map[k]))
-    solutions.forEach(s => s.computeScore(tokenizer))
     tokenizer.solution = tokenizer.solution.concat(solutions)
-    tokenizer.solution.sort((a, b) => b.score - a.score) // sort results by score desc
-    tokenizer.solution.forEach(s => s.pair.sort((a, b) => a.span.start - b.span.start)) // sort by span start
   }
 
   // compute the unique cartesian product
