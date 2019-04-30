@@ -46,14 +46,19 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       this.tokens[placetype].delete('city')
       this.tokens[placetype].delete('king')
       this.tokens[placetype].delete('at')
+      this.tokens[placetype].delete('rue')
     })
   }
 
   each (span) {
-    // do not classify tokens preceeded by an 'IntersectionClassification'
+    // do not classify tokens preceeded by an 'IntersectionClassification' or 'StopWordClassification'
     let firstChild = span.graph.findOne('child:first') || span
     let prev = firstChild.graph.findOne('prev')
-    if (prev && prev.classifications.hasOwnProperty('IntersectionClassification')) {
+    if (
+      prev && (
+        prev.classifications.hasOwnProperty('IntersectionClassification') ||
+        prev.classifications.hasOwnProperty('StopWordClassification')
+      )) {
       return
     }
 
