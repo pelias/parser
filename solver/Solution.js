@@ -54,6 +54,35 @@ class Solution {
     this.score = (score.confidence / score.coverage) * (score.coverage / tokenizer.coverage)
   }
 
+  // return a mask of the input for this solution
+  // which shows the areas covered by different types of classification
+  // N = housenumber, S = street, P = postcode, A = administrative
+  mask (tokenizer) {
+    // use the original input, mask should be the same length
+    let body = tokenizer.span.body
+    let mask = Array(body.length).fill(' ')
+    let map = { 'housenumber': 'N', 'street': 'S', 'postcode': 'P', 'default': 'A' }
+
+    // scan the input letter-by-letter from left-to-right
+    for (let i = 0; i < body.length; i++) {
+      // find which fields cover this character (should only be covered by 0 or 1 field)
+      let coveredBy = this.pair.filter(p => p.span.start <= i && p.span.end >= i)
+
+      if (coveredBy.length) {
+        let label = coveredBy[0].classification.label
+        let code = map.hasOwnProperty(label) ? map[label] : map.default
+        for (let j = coveredBy[0].span.start; j < coveredBy[0].span.end; j++) {
+          mask[j] = code
+        }
+
+        // skip forward to avoid scanning the same token again
+        i = coveredBy[0].span.end
+      }
+    }
+
+    return mask.join('')
+  }
+
   // @todo implement this
   // equals(solution) {}
 }
