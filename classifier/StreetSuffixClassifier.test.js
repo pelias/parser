@@ -22,6 +22,14 @@ module.exports.tests.contains_numerals = (test) => {
   })
 }
 
+module.exports.tests.single_character_tokens = (test) => {
+  test('index: does not contain single char tokens', (t) => {
+    let c = new StreetSuffixClassifier()
+    t.false(Object.keys(c.index).some(token => token.length < 2))
+    t.end()
+  })
+}
+
 module.exports.tests.english_suffix = (test) => {
   let valid = [
     'street', 'st', 'st.',
@@ -45,7 +53,7 @@ module.exports.tests.german_suffix = (test) => {
     'straße', 'strasse', 'str', 'str.',
     'platz', 'pl.',
     'allee', 'al', 'al.',
-    'weg', 'w', 'w.'
+    'weg', 'w.'
   ]
 
   valid.forEach(token => {

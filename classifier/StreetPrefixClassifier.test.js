@@ -22,6 +22,14 @@ module.exports.tests.contains_numerals = (test) => {
   })
 }
 
+module.exports.tests.single_character_tokens = (test) => {
+  test('index: does not contain single char tokens', (t) => {
+    let c = new StreetPrefixClassifier()
+    t.false(Object.keys(c.index).some(token => token.length < 2))
+    t.end()
+  })
+}
+
 module.exports.tests.french_prefix = (test) => {
   let valid = [
     'rue', 'allée', 'allee',
