@@ -7,6 +7,7 @@
    |===========|==================| sections
 **/
 const whitespace = new RegExp(/^\s$/)
+const quotes = `"'«»‘’‚‛“”„‟‹›⹂「」『』〝〞〟﹁﹂﹃﹄＂＇｢｣`
 
 function fieldsFuncBoundary (char) {
   switch (char) {
@@ -16,10 +17,10 @@ function fieldsFuncBoundary (char) {
       return true
     case ',':
       return true
-      // @todo: this should ideally only work for 'matching pairs' of quotes
-    case '"':
-      return true
     default:
+      // @todo: this should ideally only work for 'matching pairs' of quotes
+      if (quotes.includes(char)) { return true }
+
       return false
   }
 }
