@@ -14,6 +14,7 @@ class IntersectionClassifier extends PhraseClassifier {
 
     // blacklist
     delete this.index.e
+    delete this.index.w
   }
 
   each (span) {
