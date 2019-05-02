@@ -13,7 +13,8 @@ class TokenDistanceFilter {
       // note: remove this as a postcode classification may be more relevant
       // note: this functionality may no longer be valid in an autocomplete context
       if (housenumber.length > 0 && street.length === 0) {
-        return false
+        s.pair = s.pair.filter(p => p.classification.constructor.name !== 'HouseNumberClassification')
+        return true
       }
 
       // both housenumber and street classified

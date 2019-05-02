@@ -67,6 +67,9 @@ const testcase = (test, common) => {
     [
       { housenumber: '754' }, { street: 'Pharr Rd' },
       { locality: 'Georgia' }, { postcode: '31035' }
+    ],
+    [
+      { locality: 'Pharr' }, { region: 'Georgia' }, { postcode: '31035' }
     ]
   ])
 
@@ -88,9 +91,8 @@ const testcase = (test, common) => {
       { region: 'New York' }, { locality: 'NY' }, { postcode: '10011' }
     ],
     [
-      { street: '425 W' },
-      { region: 'New York' }, { locality: 'NY' },
-      { postcode: '10011' }
+      { housenumber: '425' }, { street: 'W 23rd St' },
+      { locality: 'New York' }, { region: 'NY' }, { postcode: '10011' }
     ]
   ])
 

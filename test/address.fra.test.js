@@ -11,7 +11,8 @@ const testcase = (test, common) => {
 
   assert('123 Rue Montmartre, Paris', [
     [{ housenumber: '123' }, { street: 'Rue Montmartre' }, { locality: 'Paris' }],
-    [{ housenumber: '123' }, { street: 'Rue Montmartre' }, { region: 'Paris' }]
+    [{ housenumber: '123' }, { street: 'Rue Montmartre' }, { region: 'Paris' }],
+    [{ locality: 'Montmartre' }, { region: 'Paris' }]
   ])
 
   assert('Rue de Paris', [

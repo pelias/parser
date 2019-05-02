@@ -31,6 +31,9 @@ const testcase = (test, common) => {
     [
       { housenumber: '754' }, { street: 'Robinson Rd West' },
       { locality: 'Aspley' }, { region: 'QLD' }, { postcode: '4035' }
+    ],
+    [
+      { locality: 'Robinson' }, { region: 'QLD' }, { postcode: '4035' }
     ]
   ])
 
@@ -62,6 +65,9 @@ const testcase = (test, common) => {
     [
       { housenumber: '8/437' }, { street: 'St Kilda Road' },
       { locality: 'VIC' }
+    ],
+    [
+      { locality: 'St Kilda' }, { region: 'VIC' }
     ]
   ])
 
