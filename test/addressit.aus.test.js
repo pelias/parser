@@ -53,8 +53,7 @@ const testcase = (test, common) => {
   ])
 
   assert('Eight Mile Plains 4113', [
-    [{ locality: 'Eight Mile Plains' }, { postcode: '4113' }],
-    [{ street: 'Eight Mile Plains' }, { housenumber: '4113' }]
+    [{ locality: 'Eight Mile Plains' }, { postcode: '4113' }]
   ])
 
   assert('8/437 St Kilda Road Melbourne, VIC ', [
@@ -76,8 +75,7 @@ const testcase = (test, common) => {
   ])
 
   assert('Eight Mile Plains 9999', [
-    [{ locality: 'Eight Mile Plains' }, { postcode: '9999' }],
-    [{ street: 'Eight Mile Plains' }, { housenumber: '9999' }]
+    [{ locality: 'Eight Mile Plains' }, { postcode: '9999' }]
   ])
 }
 

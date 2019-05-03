@@ -49,6 +49,11 @@ const testcase = (test, common) => {
   assert('West 26th Street, New York, NYC, 10010', [
     [{ street: 'West 26th Street' }, { locality: 'New York' }, { postcode: '10010' }]
   ])
+
+  // should not allow double street suffix
+  assert('foo st rd', [
+    [{ street: 'foo st' }]
+  ])
 }
 
 module.exports.all = (tape, common) => {

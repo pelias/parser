@@ -12,7 +12,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification']
       },
       {
         is: ['StreetSuffixClassification'],
@@ -27,7 +27,7 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification']
       },
       {
         is: ['StreetSuffixClassification'],
@@ -46,7 +46,7 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
@@ -60,12 +60,12 @@ module.exports = [
     Class: StreetClassification,
     scheme: [
       {
-        is: ['AlphaClassification'],
+        is: ['PersonalSuffixClassification'],
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
@@ -220,7 +220,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StopWordClassification', 'StreetClassification']
+        not: ['StopWordClassification', 'StreetPrefixClassification', 'StreetClassification']
       }
     ]
   },
@@ -239,7 +239,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -262,7 +262,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
