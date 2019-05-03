@@ -5,55 +5,50 @@ const testcase = (test, common) => {
   let assert = common.assert.bind(null, test, parser)
 
   // street simple
-  assert('main pl', [[{ street: 'main pl' }]])
+  assert('main pl', [{ street: 'main pl' }], true)
 
   // street directional
-  assert('west main st', [[{ street: 'west main st' }]])
-  assert('main st west', [[{ street: 'main st west' }]])
+  assert('west main st', [{ street: 'west main st' }], true)
+  assert('main st west', [{ street: 'main st west' }], true)
 
   // street ordinal
-  assert('10th ave', [[{ street: '10th ave' }]])
+  assert('10th ave', [{ street: '10th ave' }], true)
 
   // street cardinal
-  assert('10 ave', [[{ street: '10 ave' }]])
+  assert('10 ave', [{ street: '10 ave' }], true)
 
   // address simple
   assert('1 main pl', [
-    [{ housenumber: '1' }, { street: 'main pl' }]
-  ])
+    { housenumber: '1' }, { street: 'main pl' }
+  ], true)
 
   // address with ordinal
   assert('100 10th ave', [
-    [{ housenumber: '100' }, { street: '10th ave' }]
-  ])
+    { housenumber: '100' }, { street: '10th ave' }
+  ], true)
 
   // address with cardinal
   assert('100 10 ave', [
-    [{ housenumber: '100' }, { street: '10 ave' }]
-  ])
+    { housenumber: '100' }, { street: '10 ave' }
+  ], true)
 
   // address with directional
   assert('1 north main blvd', [
-    [{ housenumber: '1' }, { street: 'north main blvd' }]
-  ])
+    { housenumber: '1' }, { street: 'north main blvd' }
+  ], true)
   assert('1 main blvd north', [
-    [{ housenumber: '1' }, { street: 'main blvd north' }]
-  ])
+    { housenumber: '1' }, { street: 'main blvd north' }
+  ], true)
 
   // address with directional & ordinal
   assert('30 west 26th street', [
-    [{ housenumber: '30' }, { street: 'west 26th street' }]
-  ])
+    { housenumber: '30' }, { street: 'west 26th street' }
+  ], true)
 
   // street with directional, ordinal & admin info
   assert('West 26th Street, New York, NYC, 10010', [
-    [{ street: 'West 26th Street' }, { locality: 'New York' }, { postcode: '10010' }]
-  ])
-
-  // should not allow double street suffix
-  assert('foo st rd', [
-    [{ street: 'foo st' }]
-  ])
+    { street: 'West 26th Street' }, { locality: 'New York' }, { postcode: '10010' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

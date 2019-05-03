@@ -75,6 +75,8 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         this.tokens.locality.delete('texas')
         this.tokens.locality.delete('california')
         this.tokens.locality.delete('italy')
+        this.tokens.locality.delete('avenue')
+        this.tokens.locality.delete('lane')
       }
     })
   }

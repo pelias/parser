@@ -9,12 +9,10 @@ const testcase = (test, common) => {
 
   // https://github.com/openvenues/libpostal/issues/382
   assert('3360 Grand Ave Oakland 94610-2737 CA', [
-    [
-      { housenumber: '3360' }, { street: 'Grand Ave' },
-      { locality: 'Oakland' }, { postcode: '94610-2737' },
-      { region: 'CA' }
-    ]
-  ])
+    { housenumber: '3360' }, { street: 'Grand Ave' },
+    { locality: 'Oakland' }, { postcode: '94610-2737' },
+    { region: 'CA' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

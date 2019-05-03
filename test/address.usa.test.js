@@ -5,12 +5,12 @@ const testcase = (test, common) => {
   let assert = common.assert.bind(null, test, parser)
 
   assert('Martin Luther King Jr. Blvd.', [
-    [{ street: 'Martin Luther King Jr. Blvd.' }]
-  ])
+    { street: 'Martin Luther King Jr. Blvd.' }
+  ], true)
 
   assert('Martin Luther King Blvd.', [
-    [{ street: 'Martin Luther King Blvd.' }]
-  ])
+    { street: 'Martin Luther King Blvd.' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

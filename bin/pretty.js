@@ -113,7 +113,7 @@ function solutions (tokenizer, label) {
 
   // print all solutions
   tokenizer.solution.forEach(s => {
-    let score = chalk.yellow.bold('(' + s.score.toFixed(1) + ')')
+    let score = chalk.yellow.bold('(' + s.score.toFixed(2) + ')')
     console.log(score, '➜', s.pair.map(c => {
       return {
         [c.classification.label]: c.span.body

@@ -5,25 +5,20 @@ const testcase = (test, common) => {
   let assert = common.assert.bind(null, test, parser)
 
   assert('Rue Montmartre', [
-    [{ street: 'Rue Montmartre' }],
-    [{ locality: 'Montmartre' }]
-  ])
+    { street: 'Rue Montmartre' }
+  ], true)
 
   assert('123 Rue Montmartre, Paris', [
-    [{ housenumber: '123' }, { street: 'Rue Montmartre' }, { locality: 'Paris' }],
-    [{ housenumber: '123' }, { street: 'Rue Montmartre' }, { region: 'Paris' }],
-    [{ locality: 'Montmartre' }, { region: 'Paris' }]
-  ])
+    { housenumber: '123' }, { street: 'Rue Montmartre' }, { locality: 'Paris' }
+  ], true)
 
   assert('Rue de Paris', [
-    [{ street: 'Rue de Paris' }],
-    [{ region: 'de' }] // @incorrect
-  ])
+    { street: 'Rue de Paris' }
+  ], true)
 
   assert('Rue de la Paix', [
-    [{ street: 'Rue de la Paix' }],
-    [{ region: 'de' }] // @incorrect
-  ])
+    { street: 'Rue de la Paix' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {
