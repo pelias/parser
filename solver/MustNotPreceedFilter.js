@@ -9,7 +9,7 @@ class MustNotPreceedFilter {
     }
   }
   solve (tokenizer) {
-    tokenizer.solution.forEach(s => {
+    tokenizer.solution = tokenizer.solution.filter(s => {
       let object = s.pair.filter(p => p.classification.constructor.name === this.classification.object)
       let subject = s.pair.filter(p => p.classification.constructor.name === this.classification.subject)
 
@@ -19,8 +19,11 @@ class MustNotPreceedFilter {
         if (subject.some(p => p.span.start > object[0].span.end)) {
           // remove the object classification from this solution
           s.pair = s.pair.filter(p => p.classification.constructor.name !== this.classification.object)
+          return s.pair.length > 0
         }
       }
+
+      return true
     })
   }
 }
