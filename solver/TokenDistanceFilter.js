@@ -14,7 +14,7 @@ class TokenDistanceFilter {
       // note: this functionality may no longer be valid in an autocomplete context
       if (housenumber.length > 0 && street.length === 0) {
         s.pair = s.pair.filter(p => p.classification.constructor.name !== 'HouseNumberClassification')
-        return true
+        return s.pair.length > 0
       }
 
       // both housenumber and street classified
