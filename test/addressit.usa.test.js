@@ -66,6 +66,11 @@ const testcase = (test, common) => {
     ],
     [
       { housenumber: '754' }, { street: 'Pharr Rd' },
+      { locality: 'Atlanta' }, { country: 'Georgia' },
+      { postcode: '31035' }
+    ],
+    [
+      { housenumber: '754' }, { street: 'Pharr Rd' },
       { locality: 'Georgia' }, { postcode: '31035' }
     ],
     [

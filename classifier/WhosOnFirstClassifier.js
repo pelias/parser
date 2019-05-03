@@ -1,6 +1,6 @@
 const PhraseClassifier = require('./super/PhraseClassifier')
 const AreaClassification = require('../classification/AreaClassification')
-// const CountryClassification = require('../classification/CountryClassification')
+const CountryClassification = require('../classification/CountryClassification')
 // const DependencyClassification = require('../classification/DependencyClassification')
 const RegionClassification = require('../classification/RegionClassification')
 const LocalityClassification = require('../classification/LocalityClassification')
@@ -18,15 +18,15 @@ const placetypes = {
   'region': {
     files: ['abrv:eng_x_preferred.txt', 'name:eng_x_preferred.txt'],
     classifications: [AreaClassification, RegionClassification]
-  }
+  },
   // 'dependency': {
   //   files: ['wof:shortcode.txt', 'name:eng_x_preferred.txt'],
   //   classifications: [AreaClassification, DependencyClassification]
   // },
-  // 'country': {
-  //   files: ['wof:country.txt', 'wof:shortcode.txt', 'name:eng_x_preferred.txt'],
-  //   classifications: [AreaClassification, CountryClassification]
-  // },
+  'country': {
+    files: ['name:eng_x_preferred.txt'],
+    classifications: [AreaClassification, CountryClassification]
+  }
 }
 
 class WhosOnFirstClassifier extends PhraseClassifier {
