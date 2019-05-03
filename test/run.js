@@ -18,3 +18,6 @@ if (suite.includes('unit')) { files.filter(unit).forEach(run) }
 
 // run functional tests
 if (suite.includes('func')) { files.filter(func).forEach(run) }
+
+// run openaddresses tests
+if (suite.includes('oa')) { require('./openaddresses.js').all(tape, common) }
