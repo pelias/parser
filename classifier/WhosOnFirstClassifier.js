@@ -9,23 +9,24 @@ const whosonfirst = require('../resources/whosonfirst/whosonfirst')
 // databases sourced from the WhosOnFirst project
 // see: https://whosonfirst.org
 
+// note: these should be defined from most granular to least granular
 const placetypes = {
-  // 'country': {
-  //   files: ['wof:country.txt', 'wof:shortcode.txt', 'name:eng_x_preferred.txt'],
-  //   classifications: [AreaClassification, CountryClassification]
-  // },
+  'locality': {
+    files: ['name:eng_x_preferred.txt'],
+    classifications: [AreaClassification, LocalityClassification]
+  },
+  'region': {
+    files: ['abrv:eng_x_preferred.txt', 'name:eng_x_preferred.txt'],
+    classifications: [AreaClassification, RegionClassification]
+  }
   // 'dependency': {
   //   files: ['wof:shortcode.txt', 'name:eng_x_preferred.txt'],
   //   classifications: [AreaClassification, DependencyClassification]
   // },
-  'region': {
-    files: ['abrv:eng_x_preferred.txt', 'name:eng_x_preferred.txt'],
-    classifications: [AreaClassification, RegionClassification]
-  },
-  'locality': {
-    files: ['name:eng_x_preferred.txt'],
-    classifications: [AreaClassification, LocalityClassification]
-  }
+  // 'country': {
+  //   files: ['wof:country.txt', 'wof:shortcode.txt', 'name:eng_x_preferred.txt'],
+  //   classifications: [AreaClassification, CountryClassification]
+  // },
 }
 
 class WhosOnFirstClassifier extends PhraseClassifier {
@@ -37,7 +38,7 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         whosonfirst.load(this.tokens[placetype], [placetype], file)
       })
 
-      // blacklist
+      // general blacklist
       this.tokens[placetype].delete('north')
       this.tokens[placetype].delete('south')
       this.tokens[placetype].delete('east')
@@ -62,6 +63,19 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       this.tokens[placetype].delete('town')
       this.tokens[placetype].delete('city')
       this.tokens[placetype].delete('grand')
+
+      // placetype specific modifications
+      if (placetype === 'locality') {
+        // these are the only two decent values in
+        // file: locality/abrv:eng_x_preferred.txt
+        this.tokens.locality.add('nyc')
+        this.tokens.locality.add('sf')
+
+        // remove problematic locality names
+        this.tokens.locality.delete('texas')
+        this.tokens.locality.delete('california')
+        this.tokens.locality.delete('italy')
+      }
     })
   }
 

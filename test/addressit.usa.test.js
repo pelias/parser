@@ -10,12 +10,12 @@ const testcase = (test, common) => {
   assert('123 Main St, New York, NY 10010', [
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { region: 'New York' }, { locality: 'NY' },
+      { locality: 'New York' }, { region: 'NY' },
       { postcode: '10010' }
     ],
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { locality: 'New York' }, { region: 'NY' },
+      { region: 'New York' }, { locality: 'NY' },
       { postcode: '10010' }
     ]
   ])
@@ -23,12 +23,12 @@ const testcase = (test, common) => {
   assert('123 Main St New York, NY 10010', [
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { region: 'New York' }, { locality: 'NY' },
+      { locality: 'New York' }, { region: 'NY' },
       { postcode: '10010' }
     ],
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { locality: 'New York' }, { region: 'NY' },
+      { region: 'New York' }, { locality: 'NY' },
       { postcode: '10010' }
     ]
   ])
@@ -36,12 +36,12 @@ const testcase = (test, common) => {
   assert('123 Main St New York NY 10010', [
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { region: 'New York' }, { locality: 'NY' },
+      { locality: 'New York' }, { region: 'NY' },
       { postcode: '10010' }
     ],
     [
       { housenumber: '123' }, { street: 'Main St' },
-      { locality: 'New York' }, { region: 'NY' },
+      { region: 'New York' }, { locality: 'NY' },
       { postcode: '10010' }
     ]
   ])
@@ -88,11 +88,11 @@ const testcase = (test, common) => {
   assert('425 W 23rd St, New York, NY 10011', [
     [
       { housenumber: '425' }, { street: 'W 23rd St' },
-      { region: 'New York' }, { locality: 'NY' }, { postcode: '10011' }
+      { locality: 'New York' }, { region: 'NY' }, { postcode: '10011' }
     ],
     [
       { housenumber: '425' }, { street: 'W 23rd St' },
-      { locality: 'New York' }, { region: 'NY' }, { postcode: '10011' }
+      { region: 'New York' }, { locality: 'NY' }, { postcode: '10011' }
     ]
   ])
 
@@ -115,23 +115,22 @@ const testcase = (test, common) => {
   assert('Dallas', [[{ locality: 'Dallas' }]])
 
   assert('California', [
-    [{ region: 'California' }],
-    [{ locality: 'California' }]
+    [{ region: 'California' }]
   ])
 
   assert('New York', [
-    [{ region: 'New York' }],
-    [{ locality: 'New York' }]
+    [{ locality: 'New York' }],
+    [{ region: 'New York' }]
   ])
 
   assert('New York, NY', [
-    [{ region: 'New York' }, { locality: 'NY' }],
-    [{ locality: 'New York' }, { region: 'NY' }]
+    [{ locality: 'New York' }, { region: 'NY' }],
+    [{ region: 'New York' }, { locality: 'NY' }]
   ])
 
   assert('New York, New York', [
-    [{ region: 'New York' }, { locality: 'New York' }],
-    [{ locality: 'New York' }, { region: 'New York' }]
+    [{ locality: 'New York' }, { region: 'New York' }],
+    [{ region: 'New York' }, { locality: 'New York' }]
   ])
 
   // assert('northern mariana islands', [])

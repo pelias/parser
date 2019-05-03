@@ -47,7 +47,7 @@ const testcase = (test, common) => {
 
   // street with directional, ordinal & admin info
   assert('West 26th Street, New York, NYC, 10010', [
-    [{ street: 'West 26th Street' }, { region: 'New York' }, { postcode: '10010' }]
+    [{ street: 'West 26th Street' }, { locality: 'New York' }, { postcode: '10010' }]
   ])
 }
 
