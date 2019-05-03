@@ -22,6 +22,7 @@ const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const LeadingAreaDeclassifier = require('../solver/LeadingAreaDeclassifier')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
+const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
 
 class AddressParser extends Parser {
@@ -61,6 +62,17 @@ class AddressParser extends Parser {
         new LeadingAreaDeclassifier(),
         new MultiStreetSolver(),
         new TokenDistanceFilter(),
+        new MustNotPreceedFilter('PostcodeClassification', 'HouseNumberClassification'),
+        new MustNotPreceedFilter('PostcodeClassification', 'StreetClassification'),
+        new MustNotPreceedFilter('LocalityClassification', 'HouseNumberClassification'),
+        new MustNotPreceedFilter('LocalityClassification', 'StreetClassification'),
+        new MustNotPreceedFilter('RegionClassification', 'HouseNumberClassification'),
+        new MustNotPreceedFilter('RegionClassification', 'StreetClassification'),
+        new MustNotPreceedFilter('CountryClassification', 'RegionClassification'),
+        new MustNotPreceedFilter('CountryClassification', 'LocalityClassification'),
+        new MustNotPreceedFilter('CountryClassification', 'PostcodeClassification'),
+        new MustNotPreceedFilter('CountryClassification', 'StreetClassification'),
+        new MustNotPreceedFilter('CountryClassification', 'HouseNumberClassification'),
         new SubsetFilter()
       ]
     )
