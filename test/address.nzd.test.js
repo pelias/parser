@@ -56,13 +56,29 @@ const testcase = (test, common) => {
     { housenumber: '23' }, { street: 'Old Wharf Road' }
   ], true)
 
-  // assert('183 Vista Paku', [
-  //   { housenumber: '183' }, { street: 'Vista Paku' }
+  assert('183 Vista Paku', [
+    { housenumber: '183' }, { street: 'Vista Paku' }
+  ], true)
+
+  assert('109 Mathesons Corner Road', [
+    { housenumber: '109' }, { street: 'Mathesons Corner Road' }
+  ], true)
+
+  assert('81 Park Terrace', [
+    { housenumber: '81' }, { street: 'Park Terrace' }
+  ], true)
+
+  // assert('320 Cannon Hill Crescent', [
+  //   { housenumber: '320' }, { street: 'Cannon Hill Crescent' }
   // ], true)
 
-  // assert('109 Mathesons Corner Road', [
-  //   { housenumber: '109' }, { street: 'Mathesons Corner Road' }
+  // assert('16 The Stables', [
+  //   { housenumber: '16' }, { street: 'The Stables' }
   // ], true)
+
+  assert('35 Forbes Road', [
+    { housenumber: '35' }, { street: 'Forbes Road' }
+  ], true)
 
   // assert('260 Broadway', [
   //   { housenumber: '260' }, { street: 'Broadway' }

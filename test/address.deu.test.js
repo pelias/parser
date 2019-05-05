@@ -6,12 +6,12 @@ const testcase = (test, common) => {
 
   assert('Am Falkpl. 5, 10437 Berlin', [
     { street: 'Am Falkpl.' }, { housenumber: '5' },
-    { postcode: '10437' }, { region: 'Berlin' }
+    { postcode: '10437' }, { locality: 'Berlin' }
   ], true)
 
   assert('Am Bürgerpark 15-18, 13156, Berlin', [
     { street: 'Am Bürgerpark' }, { housenumber: '15-18' },
-    { postcode: '13156' }, { region: 'Berlin' }
+    { postcode: '13156' }, { locality: 'Berlin' }
   ], true)
 }
 

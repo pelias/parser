@@ -1,6 +1,7 @@
 const SectionClassifier = require('./super/SectionClassifier')
 
 // @todo: scheme.scheme is a confusing API
+// @todo: support scheme.scheme with a single element
 
 // compute cartesian product of arrays
 // https://stackoverflow.com/a/43053803

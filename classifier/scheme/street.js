@@ -3,7 +3,7 @@ const StreetClassification = require('../../classification/StreetClassification'
 module.exports = [
   {
     // Main Street
-    confidence: 0.79,
+    confidence: 0.82,
     Class: StreetClassification,
     scheme: [
       {

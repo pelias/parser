@@ -77,6 +77,7 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         this.tokens.locality.delete('italy')
         this.tokens.locality.delete('avenue')
         this.tokens.locality.delete('lane')
+        this.tokens.locality.delete('terrace')
       }
     })
   }
@@ -89,6 +90,16 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       prev && (
         prev.classifications.hasOwnProperty('IntersectionClassification') ||
         prev.classifications.hasOwnProperty('StopWordClassification')
+      )) {
+      return
+    }
+
+    // do not classify tokens preceeding 'StreetSuffixClassification'
+    let lastChild = span.graph.findOne('child:last') || span
+    let next = lastChild.graph.findOne('next')
+    if (
+      next && (
+        next.classifications.hasOwnProperty('StreetSuffixClassification')
       )) {
       return
     }
