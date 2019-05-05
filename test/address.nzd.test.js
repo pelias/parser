@@ -72,9 +72,9 @@ const testcase = (test, common) => {
   //   { housenumber: '320' }, { street: 'Cannon Hill Crescent' }
   // ], true)
 
-  // assert('16 The Stables', [
-  //   { housenumber: '16' }, { street: 'The Stables' }
-  // ], true)
+  assert('16 The Stables', [
+    { housenumber: '16' }, { street: 'The Stables' }
+  ], true)
 
   assert('35 Forbes Road', [
     { housenumber: '35' }, { street: 'Forbes Road' }

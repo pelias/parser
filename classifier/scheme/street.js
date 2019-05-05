@@ -62,6 +62,21 @@ module.exports = [
     ]
   },
   {
+    // The Stables
+    confidence: 0.82,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      }
+    ]
+  },
+  {
     // SW 26th
     confidence: 0.77,
     Class: StreetClassification,
