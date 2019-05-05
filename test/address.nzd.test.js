@@ -80,8 +80,24 @@ const testcase = (test, common) => {
     { housenumber: '35' }, { street: 'Forbes Road' }
   ], true)
 
+  assert('40 O\'Shannessey Street', [
+    { housenumber: '40' }, { street: 'O\'Shannessey Street' }
+  ], true)
+
+  // assert('37 Hillpark Drive', [
+  //   { housenumber: '37' }, { street: ' Hillpark Drive' }
+  // ], true)
+
   // assert('260 Broadway', [
   //   { housenumber: '260' }, { street: 'Broadway' }
+  // ], true)
+
+  // assert('16 Tullamore', [
+  //   { housenumber: '16' }, { street: 'Tullamore' }
+  // ], true)
+
+  // assert('4207 Mountain Road', [
+  //   { housenumber: '4207' }, { street: 'Mountain Road' }
   // ], true)
 }
 
