@@ -19,6 +19,30 @@ const testcase = (test, common) => {
   assert('Rue de la Paix', [
     { street: 'Rue de la Paix' }
   ], true)
+
+  assert('Boulevard du Général Charles De Gaulle', [
+    { street: 'Boulevard du Général Charles De Gaulle' }
+  ], true)
+
+  assert('11 Boulevard Saint Germains', [
+    { housenumber: '11' }, { street: 'Boulevard Saint Germains' }
+  ], true)
+
+  assert('Rue Saint Anne', [
+    { street: 'Rue Saint Anne' }
+  ], true)
+
+  assert('Boulevard Charles De Gaulle', [
+    { street: 'Boulevard Charles De Gaulle' }
+  ], true)
+
+  assert('Allée Victor Hugo', [
+    { street: 'Allée Victor Hugo' }
+  ], true)
+
+  assert('Avenue Aristide Briand', [
+    { street: 'Avenue Aristide Briand' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {
