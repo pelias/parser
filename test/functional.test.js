@@ -51,6 +51,12 @@ const testcase = (test, common) => {
     { region: 'New York' }, { locality: 'NYC' },
     { postcode: '10010' }
   ], true)
+
+  // do not classify tokens preceeded by a 'place' as
+  // an admin classification
+  assert('Portland Cafe Portland OR', [
+    { locality: 'Portland' }, { region: 'OR' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

@@ -101,12 +101,13 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       return
     }
 
-    // do not classify tokens preceeding 'StreetSuffixClassification'
+    // do not classify tokens preceeding 'StreetSuffixClassification' or 'PlaceClassification'
     let lastChild = span.graph.findOne('child:last') || span
     let next = lastChild.graph.findOne('next')
     if (
       next && (
-        next.classifications.hasOwnProperty('StreetSuffixClassification')
+        next.classifications.hasOwnProperty('StreetSuffixClassification') ||
+        next.classifications.hasOwnProperty('PlaceClassification')
       )) {
       return
     }
