@@ -56,17 +56,49 @@ const testcase = (test, common) => {
     { housenumber: '23' }, { street: 'Old Wharf Road' }
   ], true)
 
-  // assert('183 Vista Paku', [
-  //   { housenumber: '183' }, { street: 'Vista Paku' }
-  // ], true)
+  assert('183 Vista Paku', [
+    { housenumber: '183' }, { street: 'Vista Paku' }
+  ], true)
 
-  // assert('109 Mathesons Corner Road', [
-  //   { housenumber: '109' }, { street: 'Mathesons Corner Road' }
+  assert('109 Mathesons Corner Road', [
+    { housenumber: '109' }, { street: 'Mathesons Corner Road' }
+  ], true)
+
+  assert('81 Park Terrace', [
+    { housenumber: '81' }, { street: 'Park Terrace' }
+  ], true)
+
+  assert('320 Cannon Hill Crescent', [
+    { housenumber: '320' }, { street: 'Cannon Hill Crescent' }
+  ], true)
+
+  assert('16 The Stables', [
+    { housenumber: '16' }, { street: 'The Stables' }
+  ], true)
+
+  assert('35 Forbes Road', [
+    { housenumber: '35' }, { street: 'Forbes Road' }
+  ], true)
+
+  assert('40 O\'Shannessey Street', [
+    { housenumber: '40' }, { street: 'O\'Shannessey Street' }
+  ], true)
+
+  // assert('37 Hillpark Drive', [
+  //   { housenumber: '37' }, { street: 'Hillpark Drive' }
   // ], true)
 
   // assert('260 Broadway', [
   //   { housenumber: '260' }, { street: 'Broadway' }
   // ], true)
+
+  // assert('16 Tullamore', [
+  //   { housenumber: '16' }, { street: 'Tullamore' }
+  // ], true)
+
+  assert('4207 Mountain Road', [
+    { housenumber: '4207' }, { street: 'Mountain Road' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

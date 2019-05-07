@@ -3,7 +3,7 @@ const StreetClassification = require('../../classification/StreetClassification'
 module.exports = [
   {
     // Main Street
-    confidence: 0.79,
+    confidence: 0.82,
     Class: StreetClassification,
     scheme: [
       {
@@ -57,6 +57,21 @@ module.exports = [
       },
       {
         is: ['StreetSuffixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      }
+    ]
+  },
+  {
+    // The Stables
+    confidence: 0.82,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['PlaceClassification'],
         not: ['StreetClassification', 'IntersectionClassification']
       }
     ]

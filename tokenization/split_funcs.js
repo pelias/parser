@@ -7,7 +7,7 @@
    |===========|==================| sections
 **/
 const whitespace = new RegExp(/^\s$/)
-const quotes = `"'«»‘’‚‛“”„‟‹›⹂「」『』〝〞〟﹁﹂﹃﹄＂＇｢｣`
+const quotes = `"«»‘’‚‛“”„‟‹›⹂「」『』〝〞〟﹁﹂﹃﹄＂＇｢｣`
 
 function fieldsFuncBoundary (char) {
   switch (char) {

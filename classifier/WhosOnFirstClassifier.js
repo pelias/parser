@@ -75,8 +75,16 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         this.tokens.locality.delete('texas')
         this.tokens.locality.delete('california')
         this.tokens.locality.delete('italy')
-        this.tokens.locality.delete('avenue')
-        this.tokens.locality.delete('lane')
+
+        // remove locality names that sound like streets
+        let remove = ['avenue', 'lane', 'terrace', 'street', 'road', 'crescent']
+        this.tokens.locality.forEach(token => {
+          let split = token.split(/\s/)
+          let lastWord = split[split.length - 1]
+          if (remove.includes(lastWord)) {
+            this.tokens.locality.delete(token)
+          }
+        })
       }
     })
   }
@@ -89,6 +97,17 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       prev && (
         prev.classifications.hasOwnProperty('IntersectionClassification') ||
         prev.classifications.hasOwnProperty('StopWordClassification')
+      )) {
+      return
+    }
+
+    // do not classify tokens preceeding 'StreetSuffixClassification' or 'PlaceClassification'
+    let lastChild = span.graph.findOne('child:last') || span
+    let next = lastChild.graph.findOne('next')
+    if (
+      next && (
+        next.classifications.hasOwnProperty('StreetSuffixClassification') ||
+        next.classifications.hasOwnProperty('PlaceClassification')
       )) {
       return
     }

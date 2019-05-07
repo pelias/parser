@@ -13,6 +13,7 @@ const GivenNameClassifier = require('../classifier/GivenNameClassifier')
 const SurnameClassifier = require('../classifier/SurnameClassifier')
 const PersonalSuffixClassifier = require('../classifier/PersonalSuffixClassifier')
 const ChainClassifier = require('../classifier/ChainClassifier')
+const PlaceClassifier = require('../classifier/PlaceClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 // const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
@@ -26,7 +27,7 @@ const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
 
 class AddressParser extends Parser {
-  constructor () {
+  constructor (options) {
     super(
       // classifiers
       [
@@ -50,6 +51,7 @@ class AddressParser extends Parser {
         new SurnameClassifier(),
         new PersonalSuffixClassifier(),
         new ChainClassifier(),
+        new PlaceClassifier(),
         new WhosOnFirstClassifier(),
 
         // composite classifiers
@@ -74,7 +76,8 @@ class AddressParser extends Parser {
         new MustNotPreceedFilter('CountryClassification', 'StreetClassification'),
         new MustNotPreceedFilter('CountryClassification', 'HouseNumberClassification'),
         new SubsetFilter()
-      ]
+      ],
+      options
     )
   }
 }

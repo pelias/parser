@@ -1,4 +1,5 @@
 const BaseSolver = require('./BaseSolver')
+const Span = require('../../tokenization/Span')
 const Solution = require('../Solution')
 const SolutionPair = require('../SolutionPair')
 
@@ -6,7 +7,7 @@ class HashMapSolver extends BaseSolver {
   // you should provide this function in your subclass
   // solve() {}
 
-  generateHashMap (tokenizer, includePrivate) {
+  generateHashMap (tokenizer, includePrivate, includeEmpty) {
     let map = {}
     for (let i = 0; i < tokenizer.section.length; i++) {
       let section = tokenizer.section[i]
@@ -22,6 +23,9 @@ class HashMapSolver extends BaseSolver {
           if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
             map[classification.label] = new Solution()
+            if (includeEmpty) {
+              map[classification.label].pair.push(new SolutionPair(new Span(), classification))
+            }
           }
           map[classification.label].pair.push(new SolutionPair(phrase, classification))
         }
@@ -38,6 +42,9 @@ class HashMapSolver extends BaseSolver {
           if (!includePrivate && !classification.public) { continue }
           if (!map.hasOwnProperty(classification.label)) {
             map[classification.label] = new Solution()
+            if (includeEmpty) {
+              map[classification.label].pair.push(new SolutionPair(new Span(), classification))
+            }
           }
           map[classification.label].pair.push(new SolutionPair(word, classification))
         }
