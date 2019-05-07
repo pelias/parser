@@ -75,9 +75,16 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         this.tokens.locality.delete('texas')
         this.tokens.locality.delete('california')
         this.tokens.locality.delete('italy')
-        this.tokens.locality.delete('avenue')
-        this.tokens.locality.delete('lane')
-        this.tokens.locality.delete('terrace')
+
+        // remove locality names that sound like streets
+        let remove = ['avenue', 'lane', 'terrace', 'street', 'road', 'crescent']
+        this.tokens.locality.forEach(token => {
+          let split = token.split(/\s/)
+          let lastWord = split[split.length - 1]
+          if (remove.includes(lastWord)) {
+            this.tokens.locality.delete(token)
+          }
+        })
       }
     })
   }

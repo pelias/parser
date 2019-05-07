@@ -68,9 +68,9 @@ const testcase = (test, common) => {
     { housenumber: '81' }, { street: 'Park Terrace' }
   ], true)
 
-  // assert('320 Cannon Hill Crescent', [
-  //   { housenumber: '320' }, { street: 'Cannon Hill Crescent' }
-  // ], true)
+  assert('320 Cannon Hill Crescent', [
+    { housenumber: '320' }, { street: 'Cannon Hill Crescent' }
+  ], true)
 
   assert('16 The Stables', [
     { housenumber: '16' }, { street: 'The Stables' }
@@ -85,7 +85,7 @@ const testcase = (test, common) => {
   ], true)
 
   // assert('37 Hillpark Drive', [
-  //   { housenumber: '37' }, { street: ' Hillpark Drive' }
+  //   { housenumber: '37' }, { street: 'Hillpark Drive' }
   // ], true)
 
   // assert('260 Broadway', [
@@ -96,9 +96,9 @@ const testcase = (test, common) => {
   //   { housenumber: '16' }, { street: 'Tullamore' }
   // ], true)
 
-  // assert('4207 Mountain Road', [
-  //   { housenumber: '4207' }, { street: 'Mountain Road' }
-  // ], true)
+  assert('4207 Mountain Road', [
+    { housenumber: '4207' }, { street: 'Mountain Road' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {
