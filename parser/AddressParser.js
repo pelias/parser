@@ -12,6 +12,7 @@ const PersonClassifier = require('../classifier/PersonClassifier')
 const GivenNameClassifier = require('../classifier/GivenNameClassifier')
 const SurnameClassifier = require('../classifier/SurnameClassifier')
 const PersonalSuffixClassifier = require('../classifier/PersonalSuffixClassifier')
+const PersonalTitleClassifier = require('../classifier/PersonalTitleClassifier')
 const ChainClassifier = require('../classifier/ChainClassifier')
 const PlaceClassifier = require('../classifier/PlaceClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
@@ -50,6 +51,7 @@ class AddressParser extends Parser {
         new GivenNameClassifier(),
         new SurnameClassifier(),
         new PersonalSuffixClassifier(),
+        new PersonalTitleClassifier(),
         new ChainClassifier(),
         new PlaceClassifier(),
         new WhosOnFirstClassifier(),

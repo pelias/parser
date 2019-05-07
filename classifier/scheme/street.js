@@ -17,7 +17,7 @@ module.exports = [
     ]
   },
   {
-    // Rue Montmartre
+    // Rue Montmartre or Boulevard Charles De Gaulle
     confidence: 0.88,
     Class: StreetClassification,
     scheme: [
@@ -26,7 +26,7 @@ module.exports = [
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {
-        is: ['AlphaClassification'],
+        is: ['AlphaClassification', 'PersonClassification'],
         not: ['StreetClassification', 'IntersectionClassification']
       }
     ]
@@ -156,7 +156,7 @@ module.exports = [
     ]
   },
   {
-    // Rue Du Paris
+    // Rue De Paris
     confidence: 0.8,
     Class: StreetClassification,
     scheme: [
@@ -169,7 +169,7 @@ module.exports = [
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {
-        is: ['AlphaClassification'],
+        is: ['AlphaClassification', 'PersonClassification'],
         not: ['StreetClassification', 'StreetPrefixClassification']
       }
     ]
@@ -193,6 +193,67 @@ module.exports = [
       },
       {
         is: ['AlphaClassification'],
+        not: ['StreetClassification', 'StreetPrefixClassification']
+      }
+    ]
+  },
+  {
+    // Rue Saint Anne
+    confidence: 0.81,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['PersonalTitleClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
+        not: ['StreetClassification', 'StreetPrefixClassification']
+      }
+    ]
+  },
+  {
+    // Boulevard du Général Charles De Gaulle
+    confidence: 0.81,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['PersonalTitleClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
+        not: ['StreetClassification', 'StreetPrefixClassification']
+      }
+    ]
+  },
+  {
+    // Avenue Aristide Briand or Allée Victor Hugo
+    confidence: 0.92,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['GivenNameClassification', 'AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['SurnameClassification'],
         not: ['StreetClassification', 'StreetPrefixClassification']
       }
     ]
