@@ -57,6 +57,7 @@ class AddressParser extends Parser {
         new WhosOnFirstClassifier(),
 
         // composite classifiers
+        new CompositeClassifier(require('../classifier/scheme/person')),
         new CompositeClassifier(require('../classifier/scheme/street')),
         new CompositeClassifier(require('../classifier/scheme/intersection'))
       ],
