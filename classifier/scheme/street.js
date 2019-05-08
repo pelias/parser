@@ -26,7 +26,7 @@ module.exports = [
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {
-        is: ['AlphaClassification', 'PersonClassification'],
+        is: ['AlphaClassification', 'PersonClassification', 'StreetNameClassification'],
         not: ['StreetClassification', 'IntersectionClassification']
       }
     ]

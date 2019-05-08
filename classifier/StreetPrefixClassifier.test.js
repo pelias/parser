@@ -23,9 +23,9 @@ module.exports.tests.contains_numerals = (test) => {
 }
 
 module.exports.tests.single_character_tokens = (test) => {
-  test('index: does not contain single char tokens', (t) => {
+  test('index: does contain single char tokens', (t) => {
     let c = new StreetPrefixClassifier()
-    t.false(Object.keys(c.index).some(token => token.length < 2))
+    t.true(Object.keys(c.index).some(token => token.length < 2))
     t.end()
   })
 }
