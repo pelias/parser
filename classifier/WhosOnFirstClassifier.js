@@ -12,7 +12,7 @@ const whosonfirst = require('../resources/whosonfirst/whosonfirst')
 // note: these should be defined from most granular to least granular
 const placetypes = {
   'locality': {
-    files: ['name:eng_x_preferred.txt'],
+    files: ['name:eng_x_preferred.txt', 'name:fra_x_preferred.txt'],
     classifications: [AreaClassification, LocalityClassification]
   },
   'region': {
