@@ -14,6 +14,7 @@ resources/whosonfirst/dictionaries/*/*.txt
 !resources/whosonfirst/dictionaries/region/name:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/region/abrv:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/locality/name:eng_x_preferred.txt
+!resources/whosonfirst/dictionaries/locality/name:fra_x_preferred.txt
 
 # ignore any openaddresses test cases
 test/oa
