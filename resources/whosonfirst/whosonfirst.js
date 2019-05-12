@@ -1,26 +1,54 @@
 const fs = require('fs')
 const path = require('path')
+const pelias = require('../pelias/pelias')
 const dictPath = path.join(__dirname, `./dictionaries`)
 const allPlacetypes = fs.readdirSync(dictPath).filter(p => !p.includes('.'))
 
-function load (set, placetypes, filename, options) {
+function load (set, placetypes, filenames, options) {
+  const add = _add(set, options)
+  const remove = _remove(set, options)
+
   placetypes.forEach(placetype => {
-    let filepath = path.join(dictPath, placetype, filename)
-    if (!fs.existsSync(filepath)) { return }
-    let dict = fs.readFileSync(filepath, 'utf8')
-    dict.split('\n').forEach(row => {
-      row.split('|').forEach(cell => {
-        let value = cell.trim()
-        if (options && options.replace) {
-          value = value.replace(options.replace[0], options.replace[1])
-        }
-        if (options && options.lowercase) {
-          value = value.toLowerCase()
-        }
-        set.add(value)
-      })
-    }, this)
+    filenames.forEach(filename => {
+      let filepath = path.join(dictPath, placetype, filename)
+      if (!fs.existsSync(filepath)) { return }
+      let dict = fs.readFileSync(filepath, 'utf8')
+      dict.split('\n').forEach(row => {
+        row.split('|').forEach(add)
+      }, this)
+    })
   }, this)
+
+  placetypes.forEach(placetype => {
+    filenames.forEach(filename => {
+      pelias.load(path.join('whosonfirst', placetype, filename), add, remove)
+    })
+  })
+}
+
+function _normalize (cell, options) {
+  let value = cell.trim()
+  if (options && options.replace) {
+    value = value.replace(options.replace[0], options.replace[1])
+  }
+  if (options && options.lowercase) {
+    value = value.toLowerCase()
+  }
+  return value
+}
+
+function _add (set, options) {
+  return cell => {
+    const value = _normalize(cell, options)
+    set.add(value)
+  }
+}
+
+function _remove (set, options) {
+  return cell => {
+    const value = _normalize(cell, options)
+    set.delete(value)
+  }
 }
 
 module.exports.load = load

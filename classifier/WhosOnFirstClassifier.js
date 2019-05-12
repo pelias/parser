@@ -34,9 +34,7 @@ class WhosOnFirstClassifier extends PhraseClassifier {
     this.tokens = {}
     Object.keys(placetypes).forEach(placetype => {
       this.tokens[placetype] = new Set()
-      placetypes[placetype].files.forEach(file => {
-        whosonfirst.load(this.tokens[placetype], [placetype], file)
-      })
+      whosonfirst.load(this.tokens[placetype], [placetype], placetypes[placetype].files)
 
       // general blacklist
       this.tokens[placetype].delete('north')
@@ -66,16 +64,6 @@ class WhosOnFirstClassifier extends PhraseClassifier {
 
       // placetype specific modifications
       if (placetype === 'locality') {
-        // these are the only two decent values in
-        // file: locality/abrv:eng_x_preferred.txt
-        this.tokens.locality.add('nyc')
-        this.tokens.locality.add('sf')
-
-        // remove problematic locality names
-        this.tokens.locality.delete('texas')
-        this.tokens.locality.delete('california')
-        this.tokens.locality.delete('italy')
-
         // remove locality names that sound like streets
         let remove = ['avenue', 'lane', 'terrace', 'street', 'road', 'crescent']
         this.tokens.locality.forEach(token => {
