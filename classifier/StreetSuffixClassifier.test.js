@@ -67,6 +67,32 @@ module.exports.tests.german_suffix = (test) => {
   })
 }
 
+module.exports.tests.valid_pelias_street_types = (test) => {
+  let valid = ['paku']
+
+  valid.forEach(token => {
+    test(`valid pelias street types: ${token}`, (t) => {
+      let s = classify(token)
+      t.deepEqual(s.classifications, {
+        StreetSuffixClassification: new StreetSuffixClassification(token.length > 1 ? 1.0 : 0.2)
+      })
+      t.end()
+    })
+  })
+}
+
+module.exports.tests.invalid_pelias_street_types = (test) => {
+  let invalid = ['and']
+
+  invalid.forEach(token => {
+    test(`invalid pelias street types: ${token}`, (t) => {
+      let s = classify(token)
+      t.deepEqual(s.classifications, {})
+      t.end()
+    })
+  })
+}
+
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
     return tape(`StreetSuffixClassifier: ${name}`, testFunction)

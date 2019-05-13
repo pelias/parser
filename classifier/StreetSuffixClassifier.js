@@ -16,13 +16,6 @@ class StreetSuffixClassifier extends WordClassifier {
     // Exclude french types because they are street prefix
     libpostal.load(this.index, libpostal.languages.filter(e => !prefix.includes(e)), 'street_types.txt')
 
-    // 183 Vista Paku, Pauanui, 3579, New Zealand
-    this.index.paku = true
-
-    // blacklist
-    // this Italian contracted form of Androna causes issues in English
-    delete this.index.and
-
     // blacklist any token under 2 chars in length
     for (let token in this.index) {
       if (token.length < 2) {

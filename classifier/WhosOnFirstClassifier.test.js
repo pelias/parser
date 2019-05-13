@@ -45,6 +45,31 @@ module.exports.tests.locality = (test) => {
   })
 }
 
+module.exports.tests.valid_pelias_localities = (test) => {
+  let valid = ['nyc', 'sf']
+
+  valid.forEach(token => {
+    test(`valid pelias locality: ${token}`, (t) => {
+      let s = classify(token)
+      t.true(s.classifications.hasOwnProperty('LocalityClassification'))
+      t.true(s.classifications.hasOwnProperty('AreaClassification'))
+      t.end()
+    })
+  })
+}
+
+module.exports.tests.invalid_pelias_localities = (test) => {
+  let invalid = ['texas', 'california', 'italy']
+
+  invalid.forEach(token => {
+    test(`invalid pelias locality: ${token}`, (t) => {
+      let s = classify(token)
+      t.false(s.classifications.hasOwnProperty('LocalityClassification'))
+      t.end()
+    })
+  })
+}
+
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
     return tape(`WhosOnFirstClassifier: ${name}`, testFunction)

@@ -1,0 +1,8 @@
+
+# these are the only two decent values in file: locality/abrv:eng_x_preferred.txt
+nyc
+sf
+# remove problematic locality names
+!texas
+!california
+!italy
