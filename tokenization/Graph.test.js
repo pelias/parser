@@ -57,7 +57,7 @@ module.exports.tests.remove = (test) => {
 
     // remove node from 'bar'
     let ok3 = graph.remove('bar', node1)
-    t.equal(graph.edges.bar.length, 0)
+    t.false(graph.edges.bar)
     t.true(ok3)
 
     // remove node from 'baz'

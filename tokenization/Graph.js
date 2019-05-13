@@ -16,6 +16,10 @@ class Graph {
     if (!this.edges[relationship]) { return false }
     let len = this.edges[relationship].length
     this.edges[relationship] = this.edges[relationship].filter(n => n !== node)
+    if (!this.edges[relationship].length) {
+      delete this.edges[relationship]
+      return true
+    }
     return this.edges[relationship].length !== len
   }
 
