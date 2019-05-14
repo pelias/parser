@@ -27,6 +27,9 @@ function _normalize (cell, options) {
   if (options && options.replace) {
     value = value.replace(options.replace[0], options.replace[1])
   }
+  if (options && options.minlength) {
+    if (value.length < options.minlength) { return '' }
+  }
   if (options && options.lowercase) {
     value = value.toLowerCase()
   }
@@ -36,14 +39,18 @@ function _normalize (cell, options) {
 function _add (index, options) {
   return cell => {
     const value = _normalize(cell, options)
-    index[value] = true
+    if (value && value.length) {
+      index[value] = true
+    }
   }
 }
 
 function _remove (index, options) {
   return cell => {
     const value = _normalize(cell, options)
-    delete index[value]
+    if (value && value.length) {
+      delete index[value]
+    }
   }
 }
 

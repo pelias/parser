@@ -9,15 +9,12 @@ class CompoundStreetClassifier extends WordClassifier {
   setup () {
     // load street suffixes
     this.suffixes = {}
-    libpostal.load(this.suffixes, ['de'], 'concatenated_suffixes_separable.txt')
 
-    // remove any suffixes which contain less than 3 characters (excluding a period)
-    // this removes suffixes such as 'r.' which can be ambiguous
-    for (let token in this.suffixes) {
-      if (token.length < 3) {
-        delete this.suffixes[token]
-      }
-    }
+    libpostal.load(this.suffixes, ['de'], 'concatenated_suffixes_separable.txt', {
+      // remove any suffixes which contain less than 3 characters (excluding a period)
+      // this removes suffixes such as 'r.' which can be ambiguous
+      minlength: 3
+    })
 
     // whitelist
     this.suffixes.park = true
