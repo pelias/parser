@@ -9,7 +9,8 @@ class PersonalTitleClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
     libpostal.load(this.index, libpostal.languages, 'personal_titles.txt', {
-      replace: [/\.$/, '']
+      replace: [/\.$/, ''],
+      minlength: 2
     })
   }
 
