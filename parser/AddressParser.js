@@ -24,6 +24,7 @@ const WhosOnFirstClassifier = require('../classifier/WhosOnFirstClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const LeadingAreaDeclassifier = require('../solver/LeadingAreaDeclassifier')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
+const InvalidSolutionFilter = require('../solver/InvalidSolutionFilter')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
 const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
@@ -69,7 +70,20 @@ class AddressParser extends Parser {
         new ExclusiveCartesianSolver(),
         new LeadingAreaDeclassifier(),
         new MultiStreetSolver(),
-        new TokenDistanceFilter(),
+        new SubsetFilter(),
+        new InvalidSolutionFilter([
+          ['HouseNumberClassification', 'LocalityClassification'],
+          ['HouseNumberClassification', 'LocalityClassification', 'RegionClassification'],
+          ['HouseNumberClassification', 'LocalityClassification', 'CountryClassification'],
+          ['HouseNumberClassification', 'LocalityClassification', 'RegionClassification', 'CountryClassification'],
+          ['HouseNumberClassification', 'RegionClassification'],
+          ['HouseNumberClassification', 'RegionClassification', 'CountryClassification'],
+          ['HouseNumberClassification', 'CountryClassification'],
+          ['HouseNumberClassification', 'PostcodeClassification'],
+          ['HouseNumberClassification', 'PostcodeClassification', 'LocalityClassification'],
+          ['HouseNumberClassification', 'PostcodeClassification', 'RegionClassification'],
+          ['HouseNumberClassification', 'PostcodeClassification', 'CountryClassification']
+        ]),
         new MustNotPreceedFilter('PostcodeClassification', 'HouseNumberClassification'),
         new MustNotPreceedFilter('PostcodeClassification', 'StreetClassification'),
         new MustNotPreceedFilter('LocalityClassification', 'HouseNumberClassification'),
@@ -81,6 +95,7 @@ class AddressParser extends Parser {
         new MustNotPreceedFilter('CountryClassification', 'PostcodeClassification'),
         new MustNotPreceedFilter('CountryClassification', 'StreetClassification'),
         new MustNotPreceedFilter('CountryClassification', 'HouseNumberClassification'),
+        new TokenDistanceFilter(),
         new SubsetFilter()
       ],
       options

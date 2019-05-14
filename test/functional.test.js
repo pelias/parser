@@ -69,6 +69,16 @@ const testcase = (test, common) => {
   assert('1 Foo St NE', [{ housenumber: '1' }, { street: 'Foo St NE' }], true)
   assert('1 Foo St SW', [{ housenumber: '1' }, { street: 'Foo St SW' }], true)
   assert('1 Foo St SE', [{ housenumber: '1' }, { street: 'Foo St SE' }], true)
+
+  // invalid solutions (because the classification pairings dont make sense logically)
+  assert('1 San Francisco', [])
+  assert('1 California', [])
+  assert('1 USA', [])
+  assert('1 San Francisco California', [])
+  assert('1 San Francisco USA', [])
+  assert('1 San Francisco California USA', [])
+  assert('1 California USA', [])
+  assert('1 90210', [])
 }
 
 module.exports.all = (tape, common) => {
