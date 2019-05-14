@@ -57,6 +57,18 @@ const testcase = (test, common) => {
   assert('Portland Cafe Portland OR', [
     { locality: 'Portland' }, { region: 'OR' }
   ], true)
+
+  // trailing directional causes issue with autocomplete
+  assert('1 Foo St N', [{ housenumber: '1' }, { street: 'Foo St' }], true)
+  assert('1 Foo St S', [{ housenumber: '1' }, { street: 'Foo St' }], true)
+  assert('1 Foo St E', [{ housenumber: '1' }, { street: 'Foo St' }], true)
+  assert('1 Foo St W', [{ housenumber: '1' }, { street: 'Foo St' }], true)
+
+  // ...but we allow two letter directionals
+  assert('1 Foo St NW', [{ housenumber: '1' }, { street: 'Foo St NW' }], true)
+  assert('1 Foo St NE', [{ housenumber: '1' }, { street: 'Foo St NE' }], true)
+  assert('1 Foo St SW', [{ housenumber: '1' }, { street: 'Foo St SW' }], true)
+  assert('1 Foo St SE', [{ housenumber: '1' }, { street: 'Foo St SE' }], true)
 }
 
 module.exports.all = (tape, common) => {
