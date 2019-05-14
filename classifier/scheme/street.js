@@ -320,7 +320,7 @@ module.exports = [
   },
   {
     // Main Street West
-    confidence: 0.83,
+    confidence: 0.88,
     Class: StreetClassification,
     scheme: [
       {
@@ -329,7 +329,7 @@ module.exports = [
       },
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'FinalTokenSingleCharacterClassification']
       }
     ]
   }
