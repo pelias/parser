@@ -48,7 +48,7 @@ const testcase = (test, common) => {
   // street with directional, ordinal & admin info
   assert('West 26th Street, New York, NYC, 10010', [
     { street: 'West 26th Street' },
-    { region: 'New York' }, { locality: 'NYC' },
+    { locality: 'New York' },
     { postcode: '10010' }
   ], true)
 
@@ -79,6 +79,12 @@ const testcase = (test, common) => {
   assert('1 San Francisco California USA', [])
   assert('1 California USA', [])
   assert('1 90210', [])
+
+  // do not parse 'aus' as a locality if it follows a region
+  assert('new south wales aus', [
+    [{ region: 'new south wales' }],
+    [{ locality: 'south wales' }]]
+  )
 }
 
 module.exports.all = (tape, common) => {
