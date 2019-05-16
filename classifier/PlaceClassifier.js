@@ -16,6 +16,16 @@ class PlaceClassifier extends WordClassifier {
     // skip spans which contain numbers
     if (span.contains.numerals) { return }
 
+    // do not classify tokens preceeded by an 'IntersectionClassification'
+    let firstChild = span.graph.findOne('child:first') || span
+    let prev = firstChild.graph.findOne('prev')
+    if (
+      prev && (
+        prev.classifications.hasOwnProperty('IntersectionClassification')
+      )) {
+      return
+    }
+
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {
       span.classify(new PlaceClassification(1.0))

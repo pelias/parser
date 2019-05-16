@@ -91,6 +91,7 @@ const testcase = (test, common) => {
   // ], true)
 
   assert('Mt Tabor Park, 6220 SE Salmon St, Portland, OR 97215, USA', [
+    { place: 'Mt Tabor Park' },
     { housenumber: '6220' }, { street: 'SE Salmon St' },
     { locality: 'Portland' }, { region: 'OR' },
     { postcode: '97215' }

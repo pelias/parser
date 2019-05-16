@@ -28,21 +28,21 @@ module.exports.tests.constructor = (test) => {
 module.exports.tests.mask = (test) => {
   let parser = new AddressParser()
   test('mask', (t) => {
-    //                            '            SSSSSSSSSSSS NN PPPPP AAAAAA'
+    //                            'VVVVVV VVV  SSSSSSSSSSSS NN PPPPP AAAAAA'
     let tokenizer = new Tokenizer('Kaschk Bar, Linienstraße 40 10119 Berlin')
     parser.classify(tokenizer)
     parser.solve(tokenizer)
 
-    t.equal(tokenizer.solution[0].mask(tokenizer), '            SSSSSSSSSSSS NN PPPPP AAAAAA')
+    t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVVVVVV  SSSSSSSSSSSS NN PPPPP AAAAAA')
     t.end()
   })
   test('mask', (t) => {
-    //                            '         NN SSSSSSS AAAAAA PPPPP      '
+    //                            'VVV VVVV NN SSSSSSS AAAAAA PPPPP      '
     let tokenizer = new Tokenizer('Foo Cafe 10 Main St London 10010 Earth')
     parser.classify(tokenizer)
     parser.solve(tokenizer)
 
-    t.equal(tokenizer.solution[0].mask(tokenizer), '         NN SSSSSSS AAAAAA PPPPP      ')
+    t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVVVV NN SSSSSSS AAAAAA PPPPP      ')
     t.end()
   })
 }

@@ -17,6 +17,7 @@ class MultiStreetSolver extends HashMapSolver {
 
       // remove any pairs which are more granular than street (not applicable for intersections)
       sol.pair = sol.pair.filter(p => p.classification.constructor.name !== 'HouseNumberClassification')
+      sol.pair = sol.pair.filter(p => p.classification.constructor.name !== 'PlaceClassification')
 
       let success = false
 

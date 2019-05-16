@@ -61,7 +61,13 @@ class Solution {
     // use the original input, mask should be the same length
     let body = tokenizer.span.body
     let mask = Array(body.length).fill(' ')
-    let map = { 'housenumber': 'N', 'street': 'S', 'postcode': 'P', 'default': 'A' }
+    let map = {
+      'place': 'V',
+      'housenumber': 'N',
+      'street': 'S',
+      'postcode': 'P',
+      'default': 'A'
+    }
 
     // scan the input letter-by-letter from left-to-right
     for (let i = 0; i < body.length; i++) {
