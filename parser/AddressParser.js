@@ -27,6 +27,7 @@ const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const InvalidSolutionFilter = require('../solver/InvalidSolutionFilter')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
 const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
+const MustNotFollowFilter = require('../solver/MustNotFollowFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
 
 class AddressParser extends Parser {
@@ -95,6 +96,8 @@ class AddressParser extends Parser {
         new MustNotPreceedFilter('CountryClassification', 'PostcodeClassification'),
         new MustNotPreceedFilter('CountryClassification', 'StreetClassification'),
         new MustNotPreceedFilter('CountryClassification', 'HouseNumberClassification'),
+        new MustNotFollowFilter('LocalityClassification', 'RegionClassification'),
+        new MustNotFollowFilter('LocalityClassification', 'CountryClassification'),
         new TokenDistanceFilter(),
         new SubsetFilter()
       ],
