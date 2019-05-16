@@ -5,7 +5,7 @@ module.exports.tests = {}
 module.exports.tests.constructor = (test) => {
   test('constructor', (t) => {
     let c = new Classification()
-    t.false(c.public)
+    t.true(c.public)
     t.equals(c.label, 'place')
     t.equals(c.confidence, 1.0)
     t.deepEqual(c.meta, {})

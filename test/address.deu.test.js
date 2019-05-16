@@ -13,6 +13,12 @@ const testcase = (test, common) => {
     { street: 'Am Bürgerpark' }, { housenumber: '15-18' },
     { postcode: '13156' }, { locality: 'Berlin' }
   ], true)
+
+  assert('Kaschk Bar, Linienstraße 40 10119 Berlin', [
+    { place: 'Kaschk Bar' },
+    { street: 'Linienstraße' }, { housenumber: '40' },
+    { postcode: '10119' }, { locality: 'Berlin' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

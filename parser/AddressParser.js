@@ -64,7 +64,8 @@ class AddressParser extends Parser {
         new CompositeClassifier(require('../classifier/scheme/person')),
         new CompositeClassifier(require('../classifier/scheme/street_name')),
         new CompositeClassifier(require('../classifier/scheme/street')),
-        new CompositeClassifier(require('../classifier/scheme/intersection'))
+        new CompositeClassifier(require('../classifier/scheme/intersection')),
+        new CompositeClassifier(require('../classifier/scheme/place'))
       ],
       // solvers
       [
@@ -85,6 +86,12 @@ class AddressParser extends Parser {
           ['HouseNumberClassification', 'PostcodeClassification', 'RegionClassification'],
           ['HouseNumberClassification', 'PostcodeClassification', 'CountryClassification']
         ]),
+        new MustNotFollowFilter('PlaceClassification', 'HouseNumberClassification'),
+        new MustNotFollowFilter('PlaceClassification', 'StreetClassification'),
+        new MustNotFollowFilter('PlaceClassification', 'LocalityClassification'),
+        new MustNotFollowFilter('PlaceClassification', 'RegionClassification'),
+        new MustNotFollowFilter('PlaceClassification', 'CountryClassification'),
+        new MustNotFollowFilter('PlaceClassification', 'PostcodeClassification'),
         new MustNotPreceedFilter('PostcodeClassification', 'HouseNumberClassification'),
         new MustNotPreceedFilter('PostcodeClassification', 'StreetClassification'),
         new MustNotPreceedFilter('LocalityClassification', 'HouseNumberClassification'),
