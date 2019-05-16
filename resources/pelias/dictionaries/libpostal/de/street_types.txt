@@ -1,0 +1,2 @@
+# abbrviation for 'chaussee' conflicts with Swiss countrycode
+!ch
