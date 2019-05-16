@@ -6,6 +6,8 @@ sf
 !italy
 !college
 !university
+!airport
+!deli
 # remove any localities which share a name with a US state
 !alabama
 !alaska

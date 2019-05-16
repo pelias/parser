@@ -94,6 +94,14 @@ const testcase = (test, common) => {
     [{ street: 'SW 6th' }, { street: 'Pine' }]
   ])
 
+  // Should not detect this as an intersection
+  // assert('University of Hawaii at Hilo', [
+  //   [{ street: 'SW 6th' }, { street: 'Pine' }]
+  // ])
+  // assert('national air and space museum', [
+  //   [{ street: 'SW 6th' }, { street: 'Pine' }]
+  // ])
+
   // Trimet syntax
   // assert('9,Lambert', [
   //   [{ street: '9' }, { street: 'Lambert' }]
