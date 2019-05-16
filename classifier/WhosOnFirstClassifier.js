@@ -34,7 +34,9 @@ class WhosOnFirstClassifier extends PhraseClassifier {
     this.tokens = {}
     Object.keys(placetypes).forEach(placetype => {
       this.tokens[placetype] = new Set()
-      whosonfirst.load(this.tokens[placetype], [placetype], placetypes[placetype].files)
+      whosonfirst.load(this.tokens[placetype], [placetype], placetypes[placetype].files, {
+        minlength: 2
+      })
 
       // general blacklist
       this.tokens[placetype].delete('north')
