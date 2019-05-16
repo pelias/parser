@@ -6,7 +6,7 @@ resources/whosonfirst/dictionaries/*/*.txt
 
 # whitelist certain files
 !resources/whosonfirst/dictionaries/country/wof:country.txt
-!resources/whosonfirst/dictionaries/country/wof:shortcode.txt
+!resources/whosonfirst/dictionaries/country/wof:country_alpha3.txt
 !resources/whosonfirst/dictionaries/country/name:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/dependency/wof:shortcode.txt
 !resources/whosonfirst/dictionaries/dependency/name:eng_x_preferred.txt
