@@ -25,6 +25,7 @@ module.exports.tests.contains_numerals = (test) => {
 module.exports.tests.german_compound = (test) => {
   let valid = [
     'teststraße', 'teststrasse', 'teststr.',
+    'teststr', 'grolmanstr',
     'testallee',
     'testweg',
     'testplatz',
@@ -32,7 +33,6 @@ module.exports.tests.german_compound = (test) => {
   ]
 
   let invalid = [
-    'teststr',
     'testal',
     'testw', 'testw.'
   ]

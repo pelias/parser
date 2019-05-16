@@ -15,9 +15,6 @@ class CompoundStreetClassifier extends WordClassifier {
       // this removes suffixes such as 'r.' which can be ambiguous
       minlength: 3
     })
-
-    // whitelist
-    this.suffixes.park = true
   }
 
   each (span) {
