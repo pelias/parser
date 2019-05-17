@@ -10,6 +10,7 @@ sf
 !temple
 !airport
 !deli
+!us
 # remove any localities which share a name with a US state
 !alabama
 !alaska

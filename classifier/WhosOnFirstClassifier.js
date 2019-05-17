@@ -24,7 +24,7 @@ const placetypes = {
   //   classifications: [AreaClassification, DependencyClassification]
   // },
   'country': {
-    files: ['name:eng_x_preferred.txt'],
+    files: ['name:eng_x_preferred.txt', 'wof:country.txt', 'wof:country_alpha3.txt'],
     classifications: [AreaClassification, CountryClassification]
   }
 }
@@ -104,7 +104,16 @@ class WhosOnFirstClassifier extends PhraseClassifier {
 
     Object.keys(placetypes).forEach(placetype => {
       if (this.tokens[placetype].has(span.norm)) {
-        placetypes[placetype].classifications.forEach(Class => span.classify(new Class(1.0)))
+        // do not classify tokens if they already have a 'StopWordClassification'
+        if (
+          span.classifications.hasOwnProperty('StopWordClassification') || (
+            span.graph.length('child') > 0 &&
+            span.graph.findOne('child').classifications.hasOwnProperty('StopWordClassification')
+          )
+        ) { return }
+
+        // classify tokens
+        placetypes[placetype].classifications.forEach(Class => span.classify(new Class()))
       }
     })
   }

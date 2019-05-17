@@ -83,9 +83,8 @@ const testcase = (test, common) => {
 
   // do not parse 'aus' as a locality if it follows a region
   assert('new south wales aus', [
-    [{ region: 'new south wales' }],
-    [{ locality: 'south wales' }]]
-  )
+    { region: 'new south wales' }, { country: 'aus' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {
