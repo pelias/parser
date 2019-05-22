@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const pelias = require('../pelias/pelias')
+const custom = require('../custom/custom')
 const dictPath = path.join(__dirname, `./dictionaries`)
 const allLanguages = fs.readdirSync(dictPath).filter(p => !p.includes('.'))
 
@@ -19,6 +20,10 @@ function load (index, langs, filename, options) {
 
   langs.forEach(lang => {
     pelias.load(path.join('libpostal', lang, filename), add, remove)
+  })
+
+  langs.forEach(lang => {
+    custom.load(path.join('libpostal', lang, filename), add, remove)
   })
 }
 
