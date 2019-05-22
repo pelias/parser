@@ -16,5 +16,8 @@ resources/whosonfirst/dictionaries/*/*.txt
 !resources/whosonfirst/dictionaries/locality/name:eng_x_preferred.txt
 !resources/whosonfirst/dictionaries/locality/name:fra_x_preferred.txt
 
+# ignore all custom dictionaries
+resources/custom/dictionaries
+
 # ignore any openaddresses test cases
 test/oa
