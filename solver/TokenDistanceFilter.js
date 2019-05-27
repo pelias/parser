@@ -1,7 +1,7 @@
 // enforce a maximum span distance between classifications
 // eg. {housenumber} should not be more than n chars from {street}
 
-const MAX_DISTANCE = 1
+const MAX_DISTANCE = 2
 
 class TokenDistanceFilter {
   solve (tokenizer) {
