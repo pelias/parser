@@ -45,5 +45,24 @@ module.exports = [
         not: []
       }
     ]
+  },
+  {
+    // Air & Space Museum
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+      },
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['PlaceClassification'],
+        not: []
+      }
+    ]
   }
 ]
