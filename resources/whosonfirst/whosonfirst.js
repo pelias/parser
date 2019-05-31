@@ -44,6 +44,9 @@ function _normalize (cell, options) {
   if (options && options.lowercase) {
     value = value.toLowerCase()
   }
+  if (options && options.normalizer && typeof options.normalizer === 'function') {
+    value = options.normalizer(value)
+  }
   return value
 }
 

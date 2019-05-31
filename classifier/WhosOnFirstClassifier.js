@@ -5,6 +5,7 @@ const CountryClassification = require('../classification/CountryClassification')
 const RegionClassification = require('../classification/RegionClassification')
 const LocalityClassification = require('../classification/LocalityClassification')
 const whosonfirst = require('../resources/whosonfirst/whosonfirst')
+const normalize = require('../tokenization/normalizer')({ lowercase: true, removeHyphen: true, removeAccents: true })
 
 // databases sourced from the WhosOnFirst project
 // see: https://whosonfirst.org
@@ -35,7 +36,8 @@ class WhosOnFirstClassifier extends PhraseClassifier {
     Object.keys(placetypes).forEach(placetype => {
       this.tokens[placetype] = new Set()
       whosonfirst.load(this.tokens[placetype], [placetype], placetypes[placetype].files, {
-        minlength: 2
+        minlength: 2,
+        normalizer: normalize
       })
 
       // general blacklist
@@ -102,8 +104,9 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       return
     }
 
+    const normalizedSpan = normalize(span.norm)
     Object.keys(placetypes).forEach(placetype => {
-      if (this.tokens[placetype].has(span.norm)) {
+      if (this.tokens[placetype].has(normalizedSpan)) {
         // do not classify tokens if they already have a 'StopWordClassification'
         if (
           span.classifications.hasOwnProperty('StopWordClassification') || (
