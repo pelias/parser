@@ -1,22 +1,30 @@
 const PhraseClassifier = require('./super/PhraseClassifier')
 const IntersectionClassification = require('../classification/IntersectionClassification')
-const libpostal = require('../resources/libpostal/libpostal')
+// const libpostal = require('../resources/libpostal/libpostal')
 
 // dictionaries sourced from the libpostal project
 // see: https://github.com/openvenues/libpostal
 
-const languages = libpostal.languages
+// const languages = libpostal.languages
 
 class IntersectionClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
 
     // remove single characters but keep some punctuation
-    let options = { replace: [/^[^&@]{1}$/, ''] }
-    libpostal.load(this.index, languages, 'cross_streets.txt', options)
+    // let options = { replace: [/^[^&@]{1}$/, ''] }
+    // libpostal.load(this.index, languages, 'cross_streets.txt', options)
 
     // blacklist
-    delete this.index.corner
+    // delete this.index.corner
+
+    this.index['&'] = true
+    this.index.and = true
+    this.index.und = true
+    this.index['@'] = true
+    this.index.at = true
+    this.index.con = true
+    this.index['an der ecke von'] = true
   }
 
   each (span) {
