@@ -1,1 +1,4 @@
 temple
+cathedral
+stop
+!dist

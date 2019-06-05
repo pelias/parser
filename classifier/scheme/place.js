@@ -64,5 +64,20 @@ module.exports = [
         not: []
       }
     ]
+  },
+  {
+    // Stop 10792
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+      },
+      {
+        is: ['NumericClassification'],
+        not: []
+      }
+    ]
   }
 ]
