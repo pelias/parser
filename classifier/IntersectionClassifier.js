@@ -10,17 +10,24 @@ const languages = libpostal.languages
 class IntersectionClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
-    libpostal.load(this.index, languages, 'cross_streets.txt')
+
+    // remove single characters but keep some punctuation
+    let options = { replace: [/^[^&@]{1}$/, ''] }
+    libpostal.load(this.index, languages, 'cross_streets.txt', options)
 
     // blacklist
-    delete this.index.e
-    delete this.index.w
     delete this.index.corner
   }
 
   each (span) {
     // skip spans which contain numbers
     if (span.contains.numerals) { return }
+
+    // do not classify tokens with tokens missing before or afterwards
+    let firstChild = span.graph.findOne('child:first') || span
+    let prev = firstChild.graph.findOne('prev')
+    let next = firstChild.graph.findOne('next')
+    if (!prev || !next) { return }
 
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {

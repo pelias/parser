@@ -11,7 +11,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
       }
     ]
   },
@@ -22,14 +22,14 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'StreetPrefixClassification']
       },
       {
         is: ['StopWordClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
       }
     ]
   },

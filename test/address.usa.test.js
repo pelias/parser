@@ -11,6 +11,16 @@ const testcase = (test, common) => {
   assert('Martin Luther King Blvd.', [
     { street: 'Martin Luther King Blvd.' }
   ], true)
+
+  assert('1900 SE A ST, SAN FRANCISCO', [
+    { housenumber: '1900' }, { street: 'SE A ST' },
+    { locality: 'SAN FRANCISCO' }
+  ], true)
+
+  assert('1900 SE F ST, SAN FRANCISCO', [
+    { housenumber: '1900' }, { street: 'SE F ST' },
+    { locality: 'SAN FRANCISCO' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {

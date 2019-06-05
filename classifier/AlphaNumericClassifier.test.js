@@ -2,6 +2,7 @@ const AlphaNumericClassifier = require('./AlphaNumericClassifier')
 const AlphaClassification = require('../classification/AlphaClassification')
 const NumericClassification = require('../classification/NumericClassification')
 const AlphaNumericClassification = require('../classification/AlphaNumericClassification')
+const PunctuationClassification = require('../classification/PunctuationClassification')
 const Span = require('../tokenization/Span')
 
 module.exports.tests = {}
@@ -50,6 +51,19 @@ module.exports.tests.numeric = (test) => {
   test('NumericClassification: multiple digits', (t) => {
     let s = classify('1234567890')
     t.deepEqual(s.classifications, { NumericClassification: new NumericClassification(1.0) })
+    t.end()
+  })
+}
+
+module.exports.tests.punctuation = (test) => {
+  test('PunctuationClassification: single char', (t) => {
+    let s = classify('@')
+    t.deepEqual(s.classifications, { PunctuationClassification: new PunctuationClassification(1.0) })
+    t.end()
+  })
+  test('PunctuationClassification: multiple chars', (t) => {
+    let s = classify('###&$%')
+    t.deepEqual(s.classifications, { PunctuationClassification: new PunctuationClassification(1.0) })
     t.end()
   })
 }
