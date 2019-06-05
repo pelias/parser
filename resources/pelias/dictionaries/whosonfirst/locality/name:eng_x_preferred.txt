@@ -8,6 +8,7 @@ sf
 !university
 !hospital
 !temple
+!cathedral
 !airport
 !deli
 !us

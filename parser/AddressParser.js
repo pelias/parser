@@ -84,7 +84,9 @@ class AddressParser extends Parser {
           ['HouseNumberClassification', 'PostcodeClassification'],
           ['HouseNumberClassification', 'PostcodeClassification', 'LocalityClassification'],
           ['HouseNumberClassification', 'PostcodeClassification', 'RegionClassification'],
-          ['HouseNumberClassification', 'PostcodeClassification', 'CountryClassification']
+          ['HouseNumberClassification', 'PostcodeClassification', 'CountryClassification'],
+          ['PlaceClassification', 'HouseNumberClassification'],
+          ['PlaceClassification', 'PostcodeClassification']
         ]),
         new MustNotFollowFilter('PlaceClassification', 'HouseNumberClassification'),
         new MustNotFollowFilter('PlaceClassification', 'StreetClassification'),
