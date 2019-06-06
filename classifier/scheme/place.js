@@ -66,6 +66,21 @@ module.exports = [
     ]
   },
   {
+    // National Air & Space Museum
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+      },
+      {
+        is: ['PlaceClassification'],
+        not: []
+      }
+    ]
+  },
+  {
     // Stop 10792
     confidence: 0.8,
     Class: PlaceClassification,

@@ -5,9 +5,14 @@ const testcase = (test, common) => {
   let assert = common.assert.bind(null, test, parser)
 
   // intersection queries
-  assert('Corner of Main St & Second Ave', [
-    { street: 'Main St' }, { street: 'Second Ave' }
-  ], true)
+
+  // intersection tokens as a prefix are currently unsupported
+  // assert('Corner of Main St & Second Ave', [
+  //   { street: 'Main St' }, { street: 'Second Ave' }
+  // ], true)
+  // assert('cnr west st and north ave', [
+  //   { street: 'west st' }, { street: 'north ave' }
+  // ], true)
 
   assert('Main St & Second Ave', [
     { street: 'Main St' }, { street: 'Second Ave' }
@@ -25,13 +30,23 @@ const testcase = (test, common) => {
     { street: 'Gleimstraße' }, { street: 'Schönhauserallee' }
   ], true)
 
-  assert('cnr west st and north ave', [
-    { street: 'west st' }, { street: 'north ave' }
-  ], true)
-
   // should not consider intersection tokens for street name
   assert('& b', [])
+  assert('@ b', [])
+  assert('at b', [])
   assert('a &', [])
+  assert('a @', [])
+  assert('a at', [])
+  assert('& street', [])
+  assert('@ street', [])
+  assert('carrer &', [])
+  assert('carrer @', [])
+
+  // should correctly parse street names containing an intersection token
+  assert('at street', [{ street: 'at street' }], true)
+  assert('corner street', [{ street: 'corner street' }], true)
+  assert('carrer en', [{ street: 'carrer en' }], true)
+  assert('carrer con', [{ street: 'carrer con' }], true)
 
   // no street suffix
   assert('foo & bar', [
@@ -97,9 +112,9 @@ const testcase = (test, common) => {
   // assert('University of Hawaii at Hilo', [
   //   { street: 'SW 6th' }, { street: 'Pine' }
   // ], true)
-  // assert('national air and space museum', [
-  //   { street: 'SW 6th' }, { street: 'Pine' }
-  // ], true)
+  assert('national air and space museum', [
+    { place: 'national air and space museum' }
+  ], true)
 
   // Trimet syntax
   // assert('9,Lambert', [
