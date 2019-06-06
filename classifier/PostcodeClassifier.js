@@ -26,11 +26,12 @@ class PostcodeClassifier extends WordClassifier {
     // @todo: is this correct globally?
     if (!span.contains.numerals) { return }
 
-    // do not allow postcode in the star position unless it is the
-    // only token present.
+    // do not allow postcode in the start position unless it is the
+    // only token present in its section
     if (
       span.classifications.hasOwnProperty('StartTokenClassification') &&
-      !span.classifications.hasOwnProperty('EndTokenClassification')) {
+      (span.graph.length('prev') > 0 || span.graph.length('next') > 0)
+    ) {
       return
     }
 
