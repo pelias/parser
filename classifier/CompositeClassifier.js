@@ -49,6 +49,11 @@ class CompositeClassifier extends SectionClassifier {
   }
 
   each (section) {
+    let phrases = section.graph.findAll('phrase')
+
+    // sort phrases so shorter phrases are matched first
+    phrases.sort((a, b) => a.norm.length - b.norm.length)
+
     this.schemes.forEach(s => {
       // invalid scheme
       if (!Array.isArray(s.scheme)) { return }
@@ -57,7 +62,6 @@ class CompositeClassifier extends SectionClassifier {
       let candidates = []
 
       // compute candidate lists
-      let phrases = section.graph.findAll('phrase')
       candidates = s.scheme.map(s => phrases.filter(this.match.bind(null, s)))
 
       // no candidates were found for one or more schemes
@@ -78,6 +82,16 @@ class CompositeClassifier extends SectionClassifier {
             return false
           } else if (prev && curr.graph.findOne('child:first').graph.findOne('prev') !== prev.graph.findOne('child:last')) {
             return false
+          }
+
+          // avoid adding tokens to the front of a street classification
+          // that begins with a street prefix.
+          // eg. 'A + Ave B' (ave is both a valid prefix & suffix)
+          if (next && next.classifications.hasOwnProperty('StreetClassification')) {
+            let firstChild = next.graph.findOne('child')
+            if (firstChild && firstChild.classifications.hasOwnProperty('StreetPrefixClassification')) {
+              return false
+            }
           }
         }
         return true
