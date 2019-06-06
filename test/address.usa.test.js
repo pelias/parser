@@ -21,6 +21,12 @@ const testcase = (test, common) => {
     { housenumber: '1900' }, { street: 'SE F ST' },
     { locality: 'SAN FRANCISCO' }
   ], true)
+
+  // postcode allowed in first position when only 1 token
+  assert('90210', [{ postcode: '90210' }], true)
+
+  // postcode not allowed in first position otherwise
+  assert('90210 Foo', [])
 }
 
 module.exports.all = (tape, common) => {
