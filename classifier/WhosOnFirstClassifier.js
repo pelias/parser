@@ -69,7 +69,7 @@ class WhosOnFirstClassifier extends PhraseClassifier {
       // placetype specific modifications
       if (placetype === 'locality') {
         // remove locality names that sound like streets
-        let remove = ['avenue', 'lane', 'terrace', 'street', 'road', 'crescent', 'furlong']
+        let remove = ['avenue', 'lane', 'terrace', 'street', 'road', 'crescent', 'furlong', 'broadway']
         this.tokens.locality.forEach(token => {
           let split = token.split(/\s/)
           let lastWord = split[split.length - 1]
