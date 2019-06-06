@@ -329,7 +329,7 @@ module.exports = [
       },
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'FinalTokenSingleCharacterClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
       }
     ]
   }
