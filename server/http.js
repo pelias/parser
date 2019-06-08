@@ -26,9 +26,9 @@ const envCpus = parseInt(process.env.CPUS, 10)
 const cpus = Math.min(Math.max(envCpus || Infinity, 1), os.cpus().length)
 
 // optionally override port/host using env var
-var PORT = process.env.PORT || 3000
-var HOST = process.env.HOST || undefined
-var app = express()
+const PORT = process.env.PORT || 3000
+const HOST = process.env.HOST || undefined
+const app = express()
 
 // init placeholder and store it on $app
 console.error('parser loading')
@@ -61,6 +61,12 @@ if (cpus > 1) {
       console.error('[master] worker forked', worker.process.pid)
     })
 
+    // handle SIGTERM (required for fast docker restarts)
+    process.on('SIGTERM', () => {
+      console.error('[master] closing app')
+      process.exit(0)
+    })
+
     // fork workers
     for (var c = 0; c < cpus; c++) {
       cluster.fork()
@@ -75,7 +81,12 @@ if (cpus > 1) {
 } else {
   console.error('[master] using %d cpus', cpus)
 
-  app.listen(PORT, HOST, () => {
+  const server = app.listen(PORT, HOST, () => {
     console.log('[master] listening on %s:%s', HOST || '0.0.0.0', PORT)
+    // handle SIGTERM (required for fast docker restarts)
+    process.on('SIGTERM', () => {
+      console.error('[master] closing app')
+      server.close()
+    })
   })
 }
