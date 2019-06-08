@@ -64,7 +64,9 @@ if (cpus > 1) {
     // handle SIGTERM (required for fast docker restarts)
     process.on('SIGTERM', () => {
       console.error('[master] closing app')
-      process.exit(0)
+      Object.keys(cluster.workers)
+        .map(id => cluster.workers[id])
+        .forEach(worker => worker.send('graceful-shutdown'))
     })
 
     // fork workers
@@ -72,8 +74,15 @@ if (cpus > 1) {
       cluster.fork()
     }
   } else {
-    app.listen(PORT, HOST, () => {
+    const server = app.listen(PORT, HOST, () => {
       console.error('[worker %d] listening on %s:%s', process.pid, HOST || '0.0.0.0', PORT)
+    })
+    process.on('message', (msg) => {
+      // handle SIGTERM (required for fast docker restarts)
+      if (msg === 'graceful-shutdown') {
+        console.error('[worker %d] closing server', process.pid)
+        server.close(() => cluster.worker.disconnect())
+      }
     })
   }
 
