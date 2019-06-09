@@ -36,6 +36,24 @@ module.exports = [
     ]
   },
   {
+    // du 4 septembre
+    confidence: 0.5,
+    Class: StreetNameClassification,
+    scheme: [
+      {
+        is: ['StopWordClassification']
+      },
+      {
+        is: ['NumericClassification'],
+        not: ['PostcodeClassification']
+      },
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification', 'IntersectionClassification', 'LocalityClassification']
+      }
+    ]
+  },
+  {
     // dos Fiéis de Deus
     confidence: 0.5,
     Class: StreetNameClassification,

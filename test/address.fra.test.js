@@ -79,6 +79,18 @@ const testcase = (test, common) => {
   assert('Mery-Sur-Oise', [
     { locality: 'Mery-Sur-Oise' }
   ], true)
+
+  assert('4 Cité Du Cardinal Lemoine 75005 Paris', [
+    { housenumber: '4' }, { street: 'Cité Du Cardinal Lemoine' }, { postcode: '75005' }, { locality: 'Paris' }
+  ], true)
+
+  assert('32 Rue Du 4 Septembre', [
+    { housenumber: '32' }, { street: 'Rue Du 4 Septembre' }
+  ], true)
+
+  assert('12 Cité Roland Garros', [
+    { housenumber: '12' }, { street: 'Cité Roland Garros' }
+  ], true)
 }
 
 module.exports.all = (tape, common) => {
