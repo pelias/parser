@@ -52,7 +52,7 @@ Please refer to the CLI screenshot above for a visual reference.
 
 Tokenization is the process of splitting text into individual words.
 
-The spliting process used by the engine maintains token positions, so it's able to 'remember' where each character was in the original input text.
+The splitting process used by the engine maintains token positions, so it's able to 'remember' where each character was in the original input text.
 
 > Tokenization is coloured `blue` on the command-line.
 
@@ -92,7 +92,7 @@ Phrase generation is controlled by a configuration which specifies things like t
 
 A graph is used to associate `word`, `phrase` and `section` elements to each other.
 
-The graph is free-form, so it's easy to add a new relationship between terms on the future, as required.
+The graph is free-form, so it's easy to add a new relationship between terms in the future, as required.
 
 Graph Example:
 
