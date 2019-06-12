@@ -46,6 +46,13 @@ class Span {
 
   // add a classification for this span
   classify (classification) {
+    // ensure that duplicate classifications do not reduce confidence
+    if (
+      this.classifications.hasOwnProperty(classification.constructor.name) &&
+      this.classifications[classification.constructor.name].confidence >= classification.confidence
+    ) {
+      return this
+    }
     this.classifications[classification.constructor.name] = classification
     return this
   }
