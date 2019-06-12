@@ -1,12 +1,9 @@
-const AddressParser = require('../parser/AddressParser')
-
 const testcase = (test, common) => {
-  let parser = new AddressParser()
-  let assert = common.assert.bind(null, test, parser)
+  let assert = common.assert(test)
 
   assert('Rushendon Furlong', [
     { street: 'Rushendon Furlong' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {

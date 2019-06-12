@@ -1,18 +1,15 @@
-const AddressParser = require('../parser/AddressParser')
-
 // test cases from libpostal
 // https://github.com/openvenues/libpostal/issues
 
 const testcase = (test, common) => {
-  let parser = new AddressParser()
-  let assert = common.assert.bind(null, test, parser)
+  let assert = common.assert(test)
 
   // https://github.com/openvenues/libpostal/issues/382
   assert('3360 Grand Ave Oakland 94610-2737 CA', [
     { housenumber: '3360' }, { street: 'Grand Ave' },
     { locality: 'Oakland' }, { postcode: '94610-2737' },
     { region: 'CA' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {
