@@ -33,7 +33,7 @@ module.exports = [
       {
         is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
         not: ['IntersectionClassification', 'StreetSuffixClassification'],
-        confidence: 0.51,
+        confidence: 0.81,
         Class: StreetClassification
       },
       {
@@ -43,7 +43,7 @@ module.exports = [
       {
         is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
         not: ['IntersectionClassification'],
-        confidence: 0.52,
+        confidence: 0.82,
         Class: StreetClassification
       }
     ]
