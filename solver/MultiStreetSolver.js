@@ -1,4 +1,10 @@
 const HashMapSolver = require('./super/HashMapSolver')
+const Solution = require('./Solution')
+
+/**
+ * If a 'multistreet' classification was detected then
+ * add a new solution which covers all streets included.
+ */
 
 class MultiStreetSolver extends HashMapSolver {
   solve (tokenizer) {
@@ -8,36 +14,31 @@ class MultiStreetSolver extends HashMapSolver {
     if (!map.hasOwnProperty('multistreet')) { return }
     if (!map.hasOwnProperty('street') || map.street.pair.length < 2) { return }
 
-    let multi = map.multistreet.pair[0]
-    let candidates = map.street.copy()
+    // sort streets from longest to shortest string length.
+    // this favours longer street names over their shorter substrings.
+    let streets = map.street.copy()
+    streets.pair = streets.pair.sort((a, b) => b.span.norm.length - a.span.norm.length)
 
-    // add the second street to existing solutions
-    for (let s = 0; s < tokenizer.solution.length; s++) {
-      let sol = tokenizer.solution[s].copy() // make a copy
+    map.multistreet.pair.forEach(multi => {
+      let sol = new Solution()
 
-      // remove any pairs which are more granular than street (not applicable for intersections)
-      sol.pair = sol.pair.filter(p => p.classification.constructor.name !== 'HouseNumberClassification')
-      sol.pair = sol.pair.filter(p => p.classification.constructor.name !== 'PlaceClassification')
-
-      let success = false
-
-      for (let i = 0; i < candidates.pair.length; i++) {
-        let s = candidates.pair[i]
-
+      // find all street tokens which intersect the 'multistreet' span
+      // and also do not overlap an existing pair in this solution.
+      streets.pair.forEach(s => {
         if ((
           s.span.intersects(multi.span) &&
+          (s.classification.constructor.name === 'StreetClassification') &&
           !sol.pair.some(sp => sp.span.intersects(s.span))
         )) {
           sol.pair.push(s)
-          success = true
-          break
         }
-      }
-      if (success) {
+      })
+
+      // if more than one street was detected then add this as a new solution
+      if (sol.pair.length > 1) {
         tokenizer.solution.push(sol)
-        candidates.pair = candidates.pair.filter(c => c === sol[sol.length - 1])
       }
-    }
+    })
   }
 }
 

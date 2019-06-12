@@ -108,6 +108,14 @@ const testcase = (test, common) => {
     { street: 'SW 6th' }, { street: 'Pine' }
   ], true)
 
+  assert('9th and Lambert', [
+    { street: '9th' }, { street: 'Lambert' }
+  ], true)
+
+  assert('filbert & 32nd', [
+    { street: 'filbert' }, { street: '32nd' }
+  ], true)
+
   // Should not detect this as an intersection
   // assert('University of Hawaii at Hilo', [
   //   { street: 'SW 6th' }, { street: 'Pine' }
