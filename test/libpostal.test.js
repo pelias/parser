@@ -9,7 +9,7 @@ const testcase = (test, common) => {
     { housenumber: '3360' }, { street: 'Grand Ave' },
     { locality: 'Oakland' }, { postcode: '94610-2737' },
     { region: 'CA' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {

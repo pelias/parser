@@ -3,15 +3,15 @@ const testcase = (test, common) => {
 
   assert('Julianastraat, Heel', [
     { street: 'Julianastraat' }, { locality: 'Heel' }
-  ], true)
+  ])
 
   assert('Lindenlaan, Sint Odilienberg', [
     { street: 'Lindenlaan' }, { locality: 'Sint Odilienberg' }
-  ], true)
+  ])
 
   assert('Bosserdijk, Hoogland', [
     { street: 'Bosserdijk' }, { locality: 'Hoogland' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {

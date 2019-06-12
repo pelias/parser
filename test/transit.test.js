@@ -3,11 +3,11 @@ const testcase = (test, common) => {
 
   assert('Stop 1', [
     { place: 'Stop 1' }
-  ], true)
+  ])
 
   assert('Stop 10010', [
     { place: 'Stop 10010' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {

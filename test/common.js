@@ -19,7 +19,7 @@ const assert = (test, parser) => {
     p.solve(tokenizer)
     test(input, (t) => {
       let ext = extract(tokenizer)
-      t.deepEquals(firstOnly ? ext[0] : ext, expected)
+      t.deepEquals(firstOnly === false ? ext : ext[0], expected)
       t.end()
     })
   }

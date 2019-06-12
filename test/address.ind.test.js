@@ -5,7 +5,7 @@ const testcase = (test, common) => {
     { housenumber: '100' }, { street: 'Mahalakshmi Rd' },
     { locality: 'Pimpri-Chinchwad' }, { region: 'Maharashtra' },
     { postcode: '411027' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {

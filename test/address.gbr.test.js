@@ -3,7 +3,7 @@ const testcase = (test, common) => {
 
   assert('Rushendon Furlong', [
     { street: 'Rushendon Furlong' }
-  ], true)
+  ])
 }
 
 module.exports.all = (tape, common) => {
