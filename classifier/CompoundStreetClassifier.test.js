@@ -1,22 +1,21 @@
 const CompoundStreetClassifier = require('./CompoundStreetClassifier')
 const StreetClassification = require('../classification/StreetClassification')
 const Span = require('../tokenization/Span')
+const classifier = new CompoundStreetClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new CompoundStreetClassifier()
   let s = new Span(body)
-  c.each(s, null, 1)
+  classifier.each(s, null, 1)
   return s
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let c = new CompoundStreetClassifier()
     let s = new Span('example')
     s.contains.numerals = true
-    c.each(s, null, 1)
+    classifier.each(s, null, 1)
     t.deepEqual(s.classifications, {})
     t.end()
   })

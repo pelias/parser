@@ -1,22 +1,21 @@
 const HouseNumberClassifier = require('./HouseNumberClassifier')
 const HouseNumberClassification = require('../classification/HouseNumberClassification')
 const Span = require('../tokenization/Span')
+const classifier = new HouseNumberClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new HouseNumberClassifier()
   let s = new Span(body)
-  c.each(s)
+  classifier.each(s)
   return s
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let c = new HouseNumberClassifier()
     let s = new Span('100')
     s.contains.numerals = false
-    c.each(s)
+    classifier.each(s)
     t.deepEqual(s.classifications, {})
     t.end()
   })

@@ -1,22 +1,21 @@
 const PostcodeClassifier = require('./PostcodeClassifier')
 const PostcodeClassification = require('../classification/PostcodeClassification')
 const Span = require('../tokenization/Span')
+const classifier = new PostcodeClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new PostcodeClassifier()
   let s = new Span(body)
-  c.each(s)
+  classifier.each(s)
   return s
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let c = new PostcodeClassifier()
     let s = new Span('100')
     s.contains.numerals = false
-    c.each(s)
+    classifier.each(s)
     t.deepEqual(s.classifications, {})
     t.end()
   })

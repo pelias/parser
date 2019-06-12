@@ -1,22 +1,21 @@
 const OrdinalClassifier = require('./OrdinalClassifier')
 const OrdinalClassification = require('../classification/OrdinalClassification')
 const Span = require('../tokenization/Span')
+const classifier = new OrdinalClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new OrdinalClassifier()
   let s = new Span(body)
-  c.each(s)
+  classifier.each(s)
   return s
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let c = new OrdinalClassifier()
     let s = new Span('100')
     s.contains.numerals = false
-    c.each(s)
+    classifier.each(s)
     t.deepEqual(s.classifications, {})
     t.end()
   })

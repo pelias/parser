@@ -4,13 +4,13 @@ const NumericClassification = require('../classification/NumericClassification')
 const AlphaNumericClassification = require('../classification/AlphaNumericClassification')
 const PunctuationClassification = require('../classification/PunctuationClassification')
 const Span = require('../tokenization/Span')
+const classifier = new AlphaNumericClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new AlphaNumericClassifier()
   let s = new Span(body)
-  c.each(s)
+  classifier.each(s)
   return s
 }
 
