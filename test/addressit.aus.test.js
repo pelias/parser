@@ -1,11 +1,8 @@
-const AddressParser = require('../parser/AddressParser')
-
 // tests copied from 'npm addressit'
 // https://github.com/DamonOehlman/addressit/tree/master/test
 
 const testcase = (test, common) => {
-  let parser = new AddressParser()
-  let assert = common.assert.bind(null, test, parser)
+  let assert = common.assert(test)
 
   assert('2649 Logan Road, Eight Mile Plains, QLD 4113', [
     { housenumber: '2649' }, { street: 'Logan Road' },

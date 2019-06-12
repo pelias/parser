@@ -1,8 +1,5 @@
-const AddressParser = require('../parser/AddressParser')
-
 const testcase = (test, common) => {
-  let parser = new AddressParser()
-  let assert = common.assert.bind(null, test, parser)
+  let assert = common.assert(test)
 
   assert('Am Falkpl. 5, 10437 Berlin', [
     { street: 'Am Falkpl.' }, { housenumber: '5' },
