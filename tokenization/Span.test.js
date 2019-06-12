@@ -213,6 +213,48 @@ module.exports.tests.classify = (test) => {
     t.deepEquals(section.classifications, { Mock: classification })
     t.end()
   })
+  test('classify - duplicate with lower confidence', (t) => {
+    let section = new Span()
+    t.deepEquals(section.classifications, {})
+
+    let classification1 = new (class Mock { })()
+    let classification2 = new (class Mock { })()
+    classification1.confidence = 1
+    classification2.confidence = 0.5
+    section.classify(classification1)
+    section.classify(classification2)
+
+    t.deepEquals(section.classifications, { Mock: classification1 })
+    t.end()
+  })
+  test('classify - duplicate with same confidence', (t) => {
+    let section = new Span()
+    t.deepEquals(section.classifications, {})
+
+    let classification1 = new (class Mock { })()
+    let classification2 = new (class Mock { })()
+    classification1.confidence = 0.5
+    classification2.confidence = 0.5
+    section.classify(classification1)
+    section.classify(classification2)
+
+    t.deepEquals(section.classifications, { Mock: classification1 })
+    t.end()
+  })
+  test('classify - duplicate with higher confidence', (t) => {
+    let section = new Span()
+    t.deepEquals(section.classifications, {})
+
+    let classification1 = new (class Mock { })()
+    let classification2 = new (class Mock { })()
+    classification1.confidence = 0.5
+    classification2.confidence = 1
+    section.classify(classification1)
+    section.classify(classification2)
+
+    t.deepEquals(section.classifications, { Mock: classification2 })
+    t.end()
+  })
 }
 
 module.exports.tests.setPhrases = (test) => {
