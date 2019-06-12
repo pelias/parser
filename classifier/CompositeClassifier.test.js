@@ -1,11 +1,10 @@
 const CompositeClassifier = require('./CompositeClassifier')
 const Span = require('../tokenization/Span')
+const classifier = new CompositeClassifier()
 
 module.exports.tests = {}
 
 module.exports.tests.match = (test) => {
-  let classifier = new CompositeClassifier([])
-
   test('match: scheme.is multi-token', (t) => {
     let scheme = { is: ['PositiveClassification'] }
 

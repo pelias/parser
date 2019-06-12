@@ -1,13 +1,13 @@
 const ChainClassifier = require('./ChainClassifier')
 const ChainClassification = require('../classification/ChainClassification')
 const Span = require('../tokenization/Span')
+const classifier = new ChainClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new ChainClassifier()
   let s = new Span(body)
-  c.each(s, null, 1)
+  classifier.each(s, null, 1)
   return s
 }
 

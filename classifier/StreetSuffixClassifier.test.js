@@ -1,22 +1,21 @@
 const StreetSuffixClassifier = require('./StreetSuffixClassifier')
 const StreetSuffixClassification = require('../classification/StreetSuffixClassification')
 const Span = require('../tokenization/Span')
+const classifier = new StreetSuffixClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new StreetSuffixClassifier()
   let s = new Span(body)
-  c.each(s, null, 1)
+  classifier.each(s, null, 1)
   return s
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let c = new StreetSuffixClassifier()
     let s = new Span('example')
     s.contains.numerals = true
-    c.each(s, null, 1)
+    classifier.each(s, null, 1)
     t.deepEqual(s.classifications, {})
     t.end()
   })
@@ -24,8 +23,7 @@ module.exports.tests.contains_numerals = (test) => {
 
 module.exports.tests.single_character_tokens = (test) => {
   test('index: does not contain single char tokens', (t) => {
-    let c = new StreetSuffixClassifier()
-    t.false(Object.keys(c.index).some(token => token.length < 2))
+    t.false(Object.keys(classifier.index).some(token => token.length < 2))
     t.end()
   })
 }

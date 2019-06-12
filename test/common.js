@@ -27,3 +27,4 @@ const assert = (test, parser) => {
 
 module.exports.assert = assert
 module.exports.extract = extract
+module.exports.parser = globalParser

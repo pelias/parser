@@ -1,5 +1,4 @@
 const Solution = require('./Solution')
-const AddressParser = require('../parser/AddressParser')
 const Tokenizer = require('../tokenization/Tokenizer')
 
 module.exports.tests = {}
@@ -25,13 +24,12 @@ module.exports.tests.constructor = (test) => {
 // @todo
 // module.exports.tests.computeScore = (test) => {}
 
-module.exports.tests.mask = (test) => {
-  let parser = new AddressParser()
+module.exports.tests.mask = (test, common) => {
   test('mask', (t) => {
     //                            'VVVVVV VVV  SSSSSSSSSSSS NN PPPPP AAAAAA'
     let tokenizer = new Tokenizer('Kaschk Bar, Linienstraße 40 10119 Berlin')
-    parser.classify(tokenizer)
-    parser.solve(tokenizer)
+    common.parser.classify(tokenizer)
+    common.parser.solve(tokenizer)
 
     t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVVVVVV  SSSSSSSSSSSS NN PPPPP AAAAAA')
     t.end()
@@ -39,8 +37,8 @@ module.exports.tests.mask = (test) => {
   test('mask', (t) => {
     //                            'VVV VVVV NN SSSSSSS AAAAAA PPPPP      '
     let tokenizer = new Tokenizer('Foo Cafe 10 Main St London 10010 Earth')
-    parser.classify(tokenizer)
-    parser.solve(tokenizer)
+    common.parser.classify(tokenizer)
+    common.parser.solve(tokenizer)
 
     t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVVVV NN SSSSSSS AAAAAA PPPPP      ')
     t.end()

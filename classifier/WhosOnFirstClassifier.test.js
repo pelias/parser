@@ -1,12 +1,12 @@
 const WhosOnFirstClassifier = require('./WhosOnFirstClassifier')
 const Span = require('../tokenization/Span')
+const classifier = new WhosOnFirstClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new WhosOnFirstClassifier()
   let s = new Span(body)
-  c.each(s, null, 1)
+  classifier.each(s, null, 1)
   return s
 }
 

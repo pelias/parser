@@ -1,12 +1,12 @@
 const TokenPositionClassifier = require('./TokenPositionClassifier')
 const Tokenizer = require('../tokenization/Tokenizer')
+const classifier = new TokenPositionClassifier()
 
 module.exports.tests = {}
 
 function classify (body) {
-  let c = new TokenPositionClassifier()
   let t = new Tokenizer(body)
-  c.classify(t)
+  classifier.classify(t)
 
   // generate an array containing all the spans
   // with a final token classification
