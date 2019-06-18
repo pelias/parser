@@ -45,6 +45,14 @@ const testcase = (test, common) => {
   assert('N DWIGHT AVE Portland Oreg', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }])
   assert('N DWIGHT AVE Portland Orego', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }])
   assert('N DWIGHT AVE Portland Oregon', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }, { region: 'Oregon' }])
+
+  assert('University of Hawaii', [{ place: 'University of Hawaii' }])
+
+  // Maybe one day this test will pass...
+  // see: https://github.com/pelias/parser/pull/49
+  // assert('University of Hawaii at Hilo', [
+  //   { place: 'University of Hawaii at Hilo' }
+  // ])
 }
 
 module.exports.all = (tape, common) => {

@@ -82,15 +82,16 @@ class WhosOnFirstClassifier extends PhraseClassifier {
   }
 
   each (span) {
-    // do not classify tokens preceeded by an 'IntersectionClassification' or 'StopWordClassification'
+    let confidence = 1.0
+    // do not classify tokens preceeded by an 'IntersectionClassification' or add a penality to 'StopWordClassification'
     let firstChild = span.graph.findOne('child:first') || span
     let prev = firstChild.graph.findOne('prev')
-    if (
-      prev && (
-        prev.classifications.hasOwnProperty('IntersectionClassification') ||
-        prev.classifications.hasOwnProperty('StopWordClassification')
-      )) {
-      return
+    if (prev) {
+      if (prev.classifications.hasOwnProperty('IntersectionClassification')) {
+        return
+      } else if (prev.classifications.hasOwnProperty('StopWordClassification')) {
+        confidence = confidence / 2
+      }
     }
 
     // do not classify tokens preceeding 'StreetSuffixClassification' or 'PlaceClassification'
@@ -116,7 +117,7 @@ class WhosOnFirstClassifier extends PhraseClassifier {
         ) { return }
 
         // classify tokens
-        placetypes[placetype].classifications.forEach(Class => span.classify(new Class()))
+        placetypes[placetype].classifications.forEach(Class => span.classify(new Class(confidence)))
       }
     })
   }

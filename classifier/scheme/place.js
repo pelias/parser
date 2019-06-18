@@ -94,5 +94,39 @@ module.exports = [
         not: []
       }
     ]
+  },
+  {
+    // University of Somewhere
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['AreaClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // Ecole Jules Vernes
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['PersonClassification'],
+        not: ['StreetClassification']
+      }
+    ]
   }
 ]
