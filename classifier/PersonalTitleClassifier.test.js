@@ -24,7 +24,7 @@ module.exports.tests.contains_numerals = (test) => {
 module.exports.tests.classify = (test) => {
   let valid = [
     'Général', 'General', 'gal',
-    'Saint', 'st', 'cdt'
+    'Saint', 'st', 'cdt', 'l\'Amiral'
   ]
 
   valid.forEach(token => {
