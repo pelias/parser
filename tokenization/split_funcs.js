@@ -31,5 +31,10 @@ function fieldsFuncWhiteSpace (char) {
   return whitespace.test(char)
 }
 
+function fieldsFuncHyphenOrWhiteSpace (char) {
+  return char === '-' || fieldsFuncWhiteSpace(char)
+}
+
 module.exports.fieldsFuncBoundary = fieldsFuncBoundary
 module.exports.fieldsFuncWhiteSpace = fieldsFuncWhiteSpace
+module.exports.fieldsFuncHyphenOrWhiteSpace = fieldsFuncHyphenOrWhiteSpace

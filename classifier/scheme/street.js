@@ -199,7 +199,7 @@ module.exports = [
   },
   {
     // Rue Saint Anne
-    confidence: 0.81,
+    confidence: 0.91,
     Class: StreetClassification,
     scheme: [
       {

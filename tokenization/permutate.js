@@ -11,47 +11,63 @@ const JOIN_CHAR = ' '
   ported: https://github.com/pelias/placeholder/blob/master/lib/permutations.js
 **/
 
-function permutate (spans, windowMin, windowMax) {
-  let permutations = []
+function permutateRec (prevSpan, s, windowCur, windowMin, windowMax, permutations) {
+  // Stops when the window is reached
+  if (windowCur > windowMax) {
+    return
+  }
+  // Create new span base on the previous and the next one
+  let span = new Span(prevSpan.body + (prevSpan.body.length > 0 ? JOIN_CHAR : '') + s.body, prevSpan.start)
+  // Add all children from the previous span to the new one, they will have the same ones + the next one
+  // Add to all childrend from the previous span the new span as parent + the next one
+  prevSpan.graph.findAll('child').forEach(child => {
+    span.graph.add('child', child)
+    child.graph.add('parent', span)
+  })
+  span.graph.add('child', s)
+  s.graph.add('parent', span)
 
-  // favour larger tokens over shorter ones
-  for (let i = 0; i < spans.length; i++) {
-    for (let j = i + windowMax; j >= i + windowMin; j--) {
-      if (j <= spans.length) {
-        if (j > i) {
-          let span = new Span()
-          for (let k = i; k < j; k++) {
-            let s = spans[k]
-            span.setBody(span.body += s.body)
-            span.graph.add('child', s)
-            if (k === i) { span.graph.add('child:first', s) }
-            if (k === j - 1) { span.graph.add('child:last', s) }
-            s.graph.add('parent', span)
+  let isFirst = span.body === s.body
+  let isLast = !s.graph.findOne('next')
 
-            // join with delim
-            if (k < j - 1) {
-              span.body += JOIN_CHAR
-            }
+  // If span is the first one, s is the first child, otherwise we take the first child of the previous span
+  if (isFirst) {
+    span.graph.add('child:first', s)
+  } else {
+    span.graph.add('child:first', prevSpan.graph.findOne('child:first'))
+  }
 
-            // update spans
-            if (i === k) {
-              span.start = s.start
-              span.end = s.end
-            } else {
-              if (s.start < span.start) {
-                span.start = s.start
-              }
-              if (s.end > span.end) {
-                span.end = s.end
-              }
-            }
-          }
-          permutations.push(span)
-        }
-      }
+  span.graph.add('child:last', s)
+
+  if (isFirst) {
+    span.start = s.start
+    span.end = s.end
+  } else {
+    if (s.start < span.start) {
+      span.start = s.start
+    }
+    if (s.end > span.end) {
+      span.end = s.end
     }
   }
 
+  // go through the graph recursively, check all next spans
+  if (!isLast) {
+    s.graph.findAll('next').forEach(next => {
+      permutateRec(span, next, windowCur + 1, windowMin, windowMax, permutations)
+    })
+  }
+
+  if (windowMin <= windowCur) {
+    permutations.push(span)
+  }
+}
+
+function permutate (spans, windowMin, windowMax) {
+  let permutations = []
+  spans.forEach(span => {
+    permutateRec(new Span(), span, 1, windowMin, windowMax, permutations)
+  })
   return permutations
 }
 

@@ -20,6 +20,7 @@ class Tokenizer {
   split () {
     for (let i = 0; i < this.section.length; i++) {
       this.section[i].setChildren(split(this.section[i], funcs.fieldsFuncWhiteSpace))
+      this.section[i].setChildren(split(this.section[i], funcs.fieldsFuncHyphenOrWhiteSpace))
     }
   }
 
@@ -31,12 +32,15 @@ class Tokenizer {
     }
   }
 
+  computeCoverageRec (sum, curr) {
+    if (!curr) { return sum }
+    return this.computeCoverageRec(sum + curr.end - curr.start, curr.graph.findOne('next'))
+  }
+
   computeCoverage () {
     this.coverage = 0
     this.section.forEach(s => {
-      this.coverage += s.graph.findAll('child').reduce(
-        (sum, cur) => sum + cur.end - cur.start, 0
-      )
+      this.coverage += this.computeCoverageRec(0, s.graph.findOne('child'))
     }, this)
   }
 }

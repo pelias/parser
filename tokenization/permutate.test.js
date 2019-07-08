@@ -3,14 +3,21 @@ const permutate = require('./permutate')
 
 module.exports.tests = {}
 
+function generatePhrase (...spans) {
+  return spans.map((s, i) => {
+    if (i < spans.length - 1) { s.graph.add('next', spans[i + 1]) }
+    return s
+  })
+}
+
 module.exports.tests.permutate = (test) => {
   test('permutate: simple', (t) => {
-    let spans = [
+    let spans = generatePhrase(
       new Span('SoHo', 0),
       new Span('New', 5),
       new Span('York', 9),
       new Span('USA', 14)
-    ]
+    )
 
     // expected permutations
     let perm1 = new Span('SoHo New York USA', 0)
@@ -72,11 +79,11 @@ module.exports.tests.permutate = (test) => {
   })
 
   test('permutate: tokens contain whitespace', (t) => {
-    let spans = [
+    let spans = generatePhrase(
       new Span('SoHo', 0),
       new Span('New York', 5),
       new Span('USA', 14)
-    ]
+    )
 
     // expected permutations
     let perm1 = new Span('SoHo New York USA', 0)
@@ -117,12 +124,12 @@ module.exports.tests.permutate = (test) => {
   })
 
   test('permutate: smaller window', (t) => {
-    let spans = [
+    let spans = generatePhrase(
       new Span('SoHo', 0),
       new Span('New', 5),
       new Span('York', 9),
       new Span('USA', 13)
-    ]
+    )
 
     // expected permutations
     let perm1 = new Span('SoHo New', 0)
@@ -175,7 +182,7 @@ module.exports.tests.permutate = (test) => {
     span2.end = 14
     let span3 = new Span('York', 15)
     span3.end = 19
-    let spans = [span1, span2, span3]
+    let spans = generatePhrase(span1, span2, span3)
 
     // expected permutations
     let perm1 = new Span('SoHo New York', 2)
@@ -231,7 +238,7 @@ module.exports.tests.permutate = (test) => {
     let span1 = new Span('SoHo', 0)
     let span2 = new Span('New', 5)
     let span3 = new Span('York', 14)
-    let spans = [span1, span2, span3]
+    let spans = generatePhrase(span1, span2, span3)
 
     let actual = permutate(spans, 1, 6)
 
