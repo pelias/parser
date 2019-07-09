@@ -116,6 +116,26 @@ const testcase = (test, common) => {
   assert(`Rue de l'Adjudant Réau Paris`, [
     { street: `Rue de l'Adjudant Réau` }, { locality: 'Paris' }
   ])
+
+  assert('16 Rue Des Petits Carreaux', [
+    { housenumber: '16' }, { street: 'Rue Des Petits' }
+  ])
+
+  assert('16 Rue Des Petits Carreaux Paris', [
+    { housenumber: '16' }, { street: 'Rue Des Petits Carreaux' }, { locality: 'Paris' }
+  ])
+
+  assert('Rue Saint-Germain Dou', [
+    { street: 'Rue Saint-Germain' }
+  ])
+
+  assert('Rue Saint-Germain Dourdan', [
+    { street: 'Rue Saint-Germain' }, { locality: 'Dourdan' }
+  ])
+
+  assert('Rue du 8 Mai Chevreuse', [
+    { street: 'Rue du 8 Mai' }, { locality: 'Chevreuse' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

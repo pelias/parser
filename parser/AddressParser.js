@@ -29,6 +29,7 @@ const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
 const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const MustNotFollowFilter = require('../solver/MustNotFollowFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
+const FillSolver = require('../solver/FillSolver')
 
 class AddressParser extends Parser {
   constructor (options) {
@@ -108,7 +109,8 @@ class AddressParser extends Parser {
         new MustNotFollowFilter('LocalityClassification', 'RegionClassification'),
         new MustNotFollowFilter('LocalityClassification', 'CountryClassification'),
         new TokenDistanceFilter(),
-        new SubsetFilter()
+        new SubsetFilter(),
+        new FillSolver()
       ],
       options
     )
