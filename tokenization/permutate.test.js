@@ -10,6 +10,10 @@ function generatePhrase (...spans) {
   })
 }
 
+function getSpans (spans, ...indexes) {
+  return indexes.map(i => spans[i])
+}
+
 module.exports.tests.permutate = (test) => {
   test('permutate: simple', (t) => {
     let spans = generatePhrase(
@@ -280,6 +284,102 @@ module.exports.tests.permutate = (test) => {
     t.true(perm6.graph.findAll('child').includes(span3))
     t.true(span3.graph.findAll('parent').includes(perm6))
 
+    t.end()
+  })
+
+  test('permutate: with hyphen', (t) => {
+    let spans = generatePhrase(
+      new Span('SoHo', 0),
+      new Span('New-York', 5),
+      new Span('USA', 14)
+    )
+    spans.push(new Span('New', 5))
+    spans.push(new Span('York', 9))
+
+    // SoHo -> New
+    spans[0].graph.add('next', spans[3])
+    // New -> York
+    spans[3].graph.add('next', spans[4])
+    // York -> USA
+    spans[4].graph.add('next', spans[2])
+
+    // expected permutations
+    let perm1 = new Span('SoHo New-York USA', 0)
+    spans.slice(0, 3).forEach(s => perm1.graph.add('child', s))
+    perm1.graph.add('child:first', spans[0])
+    perm1.graph.add('child:last', spans[2])
+
+    let perm2 = new Span('SoHo New-York', 0)
+    spans.slice(0, 2).forEach(s => perm2.graph.add('child', s))
+    perm2.graph.add('child:first', spans[0])
+    perm2.graph.add('child:last', spans[1])
+
+    let perm3 = new Span('SoHo New York USA', 0)
+    getSpans(spans, 0, 3, 4, 2).forEach(s => perm3.graph.add('child', s))
+    perm3.graph.add('child:first', spans[0])
+    perm3.graph.add('child:last', spans[2])
+
+    let perm4 = new Span('SoHo New York', 0)
+    getSpans(spans, 0, 3, 4).forEach(s => perm4.graph.add('child', s))
+    perm4.graph.add('child:first', spans[0])
+    perm4.graph.add('child:last', spans[4])
+
+    let perm5 = new Span('SoHo New', 0)
+    getSpans(spans, 0, 3).forEach(s => perm5.graph.add('child', s))
+    perm5.graph.add('child:first', spans[0])
+    perm5.graph.add('child:last', spans[3])
+
+    let perm6 = new Span('SoHo', 0)
+    spans.slice(0, 1).forEach(s => perm6.graph.add('child', s))
+    perm6.graph.add('child:first', spans[0])
+    perm6.graph.add('child:last', spans[0])
+
+    let perm7 = new Span('New-York USA', 5)
+    spans.slice(1, 3).forEach(s => perm7.graph.add('child', s))
+    perm7.graph.add('child:first', spans[1])
+    perm7.graph.add('child:last', spans[2])
+
+    let perm8 = new Span('New-York', 5)
+    spans.slice(1, 2).forEach(s => perm8.graph.add('child', s))
+    perm8.graph.add('child:first', spans[1])
+    perm8.graph.add('child:last', spans[1])
+
+    let perm9 = new Span('USA', 14)
+    spans.slice(2, 3).forEach(s => perm9.graph.add('child', s))
+    perm9.graph.add('child:first', spans[2])
+    perm9.graph.add('child:last', spans[2])
+
+    let perm10 = new Span('New York USA', 5)
+    getSpans(spans, 3, 4, 2).forEach(s => perm10.graph.add('child', s))
+    perm10.graph.add('child:first', spans[3])
+    perm10.graph.add('child:last', spans[2])
+
+    let perm11 = new Span('New York', 5)
+    getSpans(spans, 3, 4).forEach(s => perm11.graph.add('child', s))
+    perm11.graph.add('child:first', spans[3])
+    perm11.graph.add('child:last', spans[4])
+
+    let perm12 = new Span('New', 5)
+    spans.slice(3, 4).forEach(s => perm12.graph.add('child', s))
+    perm12.graph.add('child:first', spans[3])
+    perm12.graph.add('child:last', spans[3])
+
+    let perm13 = new Span('York USA', 9)
+    getSpans(spans, 4, 2).forEach(s => perm13.graph.add('child', s))
+    perm13.graph.add('child:first', spans[4])
+    perm13.graph.add('child:last', spans[2])
+
+    let perm14 = new Span('York', 9)
+    spans.slice(4, 5).forEach(s => perm14.graph.add('child', s))
+    perm14.graph.add('child:first', spans[4])
+    perm14.graph.add('child:last', spans[4])
+
+    let actual = permutate(spans, 1, 10)
+    t.deepEquals(actual, [
+      perm1, perm2, perm3, perm4, perm5,
+      perm6, perm7, perm8, perm9, perm10,
+      perm11, perm12, perm13, perm14
+    ])
     t.end()
   })
 }
