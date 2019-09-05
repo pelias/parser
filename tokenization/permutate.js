@@ -19,7 +19,7 @@ function permutateRec (prevSpan, s, windowCur, windowMin, windowMax, permutation
   // Create new span base on the previous and the next one
   let span = new Span(prevSpan.body + (prevSpan.body.length > 0 ? JOIN_CHAR : '') + s.body, prevSpan.start)
   // Add all children from the previous span to the new one, they will have the same ones + the next one
-  // Add to all childrend from the previous span the new span as parent + the next one
+  // Add to all children from the previous span the new span as parent + the next one
   prevSpan.graph.findAll('child').forEach(child => {
     span.graph.add('child', child)
     child.graph.add('parent', span)
