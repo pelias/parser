@@ -71,3 +71,12 @@ class Span {
 }
 
 module.exports = Span
+module.exports.connectSiblings = (...spans) => {
+  // Supports both var-args and Array as argument
+  if (spans[0] instanceof Array) { spans = spans[0] }
+  spans.forEach((span, i) => {
+    if (spans[i - 1]) { span.graph.add('prev', spans[i - 1]) }
+    if (spans[i + 1]) { span.graph.add('next', spans[i + 1]) }
+  })
+  return spans
+}

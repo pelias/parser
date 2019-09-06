@@ -35,10 +35,7 @@ function split (span, f) {
   }
 
   // Add siblings to graph
-  spans.forEach((span, i) => {
-    if (spans[i - 1]) { span.graph.add('prev', spans[i - 1]) }
-    if (spans[i + 1]) { span.graph.add('next', spans[i + 1]) }
-  })
+  Span.connectSiblings(spans)
 
   return spans
 }
