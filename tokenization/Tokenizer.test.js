@@ -118,6 +118,18 @@ module.exports.tests.computeCoverage = (test) => {
     t.equal(30, tok.coverage)
     t.end()
   })
+  test('computeCoverage: trim text when greater than 140 characters with spaces', (t) => {
+    let tok = new Tokenizer(`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`)
+    t.ok(tok.coverage < 140)
+    t.equal(tok.coverage, 111)
+    t.end()
+  })
+  test(`computeCoverage: do not trim text when it's 140 characters`, (t) => {
+    let tok = new Tokenizer(`LoremipsumdolorsitametconsecteturadipiscingelitseddoeiusmodtemporincididuntutlaboreetdoloremagnaaliquaUtenimadminimveniamquisnostrudexercita`)
+    t.equal(tok.coverage, 140)
+    t.end()
+  })
 }
 
 module.exports.all = (tape, common) => {
