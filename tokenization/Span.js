@@ -1,4 +1,5 @@
 const Graph = require('./Graph')
+const MAX_SPAN_LENGTH = 140
 
 class Span {
   constructor (body, start) {
@@ -13,6 +14,8 @@ class Span {
   // update the token body
   setBody (body) {
     this.body = body || ''
+    if (this.body.length > MAX_SPAN_LENGTH) { this.body = this.body.slice(0, MAX_SPAN_LENGTH) }
+
     this.norm = this.body.toLowerCase() // normalized body
     this.end = this.start + this.body.length
 

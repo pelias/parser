@@ -89,6 +89,19 @@ module.exports.tests.setBody = (test) => {
     t.true(span.contains.final.period)
     t.end()
   })
+  test('setBody: trim text when greater than 140 characters with spaces', (t) => {
+    let span = new Span(`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`)
+    t.equals(span.start, 0)
+    t.equals(span.end, 140)
+    t.end()
+  })
+  test(`setBody: do not trim text when it's 140 characters`, (t) => {
+    let span = new Span(`LoremipsumdolorsitametconsecteturadipiscingelitseddoeiusmodtemporincididuntutlaboreetdoloremagnaaliquaUtenimadminimveniamquisnostrudexercita`)
+    t.equals(span.start, 0)
+    t.equals(span.end, 140)
+    t.end()
+  })
 }
 
 module.exports.tests.intersects = (test) => {
