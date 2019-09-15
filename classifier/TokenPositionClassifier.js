@@ -19,19 +19,21 @@ class TokenPositionClassifier extends BaseClassifier {
     let firstSection = tokenizer.section[0]
     let firstSectionChildren = firstSection.graph.findAll('child')
     if (firstSectionChildren.length > 0) {
-      let firstChild = firstSectionChildren[0]
-      firstChild.classify(new StartTokenClassification(1.0))
+      firstSectionChildren.filter(s => !s.graph.findOne('prev')).forEach(firstChild => {
+        firstChild.classify(new StartTokenClassification(1.0))
+      })
     }
 
     // end token
     let lastSection = tokenizer.section[tokenizer.section.length - 1]
     let lastSectionChildren = lastSection.graph.findAll('child')
     if (lastSectionChildren.length > 0) {
-      let lastChild = lastSectionChildren[lastSectionChildren.length - 1]
-      lastChild.classify(new EndTokenClassification(1.0))
-      if (lastChild.norm.length === 1) {
-        lastChild.classify(new EndTokenSingleCharacterClassification(1.0))
-      }
+      lastSectionChildren.filter(s => !s.graph.findOne('next')).forEach(lastChild => {
+        lastChild.classify(new EndTokenClassification(1.0))
+        if (lastChild.norm.length === 1) {
+          lastChild.classify(new EndTokenSingleCharacterClassification(1.0))
+        }
+      })
     }
   }
 }

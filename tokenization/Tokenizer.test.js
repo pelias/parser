@@ -66,6 +66,22 @@ module.exports.tests.split = (test) => {
     t.equals(tok.section[3].graph.findAll('child')[0].body, 'USA')
     t.end()
   })
+  test('split: hyphen', (t) => {
+    let tok = new Tokenizer('20 Boulevard Saint-Germain, Paris, France')
+    t.true(tok.section.every(s => s.graph.findAll('child').every(c => c.constructor.name === 'Span')))
+    t.equals(tok.section.length, 3)
+    t.equals(tok.section[0].graph.findAll('child').length, 5)
+    t.equals(tok.section[0].graph.findAll('child')[0].body, '20')
+    t.equals(tok.section[0].graph.findAll('child')[1].body, 'Boulevard')
+    t.equals(tok.section[0].graph.findAll('child')[2].body, 'Saint-Germain')
+    t.equals(tok.section[0].graph.findAll('child')[3].body, 'Saint')
+    t.equals(tok.section[0].graph.findAll('child')[4].body, 'Germain')
+    t.equals(tok.section[1].graph.findAll('child').length, 1)
+    t.equals(tok.section[1].graph.findAll('child')[0].body, 'Paris')
+    t.equals(tok.section[2].graph.findAll('child').length, 1)
+    t.equals(tok.section[2].graph.findAll('child')[0].body, 'France')
+    t.end()
+  })
 }
 
 module.exports.tests.permute = (test) => {

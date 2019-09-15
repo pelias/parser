@@ -14,7 +14,7 @@ function split (span, f) {
     let char = span.body.charAt(i)
     if (f(char)) {
       if (wasField) {
-        spans.push(new Span(
+        spans.push(span.graph.findAll('child').find(s => s.start === span.start + fromIndex && s.body === span.body.substring(fromIndex, i)) || new Span(
           span.body.substring(fromIndex, i),
           span.start + fromIndex
         ))
@@ -28,17 +28,14 @@ function split (span, f) {
 
   // Last field might end at EOF.
   if (wasField) {
-    spans.push(new Span(
+    spans.push(span.graph.findAll('child').find(s => s.start === span.start + fromIndex && s.body === span.body.substring(fromIndex, span.body.length)) || new Span(
       span.body.substring(fromIndex, span.body.length),
       span.start + fromIndex
     ))
   }
 
   // Add siblings to graph
-  spans.forEach((span, i) => {
-    if (spans[i - 1]) { span.graph.add('prev', spans[i - 1]) }
-    if (spans[i + 1]) { span.graph.add('next', spans[i + 1]) }
-  })
+  Span.connectSiblings(spans)
 
   return spans
 }

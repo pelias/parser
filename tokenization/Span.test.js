@@ -283,6 +283,33 @@ module.exports.tests.setPhrases = (test) => {
   })
 }
 
+module.exports.tests.connectSiblings = (test) => {
+  test('connectSiblings - array list', (t) => {
+    let spans = [new Span('A'), new Span('B'), new Span('C')]
+    Span.connectSiblings(spans)
+    t.deepEquals(spans[0].graph.findOne('next'), spans[1])
+    t.notOk(spans[0].graph.findOne('prev'))
+    t.deepEquals(spans[1].graph.findOne('next'), spans[2])
+    t.deepEquals(spans[1].graph.findOne('prev'), spans[0])
+    t.notOk(spans[2].graph.findOne('next'))
+    t.deepEquals(spans[2].graph.findOne('prev'), spans[1])
+    t.end()
+  })
+  test('connectSiblings - list of items', (t) => {
+    let a = new Span('A')
+    let b = new Span('B')
+    let c = new Span('C')
+    Span.connectSiblings(a, b, c)
+    t.deepEquals(a.graph.findOne('next'), b)
+    t.notOk(a.graph.findOne('prev'))
+    t.deepEquals(b.graph.findOne('next'), c)
+    t.deepEquals(b.graph.findOne('prev'), a)
+    t.notOk(c.graph.findOne('next'))
+    t.deepEquals(c.graph.findOne('prev'), b)
+    t.end()
+  })
+}
+
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
     return tape(`Span: ${name}`, testFunction)

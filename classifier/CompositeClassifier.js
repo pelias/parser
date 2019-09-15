@@ -79,9 +79,9 @@ class CompositeClassifier extends SectionClassifier {
           let prev = c[i - 1]
 
           // enforce adjacency
-          if (next && curr.graph.findOne('child:last').graph.findOne('next') !== next.graph.findOne('child:first')) {
+          if (next && !curr.graph.findOne('child:last').graph.some('next', s => s === next.graph.findOne('child:first'))) {
             return false
-          } else if (prev && curr.graph.findOne('child:first').graph.findOne('prev') !== prev.graph.findOne('child:last')) {
+          } else if (prev && !curr.graph.findOne('child:first').graph.some('prev', s => s === prev.graph.findOne('child:last'))) {
             return false
           }
 
