@@ -274,12 +274,12 @@ module.exports = [
     ]
   },
   {
-    // State Highway 27
+    // Highway 27
     confidence: 0.84,
     Class: StreetClassification,
     scheme: [
       {
-        is: ['StreetClassification'],
+        is: ['RoadNameClassification'],
         not: []
       },
       {
