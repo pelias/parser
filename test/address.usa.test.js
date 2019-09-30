@@ -19,6 +19,11 @@ const testcase = (test, common) => {
     { locality: 'SAN FRANCISCO' }
   ])
 
+  assert('22024 main st, ca', [
+    { housenumber: '22024' }, { street: 'main st' },
+    { region: 'ca' }
+  ])
+
   // postcode allowed in first position when only 1 token
   assert('90210', [{ postcode: '90210' }])
 
