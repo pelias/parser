@@ -279,7 +279,7 @@ module.exports = [
     Class: StreetClassification,
     scheme: [
       {
-        is: ['RoadNameClassification'],
+        is: ['RoadTypeClassification'],
         not: []
       },
       {
