@@ -58,6 +58,11 @@ const testcase = (test, common) => {
   // assert('University of Hawaii at Hilo', [
   //   { place: 'University of Hawaii at Hilo' }
   // ])
+
+  assert('Highway 72', [{ street: 'Highway 72' }], true)
+  assert('1210a Highway 10 W IA', [{ housenumber: '1210a' }, { street: 'Highway 10 W' }, { region: 'IA' }], true)
+  assert('1210a State Highway 10', [{ housenumber: '1210a' }, { street: 'State Highway 10' }], true)
+  assert('1389a County Road 42 IA', [{ housenumber: '1389a' }, { street: 'County Road 42' }, { region: 'IA' }], true)
 }
 
 module.exports.all = (tape, common) => {
