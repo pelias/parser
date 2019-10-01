@@ -21,6 +21,11 @@ const testcase = (test, common) => {
     { street: 'Genter Straße' }, { housenumber: '16a' },
     { locality: 'Munich' }, { country: 'Germany' }
   ])
+
+  // autocomplete-style query includes partial postcode
+  assert('Eberswalder Straße 100 104', [
+    { street: 'Eberswalder Straße' }, { housenumber: '100' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
