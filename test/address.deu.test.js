@@ -26,6 +26,20 @@ const testcase = (test, common) => {
   assert('Eberswalder Straße 100 104', [
     { street: 'Eberswalder Straße' }, { housenumber: '100' }
   ])
+
+  // addresses on numbered streets in europe
+  assert('25 Straße 50', [
+    { street: '25 Straße' }, { housenumber: '50' }
+  ])
+  assert('25 Straße, 50', [
+    { street: '25 Straße' }, { housenumber: '50' }
+  ])
+  assert('25 Strada 50', [
+    { street: '25 Strada' }, { housenumber: '50' }
+  ])
+  assert('25 Strada, 50', [
+    { street: '25 Strada' }, { housenumber: '50' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
