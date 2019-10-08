@@ -2,6 +2,7 @@ class Solution {
   constructor (pairs) {
     this.pair = pairs || []
     this.score = 0.0 // absolute score
+    this.penalty = 0.0
   }
 
   // create a deep copy of this solution
@@ -51,7 +52,7 @@ class Solution {
 
     // absolute score
     // the average character score coveered divided by the total coverage
-    this.score = (score.confidence / score.coverage) * (score.coverage / tokenizer.coverage)
+    this.score = (score.confidence / score.coverage) * (score.coverage / tokenizer.coverage) * (1.0 - this.penalty)
   }
 
   // return a mask of the input for this solution

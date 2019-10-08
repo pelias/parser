@@ -112,7 +112,17 @@ class CompositeClassifier extends SectionClassifier {
         })
 
         // classify each super phrase
-        superPhrases.forEach(p => p.classify(new s.Class(s.confidence)))
+        superPhrases.forEach(p => {
+          // spread children langs to the parent
+          const langs = p.graph.findAll('child').reduce((acc, s) => {
+            Object.values(s.classifications)
+              .filter(c => c.meta && c.meta.langs)
+              .map(c => Object.keys(c.meta.langs))
+              .forEach(lang => { acc[lang] = true })
+            return acc
+          }, {})
+          p.classify(new s.Class(s.confidence, { langs }))
+        })
 
         // optionally classify individual phrases
         composites.forEach(c => {

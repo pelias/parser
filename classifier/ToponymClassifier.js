@@ -18,7 +18,7 @@ class ToponymClassifier extends WordClassifier {
 
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {
-      span.classify(new ToponymClassification(1))
+      span.classify(new ToponymClassification(1, this.index[span.norm]))
     }
   }
 }

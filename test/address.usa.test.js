@@ -68,8 +68,7 @@ const testcase = (test, common) => {
   assert('1210a California 10', [{ housenumber: '1210a' }, { street: 'California 10' }], true)
   assert('1389a IA 42 IA', [{ housenumber: '1389a' }, { street: 'IA 42' }, { region: 'IA' }], true)
 
-  // This does not work because of MD
-  // assert('1111 MD 760, Lusby, MD, USA', [{ housenumber: '1111' }, { street: 'MD 760' }, { locality: 'Lusby' }, { region: 'MD' }, { country: 'USA' }], true)
+  assert('1111 MD 760, Lusby, MD, USA', [{ housenumber: '1111' }, { street: 'MD 760' }, { locality: 'Lusby' }, { region: 'MD' }, { country: 'USA' }], true)
 }
 
 module.exports.all = (tape, common) => {
