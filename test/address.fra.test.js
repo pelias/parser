@@ -89,18 +89,6 @@ const testcase = (test, common) => {
     { housenumber: '12' }, { street: 'Cité Roland Garros' }
   ])
 
-  assert('École Paul Valéry Montpellier', [
-    { place: 'École Paul Valéry' }, { locality: 'Montpellier' }
-  ])
-
-  assert('Université de Montpellier', [
-    { place: 'Université de Montpellier' }
-  ])
-
-  assert('École Jules Vernes Villetaneuse', [
-    { place: 'École Jules Vernes' }, { locality: 'Villetaneuse' }
-  ])
-
   assert(`Rue de l'Amiral Galache, Toulouse`, [
     { street: `Rue de l'Amiral Galache` }, { locality: 'Toulouse' }
   ])
