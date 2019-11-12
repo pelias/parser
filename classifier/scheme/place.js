@@ -128,5 +128,54 @@ module.exports = [
         not: ['StreetClassification']
       }
     ]
+  },
+  {
+    // ZAC du Pré
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetNameClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // ZAC de la Tuilerie
+    confidence: 0.8,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StopWordClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['StreetNameClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
+    // ZA Entraigues
+    confidence: 0.7,
+    Class: PlaceClassification,
+    scheme: [
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['AlphaClassification'],
+        not: ['StreetClassification']
+      }
+    ]
   }
 ]
