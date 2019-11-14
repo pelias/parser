@@ -45,6 +45,7 @@ app.use((req, res, next) => {
 // routes
 app.get('/parser/parse', require('./routes/parse'))
 app.use('/demo', express.static(path.join(__dirname, '/demo')))
+app.use('/', (req, res) => { res.redirect('/demo') })
 
 // start multi-threaded server
 if (cpus > 1) {
