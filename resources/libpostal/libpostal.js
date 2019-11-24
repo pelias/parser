@@ -14,16 +14,16 @@ function load (index, langs, filename, options) {
     if (!fs.existsSync(filepath)) { return }
     let dict = fs.readFileSync(filepath, 'utf8')
     dict.split('\n').forEach(row => {
-      row.split('|').forEach(add)
+      row.split('|').forEach(add.bind(null, lang))
     }, this)
   }, this)
 
   langs.forEach(lang => {
-    pelias.load(path.join('libpostal', lang, filename), add, remove)
+    pelias.load(path.join('libpostal', lang, filename), add.bind(null, lang), remove)
   })
 
   langs.forEach(lang => {
-    custom.load(path.join('libpostal', lang, filename), add, remove)
+    custom.load(path.join('libpostal', lang, filename), add.bind(null, lang), remove)
   })
 }
 
@@ -42,10 +42,11 @@ function _normalize (cell, options) {
 }
 
 function _add (index, options) {
-  return cell => {
+  return (lang, cell) => {
     const value = _normalize(cell, options)
     if (value && value.length) {
-      index[value] = true
+      index[value] = index[value] || { langs: {} }
+      index[value].langs[lang] = true
     }
   }
 }
