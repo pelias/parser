@@ -1,0 +1,3 @@
+# Korea is actually divided into 'South Korea' and 'North Korea'
+# So we add an alias here in case 'Korea' is used to indicate either.
+korea
