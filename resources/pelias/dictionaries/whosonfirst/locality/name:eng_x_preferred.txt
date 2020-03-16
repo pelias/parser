@@ -13,6 +13,7 @@ sf
 !deli
 !us
 !germany
+!empire
 # remove any localities which share a name with a US state
 !alabama
 !alaska
