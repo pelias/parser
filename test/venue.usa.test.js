@@ -5,6 +5,11 @@ const testcase = (test, common) => {
     { place: 'Air & Space Museum' },
     { locality: 'Washington' }, { region: 'DC' }
   ])
+
+  assert('Empire State Building NYC', [
+    { place: 'Empire State Building' },
+    { locality: 'NYC' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
