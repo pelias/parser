@@ -27,6 +27,15 @@ const testcase = (test, common) => {
     { locality: 'Munich' }, { country: 'Germany' }
   ])
 
+  assert('Königsallee Düsseldorf', [
+    { street: 'Königsallee' },
+    { locality: 'Düsseldorf' }
+  ])
+
+  assert('Rathausplatz', [{ street: 'Rathausplatz' }])
+  assert('Plutoweg', [{ street: 'Plutoweg' }])
+  assert('Dorfstrasse', [{ street: 'Dorfstrasse' }])
+
   // autocomplete-style query includes partial postcode
   assert('Eberswalder Straße 100 104', [
     { street: 'Eberswalder Straße' }, { housenumber: '100' }
