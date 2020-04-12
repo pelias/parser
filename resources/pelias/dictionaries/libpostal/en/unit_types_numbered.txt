@@ -1,0 +1,3 @@
+!shop|shp
+!stop
+!store|stor
