@@ -18,6 +18,12 @@ class HouseNumberClassifier extends WordClassifier {
         // /^\d{1,5}(к\d{1,5})?(с\d{1,5})?$/.test(span.body) // Russian style including korpus (cyrillic к) and stroenie (cyrillic с)
     ) {
       let confidence = 1
+      let prev = span.graph.findOne('prev')
+
+      // Housenumber must not be preceded by unit type
+      if (prev && prev.classifications.hasOwnProperty('UnitTypeClassification')) {
+        return
+      }
 
       // it's possible to have 5 digit housenumbers
       // but they are fairly uncommon
