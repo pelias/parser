@@ -20,6 +20,7 @@ const ChainClassifier = require('../classifier/ChainClassifier')
 const PlaceClassifier = require('../classifier/PlaceClassifier')
 const IntersectionClassifier = require('../classifier/IntersectionClassifier')
 // const MultiStreetClassifier = require('../classifier/MultiStreetClassifier')
+const CentralEuropeanStreetNameClassifier = require('../classifier/CentralEuropeanStreetNameClassifier')
 const CompositeClassifier = require('../classifier/CompositeClassifier')
 const WhosOnFirstClassifier = require('../classifier/WhosOnFirstClassifier')
 // const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
@@ -70,7 +71,10 @@ class AddressParser extends Parser {
         new CompositeClassifier(require('../classifier/scheme/street_name')),
         new CompositeClassifier(require('../classifier/scheme/street')),
         new CompositeClassifier(require('../classifier/scheme/place')),
-        new CompositeClassifier(require('../classifier/scheme/intersection'))
+        new CompositeClassifier(require('../classifier/scheme/intersection')),
+
+        // additional classifiers which act on unclassified tokens
+        new CentralEuropeanStreetNameClassifier()
       ],
       // solvers
       [
