@@ -41,6 +41,12 @@ const testcase = (test, common) => {
     { housenumber: '345' },
     { street: 'Main St' }
   ])
+
+  assert('Lot 12/345 Illawarra Road Marrickville NSW 2204', [
+    { unit_type: 'Lot' }, { unit: '12' }, { housenumber: '345' },
+    { street: 'Illawarra Road' }, { locality: 'Marrickville' },
+    { region: 'NSW' }, { postcode: '2204' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

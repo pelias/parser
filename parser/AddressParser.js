@@ -120,6 +120,7 @@ class AddressParser extends Parser {
         new MustNotPreceedFilter('CountryClassification', 'PostcodeClassification'),
         new MustNotPreceedFilter('CountryClassification', 'StreetClassification'),
         new MustNotPreceedFilter('CountryClassification', 'HouseNumberClassification'),
+        new MustNotPreceedFilter('PlaceClassification', 'UnitClassification'),
         new MustNotFollowFilter('LocalityClassification', 'RegionClassification'),
         new MustNotFollowFilter('LocalityClassification', 'CountryClassification'),
         new HouseNumberPositionPenalty(),
