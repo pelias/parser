@@ -57,7 +57,7 @@ class Solution {
 
   // return a mask of the input for this solution
   // which shows the areas covered by different types of classification
-  // N = housenumber, S = street, P = postcode, A = administrative
+  // N = housenumber, S = street, P = postcode, A = administrative, U = unit
   mask (tokenizer) {
     // use the original input, mask should be the same length
     let body = tokenizer.span.body
@@ -67,6 +67,8 @@ class Solution {
       'housenumber': 'N',
       'street': 'S',
       'postcode': 'P',
+      'unit': 'U',
+      'unit_type': 'U',
       'default': 'A'
     }
 
