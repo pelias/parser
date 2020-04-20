@@ -43,6 +43,15 @@ module.exports.tests.mask = (test, common) => {
     t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVVVV NN SSSSSSS AAAAAA PPPPP      ')
     t.end()
   })
+  test('mask', (t) => {
+    //                            'UUU UU NNN SSSSSSSSSSSSSS AAAAAAAAAAAA AAA PPPP'
+    let tokenizer = new Tokenizer('Lot 12/345 Illawarra Road Marrickville NSW 2204')
+    common.parser.classify(tokenizer)
+    common.parser.solve(tokenizer)
+
+    t.equal(tokenizer.solution[0].mask(tokenizer), 'UUU UU NNN SSSSSSSSSSSSSS AAAAAAAAAAAA AAA PPPP')
+    t.end()
+  })
 }
 
 module.exports.all = (tape, common) => {
