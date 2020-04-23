@@ -8,7 +8,7 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['DirectionalClassification']
+        not: ['DirectionalClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
@@ -41,7 +41,8 @@ module.exports = [
     Class: StreetNameClassification,
     scheme: [
       {
-        is: ['StopWordClassification']
+        is: ['StopWordClassification'],
+        not: ['IntersectionClassification']
       },
       {
         is: ['NumericClassification'],
