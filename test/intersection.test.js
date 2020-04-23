@@ -19,6 +19,22 @@ const testcase = (test, common) => {
     { street: 'Main St' }, { street: 'Second Ave' }
   ])
 
+  assert('Main St and Second Ave', [
+    { street: 'Main St' }, { street: 'Second Ave' }
+  ])
+
+  assert('12th Avenue and California Street', [
+    { street: '12th Avenue' }, { street: 'California Street' }
+  ])
+
+  assert('15th Avenue and Fulton Street', [
+    { street: '15th Avenue' }, { street: 'Fulton Street' }
+  ])
+
+  assert('17th Avenue & Anza Street', [
+    { street: '17th Avenue' }, { street: 'Anza Street' }
+  ])
+
   assert('Gleimstraße an der ecke von Schönhauser Allee', [
     { street: 'Gleimstraße' }, { street: 'Schönhauser Allee' }
   ])
