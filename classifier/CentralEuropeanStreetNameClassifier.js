@@ -26,6 +26,12 @@ class CentralEuropeanStreetNameClassifier extends SectionClassifier {
     // other elements cannot contain any public classifications
     if (_.some(first.classifications, (c) => c.public)) { return }
 
+    // optionally check parent phrases too?
+    // if (_.some(first.graph.findAll('parent'), (p) => {
+    //   if (p.norm !== first.norm) { return false }
+    //   return _.some(p.classifications, (c) => c.public)
+    // })) { return }
+
     // assume the first token is a street name
     first.classify(new StreetClassification(0.5))
   }

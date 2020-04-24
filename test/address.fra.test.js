@@ -108,6 +108,10 @@ const testcase = (test, common) => {
   assert(`10 Boulevard Saint-Germains Paris`, [
     { housenumber: '10' }, { street: `Boulevard Saint-Germains` }, { locality: 'Paris' }
   ])
+
+  assert(`Paris 75000, France`, [
+    { locality: 'Paris' }, { postcode: '75000' }, { country: 'France' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
