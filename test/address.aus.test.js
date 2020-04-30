@@ -47,6 +47,12 @@ const testcase = (test, common) => {
     { street: 'Illawarra Road' }, { locality: 'Marrickville' },
     { region: 'NSW' }, { postcode: '2204' }
   ])
+
+  assert('Lot 2, Burrows Avenue, EDMONDSON PARK, NSW, Australia', [
+    { unit_type: 'Lot' }, { unit: '2' },
+    { street: 'Burrows Avenue' }, { locality: 'EDMONDSON PARK' },
+    { region: 'NSW' }, { country: 'Australia' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
