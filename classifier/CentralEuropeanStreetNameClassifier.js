@@ -11,17 +11,16 @@ const StreetClassification = require('../classification/StreetClassification')
 
 class CentralEuropeanStreetNameClassifier extends SectionClassifier {
   each (section) {
-    // there must be excactly two childen in this section
-    // note: we may wish to relax/expand on this later
-    if (section.graph.length('child') !== 2) { return }
+    // there must at least two childen in this section
+    if (section.graph.length('child') < 2) { return }
 
     // get first and last child
     let children = section.graph.findAll('child')
     let first = _.first(children)
-    let last = _.last(children)
+    let next = first.graph.findOne('next')
 
     // section must end with a HouseNumberClassification
-    if (!last.classifications.hasOwnProperty('HouseNumberClassification')) { return }
+    if (!next || next.end !== section.end || !next.classifications.hasOwnProperty('HouseNumberClassification')) { return }
 
     // other elements cannot contain any public classifications
     if (_.some(first.classifications, (c) => c.public)) { return }

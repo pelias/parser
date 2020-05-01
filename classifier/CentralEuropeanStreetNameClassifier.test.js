@@ -7,15 +7,26 @@ const classifier = new CentralEuropeanStreetNameClassifier()
 
 module.exports.tests = {}
 module.exports.tests.classify = (test) => {
+  let foo = new Span('Foo')
+  let fooHouseNum = new Span('1', 4).classify(new HouseNumberClassification(1.0))
+  foo.graph.add('next', fooHouseNum)
+
+  let bar = new Span('Bar')
+  let barHouseNum = new Span('2137', 4).classify(new HouseNumberClassification(1.0))
+  bar.graph.add('next', barHouseNum)
+
+  let baz = new Span('Baz')
+  let bazHouseNum0 = new Span('152/160', 4).classify(new HouseNumberClassification(1.0))
+  let bazHouseNum1 = new Span('152', 4).classify(new HouseNumberClassification(1.0))
+  let bazHouseNum2 = new Span('160', 8).classify(new HouseNumberClassification(1.0))
+  baz.graph.add('next', bazHouseNum0)
+  baz.graph.add('next', bazHouseNum1)
+  bazHouseNum1.graph.add('next', bazHouseNum2)
+
   let valid = [
-    new Span('Foo 1').setChildren([
-      new Span('Foo'),
-      new Span('1').classify(new HouseNumberClassification(1.0))
-    ]),
-    new Span('Bar 2137').setChildren([
-      new Span('Bar'),
-      new Span('2137').classify(new HouseNumberClassification(1.0))
-    ])
+    new Span('Foo 1').setChildren([foo, fooHouseNum]),
+    new Span('Bar 2137').setChildren([bar, barHouseNum]),
+    new Span('Baz 152/160').setChildren([baz, bazHouseNum0, bazHouseNum1, bazHouseNum2])
   ]
 
   valid.forEach(s => {
@@ -32,8 +43,10 @@ module.exports.tests.classify = (test) => {
       })
 
       // last child was unchanged
-      t.deepEqual(_.last(children).classifications, {
-        HouseNumberClassification: new HouseNumberClassification(1)
+      _.tail(children).forEach(c => {
+        t.deepEqual(c.classifications, {
+          HouseNumberClassification: new HouseNumberClassification(1)
+        })
       })
 
       t.end()
