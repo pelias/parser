@@ -1,7 +1,7 @@
 const testcase = (test, common) => {
-  let assertFirstParseMatches = common.assertFirstParseMatches(test)
+  let assertFirstMatch = common.assertFirstMatch(test)
 
-  assertFirstParseMatches('Szewska 6, Kraków', [
+  assertFirstMatch('Szewska 6, Kraków', [
     { street: 'Szewska' }, { housenumber: '6' },
     { locality: 'Kraków' }
   ])

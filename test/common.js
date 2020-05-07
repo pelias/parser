@@ -25,15 +25,15 @@ const assertHelper = (test, parser, firstOnly) => {
   }
 }
 
-const assertFirstParseMatches = (test, parser) => {
+const assertFirstMatch = (test, parser) => {
   return assertHelper(test, parser, true)
 }
 
-const assertAllParsesMatch = (test, parser) => {
+const assertAllMatch = (test, parser) => {
   return assertHelper(test, parser, false)
 }
 
-module.exports.assertFirstParseMatches = assertFirstParseMatches
-module.exports.assertAllParsesMatch = assertAllParsesMatch
+module.exports.assertFirstMatch = assertFirstMatch
+module.exports.assertAllMatch = assertAllMatch
 module.exports.extract = extract
 module.exports.parser = globalParser

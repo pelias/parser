@@ -1,7 +1,7 @@
 const testcase = (test, common) => {
-  let assertFirstParseMatches = common.assertFirstParseMatches(test)
+  let assertFirstMatch = common.assertFirstMatch(test)
 
-  assertFirstParseMatches('100, Mahalakshmi Rd, Ganesh Nagar, Kirti Nagar, New Sanghavi, Pimpri-Chinchwad, Maharashtra 411027', [
+  assertFirstMatch('100, Mahalakshmi Rd, Ganesh Nagar, Kirti Nagar, New Sanghavi, Pimpri-Chinchwad, Maharashtra 411027', [
     { housenumber: '100' }, { street: 'Mahalakshmi Rd' },
     { locality: 'Pimpri-Chinchwad' }, { region: 'Maharashtra' },
     { postcode: '411027' }
