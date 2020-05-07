@@ -11,9 +11,9 @@ const extract = (tokenizer) => {
   }))
 }
 
-const assert = (test, parser) => {
+const assertHelper = (test, parser, firstOnly) => {
   let p = (parser || globalParser)
-  return (input, expected, firstOnly) => {
+  return (input, expected) => {
     let tokenizer = new Tokenizer(input)
     p.classify(tokenizer)
     p.solve(tokenizer)
@@ -25,6 +25,15 @@ const assert = (test, parser) => {
   }
 }
 
-module.exports.assert = assert
+const assertFirstParseMatches = (test, parser) => {
+  return assertHelper(test, parser, true)
+}
+
+const assertAllParsesMatch = (test, parser) => {
+  return assertHelper(test, parser, false)
+}
+
+module.exports.assertFirstParseMatches = assertFirstParseMatches
+module.exports.assertAllParsesMatch = assertAllParsesMatch
 module.exports.extract = extract
 module.exports.parser = globalParser

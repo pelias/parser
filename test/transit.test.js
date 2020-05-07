@@ -1,11 +1,11 @@
 const testcase = (test, common) => {
-  let assert = common.assert(test)
+  let assertFirstParseMatches = common.assertFirstParseMatches(test)
 
-  assert('Stop 1', [
+  assertFirstParseMatches('Stop 1', [
     { place: 'Stop 1' }
   ])
 
-  assert('Stop 10010', [
+  assertFirstParseMatches('Stop 10010', [
     { place: 'Stop 10010' }
   ])
 }

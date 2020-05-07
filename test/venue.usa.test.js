@@ -1,12 +1,12 @@
 const testcase = (test, common) => {
-  let assert = common.assert(test)
+  let assertFirstParseMatches = common.assertFirstParseMatches(test)
 
-  assert('Air & Space Museum Washington DC', [
+  assertFirstParseMatches('Air & Space Museum Washington DC', [
     { place: 'Air & Space Museum' },
     { locality: 'Washington' }, { region: 'DC' }
   ])
 
-  assert('Empire State Building NYC', [
+  assertFirstParseMatches('Empire State Building NYC', [
     { place: 'Empire State Building' },
     { locality: 'NYC' }
   ])
