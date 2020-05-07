@@ -1,6 +1,10 @@
 const testcase = (test, common) => {
   let assert = common.assert(test)
 
+  assert('wrigley field',
+    [ [ { place: 'wrigley field' } ], [ { street: 'wrigley field' } ], [ { locality: 'field' } ] ],
+    false)
+
   assert('Martin Luther King Jr. Blvd.', [
     { street: 'Martin Luther King Jr. Blvd.' }
   ])
