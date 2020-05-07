@@ -108,7 +108,6 @@ family practice
 farmer's market|farmers market
 farm|frm
 farmhouse
-field
 fire department|fd|f d
 fire station
 fitness center|fitness centre
