@@ -73,6 +73,53 @@ const testcase = (test, common) => {
   assert('1389a IA 42 IA', [{ housenumber: '1389a' }, { street: 'IA 42' }, { region: 'IA' }], true)
 
   assert('1111 MD 760, Lusby, MD, USA', [{ housenumber: '1111' }, { street: 'MD 760' }, { locality: 'Lusby' }, { region: 'MD' }, { country: 'USA' }], true)
+
+  // unit + unit number tests
+  assert('52 Ten Eyck St Apt 3 Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit_type: 'Apt' },
+    { unit: '3' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  assert('52 Ten Eyck St Apt 3b Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit_type: 'Apt' },
+    { unit: '3b' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  assert('52 Ten Eyck St Apt 3B Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit_type: 'Apt' },
+    { unit: '3B' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  assert('52 Ten Eyck St Apt #3b Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit_type: 'Apt' },
+    { unit: '#3b' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  // bummer that this fails - really wants to call "3b" the housenumber instead of 52
+  // assert('52 Ten Eyck St 3b Brooklyn NY', [
+  //   { housenumber: '52' }, { street: 'Ten Eyck St' },
+  //   { unit: '3b' },
+  //   { locality: 'Brooklyn' },
+  //   { region: 'NY' },
+  // ])
+
+  assert('52 Ten Eyck St 3 Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

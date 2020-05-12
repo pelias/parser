@@ -3,17 +3,31 @@ const UnitClassification = require('../classification/UnitClassification')
 
 class UnitClassifier extends WordClassifier {
   each (span) {
-    // skip spans which do not contain numbers
-    if (!span.contains.numerals) { return }
+    const prev = span.graph.findOne('prev')
+    const hasPrevUnitToken = prev && prev.classifications.hasOwnProperty('UnitTypeClassification')
+    const hasPrevStreetToken = prev && prev.classifications.hasOwnProperty('StreetClassification')
 
-    if (/^\d+$/.test(span.body)) {
-      let prev = span.graph.findOne('prev')
+    // number followed by one letter
+    // seems like we can be pretty sure that's a unit number if it follows a unit word or a street
+    // ex: 52 ten eyck st apt 3b
+    // ex: 52 ten eyck st 3b
+    if (
+      (hasPrevStreetToken || hasPrevUnitToken) &&
+      /^#?\d+[A-Za-z]$/.test(span.body)
+    ) {
+      span.classify(new UnitClassification(1))
+    }
 
-      // Unit must be preceded by unit type
-      if (!prev || !prev.classifications.hasOwnProperty('UnitTypeClassification')) {
-        return
-      }
-
+    // all numbers or a single letter need to follow a unit type to be a unit
+    // ex: suite a, apt 22
+    if (
+      hasPrevUnitToken && (
+        // all numbers
+        /^#?\d+$/.test(span.body) ||
+        // single letter
+        /^#?[A-Za-z]$/.test(span.body)
+      )
+    ) {
       span.classify(new UnitClassification(1))
     }
   }
