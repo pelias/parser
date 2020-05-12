@@ -107,16 +107,22 @@ const testcase = (test, common) => {
     { region: 'NY' }
   ])
 
-  // bummer that this fails - really wants to call "3b" the housenumber instead of 52
-  // assert('52 Ten Eyck St 3b Brooklyn NY', [
-  //   { housenumber: '52' }, { street: 'Ten Eyck St' },
-  //   { unit: '3b' },
-  //   { locality: 'Brooklyn' },
-  //   { region: 'NY' },
-  // ])
+  assert('52 Ten Eyck St 3 Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
 
   assert('52 Ten Eyck St 3 Brooklyn NY', [
     { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  assert('6 Montague Terrace Apt A2 Brooklyn NY', [
+    { housenumber: '6' }, { street: 'Montague Terrace' },
+    { unit_type: 'Apt' },
+    { unit: 'A2' },
     { locality: 'Brooklyn' },
     { region: 'NY' }
   ])

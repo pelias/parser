@@ -5,18 +5,6 @@ class UnitClassifier extends WordClassifier {
   each (span) {
     const prev = span.graph.findOne('prev')
     const hasPrevUnitToken = prev && prev.classifications.hasOwnProperty('UnitTypeClassification')
-    const hasPrevStreetToken = prev && prev.classifications.hasOwnProperty('StreetClassification')
-
-    // number followed by one letter
-    // seems like we can be pretty sure that's a unit number if it follows a unit word or a street
-    // ex: 52 ten eyck st apt 3b
-    // ex: 52 ten eyck st 3b
-    if (
-      (hasPrevStreetToken || hasPrevUnitToken) &&
-      /^#?\d+[A-Za-z]$/.test(span.body)
-    ) {
-      span.classify(new UnitClassification(1))
-    }
 
     // all numbers or a single letter need to follow a unit type to be a unit
     // ex: suite a, apt 22
@@ -25,7 +13,11 @@ class UnitClassifier extends WordClassifier {
         // all numbers
         /^#?\d+$/.test(span.body) ||
         // single letter
-        /^#?[A-Za-z]$/.test(span.body)
+        /^#?[A-Za-z]$/.test(span.body) ||
+        // numbers followed by letter
+        /^#?\d+[A-Za-z]$/.test(span.body) ||
+        // letter followed by numbers
+        /^#?[A-Za-z]\d+$/.test(span.body)
       )
     ) {
       span.classify(new UnitClassification(1))

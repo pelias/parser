@@ -33,6 +33,11 @@ module.exports.tests.without_unit_type = (test) => {
     t.deepEqual(s.classifications, { })
     t.end()
   })
+  test('letter and number without unit type', (t) => {
+    let s = classify('a2')
+    t.deepEqual(s.classifications, { })
+    t.end()
+  })
   test('single letter without unit type', (t) => {
     let s = classify('a')
     t.deepEqual(s.classifications, { })
@@ -61,8 +66,8 @@ module.exports.tests.with_unit_type = (test) => {
     t.deepEqual(s.classifications, { UnitClassification: new UnitClassification(1.0) })
     t.end()
   })
-  test('number and letter with street type', (t) => {
-    let s = classify('2020a', 'street')
+  test('letter and number with unit type', (t) => {
+    let s = classify('a2', 'unit')
     t.deepEqual(s.classifications, { UnitClassification: new UnitClassification(1.0) })
     t.end()
   })
