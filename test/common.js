@@ -11,7 +11,8 @@ const extract = (tokenizer) => {
   }))
 }
 
-const assertHelper = (test, parser, firstOnly) => {
+// Test if the first solution returned by parser matches the solution in "expected"
+const assertFirstSolution = (test, parser) => {
   let p = (parser || globalParser)
   return (input, expected) => {
     let tokenizer = new Tokenizer(input)
@@ -19,21 +20,29 @@ const assertHelper = (test, parser, firstOnly) => {
     p.solve(tokenizer)
     test(input, (t) => {
       let ext = extract(tokenizer)
-      t.deepEquals(firstOnly === false ? ext : ext[0], expected)
+      t.deepEquals(ext[0], expected)
       t.end()
     })
   }
 }
 
-const assertFirstMatch = (test, parser) => {
-  return assertHelper(test, parser, true)
+// Test if the first N solutions returned by parser matches the solutions
+// in "expected," where N is the length of expected.
+const assertFirstSolutions = (test, parser) => {
+  let p = (parser || globalParser)
+  return (input, expected) => {
+    let tokenizer = new Tokenizer(input)
+    p.classify(tokenizer)
+    p.solve(tokenizer)
+    test(input, (t) => {
+      let ext = extract(tokenizer)
+      t.deepEquals(ext.slice(0, expected.length), expected)
+      t.end()
+    })
+  }
 }
 
-const assertAllMatch = (test, parser) => {
-  return assertHelper(test, parser, false)
-}
-
-module.exports.assertFirstMatch = assertFirstMatch
-module.exports.assertAllMatch = assertAllMatch
+module.exports.assertFirstSolution = assertFirstSolution
+module.exports.assertFirstSolutions = assertFirstSolutions
 module.exports.extract = extract
 module.exports.parser = globalParser

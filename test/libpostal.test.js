@@ -2,10 +2,10 @@
 // https://github.com/openvenues/libpostal/issues
 
 const testcase = (test, common) => {
-  let assertFirstMatch = common.assertFirstMatch(test)
+  let assertFirstSolution = common.assertFirstSolution(test)
 
   // https://github.com/openvenues/libpostal/issues/382
-  assertFirstMatch('3360 Grand Ave Oakland 94610-2737 CA', [
+  assertFirstSolution('3360 Grand Ave Oakland 94610-2737 CA', [
     { housenumber: '3360' }, { street: 'Grand Ave' },
     { locality: 'Oakland' }, { postcode: '94610-2737' },
     { region: 'CA' }

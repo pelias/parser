@@ -1,15 +1,15 @@
 const testcase = (test, common) => {
-  let assertFirstMatch = common.assertFirstMatch(test)
+  let assertFirstSolution = common.assertFirstSolution(test)
 
-  assertFirstMatch('Julianastraat, Heel', [
+  assertFirstSolution('Julianastraat, Heel', [
     { street: 'Julianastraat' }, { locality: 'Heel' }
   ])
 
-  assertFirstMatch('Lindenlaan, Sint Odilienberg', [
+  assertFirstSolution('Lindenlaan, Sint Odilienberg', [
     { street: 'Lindenlaan' }, { locality: 'Sint Odilienberg' }
   ])
 
-  assertFirstMatch('Bosserdijk, Hoogland', [
+  assertFirstSolution('Bosserdijk, Hoogland', [
     { street: 'Bosserdijk' }, { locality: 'Hoogland' }
   ])
 }

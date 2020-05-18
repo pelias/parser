@@ -1,7 +1,7 @@
 const testcase = (test, common) => {
-  let assertFirstMatch = common.assertFirstMatch(test)
+  let assertFirstSolution = common.assertFirstSolution(test)
 
-  assertFirstMatch('Szewska 6, Kraków', [
+  assertFirstSolution('Szewska 6, Kraków', [
     { street: 'Szewska' }, { housenumber: '6' },
     { locality: 'Kraków' }
   ])

@@ -1,12 +1,12 @@
 const testcase = (test, common) => {
-  let assertFirstMatch = common.assertFirstMatch(test)
+  let assertFirstSolution = common.assertFirstSolution(test)
 
-  assertFirstMatch('Air & Space Museum Washington DC', [
+  assertFirstSolution('Air & Space Museum Washington DC', [
     { place: 'Air & Space Museum' },
     { locality: 'Washington' }, { region: 'DC' }
   ])
 
-  assertFirstMatch('Empire State Building NYC', [
+  assertFirstSolution('Empire State Building NYC', [
     { place: 'Empire State Building' },
     { locality: 'NYC' }
   ])
