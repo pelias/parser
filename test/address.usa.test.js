@@ -2,9 +2,9 @@ const testcase = (test, common) => {
   let assertFirstSolution = common.assertFirstSolution(test)
   let assertFirstSolutions = common.assertFirstSolutions(test)
 
-  assertFirstSolutions('wrigley field',
-    [ [ { place: 'wrigley field' } ], [ { street: 'wrigley field' } ],
-    false)
+  assertFirstSolutions('wrigley field', [
+    [ { place: 'wrigley field' } ], [ { street: 'wrigley field' } ]
+  ])
 
   assertFirstSolution('Martin Luther King Jr. Blvd.', [
     { street: 'Martin Luther King Jr. Blvd.' }
