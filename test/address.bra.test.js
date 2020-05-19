@@ -6,7 +6,7 @@ const testcase = (test, common) => {
     { housenumber: '65' },
     { locality: 'Tapiraí' },
     { region: 'SP' },
-    { postcode: '18180' },
+    { postcode: '18180-000' },
     { country: 'Brazil' }
   ])
 }
