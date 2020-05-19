@@ -52,6 +52,25 @@ module.exports = [
     ]
   },
   {
+    // Raul Leite Magalhães (first name, middle name, family name)
+    confidence: 0.5,
+    Class: PersonClassification,
+    scheme: [
+      {
+        is: ['GivenNameClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['GivenNameClassification', 'SurnameClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['SurnameClassification'],
+        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+      }
+    ]
+  },
+  {
     // Unknown surname
     confidence: 0.1,
     Class: PersonClassification,
