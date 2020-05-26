@@ -107,6 +107,20 @@ const testcase = (test, common) => {
     { region: 'NY' }
   ])
 
+  assert('52 Ten Eyck St #55b Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit: '#55b' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
+  assert('52 Ten Eyck St #R Brooklyn NY', [
+    { housenumber: '52' }, { street: 'Ten Eyck St' },
+    { unit: '#R' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
   assert('52 Ten Eyck St 3 Brooklyn NY', [
     { housenumber: '52' }, { street: 'Ten Eyck St' },
     { locality: 'Brooklyn' },

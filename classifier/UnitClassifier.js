@@ -35,6 +35,16 @@ class UnitClassifier extends WordClassifier {
     if (hasPrevUnitToken && combinedUnitRegexp.test(span.body)) {
       span.classify(new UnitClassification(1))
     }
+
+    // OR if the previous token was alpha and this token starts with "#"
+    // 123 Main St #4b, New York, NY
+    // we'll check in solver that this was a "street unit" pattern
+    const hasPrevAlphaToken = prev && prev.classifications.hasOwnProperty('AlphaClassification')
+    const startsWithOctothorpe = span.body[0] === '#'
+
+    if (hasPrevAlphaToken && startsWithOctothorpe) {
+      span.classify(new UnitClassification(1))
+    }
   }
 }
 
