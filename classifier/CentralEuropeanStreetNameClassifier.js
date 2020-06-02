@@ -20,7 +20,9 @@ class CentralEuropeanStreetNameClassifier extends SectionClassifier {
     let next = first.graph.findOne('next')
 
     // section must end with a HouseNumberClassification
-    if (!next || next.end !== section.end || !next.classifications.hasOwnProperty('HouseNumberClassification')) { return }
+    if (!next) { return } // no next span found
+    if (next.graph.findOne('next')) { return } // next span is NOT the final span in the section
+    if (!next.classifications.hasOwnProperty('HouseNumberClassification')) { return }
 
     // other elements cannot contain any public classifications
     if (_.some(first.classifications, (c) => c.public)) { return }
