@@ -32,6 +32,7 @@ const LeadingAreaDeclassifier = require('../solver/LeadingAreaDeclassifier')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
 const InvalidSolutionFilter = require('../solver/InvalidSolutionFilter')
 const TokenDistanceFilter = require('../solver/TokenDistanceFilter')
+const OrphanedUnitTypeDeclassifier = require('../solver/OrphanedUnitTypeDeclassifier')
 const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const MustNotFollowFilter = require('../solver/MustNotFollowFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
@@ -125,6 +126,7 @@ class AddressParser extends Parser {
         new MustNotFollowFilter('LocalityClassification', 'CountryClassification'),
         new HouseNumberPositionPenalty(),
         new TokenDistanceFilter(),
+        new OrphanedUnitTypeDeclassifier(),
         new SubsetFilter()
       ],
       options
