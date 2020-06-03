@@ -23,16 +23,23 @@ module.exports.tests.classify = (test) => {
   baz.graph.add('next', bazHouseNum1)
   bazHouseNum1.graph.add('next', bazHouseNum2)
 
+  // The Qux test case covers when the section has a greater length than
+  // the tokens it contains, such as when it ends with whitespace.
+  let qux = new Span('Qux')
+  let quxHouseNum = new Span('1', 4).classify(new HouseNumberClassification(1.0))
+  qux.graph.add('next', quxHouseNum)
+
   let valid = [
     new Span('Foo 1').setChildren([foo, fooHouseNum]),
     new Span('Bar 2137').setChildren([bar, barHouseNum]),
-    new Span('Baz 152/160').setChildren([baz, bazHouseNum0, bazHouseNum1, bazHouseNum2])
+    new Span('Baz 152/160').setChildren([baz, bazHouseNum0, bazHouseNum1, bazHouseNum2]),
+    new Span('Qux 1 ').setChildren([qux, quxHouseNum])
   ]
 
   valid.forEach(s => {
     test(`classify: ${s.body}`, (t) => {
       // run classifier
-      classifier.each(s, null, 1)
+      classifier.each(s)
 
       // get children
       let children = s.graph.findAll('child')
@@ -40,7 +47,7 @@ module.exports.tests.classify = (test) => {
       // first child should now be classified as a street
       t.deepEqual(_.first(children).classifications, {
         StreetClassification: new StreetClassification(0.5)
-      })
+      }, `'${s.body}'`)
 
       // last child was unchanged
       _.tail(children).forEach(c => {
