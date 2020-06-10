@@ -48,6 +48,24 @@ module.exports.tests.without_unit_type = (test) => {
     t.deepEqual(s.classifications, { })
     t.end()
   })
+  test('number with # without unit type with prev token', (t) => {
+    let s = new Span('#22')
+    let p = new Span('prev')
+    s.graph.add('prev', p)
+    classifier.each(s)
+    t.deepEqual(s.classifications, { UnitClassification: new UnitClassification(1.0) })
+    t.end()
+  })
+  test('short penthouse pattern', (t) => {
+    let s = classify('pha')
+    t.deepEqual(s.classifications, { UnitClassification: new UnitClassification(1.0) })
+    t.end()
+  })
+  test('short penthouse pattern', (t) => {
+    let s = classify('Ph1')
+    t.deepEqual(s.classifications, { UnitClassification: new UnitClassification(1.0) })
+    t.end()
+  })
 }
 
 module.exports.tests.with_unit_type = (test) => {
