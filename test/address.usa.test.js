@@ -136,6 +136,15 @@ const testcase = (test, common) => {
     { region: 'NY' }
   ])
 
+  assert('6 Montague Terrace Apt #A-2 Brooklyn NY', [
+    { housenumber: '6' },
+    { street: 'Montague Terrace' },
+    { unit_type: 'Apt' },
+    { unit: '#A-2' },
+    { locality: 'Brooklyn' },
+    { region: 'NY' }
+  ])
+
   // this isn't a great parse, it probably should
   // understand 6=housenumber, montague terrace=street
   assert('#6 Montague Terrace Brooklyn NY', [

@@ -3,8 +3,8 @@ const UnitClassification = require('../classification/UnitClassification')
 
 const AllNumbersRegExp = /^#?\d+$/
 const SingleLetterRegExp = /^#?[A-Za-z]$/
-const NumbersThenLetterRegExp = /^#?\d+[A-Za-z]$/
-const LetterThenNumbersRegExp = /^#?[A-Za-z]\d+$/
+const NumbersThenLetterRegExp = /^#?\d+-?[A-Za-z]$/
+const LetterThenNumbersRegExp = /^#?[A-Za-z]-?\d+$/
 
 // based on https://stackoverflow.com/questions/9213237/combining-regular-expressions-in-javascript
 function combineRegExps (...args) {
@@ -28,18 +28,17 @@ const combinedUnitRegexp = combineRegExps(
 class UnitClassifier extends WordClassifier {
   each (span) {
     const prev = span.graph.findOne('prev')
-    const hasPrevUnitTypeToken = prev && prev.classifications.hasOwnProperty('UnitTypeClassification')
-
-    const maybeUnitToken = combinedUnitRegexp.test(span.body)
+    const hasPrevUnitToken = prev && prev.classifications.hasOwnProperty('UnitTypeClassification')
 
     // If the previous token in a unit word, like apt or suite
     // and this token is something like A2, 3b, 120, A, label it as a unit (number)
-    if (hasPrevUnitTypeToken && maybeUnitToken) {
+    if (hasPrevUnitToken && combinedUnitRegexp.test(span.body)) {
       span.classify(new UnitClassification(1))
     }
 
-    // A unit token that starts with '#' is always a unit if it's not the first token
-    if (maybeUnitToken && span.body[0] === '#' && prev) {
+    // A token that starts with a '#' and is not the first token in the query
+    // and matches our regexp is always labeled as a unit
+    if (span.body[0] === '#' && prev && combinedUnitRegexp.test(span.body)) {
       span.classify(new UnitClassification(1))
     }
   }
