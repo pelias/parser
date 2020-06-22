@@ -1,8 +1,6 @@
 const WordClassifier = require('./super/WordClassifier')
 const UnitClassification = require('../classification/UnitClassification')
 
-const PenthousePattern = /^#?ph[1-9A-Z]/i
-
 const AllNumbersRegExp = /^#?\d+$/
 const SingleLetterRegExp = /^#?[A-Za-z]$/
 const NumbersThenLetterRegExp = /^#?\d+[A-Za-z]$/
@@ -33,11 +31,6 @@ class UnitClassifier extends WordClassifier {
     const hasPrevUnitTypeToken = prev && prev.classifications.hasOwnProperty('UnitTypeClassification')
 
     const maybeUnitToken = combinedUnitRegexp.test(span.body)
-
-    // PhX pattern is always a unit
-    if (PenthousePattern.test(span.body)) {
-      span.classify(new UnitClassification(1))
-    }
 
     // If the previous token in a unit word, like apt or suite
     // and this token is something like A2, 3b, 120, A, label it as a unit (number)
