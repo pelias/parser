@@ -5,7 +5,7 @@
   "description": "Pelias parsing library",
   "homepage": "https://github.com/pelias/parser",
   "license": "MIT",
-  "main": "index.js",
+  "main": "server/http.js",
   "scripts": {
     "units": "./bin/test unit",
     "funcs": "./bin/test func",
