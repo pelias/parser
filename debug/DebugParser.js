@@ -1,18 +1,36 @@
+
 const util = require('util')
 const chalk = require('chalk')
+const StringBuffer = require('stringbuffer')
 
 const Tokenizer = require('../tokenization/Tokenizer')
 const AddressParser = require('../parser/AddressParser')
 
 class DebugParser {
-  constructor (outputFunction) {
-    this.write = outputFunction
-    this.writeLine = (...s) => {
-      if (s) {
-        s.forEach(outputFunction)
+  constructor () {
+    this.sb = new StringBuffer()
+
+    const self = this
+    function write (o) {
+      if (typeof o === 'object') {
+        self.sb.append(util.inspect(o, { colors: true }))
+      } else {
+        self.sb.append(o)
       }
-      outputFunction('\n')
     }
+
+    this.write = write
+  }
+
+  toString () {
+    return this.sb.toString()
+  }
+
+  writeLine (...s) {
+    if (s) {
+      s.forEach(this.write)
+    }
+    this.write('\n')
   }
 
   tokenizer (tokenizer, label) {
@@ -40,7 +58,7 @@ class DebugParser {
     this.writeLine('-'.repeat(64))
 
     this.write('INPUT'.padEnd(32) + '➜  ')
-    this.writeLine(chalk.bold(tokenizer.span.body))
+    this.writeLine(tokenizer.span.body)
     spans('SECTIONS', tokenizer.section)
 
     for (let i = 0; i < tokenizer.section.length; i++) {
@@ -138,7 +156,7 @@ class DebugParser {
       let score = chalk.yellow.bold('(' + s.score.toFixed(2) + ')')
       this.writeLine(
         score,
-        '➜',
+        ' ➜ ',
         s.pair.map((c) => {
           return {
             [c.classification.label]: c.span.body
@@ -163,6 +181,8 @@ class DebugParser {
     this.classifications(t, util.format('(%sms)', took))
     took = parser.solve(t)
     this.solutions(t, util.format('(%sms)', took))
+
+    return this
   }
 }
 

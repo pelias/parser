@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="vendor/ansi_up.js"></script>
 
   <style>
     #table,
@@ -79,6 +80,16 @@
     .span-postcode {
       background-color: rgb(134, 195, 230);
     }
+
+    #debug {
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
+    #debug span {
+      color: lightgrey;
+      display: inline-block;
+    }
   </style>
 
   <script>
@@ -97,6 +108,7 @@
       $('#input').empty();
       $('#solutions').empty();
       $('#table').empty();
+      $('#debug').empty();
 
       // $('#input').html(JSON.stringify(res.input))
       // $('#solutions').html(JSON.stringify(res.solutions))
@@ -154,6 +166,9 @@
       });
   
       $('#table').append(body);
+
+      const debugHtml = new AnsiUp().ansi_to_html(res.debug);
+      $('#debug').html(debugHtml);
     }
 
     function request(url, params, cb) {
@@ -168,7 +183,10 @@
 
     function parse(args, cb) {
       saveText(args.text);
-      request('/parser/parse', args, cb);
+      request('/parser/parse', {
+        ...args,
+        debug: true
+      }, cb);
     }
 
     function saveText(text) {
@@ -244,6 +262,8 @@
           <ul id="solutions" class="list-group" style="margin-top:10px;"></ul>
           
           <table id="table"></table>
+
+          <div id="debug"></div>
         </div>
 
       </div>
