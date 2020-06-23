@@ -8,7 +8,10 @@ const libpostal = require('../resources/libpostal/libpostal')
 class GivenNameClassifier extends PhraseClassifier {
   setup () {
     this.index = {}
-    libpostal.load(this.index, ['all'], 'given_names.txt', { lowercase: true })
+    libpostal.load(this.index, ['all'], 'given_names.txt', {
+      lowercase: true,
+      minlength: 3 // prevent very short names being indexed
+    })
   }
 
   each (span) {
