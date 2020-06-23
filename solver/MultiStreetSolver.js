@@ -1,5 +1,4 @@
 const HashMapSolver = require('./super/HashMapSolver')
-const Solution = require('./Solution')
 
 /**
  * If a 'multistreet' classification was detected then
@@ -19,25 +18,27 @@ class MultiStreetSolver extends HashMapSolver {
     let streets = map.street.copy()
     streets.pair = streets.pair.sort((a, b) => b.span.norm.length - a.span.norm.length)
 
-    map.multistreet.pair.forEach(multi => {
-      let sol = new Solution()
+    tokenizer.solution.forEach(solution => {
+      let sol = solution.copy()
 
-      // find all street tokens which intersect the 'multistreet' span
-      // and also do not overlap an existing pair in this solution.
-      streets.pair.forEach(s => {
-        if ((
-          s.span.intersects(multi.span) &&
-          (s.classification.constructor.name === 'StreetClassification') &&
-          !sol.pair.some(sp => sp.span.intersects(s.span))
-        )) {
-          sol.pair.push(s)
+      map.multistreet.pair.forEach(multi => {
+        // find all street tokens which intersect the 'multistreet' span
+        // and also do not overlap an existing pair in this solution.
+        streets.pair.forEach(s => {
+          if ((
+            s.span.intersects(multi.span) &&
+            (s.classification.constructor.name === 'StreetClassification') &&
+            !sol.pair.some(sp => sp.span.intersects(s.span))
+          )) {
+            sol.pair.push(s)
+          }
+        })
+
+        // if more than one street was detected then add this as a new solution
+        if (sol.pair.length > 1) {
+          tokenizer.solution.push(sol)
         }
       })
-
-      // if more than one street was detected then add this as a new solution
-      if (sol.pair.length > 1) {
-        tokenizer.solution.push(sol)
-      }
     })
   }
 }

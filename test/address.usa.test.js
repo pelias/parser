@@ -15,6 +15,34 @@ const testcase = (test, common) => {
     { street: 'Martin Luther King Blvd.' }
   ])
 
+  assert('E Cesar Chavez St', [
+    { street: 'E Cesar Chavez St' }
+  ])
+
+  assert('Riverbend Club Dr Se', [
+    { street: 'Riverbend Club Dr Se' }
+  ])
+
+  assert('S Interstate 35', [
+    { street: 'S Interstate 35' }
+  ])
+
+  assert('E William Cannon Dr', [
+    { street: 'E William Cannon Dr' }
+  ])
+
+  assert('Branch Rd', [
+    { street: 'Branch Rd' }
+  ])
+
+  assert('Manor Rd', [
+    { street: 'Manor Rd' }
+  ])
+
+  assert('Fm 3009 TX', [
+    { street: 'Fm 3009' }, { region: 'TX' }
+  ])
+
   assert('1900 SE A ST, SAN FRANCISCO', [
     { housenumber: '1900' }, { street: 'SE A ST' },
     { locality: 'SAN FRANCISCO' }
