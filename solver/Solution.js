@@ -63,7 +63,7 @@ class Solution {
     let body = tokenizer.span.body
     let mask = Array(body.length).fill(' ')
     let map = {
-      'place': 'V',
+      'venue': 'V',
       'housenumber': 'N',
       'street': 'S',
       'postcode': 'P',

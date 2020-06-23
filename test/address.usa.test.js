@@ -1,9 +1,11 @@
 const testcase = (test, common) => {
   let assert = common.assert(test)
 
-  assert('wrigley field',
-    [ [ { place: 'wrigley field' } ], [ { street: 'wrigley field' } ], [ { locality: 'field' } ] ],
-    false)
+  assert('wrigley field', [
+    [ { street: 'wrigley field' } ],
+    [ { venue: 'wrigley field' } ],
+    [ { locality: 'field' } ]
+  ], false)
 
   assert('Martin Luther King Jr. Blvd.', [
     { street: 'Martin Luther King Jr. Blvd.' }
@@ -55,12 +57,12 @@ const testcase = (test, common) => {
   assert('N DWIGHT AVE Portland Orego', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }])
   assert('N DWIGHT AVE Portland Oregon', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }, { region: 'Oregon' }])
 
-  assert('University of Hawaii', [{ place: 'University of Hawaii' }])
+  assert('University of Hawaii', [{ venue: 'University of Hawaii' }])
 
   // Maybe one day this test will pass...
   // see: https://github.com/pelias/parser/pull/49
   // assert('University of Hawaii at Hilo', [
-  //   { place: 'University of Hawaii at Hilo' }
+  //   { venue: 'University of Hawaii at Hilo' }
   // ])
 
   assert('Highway 72', [{ street: 'Highway 72' }], true)
@@ -152,10 +154,9 @@ const testcase = (test, common) => {
     { region: 'NY' }
   ])
 
-  // this isn't a great parse, it probably should
-  // understand 6=housenumber, montague terrace=street
+  // @todo: the #6 should be classified as a unit number
   assert('#6 Montague Terrace Brooklyn NY', [
-    { place: 'Montague Terrace' },
+    { street: 'Montague Terrace' },
     { locality: 'Brooklyn' },
     { region: 'NY' }
   ])

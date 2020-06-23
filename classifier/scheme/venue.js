@@ -1,32 +1,32 @@
-const PlaceClassification = require('../../classification/PlaceClassification')
+const VenueClassification = require('../../classification/VenueClassification')
 
 module.exports = [
   {
     // University Hospital
     confidence: 1.0,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       }
     ]
   },
   {
     // +++ Park
-    confidence: 0.9,
-    Class: PlaceClassification,
+    confidence: 0.7,
+    Class: VenueClassification,
     scheme: [
       {
         is: ['AlphaClassification'],
         not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
       },
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       }
     ]
@@ -34,14 +34,14 @@ module.exports = [
   {
     // Mt +++ Park
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: []
       }
     ]
@@ -49,7 +49,7 @@ module.exports = [
   {
     // Air & Space Museum
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
         is: ['AlphaClassification'],
@@ -60,7 +60,7 @@ module.exports = [
         not: ['StreetClassification']
       },
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: []
       }
     ]
@@ -68,14 +68,14 @@ module.exports = [
   {
     // National Air & Space Museum
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
         is: ['AlphaClassification'],
         not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
       },
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: []
       }
     ]
@@ -83,10 +83,10 @@ module.exports = [
   {
     // Stop 10792
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
       },
       {
@@ -98,10 +98,10 @@ module.exports = [
   {
     // University of Somewhere
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
@@ -117,10 +117,10 @@ module.exports = [
   {
     // Ecole Jules Vernes
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
@@ -132,10 +132,10 @@ module.exports = [
   {
     // ZAC du Pré
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
@@ -147,10 +147,10 @@ module.exports = [
   {
     // ZAC de la Tuilerie
     confidence: 0.8,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
@@ -166,10 +166,10 @@ module.exports = [
   {
     // ZA Entraigues
     confidence: 0.7,
-    Class: PlaceClassification,
+    Class: VenueClassification,
     scheme: [
       {
-        is: ['PlaceClassification'],
+        is: ['PlaceClassification', 'VenueClassification'],
         not: ['StreetClassification']
       },
       {
