@@ -52,7 +52,7 @@ const testcase = (test, common) => {
   // do not classify tokens preceeded by a 'place' as
   // an admin classification
   assert('Portland Cafe Portland OR', [
-    { place: 'Portland Cafe' },
+    { venue: 'Portland Cafe' },
     { locality: 'Portland' }, { region: 'OR' }
   ])
 

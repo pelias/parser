@@ -2,11 +2,11 @@ const testcase = (test, common) => {
   let assert = common.assert(test)
 
   assert('Stop 1', [
-    { place: 'Stop 1' }
+    { venue: 'Stop 1' }
   ])
 
   assert('Stop 10010', [
-    { place: 'Stop 10010' }
+    { venue: 'Stop 10010' }
   ])
 }
 

@@ -1,12 +1,12 @@
-const Classification = require('./PlaceClassification')
+const Classification = require('./VenueClassification')
 
 module.exports.tests = {}
 
 module.exports.tests.constructor = (test) => {
   test('constructor', (t) => {
     let c = new Classification()
-    t.false(c.public)
-    t.equals(c.label, 'place')
+    t.true(c.public)
+    t.equals(c.label, 'venue')
     t.equals(c.confidence, 1.0)
     t.deepEqual(c.meta, {})
     t.end()
@@ -15,7 +15,7 @@ module.exports.tests.constructor = (test) => {
 
 module.exports.all = (tape, common) => {
   function test (name, testFunction) {
-    return tape(`PlaceClassification: ${name}`, testFunction)
+    return tape(`VenueClassification: ${name}`, testFunction)
   }
 
   for (var testCase in module.exports.tests) {

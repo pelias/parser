@@ -17,7 +17,7 @@ const testcase = (test, common) => {
   ])
 
   assert('Kaschk Bar, Linienstraße 40 10119 Berlin', [
-    { place: 'Kaschk Bar' },
+    { venue: 'Kaschk Bar' },
     { street: 'Linienstraße' }, { housenumber: '40' },
     { postcode: '10119' }, { locality: 'Berlin' }
   ])

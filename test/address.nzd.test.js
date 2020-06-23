@@ -96,6 +96,10 @@ const testcase = (test, common) => {
   assert('4207 Mountain Road', [
     { housenumber: '4207' }, { street: 'Mountain Road' }
   ])
+
+  assert('Mt Victoria Rd, Wellington', [
+    { street: 'Mt Victoria Rd' }, { locality: 'Wellington' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

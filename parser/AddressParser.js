@@ -77,7 +77,7 @@ class AddressParser extends Parser {
         new CompositeClassifier(require('../classifier/scheme/person')),
         new CompositeClassifier(require('../classifier/scheme/street_name')),
         new CompositeClassifier(require('../classifier/scheme/street')),
-        new CompositeClassifier(require('../classifier/scheme/place')),
+        new CompositeClassifier(require('../classifier/scheme/venue')),
         new CompositeClassifier(require('../classifier/scheme/intersection')),
 
         // additional classifiers which act on unclassified tokens

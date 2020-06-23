@@ -134,7 +134,7 @@ const testcase = (test, common) => {
   //   { street: 'SW 6th' }, { street: 'Pine' }
   // ])
   assert('national air and space museum', [
-    { place: 'national air and space museum' }
+    { venue: 'national air and space museum' }
   ])
 
   // Trimet syntax
