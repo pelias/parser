@@ -57,7 +57,7 @@ module.exports = [
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'RoadTypeClassification']
       }
     ]
   },
@@ -284,7 +284,7 @@ module.exports = [
       },
       {
         is: ['NumericClassification'],
-        not: ['PostcodeClassification']
+        not: []
       }
     ]
   },
