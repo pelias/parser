@@ -183,11 +183,11 @@ const testcase = (test, common) => {
   //   { locality: 'Kokomo' }, { region: 'IN' },
   //   { postcode: '46902' }, { country: 'USA' }
   // ])
-  // assert('Sylvester Hwy At Branch Rd, Albany, GA 31705, USA', [
-  //   { street: 'Sylvester Hwy' }, { street: 'Branch Rd' },
-  //   { locality: 'Albany' }, { region: 'GA' },
-  //   { postcode: '31705' }, { country: 'USA' }
-  // ])
+  assert('Sylvester Hwy At Branch Rd, Albany, GA 31705, USA', [
+    { street: 'Sylvester Hwy' }, { street: 'Branch Rd' },
+    { locality: 'Albany' }, { region: 'GA' },
+    { postcode: '31705' }, { country: 'USA' }
+  ])
   assert('E Riverside Dr At Montopolis Dr, Austin, TX 78741, USA', [
     { street: 'E Riverside Dr' }, { street: 'Montopolis Dr' },
     { locality: 'Austin' }, { region: 'TX' },
