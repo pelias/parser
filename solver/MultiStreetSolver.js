@@ -1,5 +1,14 @@
 const HashMapSolver = require('./super/HashMapSolver')
 
+// classifications which are more granular than StreetClassification
+// should not be included in intersection solutions.
+const MORE_GRANULAR_THAN_STREET = [
+  'HouseNumberClassification',
+  'UnitClassification',
+  'UnitTypeClassification',
+  'VenueClassification'
+]
+
 /**
  * If a 'multistreet' classification was detected then
  * add a new solution which covers all streets included.
@@ -30,13 +39,16 @@ class MultiStreetSolver extends HashMapSolver {
         s.span.intersects(multi.span)
       ))
     }).forEach(solution => {
-      // find the location of the street classification
-      let street = solution.pair.find(s => s.classification.constructor.name === 'StreetClassification')
+      // find the street solution pair
+      const street = solution.pair.find(s => s.classification.constructor.name === 'StreetClassification')
 
-      // make a copy of the current solution and remove all classifications
-      // which came before the street (such as venue, housenumber etc.)
-      let truncated = solution.copy()
-      truncated.pair = truncated.pair.filter(s => s.span.start >= street.span.start)
+      // make a copy of the current solution and remove all solution pairs which came before
+      // the street and also any pairs less granular than street (such as venue, housenumber etc.)
+      const truncated = solution.copy()
+      truncated.pair = truncated.pair.filter(s => (
+        (s.span.start >= street.span.start) &&
+        !MORE_GRANULAR_THAN_STREET.includes(s.classification.constructor.name)
+      ))
 
       // find all street classsification which intersect the 'multistreet' span
       // and also do not overlap an existing pair in this solution.
