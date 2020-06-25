@@ -14,11 +14,11 @@ function classify (body) {
 
 module.exports.tests.english_unit_types = (test) => {
   let valid = [
-    'unit16', 'apt23', 'lot75'
+    'unit16', 'apt23', 'lot75', 'pha', 'AptA', 'o22', 'o2'
   ]
 
   let invalid = [
-    'unit', '23', 'Main'
+    'unit', '23', 'Main', 'oa'
   ]
 
   valid.forEach(token => {

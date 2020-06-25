@@ -4,6 +4,8 @@ const UnitClassification = require('../classification/UnitClassification')
 const libpostal = require('../resources/libpostal/libpostal')
 const Span = require('../tokenization/Span')
 
+const AllNumberRegex = /^\d+$/
+
 class UnitTypeClassifier extends BaseClassifier {
   setup () {
     // load index tokens
@@ -19,17 +21,29 @@ class UnitTypeClassifier extends BaseClassifier {
     }
   }
   each (span, section) {
-    // skip spans whithout numbers
-    if (!span.contains.numerals) { return }
+    // We are searching for spans like `U12` which means `Unit 12`
+    // As well as spans like 'PHA' (penthouse A) or 'AptA'
+    for (let unitToken in this.index) {
+      if (span.body.length < unitToken.length) {
+        continue
+      }
 
-    // We a searching spans like `U12` which means `Unit 12`
-    for (let token in this.index) {
-      if (span.body.length < token.length) { continue }
+      const startsWithThisToken = span.norm.substring(0, unitToken.length) === unitToken
+      const endsWithNumbers = AllNumberRegex.test(span.norm.substring(unitToken.length))
+      // Only let this test pass if the unitToken is longer than one character. Deciding "oa" is a
+      // unit seems a little ridiculous
+      const endsWithASingleCharacter =
+        unitToken.length > 1 &&
+        unitToken.length === span.body.length - 1
 
-      // perf: https://gist.github.com/dai-shi/4950506
-      if (span.norm.substring(0, token.length) === token && /^\d+$/.test(span.norm.substring(token.length))) {
-        const unitTypeBody = span.body.substring(0, token.length)
-        const unitBody = span.body.substring(token.length)
+      // It's compound unit token if it starts with a unitToken from our index
+      // and either ends with numbers, or a single character
+      if (
+        startsWithThisToken &&
+        (endsWithNumbers || endsWithASingleCharacter)
+      ) {
+        const unitTypeBody = span.body.substring(0, unitToken.length)
+        const unitBody = span.body.substring(unitToken.length)
 
         const unitType = new Span(unitTypeBody, span.start)
         const unit = new Span(unitBody, span.start + unitTypeBody.length)
@@ -40,8 +54,8 @@ class UnitTypeClassifier extends BaseClassifier {
         unit.classify(new UnitClassification(1.0))
         unit.graph.add('prev', unitType)
 
-        span.graph.findAll('prev').forEach(prev => unitType.graph.add('prev', prev))
-        span.graph.findAll('next').forEach(next => unit.graph.add('next', next))
+        span.graph.findAll('prev').forEach((prev) => unitType.graph.add('prev', prev))
+        span.graph.findAll('next').forEach((next) => unit.graph.add('next', next))
 
         section.graph.add('child', unitType)
         section.graph.add('child', unit)
