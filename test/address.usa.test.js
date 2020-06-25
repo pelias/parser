@@ -58,12 +58,7 @@ const testcase = (test, common) => {
   assert('N DWIGHT AVE Portland Oregon', [{ street: 'N DWIGHT AVE' }, { locality: 'Portland' }, { region: 'Oregon' }])
 
   assert('University of Hawaii', [{ venue: 'University of Hawaii' }])
-
-  // Maybe one day this test will pass...
-  // see: https://github.com/pelias/parser/pull/49
-  // assert('University of Hawaii at Hilo', [
-  //   { venue: 'University of Hawaii at Hilo' }
-  // ])
+  assert('University of Hawaii at Hilo', [{ venue: 'University of Hawaii at Hilo' }])
 
   assert('Highway 72', [{ street: 'Highway 72' }], true)
   assert('1210a Highway 10 W IA', [{ housenumber: '1210a' }, { street: 'Highway 10 W' }, { region: 'IA' }], true)
