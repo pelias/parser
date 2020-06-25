@@ -223,11 +223,11 @@ const testcase = (test, common) => {
     { locality: 'Circleville' }, { region: 'OH' },
     { postcode: '43113' }, { country: 'USA' }
   ])
-  // assert('Manor Rd At Airport Blvd, Austin, TX 78722, USA', [
-  //   { street: 'Manor Rd' }, { street: 'Airport Blvd' },
-  //   { locality: 'Austin' }, { region: 'TX' },
-  //   { postcode: '78722' }, { country: 'USA' }
-  // ])
+  assert('Manor Rd At Airport Blvd, Austin, TX 78722, USA', [
+    { street: 'Manor Rd' }, { street: 'Airport Blvd' },
+    { locality: 'Austin' }, { region: 'TX' },
+    { postcode: '78722' }, { country: 'USA' }
+  ])
   assert('S Interstate 35 At E William Cannon Dr, Austin, TX 78744, USA', [
     { street: 'S Interstate 35' }, { street: 'E William Cannon Dr' },
     { locality: 'Austin' }, { region: 'TX' },
@@ -253,16 +253,16 @@ const testcase = (test, common) => {
     { locality: 'Chicago' }, { region: 'IL' },
     { postcode: '60661' }, { country: 'USA' }
   ])
-  // assert('College Park Dr At Gosling Rd, Conroe, TX 77384, USA', [
-  //   { street: 'College Park Dr' }, { street: 'Gosling Rd' },
-  //   { locality: 'Conroe' }, { region: 'TX' },
-  //   { postcode: '77384' }, { country: 'USA' }
-  // ])
-  // assert('Hall Ave At N Cherry St, Wallingford, CT 06492, USA', [
-  //   { street: 'Hall Ave' }, { street: 'N Cherry St' },
-  //   { locality: 'Wallingford' }, { region: 'CT' },
-  //   { postcode: '06492' }, { country: 'USA' }
-  // ])
+  assert('College Park Dr At Gosling Rd, Conroe, TX 77384, USA', [
+    { street: 'College Park Dr' }, { street: 'Gosling Rd' },
+    { locality: 'Conroe' }, { region: 'TX' },
+    { postcode: '77384' }, { country: 'USA' }
+  ])
+  assert('Hall Ave At N Cherry St, Wallingford, CT 06492, USA', [
+    { street: 'Hall Ave' }, { street: 'N Cherry St' },
+    { locality: 'Wallingford' }, { region: 'CT' },
+    { postcode: '06492' }, { country: 'USA' }
+  ])
   assert('Pinemont Dr At N Shepherd Dr, Houston, TX 77018, USA', [
     { street: 'Pinemont Dr' }, { street: 'N Shepherd Dr' },
     { locality: 'Houston' }, { region: 'TX' },
