@@ -1,5 +1,5 @@
 const Tokenizer = require('../../tokenization/Tokenizer')
-const DebugParser = require('../../debug/DebugParser')
+const DebugOutputBuilder = require('../../debug/DebugOutputBuilder')
 
 module.exports = function (req, res) {
   // address parser
@@ -21,7 +21,7 @@ module.exports = function (req, res) {
       end: t.span.end
     },
     solutions: t.solution.map(jsonify),
-    debug: req.query.debug && new DebugParser().parse(text).toString()
+    debug: req.query.debug && new DebugOutputBuilder().parse(text).toString()
   })
 }
 

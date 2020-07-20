@@ -57,10 +57,5 @@
   "release": {
     "branch": "master",
     "success": []
-  },
-  "standard": {
-    "ignore": [
-      "/server/demo/vendor"
-    ]
   }
 }

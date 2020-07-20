@@ -1,6 +1,6 @@
 const input = process.argv.slice(2).join(' ')
-const DebugParser = require('../debug/DebugParser')
+const DebugOutputBuilder = require('../debug/DebugOutputBuilder')
 
 process.stdout.write(
-  new DebugParser().parse(input).toString()
+  new DebugOutputBuilder().parse(input).toString()
 )

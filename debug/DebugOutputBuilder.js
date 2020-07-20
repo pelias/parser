@@ -1,3 +1,11 @@
+/** This class generates ansi color-coded debugging output from an
+ * address parse. The string that it builds up is suitable for outputting
+ * to a console, or, through the use of a javascript library like ansi-up,
+ * displaying on the web.
+ *
+ * The class is generally called like so:
+ *   new DebugOutputBuilder().parse(input).toString()
+ */
 
 const util = require('util')
 const chalk = require('chalk')
@@ -6,7 +14,7 @@ const StringBuffer = require('stringbuffer')
 const Tokenizer = require('../tokenization/Tokenizer')
 const AddressParser = require('../parser/AddressParser')
 
-class DebugParser {
+class DebugOutputBuilder {
   constructor () {
     this.sb = new StringBuffer()
 
@@ -186,4 +194,4 @@ class DebugParser {
   }
 }
 
-module.exports = DebugParser
+module.exports = DebugOutputBuilder
