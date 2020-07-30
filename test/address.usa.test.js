@@ -167,6 +167,17 @@ const testcase = (test, common) => {
   assert('E William Cannon Dr', [
     { street: 'E William Cannon Dr' }
   ])
+
+  // There was a bug where multiple interpretations were being
+  // returned for this query because "Deerfield Beach" was interpreted
+  // as a possible venue. This test checks for that regression.
+  assert('3551 W. Hillsboro Blvd Deerfield Beach, FL 33442', [[
+    { housenumber: '3551' },
+    { street: 'W. Hillsboro Blvd' },
+    { locality: 'Deerfield Beach' },
+    { region: 'FL' },
+    { postcode: '33442' }
+  ]], false)
 }
 
 module.exports.all = (tape, common) => {
