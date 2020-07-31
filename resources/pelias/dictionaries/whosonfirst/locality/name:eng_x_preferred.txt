@@ -13,6 +13,7 @@ sf
 !deli
 !us
 !germany
+!japan
 !empire
 !unit
 # remove any localities which share a name with a US state
@@ -65,3 +66,4 @@ sf
 !west virginia
 !wisconsin
 !wyoming
+
