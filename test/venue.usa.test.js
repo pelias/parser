@@ -10,6 +10,14 @@ const testcase = (test, common) => {
     { venue: 'Empire State Building' },
     { locality: 'NYC' }
   ])
+
+  assert('Donald W Reynolds Stadium', [
+    { venue: 'Donald W Reynolds Stadium' }
+  ])
+
+  assert('Donald W. Reynolds Stadium', [
+    { venue: 'Donald W. Reynolds Stadium' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
