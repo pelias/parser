@@ -10,7 +10,7 @@ apartments|apts|appartments
 approach|app|apch|appr
 arcade|arc
 arterial|artl
-artery|arty
+artery|art|arty
 avenue|av|ave|aven|avenu|avn|avnu|avnue
 avenues|avs|aves|avens|avenus|avns|avnus|avnues
 autoroute|aut

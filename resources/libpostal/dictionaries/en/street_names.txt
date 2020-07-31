@@ -6,7 +6,7 @@ amble|ambl
 anchorage|ancg
 approach|app|apch|appr
 arterial|artl
-artery|arty
+artery|art|arty
 back|bk
 bank|bnk
 basin|basn|bsn
