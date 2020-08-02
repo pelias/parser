@@ -3,3 +3,6 @@ paku
 
 # Rushendon Furlong, Pitstone, England
 furlong
+
+# bad abbreviation for the very uncommon suffix "Artery"
+!art
