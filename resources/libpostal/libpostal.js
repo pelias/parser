@@ -1,5 +1,7 @@
+const _ = require('lodash')
 const fs = require('fs')
 const path = require('path')
+const pluralize = require('pluralize')
 const pelias = require('../pelias/pelias')
 const custom = require('../custom/custom')
 const dictPath = path.join(__dirname, `./dictionaries`)
@@ -60,5 +62,18 @@ function _remove (index, options) {
   }
 }
 
+// This functionality is only currently available for English
+// see: https://github.com/plurals/pluralize
+// @todo: find similar libraries which cover other languages
+function generatePlurals (index) {
+  _.forEach(index, (i, cell) => {
+    if (_.get(index[cell], 'langs.en', false)) {
+      const plural = pluralize(cell)
+      _.set(index, `${plural}.langs.en`, true)
+    }
+  })
+}
+
 module.exports.load = load
 module.exports.languages = allLanguages
+module.exports.generatePlurals = generatePlurals
