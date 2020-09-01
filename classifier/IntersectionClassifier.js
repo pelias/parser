@@ -18,6 +18,7 @@ class IntersectionClassifier extends PhraseClassifier {
     // blacklist
     // delete this.index.corner
 
+    // index defined in code below, no dictionary files loaded:
     this.index['&'] = true
     this.index.and = true
     this.index.und = true
@@ -39,6 +40,17 @@ class IntersectionClassifier extends PhraseClassifier {
 
     // use an inverted index for full token matching as it's O(1)
     if (this.index.hasOwnProperty(span.norm)) {
+      // do not classify 'and' sandwiched by two 'PlaceClassification'
+      // as an 'IntersectionClassification'.
+      // eg. 'Bar & Restaurant'
+      if (
+        ['&', 'and', 'und'].includes(span.norm) &&
+        prev.classifications.hasOwnProperty('PlaceClassification') &&
+        next.classifications.hasOwnProperty('PlaceClassification')
+      ) {
+        return
+      }
+
       // classify phrase
       span.classify(new IntersectionClassification(1))
 

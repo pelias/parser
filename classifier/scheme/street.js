@@ -8,11 +8,11 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -23,11 +23,11 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification', 'StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -38,11 +38,11 @@ module.exports = [
     scheme: [
       {
         is: ['OrdinalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -53,11 +53,11 @@ module.exports = [
     scheme: [
       {
         is: ['NumericClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'RoadTypeClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'RoadTypeClassification']
       }
     ]
   },
@@ -68,11 +68,11 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['PlaceClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -83,11 +83,11 @@ module.exports = [
     scheme: [
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['OrdinalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -98,11 +98,11 @@ module.exports = [
     scheme: [
       {
         is: ['PersonalSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -113,11 +113,11 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['IntersectionClassification']
+        not: ['PunctuationClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetClassification'],
-        not: ['StopWordClassification']
+        not: ['PunctuationClassification', 'StopWordClassification']
       }
     ]
   },
@@ -128,11 +128,11 @@ module.exports = [
     scheme: [
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -143,15 +143,15 @@ module.exports = [
     scheme: [
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['PersonalSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   },
@@ -162,15 +162,15 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -181,19 +181,19 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -204,15 +204,15 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['PersonalTitleClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -223,19 +223,19 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['PersonalTitleClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -246,15 +246,15 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['GivenNameClassification', 'AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification']
       }
     ]
   },
@@ -265,11 +265,11 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'StopWordClassification']
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification']
       }
     ]
   },
@@ -295,11 +295,11 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'StopWordClassification']
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification']
       }
     ]
   },
@@ -310,11 +310,11 @@ module.exports = [
     scheme: [
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification']
       },
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
       }
     ]
   },
@@ -325,11 +325,11 @@ module.exports = [
     scheme: [
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification']
       }
     ]
   }

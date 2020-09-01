@@ -15,6 +15,22 @@ const testcase = (test, common) => {
   assert('philadelphia museum of art', [
     { venue: 'philadelphia museum of art' }
   ])
+
+  // common venue suffixes containing ampersand
+  assert('Bar & Grill', [{ venue: 'Bar & Grill' }])
+  assert('Restaurant & Bar', [{ venue: 'Restaurant & Bar' }])
+  assert('Cafe & Pub', [{ venue: 'Cafe & Pub' }])
+
+  // venue names containing ampersand
+  assert('Andy\'s Bar & Grill', [
+    { venue: 'Andy\'s Bar & Grill' }
+  ])
+  assert('Adams Family Restaurant & Bar', [
+    { venue: 'Adams Family Restaurant & Bar' }
+  ])
+  // assert('Kells Irish Restaurant & Pub', [
+  //   { venue: 'Kells Irish Restaurant & Pub' }
+  // ])
 }
 
 module.exports.all = (tape, common) => {

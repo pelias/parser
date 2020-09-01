@@ -62,18 +62,25 @@ const testcase = (test, common) => {
   assert('carrer con', [{ street: 'carrer con' }])
 
   // no street suffix
-  assert('foo & bar', [
-    { street: 'foo' }, { street: 'bar' }
-  ])
-  assert('foo and bar', [
-    { street: 'foo' }, { street: 'bar' }
-  ])
-  assert('foo at bar', [
-    { street: 'foo' }, { street: 'bar' }
-  ])
   assert('foo @ bar', [
     { street: 'foo' }, { street: 'bar' }
   ])
+
+  // ambiguous query containing ampersand (venue/intersection)
+  // note: we chose to prefer a venue solution in
+  // these cases over the intersection solution.
+  assert('foo & bar', [
+    [{ venue: 'foo & bar' }],
+    [{ street: 'foo' }, { street: 'bar' }]
+  ], false)
+  assert('foo and bar', [
+    [{ venue: 'foo and bar' }],
+    [{ street: 'foo' }, { street: 'bar' }]
+  ], false)
+  assert('foo at bar', [
+    [{ venue: 'foo at bar' }],
+    [{ street: 'foo' }, { street: 'bar' }]
+  ], false)
 
   // missing street suffix - alpha
   assert('main st & side ave', [
