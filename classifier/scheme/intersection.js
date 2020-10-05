@@ -84,7 +84,7 @@ module.exports = [
       },
       {
         is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
-        not: ['IntersectionClassification', 'StreetClassification', 'StreetSuffixClassification'],
+        not: ['IntersectionClassification', 'StreetClassification'],
         confidence: 0.56,
         Class: StreetClassification
       }

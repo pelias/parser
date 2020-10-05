@@ -16,6 +16,8 @@ sf
 !japan
 !empire
 !unit
+# 18 person county in texas
+!art
 # remove any localities which share a name with a US state
 !alabama
 !alaska

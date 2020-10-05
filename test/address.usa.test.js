@@ -15,6 +15,34 @@ const testcase = (test, common) => {
     { street: 'Martin Luther King Blvd.' }
   ])
 
+  assert('E Cesar Chavez St', [
+    { street: 'E Cesar Chavez St' }
+  ])
+
+  assert('Riverbend Club Dr Se', [
+    { street: 'Riverbend Club Dr Se' }
+  ])
+
+  assert('S Interstate 35', [
+    { street: 'S Interstate 35' }
+  ])
+
+  assert('E William Cannon Dr', [
+    { street: 'E William Cannon Dr' }
+  ])
+
+  assert('Branch Rd', [
+    { street: 'Branch Rd' }
+  ])
+
+  assert('Manor Rd', [
+    { street: 'Manor Rd' }
+  ])
+
+  assert('Fm 3009 TX', [
+    { street: 'Fm 3009' }, { region: 'TX' }
+  ])
+
   assert('1900 SE A ST, SAN FRANCISCO', [
     { housenumber: '1900' }, { street: 'SE A ST' },
     { locality: 'SAN FRANCISCO' }
@@ -167,6 +195,17 @@ const testcase = (test, common) => {
   assert('E William Cannon Dr', [
     { street: 'E William Cannon Dr' }
   ])
+
+  // There was a bug where multiple interpretations were being
+  // returned for this query because "Deerfield Beach" was interpreted
+  // as a possible venue. This test checks for that regression.
+  assert('3551 W. Hillsboro Blvd Deerfield Beach, FL 33442', [[
+    { housenumber: '3551' },
+    { street: 'W. Hillsboro Blvd' },
+    { locality: 'Deerfield Beach' },
+    { region: 'FL' },
+    { postcode: '33442' }
+  ]], false)
 }
 
 module.exports.all = (tape, common) => {

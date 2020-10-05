@@ -14,6 +14,10 @@ const testcase = (test, common) => {
   assert('Universal Studios Japan', [
     { venue: 'Universal Studios' },
     { country: 'Japan' }
+
+    // checking that "art" is not interpreted as a street suffix
+  assert('philadelphia museum of art', [
+    { venue: 'philadelphia museum of art' }
   ])
 }
 
