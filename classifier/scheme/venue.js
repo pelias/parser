@@ -3,7 +3,7 @@ const VenueClassification = require('../../classification/VenueClassification')
 module.exports = [
   {
     // University Hospital
-    confidence: 1.0,
+    confidence: 0.9,
     Class: VenueClassification,
     scheme: [
       {

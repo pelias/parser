@@ -5,7 +5,7 @@
   "description": "Pelias parsing library",
   "homepage": "https://github.com/pelias/parser",
   "license": "MIT",
-  "main": "index.js",
+  "main": "server/http.js",
   "scripts": {
     "units": "./bin/test unit",
     "funcs": "./bin/test func",
@@ -34,7 +34,9 @@
   "dependencies": {
     "cluster": "^0.7.7",
     "express": "^4.16.4",
-    "remove-accents": "^0.4.2"
+    "pluralize": "^8.0.0",
+    "remove-accents": "^0.4.2",
+    "stringbuffer": "^1.0.0"
   },
   "devDependencies": {
     "better-sqlite3": "^6.0.1",

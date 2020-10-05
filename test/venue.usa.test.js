@@ -18,6 +18,11 @@ const testcase = (test, common) => {
   assert('Donald W. Reynolds Stadium', [
     { venue: 'Donald W. Reynolds Stadium' }
   ])
+
+    // checking that "art" is not interpreted as a street suffix
+  assert('philadelphia museum of art', [
+    { venue: 'philadelphia museum of art' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
