@@ -88,6 +88,9 @@ const testcase = (test, common) => {
   assert('new south wales aus', [
     { region: 'new south wales' }, { country: 'aus' }
   ])
+
+  // test that we don't interpret "ga" as a street suffix
+  assert('jasper ga', [{ locality: 'jasper' }, { region: 'ga' }])
 }
 
 module.exports.all = (tape, common) => {
