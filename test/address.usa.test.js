@@ -206,6 +206,15 @@ const testcase = (test, common) => {
     { region: 'FL' },
     { postcode: '33442' }
   ]], false)
+
+  assert('1384 Cambridge Beltway, Cambridge, MD 21613, USA', [[
+    { housenumber: '1384' },
+    { street: 'Cambridge Beltway' },
+    { locality: 'Cambridge' },
+    { region: 'MD' },
+    { postcode: '21613' },
+    { country: 'USA' }
+  ]], false)
 }
 
 module.exports.all = (tape, common) => {
