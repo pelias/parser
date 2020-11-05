@@ -11,6 +11,7 @@ const testcase = (test, common) => {
     { locality: 'NYC' }
   ])
 
+  // checking that NAME INITIAL NAME works
   assert('Donald W Reynolds Stadium', [
     { venue: 'Donald W Reynolds Stadium' }
   ])
@@ -19,7 +20,13 @@ const testcase = (test, common) => {
     { venue: 'Donald W. Reynolds Stadium' }
   ])
 
-    // checking that "art" is not interpreted as a street suffix
+  // checking that "japan" is interpreted as a country, not a city
+  assert('Universal Studios Japan', [
+    { venue: 'Universal Studios' },
+    { country: 'Japan' }
+  ])
+
+  // checking that "art" is not interpreted as a street suffix
   assert('philadelphia museum of art', [
     { venue: 'philadelphia museum of art' }
   ])
