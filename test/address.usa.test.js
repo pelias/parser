@@ -215,6 +215,25 @@ const testcase = (test, common) => {
     { postcode: '21613' },
     { country: 'USA' }
   ]], false)
+
+  // NYC Boroughs
+  assert('866 E 178th St, Bronx, NY 10460, USA', [[
+    { housenumber: '866' },
+    { street: 'E 178th St' },
+    { locality: 'Bronx' },
+    { region: 'NY' },
+    { postcode: '10460' },
+    { country: 'USA' }
+  ]], false)
+
+  assert('866 E 178th St, Staten Island, NY 10460, USA', [[
+    { housenumber: '866' },
+    { street: 'E 178th St' },
+    { locality: 'Staten Island' },
+    { region: 'NY' },
+    { postcode: '10460' },
+    { country: 'USA' }
+  ]], false)
 }
 
 module.exports.all = (tape, common) => {
