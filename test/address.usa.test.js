@@ -234,6 +234,21 @@ const testcase = (test, common) => {
     { postcode: '10460' },
     { country: 'USA' }
   ]], false)
+
+  // 'Massachusetts' and 'MA' should be interchangeable and both
+  // forms should allow 'Boston' to be parsed as a locality.
+  assert('12 main st, boston massachusetts', [
+    { housenumber: '12' },
+    { street: 'main st' },
+    { locality: 'boston' },
+    { region: 'massachusetts' }
+  ])
+  assert('12 main st, boston ma', [
+    { housenumber: '12' },
+    { street: 'main st' },
+    { locality: 'boston' },
+    { region: 'ma' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
