@@ -4,3 +4,5 @@ stop
 !dist
 building
 field
+home
+pub

@@ -9,11 +9,11 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   },
@@ -24,11 +24,11 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   },
@@ -39,15 +39,15 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   },
@@ -58,15 +58,15 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['GivenNameClassification', 'SurnameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   },
@@ -77,11 +77,11 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   },
@@ -92,15 +92,15 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
       }
     ]
   }

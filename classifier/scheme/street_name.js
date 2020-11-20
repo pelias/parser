@@ -8,11 +8,11 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['DirectionalClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification', 'IntersectionClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
       }
     ]
   },
@@ -23,15 +23,15 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'StreetPrefixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'StreetPrefixClassification']
       },
       {
         is: ['StopWordClassification'],
-        not: ['DirectionalClassification']
+        not: ['PunctuationClassification', 'DirectionalClassification']
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
       }
     ]
   },
@@ -42,15 +42,15 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['IntersectionClassification']
+        not: ['PunctuationClassification', 'IntersectionClassification']
       },
       {
         is: ['NumericClassification'],
-        not: ['PostcodeClassification']
+        not: ['PunctuationClassification', 'PostcodeClassification']
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'LocalityClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification', 'LocalityClassification']
       }
     ]
   },
@@ -61,11 +61,11 @@ module.exports = [
     scheme: [
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       },
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['PunctuationClassification', 'StreetClassification', 'IntersectionClassification']
       }
     ]
   }

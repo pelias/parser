@@ -63,6 +63,7 @@ class AddressParser extends Parser {
         new StopWordClassifier(),
 
         // phrase classifiers
+        new PlaceClassifier(),
         new IntersectionClassifier(),
         new PersonClassifier(),
         new GivenNameClassifier(),
@@ -70,7 +71,6 @@ class AddressParser extends Parser {
         new PersonalSuffixClassifier(),
         new PersonalTitleClassifier(),
         new ChainClassifier(),
-        new PlaceClassifier(),
         new WhosOnFirstClassifier(),
 
         // composite classifiers
