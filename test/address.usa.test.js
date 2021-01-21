@@ -216,6 +216,25 @@ const testcase = (test, common) => {
     { country: 'USA' }
   ]], false)
 
+  // NYC Boroughs
+  assert('866 E 178th St, Bronx, NY 10460, USA', [[
+    { housenumber: '866' },
+    { street: 'E 178th St' },
+    { locality: 'Bronx' },
+    { region: 'NY' },
+    { postcode: '10460' },
+    { country: 'USA' }
+  ]], false)
+
+  assert('866 E 178th St, Staten Island, NY 10460, USA', [[
+    { housenumber: '866' },
+    { street: 'E 178th St' },
+    { locality: 'Staten Island' },
+    { region: 'NY' },
+    { postcode: '10460' },
+    { country: 'USA' }
+  ]], false)
+
   // 'Massachusetts' and 'MA' should be interchangeable and both
   // forms should allow 'Boston' to be parsed as a locality.
   assert('12 main st, boston massachusetts', [
