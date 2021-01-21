@@ -53,6 +53,7 @@ module.exports = [
   },
   {
     // Raul Leite Magalhães (first name, middle name, family name)
+    // Donald W. Reynolds
     confidence: 0.5,
     Class: PersonClassification,
     scheme: [
@@ -61,7 +62,7 @@ module.exports = [
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {
-        is: ['GivenNameClassification', 'SurnameClassification'],
+        is: ['GivenNameClassification', 'SurnameClassification', 'MiddleInitialClassification'],
         not: ['StreetClassification', 'IntersectionClassification']
       },
       {

@@ -130,6 +130,22 @@ module.exports = [
     ]
   },
   {
+    // Donald W Reynolds Stadium
+    // boost confidence slightly above street for "Donald W"
+    confidence: 0.82,
+    Class: VenueClassification,
+    scheme: [
+      {
+        is: ['PersonClassification'],
+        not: ['StreetClassification']
+      },
+      {
+        is: ['PlaceClassification', 'VenueClassification'],
+        not: ['StreetClassification']
+      }
+    ]
+  },
+  {
     // ZAC du Pré
     confidence: 0.8,
     Class: VenueClassification,
