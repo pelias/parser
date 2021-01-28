@@ -10,7 +10,7 @@ const dictPath = path.join(__dirname, `../resources/chromium-i18n/ssl-address`)
 // const countryCodes = fs.readdirSync(dictPath)
 //   .filter(p => p.endsWith('.json'))
 //   .map(p => p.split('.')[0])
-const countryCodes = ['us', 'gb', 'fr', 'de', 'es', 'pt', 'au', 'nz', 'kr', 'jp', 'in', 'ru', 'br']
+const countryCodes = ['us', 'gb', 'fr', 'de', 'es', 'pt', 'au', 'nz', 'kr', 'jp', 'in', 'ru', 'br', 'nl']
 
 class PostcodeClassifier extends WordClassifier {
   setup () {
