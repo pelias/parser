@@ -1,2 +1,5 @@
 !kort|k
 !korte|kte
+#typo in LibPostal resource
+!burgermeester|burg|bgm
+burgemeester|burg|bgm
