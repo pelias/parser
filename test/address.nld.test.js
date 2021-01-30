@@ -48,6 +48,10 @@ const testcase = (test, common) => {
   assert('Rembrandtplein, Amsterdam', [
     { street: 'Rembrandtplein' }, { locality: 'Amsterdam' }
   ])
+
+  assert('Korte Tiendeweg, Gouda', [
+    { street: 'Korte Tiendeweg' }, { locality: 'Gouda' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
