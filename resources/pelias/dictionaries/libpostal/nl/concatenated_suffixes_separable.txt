@@ -1,3 +1,6 @@
+baan
+daal
 dijk
 !plain|pln.
 plein|pln
+burg|brg|bg

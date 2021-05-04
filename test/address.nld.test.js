@@ -25,6 +25,16 @@ const testcase = (test, common) => {
     { street: 'Achter Clarenburg' }, { locality: 'Utrecht' }
   ])
 
+  assert('Rozenburg', [
+    [{ locality: 'Rozenburg' }],
+    [{ street: 'Rozenburg' }]
+  ], false)
+  
+  assert('Bloemendaal', [
+    [{ locality: 'Bloemendaal' }],
+    [{ street: 'Bloemendaal' }]
+  ], false)
+
   assert('Brinkstraat 87, 7512EC, Enschede', [
     { street: 'Brinkstraat' }, { housenumber: '87' }, { postcode: '7512EC' }, { locality: 'Enschede' }
   ])
@@ -56,6 +66,11 @@ const testcase = (test, common) => {
   assert('Burgemeester Martenssingel, Gouda', [
     { street: 'Burgemeester Martenssingel' }, { locality: 'Gouda' }
   ])
+
+  assert('Agorabaan, Lelystad', [
+    { street: 'Agorabaan' }, { locality: 'Lelystad' }
+  ])
+
 }
 
 module.exports.all = (tape, common) => {
