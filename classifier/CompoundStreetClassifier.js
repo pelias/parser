@@ -20,7 +20,7 @@ class CompoundStreetClassifier extends WordClassifier {
       // remove any suffixes which contain less than 3 characters (excluding a period)
       // this removes suffixes such as 'r.' which can be ambiguous
       minlength: 3
-    })  
+    })
   }
 
   each (span) {
