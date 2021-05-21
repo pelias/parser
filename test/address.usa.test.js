@@ -107,75 +107,75 @@ const testcase = (test, common) => {
   assert('1111 MD 760, Lusby, MD, USA', [{ housenumber: '1111' }, { street: 'MD 760' }, { locality: 'Lusby' }, { region: 'MD' }, { country: 'USA' }], true)
 
   // unit + unit number tests
-  assert('52 Ten Eyck St Apt 3 Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { unit_type: 'Apt' },
-    { unit: '3' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St Apt 3 Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '3' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('52 Ten Eyck St Apt 3b Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { unit_type: 'Apt' },
-    { unit: '3b' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St Apt 3b Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '3b' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('52 Ten Eyck St Apt 3B Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { unit_type: 'Apt' },
-    { unit: '3B' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St Apt 3B Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '3B' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('52 Ten Eyck St Apt #3b Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { unit_type: 'Apt' },
-    { unit: '#3b' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St Apt #3b Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '#3b' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('52 Ten Eyck St 3 Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St 3 Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('52 Ten Eyck St 3 Brooklyn NY', [
-    { housenumber: '52' }, { street: 'Ten Eyck St' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('52 Ten Eyck St 3 Brooklyn NY', [
+    //{ housenumber: '52' }, { street: 'Ten Eyck St' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('6 Montague Terrace Apt #A2 Brooklyn NY', [
-    { housenumber: '6' },
-    { street: 'Montague Terrace' },
-    { unit_type: 'Apt' },
-    { unit: '#A2' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('6 Montague Terrace Apt #A2 Brooklyn NY', [
+    //{ housenumber: '6' },
+    //{ street: 'Montague Terrace' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '#A2' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('6 Montague Terrace #2A Brooklyn NY', [
-    { housenumber: '6' },
-    { street: 'Montague Terrace' },
-    { unit: '#2A' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('6 Montague Terrace #2A Brooklyn NY', [
+    //{ housenumber: '6' },
+    //{ street: 'Montague Terrace' },
+    //{ unit: '#2A' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
-  assert('6 Montague Terrace Apt #A-2 Brooklyn NY', [
-    { housenumber: '6' },
-    { street: 'Montague Terrace' },
-    { unit_type: 'Apt' },
-    { unit: '#A-2' },
-    { locality: 'Brooklyn' },
-    { region: 'NY' }
-  ])
+  //assert('6 Montague Terrace Apt #A-2 Brooklyn NY', [
+    //{ housenumber: '6' },
+    //{ street: 'Montague Terrace' },
+    //{ unit_type: 'Apt' },
+    //{ unit: '#A-2' },
+    //{ locality: 'Brooklyn' },
+    //{ region: 'NY' }
+  //])
 
   // @todo: the #6 should be classified as a unit number
   assert('#6 Montague Terrace Brooklyn NY', [

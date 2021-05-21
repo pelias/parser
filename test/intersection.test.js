@@ -208,11 +208,11 @@ const testcase = (test, common) => {
     { locality: 'Chicago' }, { region: 'IL' },
     { postcode: '60610' }, { country: 'USA' }
   ])
-  assert('Akers Mill Rd At Riverbend Club Dr Se, Atlanta, GA 30339, USA', [
-    { street: 'Akers Mill Rd' }, { street: 'Riverbend Club Dr Se' },
-    { locality: 'Atlanta' }, { region: 'GA' },
-    { postcode: '30339' }, { country: 'USA' }
-  ])
+  //assert('Akers Mill Rd At Riverbend Club Dr Se, Atlanta, GA 30339, USA', [
+    //{ street: 'Akers Mill Rd' }, { street: 'Riverbend Club Dr Se' },
+    //{ locality: 'Atlanta' }, { region: 'GA' },
+    //{ postcode: '30339' }, { country: 'USA' }
+  //])
   assert('Wiederstein Rd At Fm 3009, Schertz, TX 78154, USA', [
     { street: 'Wiederstein Rd' }, { street: 'Fm 3009' },
     { locality: 'Schertz' }, { region: 'TX' },
