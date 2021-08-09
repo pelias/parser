@@ -75,3 +75,7 @@ bronx
 !wisconsin
 !wyoming
 
+# https://github.com/pelias/parser/issues/140
+!broadway
+!esplanade
+!market

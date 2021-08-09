@@ -259,6 +259,32 @@ module.exports = [
     ]
   },
   {
+    // Broadway Market
+    confidence: 0.80,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetProperNameClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['StreetSuffixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      }
+    ]
+  },
+  {
+    // Broadway
+    confidence: 0.82,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetProperNameClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      }
+    ]
+  },
+  {
     // +++ Main Street
     confidence: 0.84,
     Class: StreetClassification,

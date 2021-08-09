@@ -249,6 +249,36 @@ const testcase = (test, common) => {
     { locality: 'boston' },
     { region: 'ma' }
   ])
+
+  // https://github.com/pelias/parser/issues/140
+  assert('Broadway, Manhattan', [
+    { street: 'Broadway' },
+    { locality: 'Manhattan' }
+  ])
+  assert('24 Broadway, Manhattan', [
+    { housenumber: '24' }, { street: 'Broadway' },
+    { locality: 'Manhattan' }
+  ])
+  assert('Broadway 24, Manhattan', [
+    { street: 'Broadway' }, { housenumber: '24' },
+    { locality: 'Manhattan' }
+  ])
+  assert('East Broadway, Manhattan', [
+    { street: 'East Broadway' },
+    { locality: 'Manhattan' }
+  ])
+  assert('24 East Broadway, Manhattan', [
+    { housenumber: '24' }, { street: 'East Broadway' },
+    { locality: 'Manhattan' }
+  ])
+  assert('West Broadway, Manhattan', [
+    { street: 'West Broadway' },
+    { locality: 'Manhattan' }
+  ])
+  assert('24 West Broadway, Manhattan', [
+    { housenumber: '24' }, { street: 'West Broadway' },
+    { locality: 'Manhattan' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

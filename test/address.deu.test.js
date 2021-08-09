@@ -27,8 +27,18 @@ const testcase = (test, common) => {
     { locality: 'Munich' }, { country: 'Germany' }
   ])
 
+  assert('Esplanade, Berlin', [
+    { street: 'Esplanade' },
+    { locality: 'Berlin' }
+  ])
+
   assert('Esplanade 17, Berlin', [
     { street: 'Esplanade' }, { housenumber: '17' },
+    { locality: 'Berlin' }
+  ])
+
+  assert('17 Esplanade, Berlin', [
+    { housenumber: '17' }, { street: 'Esplanade' },
     { locality: 'Berlin' }
   ])
 

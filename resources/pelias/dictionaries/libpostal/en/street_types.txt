@@ -10,3 +10,7 @@ furlong
 # 1384 Cambridge beltway, Cambridge, MD 21613, USA
 beltway
 
+# https://github.com/pelias/parser/issues/140
+!broadway|bdwy|bway|bwy|brdway
+!esplanade|esp|espl
+market
