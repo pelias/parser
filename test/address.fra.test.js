@@ -112,6 +112,11 @@ const testcase = (test, common) => {
   assert(`Paris 75000, France`, [
     { locality: 'Paris' }, { postcode: '75000' }, { country: 'France' }
   ])
+
+  // https://github.com/pelias/parser/pull/141#issuecomment-895230721
+  assert(`Esplanade de la Liberté`, [{ street: 'Esplanade de la Liberté' }])
+  assert(`Esplanade du Géneral de Gaulle`, [{ street: 'Esplanade du Géneral de Gaulle' }])
+  assert(`Esplanade Méditerranée`, [{ street: 'Esplanade Méditerranée' }])
 }
 
 module.exports.all = (tape, common) => {

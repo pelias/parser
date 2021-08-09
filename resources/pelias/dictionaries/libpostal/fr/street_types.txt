@@ -1,2 +1,5 @@
 cité|cite
 cités|cites
+
+# https://github.com/pelias/parser/pull/141#issuecomment-895230721
+!esplanades|esps

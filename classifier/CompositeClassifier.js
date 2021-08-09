@@ -106,8 +106,9 @@ class CompositeClassifier extends SectionClassifier {
         // find phrases which equal the composites
         let superPhrases = []
         composites.forEach(c => {
-          let start = c[0].start
-          let end = c[c.length - 1].end
+          var carr = Array.isArray(c) ? c : [c] // cast to array
+          let start = carr[0].start
+          let end = carr[carr.length - 1].end
           superPhrases = superPhrases.concat(phrases.filter(p => p.start === start && p.end === end))
         })
 
