@@ -279,6 +279,12 @@ const testcase = (test, common) => {
     { housenumber: '24' }, { street: 'West Broadway' },
     { locality: 'Manhattan' }
   ])
+
+  // These solutions aren't perfect but the cases exist to
+  // ensure that 'parish' isnt being interpreted as a venue.
+  // https://github.com/pelias/pelias/issues/912
+  assert('Jefferson Parish', [{ locality: 'Jefferson' }])
+  assert('Mills County', [{ locality: 'Mills' }])
 }
 
 module.exports.all = (tape, common) => {
