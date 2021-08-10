@@ -4,3 +4,4 @@ stop
 !dist
 building
 field
+!parish
