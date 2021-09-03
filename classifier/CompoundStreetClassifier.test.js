@@ -28,7 +28,8 @@ module.exports.tests.german_compound = (test) => {
     'testallee',
     'testweg',
     'testplatz',
-    'testpl.'
+    'testpl.',
+    'testvägen'
   ]
 
   let invalid = [
