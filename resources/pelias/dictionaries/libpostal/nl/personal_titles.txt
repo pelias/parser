@@ -1,0 +1,43 @@
+!kort|k
+!korte|kte
+aalmoezenier
+admiraal|adm
+bisschop|biss
+#typo in LibPostal resource
+!burgermeester|burg|bgm
+burgemeester|burg|bgm
+commissaris|comm
+deken|dkn
+directeur|dir
+frater|fr
+graaf
+gravin
+goeverneur|goev
+gouverneur|gouv
+heer|hr
+jonker|jkr
+juffrouw|juffr
+hertog|htg
+kanunnik|kan
+kapelaan|kap
+kapitein|kapt
+keizer
+luitenant generaal|lt gen
+!mevrouw|mevr
+mevrouw|mevr|mw
+madame|mad
+majoor|maj
+notaris|not
+overste|ov
+pater|ptr
+prelaat|prlt
+rector|rect
+schepen|sch
+schout|sch
+schout bij nacht|sbn
+secretaris|secr
+sekretaris|sekr
+veldmaarschalk|veldm
+vicaris|vic
+wethouder|weth
+zusters|zr

@@ -72,6 +72,11 @@ module.exports.tests.classify = (test) => {
     t.deepEqual(s.classifications, { PostcodeClassification: new PostcodeClassification(1.0) })
     t.end()
   })
+  test('classify: NLD', (t) => {
+    let s = classify('7512EC')
+    t.deepEqual(s.classifications, { PostcodeClassification: new PostcodeClassification(1.0) })
+    t.end()
+  })
 }
 
 module.exports.all = (tape, common) => {

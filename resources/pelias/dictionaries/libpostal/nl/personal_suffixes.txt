@@ -1,0 +1,4 @@
+junior|jr|jnr
+senior|sr|snr
+# st is not a personal suffix in Dutch
+!st
