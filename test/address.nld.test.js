@@ -62,6 +62,32 @@ const testcase = (test, common) => {
   assert('Agorabaan, Lelystad', [
     { street: 'Agorabaan' }, { locality: 'Lelystad' }
   ])
+
+  assert('1234AB, Amsterdam', [
+    { postcode: '1234AB' }, { locality: 'Amsterdam' }
+  ])
+
+  assert('Haarlemmerdijk 12, 1234ST, Amsterdam', [
+    { street: 'Haarlemmerdijk' }, { housenumber: '12' }, { postcode: '1234ST' }, { locality: 'Amsterdam' }
+  ])
+
+  // Postcode cannot have 'SA', 'SD' or 'SS' alphanumeric sequence
+  // https://github.com/pelias/parser/issues/145
+  assert('1234SA, Amsterdam', [
+    { locality: 'Amsterdam' }
+  ])
+
+  // Postcode cannot have 'SA', 'SD' or 'SS' alphanumeric sequence
+  // https://github.com/pelias/parser/issues/145
+  assert('Haarlemmerdijk 12, 1234SS, Amsterdam', [
+    { street: 'Haarlemmerdijk' }, { housenumber: '12' }, { locality: 'Amsterdam' }
+  ])
+
+  // First digit cannot be '0'
+  // https://github.com/pelias/parser/issues/145
+  assert('Haarlemmerdijk 12, 0123AB, Amsterdam', [
+    { street: 'Haarlemmerdijk' }, { housenumber: '12' }, { locality: 'Amsterdam' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
