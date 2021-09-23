@@ -13,7 +13,7 @@
     "format_fix": "./node_modules/standard/bin/cmd.js --fix",
     "server": "node ./server/http.js",
     "test": "./bin/test",
-    "travis": "./bin/test",
+    "ci": "./bin/test",
     "lint": "jshint .",
     "validate": "npm ls"
   },
