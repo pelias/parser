@@ -1,4 +1,4 @@
-const StreetNameClassification = require('../../classification/StreetNameClassification')
+const StreetNameClassification = require('../../classification/StreetNameClassification');
 
 module.exports = [
   {
@@ -8,13 +8,17 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['DirectionalClassification', 'IntersectionClassification']
+        not: ['DirectionalClassification', 'IntersectionClassification'],
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StreetSuffixClassification',
+        ],
+      },
+    ],
   },
   {
     // Academia das Ciências
@@ -23,17 +27,26 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'StreetPrefixClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+          'StreetPrefixClassification',
+        ],
       },
       {
         is: ['StopWordClassification'],
-        not: ['DirectionalClassification']
+        not: ['DirectionalClassification'],
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StreetSuffixClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StreetSuffixClassification',
+        ],
+      },
+    ],
   },
   {
     // du 4 septembre
@@ -42,17 +55,21 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['IntersectionClassification']
+        not: ['IntersectionClassification'],
       },
       {
         is: ['NumericClassification'],
-        not: ['PostcodeClassification']
+        not: ['PostcodeClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'LocalityClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'LocalityClassification',
+        ],
+      },
+    ],
   },
   {
     // dos Fiéis de Deus
@@ -61,12 +78,12 @@ module.exports = [
     scheme: [
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
-  }
-]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
+  },
+];

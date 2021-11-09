@@ -7,191 +7,203 @@
  *   new DebugOutputBuilder().parse(input).toString()
  */
 
-const util = require('util')
-const chalk = require('chalk')
-const StringBuffer = require('stringbuffer')
+const util = require('util');
+const chalk = require('chalk');
+const StringBuffer = require('stringbuffer');
 
-const Tokenizer = require('../tokenization/Tokenizer')
-const AddressParser = require('../parser/AddressParser')
+const Tokenizer = require('../tokenization/Tokenizer');
+const AddressParser = require('../parser/AddressParser');
 
 class DebugOutputBuilder {
-  constructor () {
-    this.sb = new StringBuffer()
+  constructor() {
+    this.sb = new StringBuffer();
 
-    const self = this
-    function write (o) {
+    const self = this;
+    function write(o) {
       if (typeof o === 'object') {
-        self.sb.append(util.inspect(o, { colors: true }))
+        self.sb.append(util.inspect(o, { colors: true }));
       } else {
-        self.sb.append(o)
+        self.sb.append(o);
       }
     }
 
-    this.write = write
+    this.write = write;
   }
 
-  toString () {
-    return this.sb.toString()
+  toString() {
+    return this.sb.toString();
   }
 
-  writeLine (...s) {
+  writeLine(...s) {
     if (s) {
-      s.forEach(this.write)
+      s.forEach(this.write);
     }
-    this.write('\n')
+    this.write('\n');
   }
 
-  tokenizer (tokenizer, label) {
+  tokenizer(tokenizer, label) {
     const spans = (title, s) => {
-      this.write(title.padEnd(32) + '➜  ')
+      this.write(title.padEnd(32) + '➜  ');
       if (s.length === 0) {
-        this.writeLine()
+        this.writeLine();
       }
       for (let i = 0; i < s.length; i++) {
         this.write(
           chalk.bgBlue.bold(util.format(' %s ', s[i].body)) +
-            chalk.bgWhite.bold.gray(util.format(' %d:%d ', s[i].start, s[i].end))
-        )
+            chalk.bgWhite.bold.gray(
+              util.format(' %d:%d ', s[i].start, s[i].end),
+            ),
+        );
         if (i === s.length - 1) {
-          this.writeLine()
+          this.writeLine();
         } else {
-          this.write(' ')
+          this.write(' ');
         }
       }
-    }
+    };
 
-    this.writeLine()
-    this.writeLine('='.repeat(64))
-    this.writeLine(`TOKENIZATION ${label}`)
-    this.writeLine('-'.repeat(64))
+    this.writeLine();
+    this.writeLine('='.repeat(64));
+    this.writeLine(`TOKENIZATION ${label}`);
+    this.writeLine('-'.repeat(64));
 
-    this.write('INPUT'.padEnd(32) + '➜  ')
-    this.writeLine(tokenizer.span.body)
-    spans('SECTIONS', tokenizer.section)
-
-    for (let i = 0; i < tokenizer.section.length; i++) {
-      spans(util.format('S%d TOKENS', i), tokenizer.section[i].graph.findAll('child'))
-    }
+    this.write('INPUT'.padEnd(32) + '➜  ');
+    this.writeLine(tokenizer.span.body);
+    spans('SECTIONS', tokenizer.section);
 
     for (let i = 0; i < tokenizer.section.length; i++) {
-      spans(util.format('S%d PHRASES', i), tokenizer.section[i].graph.findAll('phrase'))
+      spans(
+        util.format('S%d TOKENS', i),
+        tokenizer.section[i].graph.findAll('child'),
+      );
     }
 
-    this.writeLine()
+    for (let i = 0; i < tokenizer.section.length; i++) {
+      spans(
+        util.format('S%d PHRASES', i),
+        tokenizer.section[i].graph.findAll('phrase'),
+      );
+    }
+
+    this.writeLine();
   }
 
-  wordClassifications (tokenizer) {
-    this.writeLine('-'.repeat(64))
-    this.writeLine('WORDS')
-    this.writeLine('-'.repeat(64))
+  wordClassifications(tokenizer) {
+    this.writeLine('-'.repeat(64));
+    this.writeLine('WORDS');
+    this.writeLine('-'.repeat(64));
 
     for (let i = 0; i < tokenizer.section.length; i++) {
-      let section = tokenizer.section[i]
-      let children = section.graph.findAll('child')
+      let section = tokenizer.section[i];
+      let children = section.graph.findAll('child');
       for (let j = 0; j < children.length; j++) {
-        let word = children[j]
-        let keys = Object.keys(word.classifications)
+        let word = children[j];
+        let keys = Object.keys(word.classifications);
         if (!keys.length) {
-          continue
+          continue;
         }
-        this.write(word.body.padEnd(32) + '➜  ')
+        this.write(word.body.padEnd(32) + '➜  ');
         for (let k in word.classifications) {
-          let classification = word.classifications[k]
-          let block = chalk.bgGreen.bold(util.format(' %s ', classification.label))
+          let classification = word.classifications[k];
+          let block = chalk.bgGreen.bold(
+            util.format(' %s ', classification.label),
+          );
           block += chalk.bgWhite.bold.gray(
-            util.format(' %s ', classification.confidence.toFixed(2))
-          )
-          this.write(block)
+            util.format(' %s ', classification.confidence.toFixed(2)),
+          );
+          this.write(block);
           if (k !== keys.slice(-1)) {
-            this.write(' ')
+            this.write(' ');
           }
         }
-        this.writeLine()
+        this.writeLine();
       }
     }
 
-    this.writeLine()
+    this.writeLine();
   }
 
-  phraseClassifications (tokenizer) {
-    this.writeLine('-'.repeat(64))
-    this.writeLine('PHRASES')
-    this.writeLine('-'.repeat(64))
+  phraseClassifications(tokenizer) {
+    this.writeLine('-'.repeat(64));
+    this.writeLine('PHRASES');
+    this.writeLine('-'.repeat(64));
 
     for (let i = 0; i < tokenizer.section.length; i++) {
-      let section = tokenizer.section[i]
-      let phrases = section.graph.findAll('phrase')
+      let section = tokenizer.section[i];
+      let phrases = section.graph.findAll('phrase');
       for (let j = 0; j < phrases.length; j++) {
-        let phrase = phrases[j]
-        let keys = Object.keys(phrase.classifications)
+        let phrase = phrases[j];
+        let keys = Object.keys(phrase.classifications);
         if (!keys.length) {
-          continue
+          continue;
         }
-        this.write(phrase.body.padEnd(32) + '➜  ')
+        this.write(phrase.body.padEnd(32) + '➜  ');
         for (let k in phrase.classifications) {
-          let classification = phrase.classifications[k]
-          let block = chalk.bgRed.bold(util.format(' %s ', classification.label))
+          let classification = phrase.classifications[k];
+          let block = chalk.bgRed.bold(
+            util.format(' %s ', classification.label),
+          );
           block += chalk.bgWhite.bold.gray(
-            util.format(' %s ', classification.confidence.toFixed(2))
-          )
-          this.write(block)
+            util.format(' %s ', classification.confidence.toFixed(2)),
+          );
+          this.write(block);
           if (k !== keys.slice(-1)) {
-            this.write(' ')
+            this.write(' ');
           }
         }
-        this.writeLine()
+        this.writeLine();
       }
     }
 
-    this.writeLine()
+    this.writeLine();
   }
 
-  classifications (tokenizer, label) {
-    this.writeLine('='.repeat(64))
-    this.writeLine(`CLASSIFICATIONS ${label}`)
+  classifications(tokenizer, label) {
+    this.writeLine('='.repeat(64));
+    this.writeLine(`CLASSIFICATIONS ${label}`);
 
-    this.wordClassifications(tokenizer, label)
-    this.phraseClassifications(tokenizer, label)
+    this.wordClassifications(tokenizer, label);
+    this.phraseClassifications(tokenizer, label);
   }
 
-  solutions (tokenizer, label) {
-    this.writeLine('='.repeat(64))
-    this.writeLine(`SOLUTIONS ${label}`)
-    this.writeLine('-'.repeat(64))
+  solutions(tokenizer, label) {
+    this.writeLine('='.repeat(64));
+    this.writeLine(`SOLUTIONS ${label}`);
+    this.writeLine('-'.repeat(64));
 
     // print all solutions
     tokenizer.solution.forEach((s) => {
-      let score = chalk.yellow.bold('(' + s.score.toFixed(2) + ')')
+      let score = chalk.yellow.bold('(' + s.score.toFixed(2) + ')');
       this.writeLine(
         score,
         ' ➜ ',
         s.pair.map((c) => {
           return {
-            [c.classification.label]: c.span.body
+            [c.classification.label]: c.span.body,
             // offset: c.span.start
-          }
-        })
-      )
-      this.writeLine()
-    })
+          };
+        }),
+      );
+      this.writeLine();
+    });
   }
 
-  parse (input) {
+  parse(input) {
     // tokenizer
-    var start = new Date()
-    const t = new Tokenizer(input)
-    let took = new Date() - start
-    this.tokenizer(t, util.format('(%sms)', took))
+    var start = new Date();
+    const t = new Tokenizer(input);
+    let took = new Date() - start;
+    this.tokenizer(t, util.format('(%sms)', took));
 
     // parser
-    const parser = new AddressParser()
-    took = parser.classify(t)
-    this.classifications(t, util.format('(%sms)', took))
-    took = parser.solve(t)
-    this.solutions(t, util.format('(%sms)', took))
+    const parser = new AddressParser();
+    took = parser.classify(t);
+    this.classifications(t, util.format('(%sms)', took));
+    took = parser.solve(t);
+    this.solutions(t, util.format('(%sms)', took));
 
-    return this
+    return this;
   }
 }
 
-module.exports = DebugOutputBuilder
+module.exports = DebugOutputBuilder;

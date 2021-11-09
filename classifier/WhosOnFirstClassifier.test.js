@@ -1,13 +1,13 @@
-const WhosOnFirstClassifier = require('./WhosOnFirstClassifier')
-const Span = require('../tokenization/Span')
-const classifier = new WhosOnFirstClassifier()
+const WhosOnFirstClassifier = require('./WhosOnFirstClassifier');
+const Span = require('../tokenization/Span');
+const classifier = new WhosOnFirstClassifier();
 
-module.exports.tests = {}
+module.exports.tests = {};
 
-function classify (body) {
-  let s = new Span(body)
-  classifier.each(s, null, 1)
-  return s
+function classify(body) {
+  let s = new Span(body);
+  classifier.each(s, null, 1);
+  return s;
 }
 
 // module.exports.tests.country = (test) => {
@@ -29,53 +29,49 @@ function classify (body) {
 // }
 
 module.exports.tests.locality = (test) => {
-  let valid = [
-    'new york',
-    'london', 'paris', 'berlin', 'bern',
-    'tokyo'
-  ]
+  let valid = ['new york', 'london', 'paris', 'berlin', 'bern', 'tokyo'];
 
-  valid.forEach(token => {
+  valid.forEach((token) => {
     test(`locality: ${token}`, (t) => {
-      let s = classify(token)
-      t.true(s.classifications.hasOwnProperty('LocalityClassification'))
-      t.true(s.classifications.hasOwnProperty('AreaClassification'))
-      t.end()
-    })
-  })
-}
+      let s = classify(token);
+      t.true(s.classifications.hasOwnProperty('LocalityClassification'));
+      t.true(s.classifications.hasOwnProperty('AreaClassification'));
+      t.end();
+    });
+  });
+};
 
 module.exports.tests.valid_pelias_localities = (test) => {
-  let valid = ['nyc', 'sf']
+  let valid = ['nyc', 'sf'];
 
-  valid.forEach(token => {
+  valid.forEach((token) => {
     test(`valid pelias locality: ${token}`, (t) => {
-      let s = classify(token)
-      t.true(s.classifications.hasOwnProperty('LocalityClassification'))
-      t.true(s.classifications.hasOwnProperty('AreaClassification'))
-      t.end()
-    })
-  })
-}
+      let s = classify(token);
+      t.true(s.classifications.hasOwnProperty('LocalityClassification'));
+      t.true(s.classifications.hasOwnProperty('AreaClassification'));
+      t.end();
+    });
+  });
+};
 
 module.exports.tests.invalid_pelias_localities = (test) => {
-  let invalid = ['texas', 'california', 'italy']
+  let invalid = ['texas', 'california', 'italy'];
 
-  invalid.forEach(token => {
+  invalid.forEach((token) => {
     test(`invalid pelias locality: ${token}`, (t) => {
-      let s = classify(token)
-      t.false(s.classifications.hasOwnProperty('LocalityClassification'))
-      t.end()
-    })
-  })
-}
+      let s = classify(token);
+      t.false(s.classifications.hasOwnProperty('LocalityClassification'));
+      t.end();
+    });
+  });
+};
 
 module.exports.all = (tape, common) => {
-  function test (name, testFunction) {
-    return tape(`WhosOnFirstClassifier: ${name}`, testFunction)
+  function test(name, testFunction) {
+    return tape(`WhosOnFirstClassifier: ${name}`, testFunction);
   }
 
   for (var testCase in module.exports.tests) {
-    module.exports.tests[testCase](test, common)
+    module.exports.tests[testCase](test, common);
   }
-}
+};

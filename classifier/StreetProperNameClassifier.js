@@ -1,5 +1,5 @@
-const WordClassifier = require('./super/WordClassifier')
-const StreetProperNameClassification = require('../classification/StreetProperNameClassification')
+const WordClassifier = require('./super/WordClassifier');
+const StreetProperNameClassification = require('../classification/StreetProperNameClassification');
 
 /**
   Special handling of streets with no suffix
@@ -8,22 +8,24 @@ const StreetProperNameClassification = require('../classification/StreetProperNa
 **/
 
 class StreetProperNameClassifier extends WordClassifier {
-  setup () {
+  setup() {
     this.index = {
-      'broadway': true,
-      'esplanade': true
-    }
+      broadway: true,
+      esplanade: true,
+    };
   }
 
-  each (span) {
+  each(span) {
     // skip spans which contain numbers
-    if (span.contains.numerals) { return }
+    if (span.contains.numerals) {
+      return;
+    }
 
     // classify tokens in the index as 'street_proper_name'
     if (this.index[span.norm] === true) {
-      span.classify(new StreetProperNameClassification(0.7))
+      span.classify(new StreetProperNameClassification(0.7));
     }
   }
 }
 
-module.exports = StreetProperNameClassifier
+module.exports = StreetProperNameClassifier;

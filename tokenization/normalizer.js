@@ -1,22 +1,22 @@
-const removeAccents = require('remove-accents')
+const removeAccents = require('remove-accents');
 
-function normalizer (options = {}) {
+function normalizer(options = {}) {
   return (value) => {
-    value = value.trim()
+    value = value.trim();
     if (options.lowercase) {
-      value = value.toLowerCase()
+      value = value.toLowerCase();
     }
     if (options.removeAccents) {
-      value = removeAccents(value)
+      value = removeAccents(value);
     }
     if (options.removeHyphen) {
-      value = value.replace(/-/g, ' ')
+      value = value.replace(/-/g, ' ');
     }
     if (options.removeSpaces) {
-      value = value.replace(/ /g, '')
+      value = value.replace(/ /g, '');
     }
-    return value
-  }
+    return value;
+  };
 }
 
-module.exports = normalizer
+module.exports = normalizer;

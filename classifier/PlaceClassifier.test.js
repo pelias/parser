@@ -1,49 +1,46 @@
-const PlaceClassifier = require('./PlaceClassifier')
-const PlaceClassification = require('../classification/PlaceClassification')
-const Span = require('../tokenization/Span')
-const classifier = new PlaceClassifier()
+const PlaceClassifier = require('./PlaceClassifier');
+const PlaceClassification = require('../classification/PlaceClassification');
+const Span = require('../tokenization/Span');
+const classifier = new PlaceClassifier();
 
-module.exports.tests = {}
+module.exports.tests = {};
 
-function classify (body) {
-  let s = new Span(body)
-  classifier.each(s, null, 1)
-  return s
+function classify(body) {
+  let s = new Span(body);
+  classifier.each(s, null, 1);
+  return s;
 }
 
 module.exports.tests.contains_numerals = (test) => {
   test('contains numerals: honours contains.numerals boolean', (t) => {
-    let s = new Span('example')
-    s.contains.numerals = true
-    classifier.each(s, null, 1)
-    t.deepEqual(s.classifications, {})
-    t.end()
-  })
-}
+    let s = new Span('example');
+    s.contains.numerals = true;
+    classifier.each(s, null, 1);
+    t.deepEqual(s.classifications, {});
+    t.end();
+  });
+};
 
 module.exports.tests.classify = (test) => {
-  let valid = [
-    'stables', 'swimming pool',
-    'cafe', 'bar'
-  ]
+  let valid = ['stables', 'swimming pool', 'cafe', 'bar'];
 
-  valid.forEach(token => {
+  valid.forEach((token) => {
     test(`classify: ${token}`, (t) => {
-      let s = classify(token)
+      let s = classify(token);
       t.deepEqual(s.classifications, {
-        PlaceClassification: new PlaceClassification(1.0)
-      })
-      t.end()
-    })
-  })
-}
+        PlaceClassification: new PlaceClassification(1.0),
+      });
+      t.end();
+    });
+  });
+};
 
 module.exports.all = (tape, common) => {
-  function test (name, testFunction) {
-    return tape(`PlaceClassifier: ${name}`, testFunction)
+  function test(name, testFunction) {
+    return tape(`PlaceClassifier: ${name}`, testFunction);
   }
 
   for (var testCase in module.exports.tests) {
-    module.exports.tests[testCase](test, common)
+    module.exports.tests[testCase](test, common);
   }
-}
+};

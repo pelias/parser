@@ -2,42 +2,48 @@
 // less granular components such as street or housenumber
 // @todo: this is not globally true, but works well in the Western Hemisphere
 
-const NETURAL_CLASSIFICATIONS = [
-  'PostcodeClassification'
-]
+const NETURAL_CLASSIFICATIONS = ['PostcodeClassification'];
 
 const ADMIN_CLASSIFICATIONS = [
   'LocalityClassification',
   'RegionClassification',
-  'CountryClassification'
-]
+  'CountryClassification',
+];
 
 class LeadingAreaDeclassifier {
-  solve (tokenizer) {
-    tokenizer.solution.forEach(s => {
+  solve(tokenizer) {
+    tokenizer.solution.forEach((s) => {
       // record the position of the last non-admin cursor position
-      let lastNonAdminCursorPosition = 0
+      let lastNonAdminCursorPosition = 0;
 
       for (let i = 0; i < s.pair.length; i++) {
-        let isAdmin = ADMIN_CLASSIFICATIONS.some(c => s.pair[i].classification.constructor.name === c)
-        let isNeut = NETURAL_CLASSIFICATIONS.some(c => s.pair[i].classification.constructor.name === c)
+        let isAdmin = ADMIN_CLASSIFICATIONS.some(
+          (c) => s.pair[i].classification.constructor.name === c,
+        );
+        let isNeut = NETURAL_CLASSIFICATIONS.some(
+          (c) => s.pair[i].classification.constructor.name === c,
+        );
         if (!isAdmin && !isNeut) {
-          lastNonAdminCursorPosition = s.pair[i].span.end
+          lastNonAdminCursorPosition = s.pair[i].span.end;
         }
       }
 
-      s.pair = s.pair.filter(p => {
-        let isAdmin = ADMIN_CLASSIFICATIONS.some(c => p.classification.constructor.name === c)
+      s.pair = s.pair.filter((p) => {
+        let isAdmin = ADMIN_CLASSIFICATIONS.some(
+          (c) => p.classification.constructor.name === c,
+        );
         if (isAdmin && p.span.end < lastNonAdminCursorPosition) {
-          return false
+          return false;
         }
-        return true
-      })
-    })
+        return true;
+      });
+    });
 
-    tokenizer.solution.sort((a, b) => b.score - a.score) // sort results by score desc
-    tokenizer.solution.forEach(s => s.pair.sort((a, b) => a.span.start - b.span.start)) // sort by span start
+    tokenizer.solution.sort((a, b) => b.score - a.score); // sort results by score desc
+    tokenizer.solution.forEach((s) =>
+      s.pair.sort((a, b) => a.span.start - b.span.start),
+    ); // sort by span start
   }
 }
 
-module.exports = LeadingAreaDeclassifier
+module.exports = LeadingAreaDeclassifier;

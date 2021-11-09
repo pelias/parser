@@ -1,15 +1,14 @@
 class SolutionPair {
-  constructor (span, classification) {
-    this.span = span
-    this.classification = classification
+  constructor(span, classification) {
+    this.span = span;
+    this.classification = classification;
   }
 
-  equals (pair) {
+  equals(pair) {
     return (
-      this.span === pair.span &&
-      this.classification.equals(pair.classification)
-    )
+      this.span === pair.span && this.classification.equals(pair.classification)
+    );
   }
 }
 
-module.exports = SolutionPair
+module.exports = SolutionPair;

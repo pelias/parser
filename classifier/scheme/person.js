@@ -1,5 +1,5 @@
-const PersonClassification = require('../../classification/PersonClassification')
-const GivenNameClassification = require('../../classification/GivenNameClassification')
+const PersonClassification = require('../../classification/PersonClassification');
+const GivenNameClassification = require('../../classification/GivenNameClassification');
 
 module.exports = [
   {
@@ -9,13 +9,17 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
   },
   {
     // Georges Bizet
@@ -24,13 +28,17 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
   },
   {
     // Rose de Lima
@@ -39,17 +47,21 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
   },
   {
     // Raul Leite Magalhães (first name, middle name, family name)
@@ -59,17 +71,25 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
-        is: ['GivenNameClassification', 'SurnameClassification', 'MiddleInitialClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        is: [
+          'GivenNameClassification',
+          'SurnameClassification',
+          'MiddleInitialClassification',
+        ],
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
   },
   {
     // Unknown surname
@@ -78,13 +98,17 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
   },
   {
     // Unknown surname
@@ -93,16 +117,20 @@ module.exports = [
     scheme: [
       {
         is: ['GivenNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification', 'StopWordClassification']
-      }
-    ]
-  }
-]
+        not: [
+          'StreetClassification',
+          'StreetPrefixClassification',
+          'StopWordClassification',
+        ],
+      },
+    ],
+  },
+];

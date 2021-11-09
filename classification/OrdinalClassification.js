@@ -1,10 +1,10 @@
-const Classification = require('./Classification')
+const Classification = require('./Classification');
 
 class OrdinalClassification extends Classification {
-  constructor (confidence, meta) {
-    super(confidence, meta)
-    this.label = 'ordinal'
+  constructor(confidence, meta) {
+    super(confidence, meta);
+    this.label = 'ordinal';
   }
 }
 
-module.exports = OrdinalClassification
+module.exports = OrdinalClassification;

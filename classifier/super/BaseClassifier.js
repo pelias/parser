@@ -1,6 +1,6 @@
 class BaseClassifier {
-  constructor () {
-    this.setup()
+  constructor() {
+    this.setup();
   }
 
   // you override this function in your classifier
@@ -10,7 +10,7 @@ class BaseClassifier {
   // classify(tokenizer) {}
 
   // you may optionally provide this function in your subclass
-  setup () {}
+  setup() {}
 }
 
-module.exports = BaseClassifier
+module.exports = BaseClassifier;

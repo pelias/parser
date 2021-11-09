@@ -6,35 +6,37 @@
    |------||---||--------||--||---| tokens
    |===========|==================| sections
 **/
-const whitespace = new RegExp(/^\s$/)
-const quotes = `"«»‘’‚‛“”„‟‹›⹂「」『』〝〞〟﹁﹂﹃﹄＂＇｢｣`
+const whitespace = new RegExp(/^\s$/);
+const quotes = `"«»‘’‚‛“”„‟‹›⹂「」『』〝〞〟﹁﹂﹃﹄＂＇｢｣`;
 
-function fieldsFuncBoundary (char) {
+function fieldsFuncBoundary(char) {
   switch (char) {
     case '\n':
-      return true
+      return true;
     case '\t':
-      return true
+      return true;
     case ',':
-      return true
+      return true;
     default:
       // @todo: this should ideally only work for 'matching pairs' of quotes
-      if (quotes.includes(char)) { return true }
+      if (quotes.includes(char)) {
+        return true;
+      }
 
-      return false
+      return false;
   }
 }
 
 // test for any unicode whitespace char including newlines and tabs
 // @todo: is this possible in js without using a regex?
-function fieldsFuncWhiteSpace (char) {
-  return whitespace.test(char)
+function fieldsFuncWhiteSpace(char) {
+  return whitespace.test(char);
 }
 
-function fieldsFuncHyphenOrWhiteSpace (char) {
-  return char === '-' || char === '/' || fieldsFuncWhiteSpace(char)
+function fieldsFuncHyphenOrWhiteSpace(char) {
+  return char === '-' || char === '/' || fieldsFuncWhiteSpace(char);
 }
 
-module.exports.fieldsFuncBoundary = fieldsFuncBoundary
-module.exports.fieldsFuncWhiteSpace = fieldsFuncWhiteSpace
-module.exports.fieldsFuncHyphenOrWhiteSpace = fieldsFuncHyphenOrWhiteSpace
+module.exports.fieldsFuncBoundary = fieldsFuncBoundary;
+module.exports.fieldsFuncWhiteSpace = fieldsFuncWhiteSpace;
+module.exports.fieldsFuncHyphenOrWhiteSpace = fieldsFuncHyphenOrWhiteSpace;

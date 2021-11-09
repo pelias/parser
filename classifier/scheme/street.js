@@ -1,4 +1,4 @@
-const StreetClassification = require('../../classification/StreetClassification')
+const StreetClassification = require('../../classification/StreetClassification');
 
 module.exports = [
   {
@@ -8,13 +8,13 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // Rue Montmartre or Boulevard Charles De Gaulle
@@ -23,13 +23,17 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
-        is: ['AlphaClassification', 'PersonClassification', 'StreetNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        is: [
+          'AlphaClassification',
+          'PersonClassification',
+          'StreetNameClassification',
+        ],
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // 26th Street
@@ -38,13 +42,13 @@ module.exports = [
     scheme: [
       {
         is: ['OrdinalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // 26 Street
@@ -53,13 +57,17 @@ module.exports = [
     scheme: [
       {
         is: ['NumericClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'RoadTypeClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'RoadTypeClassification',
+        ],
+      },
+    ],
   },
   {
     // The Stables
@@ -68,13 +76,13 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['PlaceClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // SW 26th
@@ -83,13 +91,13 @@ module.exports = [
     scheme: [
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['OrdinalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // St Kilda Road
@@ -98,13 +106,13 @@ module.exports = [
     scheme: [
       {
         is: ['PersonalSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // Am Falkplatz
@@ -113,13 +121,13 @@ module.exports = [
     scheme: [
       {
         is: ['StopWordClassification'],
-        not: ['IntersectionClassification']
+        not: ['IntersectionClassification'],
       },
       {
         is: ['StreetClassification'],
-        not: ['StopWordClassification']
-      }
-    ]
+        not: ['StopWordClassification'],
+      },
+    ],
   },
   {
     // Martin Luther King Blvd.
@@ -128,13 +136,13 @@ module.exports = [
     scheme: [
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // Martin Luther King Jr. Blvd.
@@ -143,17 +151,17 @@ module.exports = [
     scheme: [
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['PersonalSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // Rue De Paris
@@ -162,17 +170,17 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['AlphaClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
-      }
-    ]
+        not: ['StreetClassification', 'StreetPrefixClassification'],
+      },
+    ],
   },
   {
     // Boulevard De La Paix
@@ -181,21 +189,21 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
-      }
-    ]
+        not: ['StreetClassification', 'StreetPrefixClassification'],
+      },
+    ],
   },
   {
     // Rue Saint Anne
@@ -204,17 +212,21 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['PersonalTitleClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
-        is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
-      }
-    ]
+        is: [
+          'AlphaClassification',
+          'GivenNameClassification',
+          'PersonClassification',
+        ],
+        not: ['StreetClassification', 'StreetPrefixClassification'],
+      },
+    ],
   },
   {
     // Boulevard du Général Charles De Gaulle
@@ -223,21 +235,25 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['PersonalTitleClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
-        is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
-      }
-    ]
+        is: [
+          'AlphaClassification',
+          'GivenNameClassification',
+          'PersonClassification',
+        ],
+        not: ['StreetClassification', 'StreetPrefixClassification'],
+      },
+    ],
   },
   {
     // Avenue Aristide Briand or Allée Victor Hugo
@@ -246,32 +262,32 @@ module.exports = [
     scheme: [
       {
         is: ['StreetPrefixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['GivenNameClassification', 'AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['SurnameClassification'],
-        not: ['StreetClassification', 'StreetPrefixClassification']
-      }
-    ]
+        not: ['StreetClassification', 'StreetPrefixClassification'],
+      },
+    ],
   },
   {
     // Broadway Market
-    confidence: 0.80,
+    confidence: 0.8,
     Class: StreetClassification,
     scheme: [
       {
         is: ['StreetProperNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
+        not: ['StreetClassification', 'IntersectionClassification'],
       },
       {
         is: ['StreetSuffixClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // Broadway
@@ -280,9 +296,9 @@ module.exports = [
     scheme: [
       {
         is: ['StreetProperNameClassification'],
-        not: ['StreetClassification', 'IntersectionClassification']
-      }
-    ]
+        not: ['StreetClassification', 'IntersectionClassification'],
+      },
+    ],
   },
   {
     // +++ Main Street
@@ -291,13 +307,17 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
-      }
-    ]
+        not: ['DirectionalClassification'],
+      },
+    ],
   },
   {
     // Highway 27
@@ -306,13 +326,13 @@ module.exports = [
     scheme: [
       {
         is: ['RoadTypeClassification', 'ToponymClassification'],
-        not: []
+        not: [],
       },
       {
         is: ['NumericClassification'],
-        not: []
-      }
-    ]
+        not: [],
+      },
+    ],
   },
   {
     // +++ +++ Main Street
@@ -321,13 +341,17 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
-      }
-    ]
+        not: ['DirectionalClassification'],
+      },
+    ],
   },
   {
     // Main Street West
@@ -336,13 +360,17 @@ module.exports = [
     scheme: [
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
+        not: ['DirectionalClassification'],
       },
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
-      }
-    ]
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'EndTokenSingleCharacterClassification',
+        ],
+      },
+    ],
   },
   {
     // West Main Street
@@ -351,12 +379,16 @@ module.exports = [
     scheme: [
       {
         is: ['DirectionalClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'EndTokenSingleCharacterClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'EndTokenSingleCharacterClassification',
+        ],
       },
       {
         is: ['StreetClassification'],
-        not: ['DirectionalClassification']
-      }
-    ]
-  }
-]
+        not: ['DirectionalClassification'],
+      },
+    ],
+  },
+];

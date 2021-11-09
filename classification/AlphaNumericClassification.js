@@ -1,10 +1,10 @@
-const Classification = require('../classification/Classification')
+const Classification = require('../classification/Classification');
 
 class AlphaNumericClassification extends Classification {
-  constructor (confidence, meta) {
-    super(confidence, meta)
-    this.label = 'alphanumeric'
+  constructor(confidence, meta) {
+    super(confidence, meta);
+    this.label = 'alphanumeric';
   }
 }
 
-module.exports = AlphaNumericClassification
+module.exports = AlphaNumericClassification;

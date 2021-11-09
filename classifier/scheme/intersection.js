@@ -1,5 +1,5 @@
-const StreetClassification = require('../../classification/StreetClassification')
-const MultiStreetClassification = require('../../classification/MultiStreetClassification')
+const StreetClassification = require('../../classification/StreetClassification');
+const MultiStreetClassification = require('../../classification/MultiStreetClassification');
 
 module.exports = [
   {
@@ -9,21 +9,29 @@ module.exports = [
     scheme: [
       {
         is: ['DirectionalClassification'],
-        not: ['IntersectionClassification', 'StreetSuffixClassification']
+        not: ['IntersectionClassification', 'StreetSuffixClassification'],
       },
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
-        not: ['IntersectionClassification', 'StreetSuffixClassification']
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
+        not: ['IntersectionClassification', 'StreetSuffixClassification'],
       },
       {
         is: ['IntersectionClassification'],
-        not: ['StreetClassification', 'StreetSuffixClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification'],
       },
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
-        not: ['IntersectionClassification']
-      }
-    ]
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
+        not: ['IntersectionClassification'],
+      },
+    ],
   },
   {
     // Foo St and Bar St
@@ -31,22 +39,30 @@ module.exports = [
     Class: MultiStreetClassification,
     scheme: [
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
         not: ['IntersectionClassification', 'StreetSuffixClassification'],
         confidence: 0.81,
-        Class: StreetClassification
+        Class: StreetClassification,
       },
       {
         is: ['IntersectionClassification'],
-        not: ['StreetClassification', 'StreetSuffixClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification'],
       },
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
         not: ['IntersectionClassification'],
         confidence: 0.82,
-        Class: StreetClassification
-      }
-    ]
+        Class: StreetClassification,
+      },
+    ],
   },
   {
     // Foo and Bar St
@@ -55,19 +71,27 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['IntersectionClassification', 'StreetClassification', 'StreetSuffixClassification'],
+        not: [
+          'IntersectionClassification',
+          'StreetClassification',
+          'StreetSuffixClassification',
+        ],
         confidence: 0.53,
-        Class: StreetClassification
+        Class: StreetClassification,
       },
       {
         is: ['IntersectionClassification'],
-        not: ['StreetClassification', 'StreetSuffixClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification'],
       },
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
-        not: ['IntersectionClassification']
-      }
-    ]
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
+        not: ['IntersectionClassification'],
+      },
+    ],
   },
   {
     // Foo St and Bar
@@ -75,20 +99,28 @@ module.exports = [
     Class: MultiStreetClassification,
     scheme: [
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
-        not: ['IntersectionClassification']
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
+        not: ['IntersectionClassification'],
       },
       {
         is: ['IntersectionClassification'],
-        not: ['StreetClassification', 'StreetSuffixClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification'],
       },
       {
-        is: ['AlphaClassification', 'NumericClassification', 'OrdinalClassification'],
+        is: [
+          'AlphaClassification',
+          'NumericClassification',
+          'OrdinalClassification',
+        ],
         not: ['IntersectionClassification', 'StreetClassification'],
         confidence: 0.56,
-        Class: StreetClassification
-      }
-    ]
+        Class: StreetClassification,
+      },
+    ],
   },
   {
     // Foo and Bar
@@ -97,20 +129,28 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['IntersectionClassification', 'StreetClassification', 'StreetSuffixClassification'],
+        not: [
+          'IntersectionClassification',
+          'StreetClassification',
+          'StreetSuffixClassification',
+        ],
         confidence: 0.57,
-        Class: StreetClassification
+        Class: StreetClassification,
       },
       {
         is: ['IntersectionClassification'],
-        not: ['StreetClassification', 'StreetSuffixClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['IntersectionClassification', 'StreetClassification', 'StreetSuffixClassification'],
+        not: [
+          'IntersectionClassification',
+          'StreetClassification',
+          'StreetSuffixClassification',
+        ],
         confidence: 0.58,
-        Class: StreetClassification
-      }
-    ]
-  }
-]
+        Class: StreetClassification,
+      },
+    ],
+  },
+];

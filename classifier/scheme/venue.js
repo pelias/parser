@@ -1,4 +1,4 @@
-const VenueClassification = require('../../classification/VenueClassification')
+const VenueClassification = require('../../classification/VenueClassification');
 
 module.exports = [
   {
@@ -8,13 +8,13 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // +++ Park
@@ -23,13 +23,17 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // Mt +++ Park
@@ -38,13 +42,13 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: []
-      }
-    ]
+        not: [],
+      },
+    ],
   },
   {
     // Air & Space Museum
@@ -53,17 +57,21 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: []
-      }
-    ]
+        not: [],
+      },
+    ],
   },
   {
     // National Air & Space Museum
@@ -72,13 +80,17 @@ module.exports = [
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: []
-      }
-    ]
+        not: [],
+      },
+    ],
   },
   {
     // Stop 10792
@@ -87,13 +99,17 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification']
+        not: [
+          'StreetClassification',
+          'IntersectionClassification',
+          'StopWordClassification',
+        ],
       },
       {
         is: ['NumericClassification'],
-        not: []
-      }
-    ]
+        not: [],
+      },
+    ],
   },
   {
     // University of Somewhere
@@ -102,17 +118,17 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['AreaClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // Ecole Jules Vernes
@@ -121,13 +137,13 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // Donald W Reynolds Stadium
@@ -137,13 +153,13 @@ module.exports = [
     scheme: [
       {
         is: ['PersonClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // ZAC du Pré
@@ -152,13 +168,13 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // ZAC de la Tuilerie
@@ -167,17 +183,17 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['StopWordClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['StreetNameClassification'],
-        not: ['StreetClassification']
-      }
-    ]
+        not: ['StreetClassification'],
+      },
+    ],
   },
   {
     // ZA Entraigues
@@ -186,12 +202,12 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification'],
       },
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification']
-      }
-    ]
-  }
-]
+        not: ['StreetClassification'],
+      },
+    ],
+  },
+];

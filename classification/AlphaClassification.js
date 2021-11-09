@@ -1,10 +1,10 @@
-const Classification = require('../classification/Classification')
+const Classification = require('../classification/Classification');
 
 class AlphaClassification extends Classification {
-  constructor (confidence, meta) {
-    super(confidence, meta)
-    this.label = 'alpha'
+  constructor(confidence, meta) {
+    super(confidence, meta);
+    this.label = 'alpha';
   }
 }
 
-module.exports = AlphaClassification
+module.exports = AlphaClassification;

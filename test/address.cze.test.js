@@ -1,20 +1,23 @@
 const testcase = (test, common) => {
-  let assert = common.assert(test)
+  let assert = common.assert(test);
 
   assert('Korunní 810, Praha', [
-    { street: 'Korunní' }, { housenumber: '810' },
-    { locality: 'Praha' }
-  ])
+    { street: 'Korunní' },
+    { housenumber: '810' },
+    { locality: 'Praha' },
+  ]);
 
   assert('Kájovská 68, Český Krumlov', [
-    { street: 'Kájovská' }, { housenumber: '68' },
-    { locality: 'Český Krumlov' }
-  ])
+    { street: 'Kájovská' },
+    { housenumber: '68' },
+    { locality: 'Český Krumlov' },
+  ]);
 
   assert('Beethovenova 641/9, Brno', [
-    { street: 'Beethovenova' }, { housenumber: '641/9' },
-    { locality: 'Brno' }
-  ])
+    { street: 'Beethovenova' },
+    { housenumber: '641/9' },
+    { locality: 'Brno' },
+  ]);
 
   // assert('Ostrava, U Koupaliště 1570/10', [
   //   { street: 'U Koupaliště' }, { housenumber: '1570/10' },
@@ -90,12 +93,12 @@ const testcase = (test, common) => {
   //   { street: 'Rašínova' }, { housenumber: '70' },
   //   { locality: 'Zlín' }
   // ])
-}
+};
 
 module.exports.all = (tape, common) => {
-  function test (name, testFunction) {
-    return tape(`address CZEs: ${name}`, testFunction)
+  function test(name, testFunction) {
+    return tape(`address CZEs: ${name}`, testFunction);
   }
 
-  testcase(test, common)
-}
+  testcase(test, common);
+};

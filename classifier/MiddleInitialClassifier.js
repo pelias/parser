@@ -1,17 +1,16 @@
-const PhraseClassifier = require('./super/PhraseClassifier')
-const MiddleInitialClassification = require('../classification/MiddleInitialClassification')
+const PhraseClassifier = require('./super/PhraseClassifier');
+const MiddleInitialClassification = require('../classification/MiddleInitialClassification');
 
-const SingleLetterRegExp = /^[A-Za-z]\.?$/
+const SingleLetterRegExp = /^[A-Za-z]\.?$/;
 
 class MiddleInitialClassifier extends PhraseClassifier {
-  setup () {
-  }
+  setup() {}
 
-  each (span) {
+  each(span) {
     if (SingleLetterRegExp.test(span.body)) {
-      span.classify(new MiddleInitialClassification(1))
+      span.classify(new MiddleInitialClassification(1));
     }
   }
 }
 
-module.exports = MiddleInitialClassifier
+module.exports = MiddleInitialClassifier;
