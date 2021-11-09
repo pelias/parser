@@ -1,12 +1,10 @@
 {
   "node": true,
-  "esversion": 6,
+
   "curly": true,
-  "latedef": "nofunc",
+  "latedef": true,
   "quotmark": true,
   "undef": true,
   "unused": true,
-  "trailing": true,
-  "asi": true,
-  "loopfunc": true
+  "trailing": true
 }
