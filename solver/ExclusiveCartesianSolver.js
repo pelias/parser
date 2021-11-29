@@ -1,5 +1,7 @@
 const Solution = require('./Solution')
 const HashMapSolver = require('./super/HashMapSolver')
+const MAX_RECURSION = 10
+const MAX_SOLUTIONS = 50000
 
 class ExclusiveCartesianSolver extends HashMapSolver {
   solve (tokenizer) {
@@ -20,10 +22,10 @@ class ExclusiveCartesianSolver extends HashMapSolver {
           copy.pair.push(arg[i].pair[j])
         }
         if (i === max) {
-          if (copy.pair.length) {
+          if (copy.pair.length && r.length < MAX_SOLUTIONS) {
             r.push(copy)
           }
-        } else {
+        } else if (i < MAX_RECURSION) {
           helper(copy, i + 1)
         }
       }
