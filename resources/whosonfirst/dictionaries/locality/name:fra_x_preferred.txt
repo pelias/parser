@@ -9019,7 +9019,7 @@ jelgava
 jurmala
 riga
 bender
-chişinău
+chișinău
 tiraspol
 municipalité de bălți
 rîbnița
@@ -9083,28 +9083,28 @@ drobeta turnu-severin
 slatina
 târgu jiu
 slobozia
-reşița
+reșița
 constanța
 târgoviste
 râmnicu vâlcea
-piteşti
-timişoara
-ploieşti
+pitești
+timișoara
+ploiești
 brăila
 buzău
 deva
 hunedoara
 tulcea
-braşov
-mediaş
+brașov
+mediaș
 sibiu
 arad
 alba iulia
-focşani
+focșani
 galați
 bacău
-oneşti
-târgu mureş
+onești
+târgu mureș
 zalău
 cluj-napoca
 turda
@@ -9117,7 +9117,7 @@ satu mare
 baia mare
 iași
 suceava
-botoşani
+botoșani
 nitra
 trnava
 banská bystrica

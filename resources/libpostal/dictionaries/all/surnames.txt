@@ -4085,7 +4085,7 @@ Vormer
 Vorganov
 Vorgrimler
 Vornholt
-Vornişel
+Vornișel
 Voráček
 Voráčová
 Vorbe
@@ -4349,7 +4349,7 @@ Vulević
 Vulliamy
 Vullo
 Vulpe
-Vulpeş
+Vulpeș
 Vulović
 Vultaggio
 Vujanić
@@ -4738,7 +4738,7 @@ Vălean
 Văluță
 Văideanu
 Văsie
-Vătăşoiu
+Vătășoiu
 Vēja
 Vējonis
 Vētra
