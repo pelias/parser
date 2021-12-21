@@ -4735,7 +4735,7 @@ Văcăroiu
 Vădrariu
 Văduva
 Vălean
-Văluţă
+Văluță
 Văideanu
 Văsie
 Vătăşoiu
@@ -38654,7 +38654,7 @@ Tonge
 Tonguç
 Toninelli
 Tonini
-Toniţa
+Tonița
 Tonokura
 Tonon
 Tondre
@@ -44366,14 +44366,14 @@ Negro
 Negron
 Negroni
 Negru
-Negruţă
+Negruță
 Negi
 Negishi
 Negus
 Negussie
 Negash
 Negedu
-Negoiţescu
+Negoițescu
 Neil
 Neild
 Neill

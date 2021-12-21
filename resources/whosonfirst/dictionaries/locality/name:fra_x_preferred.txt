@@ -9021,7 +9021,7 @@ riga
 bender
 chişinău
 tiraspol
-municipalité de bălţi
+municipalité de bălți
 rîbnița
 maastricht
 helmond
@@ -9083,7 +9083,7 @@ drobeta turnu-severin
 slatina
 târgu jiu
 slobozia
-reşiţa
+reşița
 constanța
 târgoviste
 râmnicu vâlcea
@@ -9111,8 +9111,8 @@ turda
 oradea
 vaslui
 bârlad
-piatra neamţ
-bistriţa
+piatra neamț
+bistrița
 satu mare
 baia mare
 iași
@@ -19673,7 +19673,7 @@ pálháza
 vilmány
 sátoraljaújhely
 ricse
-rădăuţi
+rădăuți
 cândești
 malá lehota
 hriňová
