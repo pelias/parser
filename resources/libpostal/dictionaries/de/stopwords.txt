@@ -3,37 +3,37 @@ an
 an der|a.d.|a.d|a d
 auf
 auf der|a.d.|a.d|a d
-bei|b
+bei|b|b.
 beim
 bis
-das
+das|d|d.
 de
-dem
-den
-der
-des
-die
+dem|d|d.
+den|d|d.
+der|d|d.
+des|d|d.
+die|d|d.
 du
-fur
-gegenuber
+fur|für|f.
+gegenuber|gegenüber|ggü.|ggu|g g u|g g ü 
 im|i
 in|i
 in der|i.d.|i.d|i d
-mit
+mit|m.
 nach
-nachst
+nachst|nächst
 neben
 ob|o
 oder|od
-uber
+uber|über
 und|&
 unter
-vor|v
-von|v
+vor|v|v.
+von|v|v.
 von der|v.d.|v.d|v d
-zu
+zu|z|z.
 zu der
 zur
 zu dem
-zwischen
-zum|z
+zwischen|zw.|z w
+zum|z|z.
