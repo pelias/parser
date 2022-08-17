@@ -5,7 +5,7 @@ apotheke
 arzt
 allgemeiner deutscher automobil club|adac|a d a c
 auswartiges amt|aa|a a
-bahnhof|bf|b f
+bahnhof
 bank
 bar
 bauernhof
@@ -16,9 +16,9 @@ bundesrealgymnasium|brg|b r g
 bunker
 büro|buro|buero
 bustenhalter|bh
-busbahnhof|bbf
+busbahnhof
 café|cafe
-casino|kasino
+casino
 denkmal|dkm
 deutsche bahn|db|d b
 deutscher alpenverein|dav|d a v
@@ -30,7 +30,7 @@ fähranlegestelle|fahranlegestelle|faehranlegestelle
 fahrschule
 flughafen
 freiwillige feuerwehr|ff
-feuerwehr|fw
+feuerwehr
 gasthaus|gh
 gaststätte|gaststatte|gaststaette
 gasthof|ghf
@@ -41,13 +41,13 @@ geschäft|geschaft|geschaeft
 geselligkeitsverein
 gesundheitszentrum
 gericht
-grundschule|gs|g s
+grundschule
 hafen
 halle
 haus
 handelsakademie|hak
 handelsschule|hasch
-hauptbahnhof|hbf|h b f
+hauptbahnhof|hbf
 hochschule
 höhle|hohle
 höhere technische lehranstalt|htl|hohere technische lehranstalt|hoehere technische lehranstalt|h t l
@@ -70,12 +70,12 @@ kirche
 kläranlage|ka|klaranlage|klaeranlage
 kneipe
 konzentrationslager|kz|kl
-krankenhaus|kh|k h
+krankenhaus
 kulturzentrum
 magistratsabteilung|ma
 markt|mkt
 marktplatz|markt platz|markt pl|mkt pl|marktpl
-nachtklub|nachtclub
+nachtklub
 nationalpark|np|national park
 naturschutzgebiet|nsg
 neue mittelschule|nms
@@ -84,7 +84,7 @@ padagogische hochschule|ph
 park
 parkplatz
 pflegeheim
-polizei|pol
+polizei
 postamt
 rathaus
 recyclingeinrichtung
