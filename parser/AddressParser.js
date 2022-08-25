@@ -2,9 +2,6 @@ const Parser = require('./Parser')
 const AlphaNumericClassifier = require('../classifier/AlphaNumericClassifier')
 const TokenPositionClassifier = require('../classifier/TokenPositionClassifier')
 const HouseNumberClassifier = require('../classifier/HouseNumberClassifier')
-const UnitClassifier = require('../classifier/UnitClassifier')
-const UnitTypeClassifier = require('../classifier/UnitTypeClassifier')
-const UnitTypeUnitClassifier = require('../classifier/UnitTypeUnitClassifier')
 const PostcodeClassifier = require('../classifier/PostcodeClassifier')
 const StreetPrefixClassifier = require('../classifier/StreetPrefixClassifier')
 const StreetSuffixClassifier = require('../classifier/StreetSuffixClassifier')
@@ -39,6 +36,7 @@ const MustNotPreceedFilter = require('../solver/MustNotPreceedFilter')
 const MustNotFollowFilter = require('../solver/MustNotFollowFilter')
 const SubsetFilter = require('../solver/SubsetFilter')
 const HouseNumberPositionPenalty = require('../solver/HouseNumberPositionPenalty')
+const PostcodePositionPenalty = require('../solver/PostcodePositionPenalty')
 
 class AddressParser extends Parser {
   constructor (options) {
@@ -47,13 +45,10 @@ class AddressParser extends Parser {
       [
         // generic word classifiers
         new AlphaNumericClassifier(),
-        new UnitTypeUnitClassifier(),
         new TokenPositionClassifier(),
 
         // word classifiers
-        new UnitTypeClassifier(),
         new HouseNumberClassifier(),
-        new UnitClassifier(),
         new PostcodeClassifier(),
         new StreetPrefixClassifier(),
         new StreetSuffixClassifier(),
@@ -129,6 +124,7 @@ class AddressParser extends Parser {
         new MustNotFollowFilter('LocalityClassification', 'RegionClassification'),
         new MustNotFollowFilter('LocalityClassification', 'CountryClassification'),
         new HouseNumberPositionPenalty(),
+        new PostcodePositionPenalty(),
         new TokenDistanceFilter(),
         new OrphanedUnitTypeDeclassifier(),
         new SubsetFilter()

@@ -218,10 +218,7 @@ $ npm test
 
 ### Continuous Integration
 
-Travis tests every release against all supported Node.js versions.
-
-[![Build Status](https://travis-ci.org/pelias/parser.png?branch=master)](https://travis-ci.org/pelias/parser)
-
+CI tests every release against all supported Node.js versions.
 
 ### Versioning
 

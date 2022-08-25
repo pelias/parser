@@ -2,6 +2,7 @@ const BaseSolver = require('./BaseSolver')
 const Span = require('../../tokenization/Span')
 const Solution = require('../Solution')
 const SolutionPair = require('../SolutionPair')
+const MAX_PAIRS_PER_LABEL = 8
 
 class HashMapSolver extends BaseSolver {
   // you should provide this function in your subclass
@@ -27,6 +28,7 @@ class HashMapSolver extends BaseSolver {
               map[classification.label].pair.push(new SolutionPair(new Span(), classification))
             }
           }
+          if (map[classification.label].pair.length >= MAX_PAIRS_PER_LABEL) { continue }
           map[classification.label].pair.push(new SolutionPair(phrase, classification))
         }
       }
@@ -46,6 +48,7 @@ class HashMapSolver extends BaseSolver {
               map[classification.label].pair.push(new SolutionPair(new Span(), classification))
             }
           }
+          if (map[classification.label].pair.length >= MAX_PAIRS_PER_LABEL) { continue }
           map[classification.label].pair.push(new SolutionPair(word, classification))
         }
       }

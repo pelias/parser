@@ -28,6 +28,15 @@ const testcase = (test, common) => {
     { street: 'Tv. dos Fiéis de Deus' }, { housenumber: '12C' },
     { region: 'Lisboa' }, { country: 'Portugal' }
   ])
+
+  assert('rua godinho de faria 1200', [
+    { street: 'rua godinho de faria' }, { housenumber: '1200' }
+  ])
+
+  assert('rua godinho de faria 1200 porto', [
+    { street: 'rua godinho de faria' }, { housenumber: '1200' },
+    { locality: 'porto' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

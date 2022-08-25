@@ -49,7 +49,7 @@ module.exports.tests.mask = (test, common) => {
     common.parser.classify(tokenizer)
     common.parser.solve(tokenizer)
 
-    t.equal(tokenizer.solution[0].mask(tokenizer), 'UUU UU NNN SSSSSSSSSSSSSS AAAAAAAAAAAA AAA PPPP')
+    t.equal(tokenizer.solution[0].mask(tokenizer), 'VVVVVV NNN SSSSSSSSSSSSSS AAAAAAAAAAAA AAA PPPP')
     t.end()
   })
 }
