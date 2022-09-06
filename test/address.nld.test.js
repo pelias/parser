@@ -39,6 +39,10 @@ const testcase = (test, common) => {
     { street: 'Brinkstraat' }, { housenumber: '87' }, { postcode: '7512EC' }, { locality: 'Enschede' }
   ])
 
+  assert('Blekerssngl, Gouda', [
+    { street: 'Blekerssngl' }, { locality: 'Gouda' }
+  ])
+
   assert('Weerdsingel O.Z., Utrecht', [
     { street: 'Weerdsingel O.Z.' }, { locality: 'Utrecht' }
   ])
