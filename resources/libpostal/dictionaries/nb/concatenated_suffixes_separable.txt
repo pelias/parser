@@ -1,6 +1,4 @@
 allè|alle
 allèen|alleen
-veg|v.
-vegen|v.|vn.
-vei|v.
-veien|v.|vn.
+veg|vegen|v.|vn.
+vei|veien|v.|vn.
