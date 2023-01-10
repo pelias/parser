@@ -38,7 +38,7 @@ hage|hagen
 lund|lunden
 holm|holmen
 berg|berget
-Land|Landa|lande|landet
+landa|lande|landet
 dal|dalen
 sund
 bakke|bakken
@@ -48,6 +48,6 @@ gard|garden|garda
 mark|marka
 voll|vollen
 sjø|sjøen
-lie|lien
+lie
 sti|stien
 tangen
