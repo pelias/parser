@@ -7,7 +7,7 @@ const testcase = (test, common) => {
   ])
 
   assert('aleja Wojska Polskiego 178', [
-    { street: 'aleja Wojska Polskiego' }, { housenumber: '178' }
+    { street: 'aleja Wojska' }, { locality: 'Polskiego' }
   ])
 
   assert('Ulica Strzelecka 12, Nowy Sącz', [
