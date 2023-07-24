@@ -5,6 +5,21 @@ const testcase = (test, common) => {
     { street: 'Szewska' }, { housenumber: '6' },
     { locality: 'Kraków' }
   ])
+
+  assert('aleja Wojska Polskiego 178', [
+    { street: 'aleja Wojska Polskiego' }, { housenumber: '178' }
+  ])
+
+  assert('Ulica Strzelecka 12, Nowy Sącz', [
+    { street: 'Ulica Strzelecka' }, { housenumber: '12'},
+    { locality: "Nowy Sącz" }
+  ])
+
+  assert('Żorska 11, 47-400', [
+    { street: 'Żorska' }, { housenumber: '11' },
+    { postcode: '47-400' }
+  ])
+ 
 }
 
 module.exports.all = (tape, common) => {
