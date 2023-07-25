@@ -217,6 +217,25 @@ module.exports = [
     ]
   },
   {
+    // Aleja Wojska Polskiego
+    confidence: 0.91,
+    Class: StreetClassification,
+    scheme: [
+      {
+        is: ['StreetPrefixClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['PlaceClassification'],
+        not: ['StreetClassification', 'IntersectionClassification']
+      },
+      {
+        is: ['AlphaClassification', 'GivenNameClassification', 'PersonClassification'],
+        not: ['StreetClassification', 'StreetPrefixClassification']
+      }
+    ]
+  },
+  {
     // Boulevard du Général Charles De Gaulle
     confidence: 0.81,
     Class: StreetClassification,
