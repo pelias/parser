@@ -29,3 +29,4 @@ szkoła
 technikum|techn
 uniwersytet|u|un|uniw
 zakład|zaklad|zakł|zakl
+wojsko|wojska|wojsk
