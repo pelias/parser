@@ -17,4 +17,3 @@ rzeka|rz
 siostry|ss
 stary|st
 szeregowy|szer|szereg
-polskiego|polski|pol
