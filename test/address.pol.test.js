@@ -9,6 +9,10 @@ const testcase = (test, common) => {
   assert('aleja Wojska Polskiego 178', [
     { street: 'aleja Wojska Polskiego' }, { housenumber: '178' }
   ])
+
+  assert('aleja 29 listopada 11', [
+    { street: 'aleja 29 listopada' }, { housenumber: '11' }
+  ])
   
   assert('aleja Wojska 178', [
     { street: 'aleja Wojska' }, { housenumber: '178' }
