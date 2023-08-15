@@ -9,7 +9,7 @@ class PlaceClassifier extends WordClassifier {
   setup () {
     // load index tokens
     this.index = {}
-    libpostal.load(this.index, ['fr', 'de', 'en'], 'place_names.txt')
+    libpostal.load(this.index, ['fr', 'de', 'en', 'pl'], 'place_names.txt')
     libpostal.generatePlurals(this.index)
   }
 
