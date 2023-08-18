@@ -4,7 +4,7 @@ const libpostal = require('../resources/libpostal/libpostal')
 
 
 // numeric streets languages
-// languages which 
+// languages which use street names that start with numbers
 const prefix = ['pl']
 
 class StreetNumericClassifier extends PhraseClassifier {
