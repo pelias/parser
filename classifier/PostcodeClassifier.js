@@ -1,8 +1,6 @@
-// const fs = require('fs')
-const path = require('path')
 const WordClassifier = require('./super/WordClassifier')
 const PostcodeClassification = require('../classification/PostcodeClassification')
-const dictPath = path.join(__dirname, `../resources/chromium-i18n/ssl-address`)
+const zipregex = require('../resources/chromium-i18n/zipregex')
 
 // postcode data sourced from google-i18n project
 // see: https://chromium-i18n.appspot.com/ssl-address
@@ -15,10 +13,9 @@ const countryCodes = ['us', 'gb', 'fr', 'de', 'es', 'pt', 'au', 'nz', 'kr', 'jp'
 class PostcodeClassifier extends WordClassifier {
   setup () {
     this.data = countryCodes.map(cc => {
-      let row = require(path.join(dictPath, `${cc.toUpperCase()}.json`))
-      row.regex = new RegExp('^(' + row.zip + ')$', 'i')
-      return row
-    }).filter(row => !row.regex.test('100')) // remove countries with 3-digit postcodes
+      let regex = zipregex[cc.toUpperCase()]
+      return new RegExp('^(' + regex + ')$', 'i')
+    }).filter(regex => !regex.test('100')) // remove countries with 3-digit postcodes
   }
 
   each (span) {
@@ -36,7 +33,7 @@ class PostcodeClassifier extends WordClassifier {
     }
 
     for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i].regex.test(span.norm)) {
+      if (this.data[i].test(span.norm)) {
         span.classify(new PostcodeClassification(1))
         break
       }

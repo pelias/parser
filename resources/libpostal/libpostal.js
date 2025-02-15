@@ -1,32 +1,32 @@
 const _ = require('lodash')
-const fs = require('fs')
-const path = require('path')
 const pluralize = require('pluralize')
 const pelias = require('../pelias/pelias')
-const custom = require('../custom/custom')
-const dictPath = path.join(__dirname, `./dictionaries`)
-const allLanguages = fs.readdirSync(dictPath).filter(p => !p.includes('.'))
+const libpostaldict = require('./_dictionaries')
+const allLanguages = Object.keys(libpostaldict)
 
 function load (index, langs, filename, options) {
   const add = _add(index, options)
   const remove = _remove(index, options)
+  const key = filename.replace('.txt', '')
 
+  // Load libpostal/dictionaries
   langs.forEach(lang => {
-    let filepath = path.join(dictPath, lang, filename)
-    if (!fs.existsSync(filepath)) { return }
-    let dict = fs.readFileSync(filepath, 'utf8')
+    let dict = libpostaldict[lang][key]
+    if (dict === undefined) { return }
     dict.split('\n').forEach(row => {
       row.split('|').forEach(add.bind(null, lang))
     }, this)
   }, this)
 
+  // Load pelias/dictionaries/libostal
   langs.forEach(lang => {
-    pelias.load(path.join('libpostal', lang, filename), add.bind(null, lang), remove)
+    pelias.load(['libpostal', lang, key], add.bind(null, lang), remove)
   })
 
-  langs.forEach(lang => {
-    custom.load(path.join('libpostal', lang, filename), add.bind(null, lang), remove)
-  })
+  // TODO: Not sure how this could ever be anything besides a no-op
+  // langs.forEach(lang => {
+  //   custom.load(path.join('libpostal', lang, filename), add.bind(null, lang), remove)
+  // })
 }
 
 function _normalize (cell, options) {

@@ -1,21 +1,15 @@
-const fs = require('fs')
-const path = require('path')
 const pelias = require('../pelias/pelias')
-const custom = require('../custom/custom')
-const generateFilenames = require('../helper').generateFilenames
-const dictPath = path.join(__dirname, `./dictionaries`)
-const allPlacetypes = fs.readdirSync(dictPath).filter(p => !p.includes('.'))
+// const generateFilenames = require('../helper').generateFilenames
+// const dictPath = `resources/whosonfirst/dictionaries`
 
 function load (set, placetypes, filenames, options) {
+  const wofdict = require('./_dictionaries')
   const add = _add(set, options)
   const remove = _remove(set, options)
+  const keys = filenames.map(p => p.replace('.txt', ''))
 
   placetypes.forEach(placetype => {
-    const directory = path.join(dictPath, placetype)
-    generateFilenames(directory, filenames).forEach(filename => {
-      let filepath = path.join(directory, filename)
-      if (!fs.existsSync(filepath)) { return }
-      let dict = fs.readFileSync(filepath, 'utf8')
+    Object.values(wofdict[placetype]).forEach(dict => {
       dict.split('\n').forEach(row => {
         row.split('|').forEach(add)
       }, this)
@@ -23,12 +17,15 @@ function load (set, placetypes, filenames, options) {
   }, this)
 
   placetypes.forEach(placetype => {
-    pelias.load({ directory: path.join('whosonfirst', placetype), filenames: filenames }, add, remove)
+    for (const key of keys) {
+      pelias.load(['whosonfirst', placetype, key], add, remove)
+    }
   })
 
-  placetypes.forEach(placetype => {
-    custom.load({ directory: path.join('whosonfirst', placetype), filenames: filenames }, add, remove)
-  })
+  // TODO: Not sure how this could ever be anything besides a no-op
+  // placetypes.forEach(placetype => {
+  //   custom.load({ directory: path.join('whosonfirst', placetype), filenames: filenames }, add, remove)
+  // })
 }
 
 function _normalize (cell, options) {
@@ -67,4 +64,3 @@ function _remove (set, options) {
 }
 
 module.exports.load = load
-module.exports.placetypes = allPlacetypes

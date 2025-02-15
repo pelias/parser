@@ -1,5 +1,4 @@
-const path = require('path')
-const resourceLoader = require('../helper').resourceLoader
-const dictPath = path.join(__dirname, `./dictionaries`)
+const resourceLoader = require('../helper-nofs').resourceLoader
+const dict = require('./_dictionaries')
 
-module.exports.load = resourceLoader(dictPath)
+module.exports.load = resourceLoader(dict)
