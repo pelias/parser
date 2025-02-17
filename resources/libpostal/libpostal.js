@@ -11,11 +11,9 @@ function load (index, langs, filename, options) {
 
   // Load libpostal/dictionaries
   langs.forEach(lang => {
-    let dict = libpostaldict[lang][key]
-    if (dict === undefined) { return }
-    dict.split('\n').forEach(row => {
-      row.split('|').forEach(add.bind(null, lang))
-    }, this)
+    let d = libpostaldict[lang][key]
+    if (d === undefined) { return }
+    d.forEach(entry => add(lang, entry))
   }, this)
 
   // Load pelias/dictionaries/libostal

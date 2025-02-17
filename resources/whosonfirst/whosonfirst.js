@@ -1,6 +1,4 @@
 const pelias = require('../pelias/pelias')
-// const generateFilenames = require('../helper').generateFilenames
-// const dictPath = `resources/whosonfirst/dictionaries`
 
 function load (set, placetypes, filenames, options) {
   const wofdict = require('./_dictionaries')
@@ -9,10 +7,8 @@ function load (set, placetypes, filenames, options) {
   const keys = filenames.map(p => p.replace('.txt', ''))
 
   placetypes.forEach(placetype => {
-    Object.values(wofdict[placetype]).forEach(dict => {
-      dict.split('\n').forEach(row => {
-        row.split('|').forEach(add)
-      }, this)
+    keys.forEach(key => {
+      wofdict[placetype][key].forEach(add)
     })
   }, this)
 
