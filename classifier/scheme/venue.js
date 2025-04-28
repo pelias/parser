@@ -186,7 +186,7 @@ module.exports = [
     scheme: [
       {
         is: ['PlaceClassification', 'VenueClassification'],
-        not: ['StreetClassification']
+        not: ['StreetClassification', 'StreetSuffixClassification']
       },
       {
         is: ['AlphaClassification'],
