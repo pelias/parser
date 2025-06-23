@@ -285,6 +285,11 @@ const testcase = (test, common) => {
   // https://github.com/pelias/pelias/issues/912
   assert('Jefferson Parish', [{ locality: 'Jefferson' }])
   assert('Mills County', [{ locality: 'Mills' }])
+
+  // Partial admin match that triggered a regression in 2.5.0
+  assert('Main St Seattl', [
+    { street: 'Main St' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
