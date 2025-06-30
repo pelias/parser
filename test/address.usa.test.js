@@ -290,6 +290,12 @@ const testcase = (test, common) => {
   assert('Main St Seattl', [
     { street: 'Main St' }
   ])
+
+  // https://github.com/pelias/parser/pull/179
+  assert('10 A Main Street', [
+    { housenumber: '10 A' },
+    { street: 'Main Street' }
+  ])
 }
 
 module.exports.all = (tape, common) => {
