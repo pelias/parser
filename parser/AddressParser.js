@@ -26,6 +26,7 @@ const CentralEuropeanStreetNameClassifier = require('../classifier/CentralEurope
 const CompositeClassifier = require('../classifier/CompositeClassifier')
 const WhosOnFirstClassifier = require('../classifier/WhosOnFirstClassifier')
 // const AdjacencyClassifier = require('../classifier/AdjacencyClassifier')
+const SubdivisionClassifier = require('../classifier/SubdivisionClassifier')
 const ExclusiveCartesianSolver = require('../solver/ExclusiveCartesianSolver')
 const LeadingAreaDeclassifier = require('../solver/LeadingAreaDeclassifier')
 const MultiStreetSolver = require('../solver/MultiStreetSolver')
@@ -71,6 +72,7 @@ class AddressParser extends Parser {
         new ChainClassifier(),
         new PlaceClassifier(),
         new WhosOnFirstClassifier(),
+        new SubdivisionClassifier(),
 
         // composite classifiers
         new CompositeClassifier(require('../classifier/scheme/person')),
