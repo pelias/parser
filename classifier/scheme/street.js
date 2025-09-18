@@ -117,7 +117,7 @@ module.exports = [
       },
       {
         is: ['StreetClassification'],
-        not: ['IntersectionClassification', 'DirectionalClassification']
+        not: ['DirectionalClassification']
       }
     ]
   },

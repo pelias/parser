@@ -3,6 +3,7 @@ const AlphaClassification = require('../classification/AlphaClassification')
 const NumericClassification = require('../classification/NumericClassification')
 const AlphaNumericClassification = require('../classification/AlphaNumericClassification')
 const PunctuationClassification = require('../classification/PunctuationClassification')
+const SingleAlphaClassification = require('../classification/SingleAlphaClassification')
 const Span = require('../tokenization/Span')
 const classifier = new AlphaNumericClassifier()
 
@@ -17,7 +18,10 @@ function classify (body) {
 module.exports.tests.alpha = (test) => {
   test('AlphaClassification: English letter', (t) => {
     let s = classify('A')
-    t.deepEqual(s.classifications, { AlphaClassification: new AlphaClassification(1.0) })
+    t.deepEqual(s.classifications, {
+      AlphaClassification: new AlphaClassification(1.0),
+      SingleAlphaClassification: new SingleAlphaClassification(1.0)
+    })
     t.end()
   })
   test('AlphaClassification: English mixed-case word', (t) => {
