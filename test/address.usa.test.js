@@ -293,8 +293,21 @@ const testcase = (test, common) => {
 
   // https://github.com/pelias/parser/pull/179
   assert('10 A Main Street', [
-    { housenumber: '10 A' },
-    { street: 'Main Street' }
+    { housenumber: '10' },
+    { street: 'A Main Street' }
+  ])
+
+  // https://github.com/pelias/parser/issues/191
+  assert('Indianapolis, IN', [
+    { locality: 'Indianapolis' },
+    { region: 'IN' }
+  ])
+  assert('1441 Brown Ave, Whiting, IN 46394', [
+    { housenumber: '1441' },
+    { street: 'Brown Ave' },
+    { locality: 'Whiting' },
+    { region: 'IN' },
+    { postcode: '46394' }
   ])
 }
 
