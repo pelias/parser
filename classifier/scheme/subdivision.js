@@ -11,7 +11,7 @@ module.exports = [
         not: ['IntersectionClassification']
       },
       {
-        is: ['StopWordClassification'],
+        is: ['SubdivisionClassification'],
         not: ['IntersectionClassification', 'PunctuationClassification']
       }
     ]
