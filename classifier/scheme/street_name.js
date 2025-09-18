@@ -2,12 +2,12 @@ const StreetNameClassification = require('../../classification/StreetNameClassif
 
 module.exports = [
   {
-    // dos Fiéis
+    // dos Fiéis, a Santa
     confidence: 0.5,
     Class: StreetNameClassification,
     scheme: [
       {
-        is: ['StopWordClassification'],
+        is: ['StopWordClassification', 'SingleAlphaClassification'],
         not: ['DirectionalClassification', 'IntersectionClassification']
       },
       {
@@ -17,16 +17,16 @@ module.exports = [
     ]
   },
   {
-    // Academia das Ciências
+    // Academia das Ciências, Sol a Santa
     confidence: 0.5,
     Class: StreetNameClassification,
     scheme: [
       {
         is: ['AlphaClassification'],
-        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'StreetPrefixClassification']
+        not: ['StreetClassification', 'IntersectionClassification', 'StopWordClassification', 'SingleAlphaClassification', 'StreetPrefixClassification']
       },
       {
-        is: ['StopWordClassification'],
+        is: ['StopWordClassification', 'SingleAlphaClassification'],
         not: ['DirectionalClassification']
       },
       {

@@ -3,6 +3,7 @@ const AlphaClassification = require('../classification/AlphaClassification')
 const NumericClassification = require('../classification/NumericClassification')
 const AlphaNumericClassification = require('../classification/AlphaNumericClassification')
 const PunctuationClassification = require('../classification/PunctuationClassification')
+const SingleAlphaClassification = require('../classification/SingleAlphaClassification')
 
 class AlphaNumericClassifier extends WordClassifier {
   each (span) {
@@ -14,6 +15,9 @@ class AlphaNumericClassifier extends WordClassifier {
       span.classify(new PunctuationClassification(1))
     } else {
       span.classify(new AlphaClassification(1))
+      if (span.norm.length === 1) {
+        span.classify(new SingleAlphaClassification(1))
+      }
     }
   }
 }
