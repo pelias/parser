@@ -133,6 +133,12 @@ const testcase = (test, common) => {
     { locality: 'Châtillon' },
     { country: 'France' }
   ])
+  assert(`1 bis Rue Ballainvilliers 63000 Clermont-Ferrand`, [
+    { housenumber: '1 bis' },
+    { street: 'Rue Ballainvilliers' },
+    { postcode: '63000' },
+    { locality: 'Clermont-Ferrand' }
+  ])
 }
 
 module.exports.all = (tape, common) => {

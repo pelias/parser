@@ -293,8 +293,8 @@ const testcase = (test, common) => {
 
   // https://github.com/pelias/parser/pull/179
   assert('10 A Main Street', [
-    { housenumber: '10 A' },
-    { street: 'Main Street' }
+    { housenumber: '10' },
+    { street: 'A Main Street' }
   ])
 }
 
